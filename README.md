@@ -14,4 +14,4 @@
 ## SDK
 
 - TODO: link to RPC doc
-- TODO: link to Ruby SDK doc
+[CKB Demo Ruby SDK](https://github.com/nervosnetwork/ckb-demo-ruby-sdk#how-to-use)
