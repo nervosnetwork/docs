@@ -13,5 +13,5 @@
 
 ## SDK
 
-- TODO: link to RPC doc
+- [CKB Node RPC](https://github.com/nervosnetwork/ckb/blob/develop/rpc/doc.md)
 [CKB Demo Ruby SDK](https://github.com/nervosnetwork/ckb-demo-ruby-sdk#how-to-use)
