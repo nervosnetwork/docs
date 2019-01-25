@@ -4,7 +4,7 @@
 
 ## Papers
 
-- [White Paper](https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb.pdf)
+- [White Paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md)
 
 ## Key Concepts
 
