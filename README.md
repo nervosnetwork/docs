@@ -2,6 +2,8 @@
 
 \[ **English** | 中文(TBD) \]
 
+The [wiki](https://github.com/nervosnetwork/docs/wiki) of this project is open to everyone.
+
 ## Papers
 
 - [White Paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md)
