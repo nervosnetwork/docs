@@ -1,11 +1,11 @@
-# No Rules!
+No Rules.
 
-# Just Do It!
+Just Do It.
 
-# You want something you put up an issue!
+You want something, you just put up an issue.
 
-# You have something you put up a pr!
+You have something, you put up a pr.
 
-# That's It! 
+That's It.
 
-# Now Go Do It!
+Just Do It.
