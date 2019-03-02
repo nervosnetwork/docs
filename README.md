@@ -1,8 +1,9 @@
-# Docs
 
 \[ **English** | 中文(TBD) \]
 
-This is a collection of Nervos Documentations, curated by Nervos Foundation. See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to contribute. 
+# Docs
+
+This is a collection of Nervos docs, curated by Nervos Foundation, contributed by the Nervos Community with :heart:.
 
 ## Get to Know About Nervos
 ### Papers
