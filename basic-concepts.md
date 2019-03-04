@@ -106,7 +106,10 @@ As you may noticed, in a transaction data structure, cells are not shown explici
 More information about Transaction can be found in [whitepaper](https://github.com/nervosnetwork/rfcs/blob/afe50463bb620393b179bd8f08c263b78e366ab3/rfcs/0002-ckb/0002-ckb.md#44-transaction).
 
 ## Block
+The block structure of Nervos CKB is similar to all the other blockchain systems. The difference is that two kinds of transactions are separated for implementing the consensus algorithm, which will be introduced later. Also the information of uncle blocks are included in the block as well, still for the purpose of consensus algorithm. 
 
+
+Here's an example of the transaction of CKB:
 ```json
 {
 
@@ -162,8 +165,7 @@ More information about Transaction can be found in [whitepaper](https://github.c
 }
 ```
 
-
-
+Here's an example of the `uncles` field.
 ```json
 "uncles": [
     {
@@ -217,4 +219,14 @@ More information about Transaction can be found in [whitepaper](https://github.c
 ]
 ```
 
+introduce each of the field:
+
+
+
+
 ## Wallet & Address
+
+
+
+To do:
+* remind to run a node and use rpc to get the datas
