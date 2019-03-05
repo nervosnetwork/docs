@@ -26,6 +26,9 @@ This is a collection of Nervos docs, curated by Nervos Foundation, contributed b
 - [Nervos CKB White Paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md)
 - [CKB-VM Paper](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm)
 
+### RFCs
+- [Nervos RFCs](https://github.com/nervosnetwork/rfcs)
+
 ### Blogs
 - Token Economic Model
     - [Smart Contract Platforms Have to be Store of Value](https://medium.com/nervosnetwork/smart-contract-platforms-have-to-be-store-of-value-323745fac0a5)
