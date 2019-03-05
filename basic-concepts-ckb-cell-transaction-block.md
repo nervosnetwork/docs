@@ -1,4 +1,4 @@
-# Basic Concepts
+# Basic Concepts of CKB/Cell/Transaction/Block
 This document introduces some of the basic concepts you should know before you start to develop on CKB.
 
 ## CKB

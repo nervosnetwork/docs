@@ -5,6 +5,21 @@
 
 This is a collection of Nervos docs, curated by Nervos Foundation, contributed by the Nervos Community with :heart:.
 
+## Start to Develop on Nervos
+### Basic Concepts
+
+- [Introducing the basic concepts of CKB/Cell/Transaction/Block](https://github.com/nervosnetwork/docs/blob/master/basic-concepts.md)
+
+### Develop 
+- [How to Run a CKB Node](https://github.com/nervosnetwork/ckb)
+- [How to Write a Contract](https://github.com/nervosnetwork/ckb-demo-ruby-sdk/blob/develop/docs/how-to-write-contracts.md)
+- [How to Play with Ruby SDK](https://github.com/nervosnetwork/ckb-demo-ruby-sdk)
+
+### API
+
+- [CKB Node RPC](https://github.com/nervosnetwork/ckb/blob/develop/rpc/doc.md)
+
+
 ## Get to Know About Nervos
 ### Papers
 
@@ -29,22 +44,3 @@ This is a collection of Nervos docs, curated by Nervos Foundation, contributed b
 - [A Deep Dive into Nervos' Layered Design](https://www.youtube.com/watch?v=5I24G-jNutw)
 - [Nervos CKB-VM Walkthrough](https://www.youtube.com/watch?v=qUGU5_o5Lo4)
 - [How to Safely Improve the Scalability while Keeping the Decentralized Nature of Bitcoin Network](https://www.youtube.com/watch?v=HSXzbgVRH_M) (start from 4:27)
-
-
-## Start to Develop on Nervos
-### Basic Concepts (TBD)
-
-- CKB
-- Cell
-- Transaction
-- Block
-- Wallet and Address
-
-### Develop 
-- [How to Run a CKB Node](https://github.com/nervosnetwork/ckb)
-- [How to Write a Contract](https://github.com/nervosnetwork/ckb-demo-ruby-sdk/blob/develop/docs/how-to-write-contracts.md)
-- [How to Play with Ruby SDK](https://github.com/nervosnetwork/ckb-demo-ruby-sdk)
-
-### API
-
-- [CKB Node RPC](https://github.com/nervosnetwork/ckb/blob/develop/rpc/doc.md)
