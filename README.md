@@ -1,8 +1,9 @@
-# Docs
 
 \[ **English** | 中文(TBD) \]
 
-This is a collection of Nervos Documentations, curated by Nervos Foundation. See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to contribute. 
+# Docs
+
+This is a collection of Nervos docs, curated by Nervos Foundation, contributed by the Nervos Community with :heart:.
 
 ## Get to Know About Nervos
 ### Papers
@@ -20,6 +21,7 @@ This is a collection of Nervos Documentations, curated by Nervos Foundation. See
 - Virtual Machine - CKB-VM
     - [An Introduction to Nervos CKB-VM](https://medium.com/nervosnetwork/an-introduction-to-ckb-vm-9d95678a7757)
     - [CKB-VM Lite Paper](https://medium.com/nervosnetwork/ckb-vm-lite-paper-1d9b0dab57ba)
+
 - Consensus Algorithm - NC-Max 
     - [Why We Love Nakamoto Consensus Algorithm](https://medium.com/nervosnetwork/why-we-love-nakamoto-consensus-5467c035fc55)
 
@@ -30,7 +32,7 @@ This is a collection of Nervos Documentations, curated by Nervos Foundation. See
 
 
 ## Start to Develop on Nervos
-### Key Concepts (TBD)
+### Basic Concepts (TBD)
 
 - CKB
 - Cell
