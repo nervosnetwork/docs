@@ -56,13 +56,17 @@ A typical `unlock` script may contain the information of the cell owner's public
 
 For example, Alice has a cell, whose `data` field stores the balance of a kind of UDT, and its `type` field refers to a cell that defines the rules and logic of this UDT. If Alice wants to send some of this UDT to others, then she would use this cell as input, and make another cell that has the exact same `type` field with this one as output, then assemble the transaction and send it to the CKB node. (Alice also needs to make another output cell for herself as the changes she needs to keep for herself) 
 
+
 After received the transaction, the CKB node would first verify the `lock` and the `unlock` script of this input cell, to make sure that Alice indeed owns the cell. Then it verifies the `type` script of the output cell, which is same to the `type` script of the input cell, to make sure the UDT transaction is valid according to the rules defined by the `type` script.
+
 
 > In theory, `lock` script can replace the function of `type` script, as they both can access all the information about the transaction. Still, `type` field is still added by the design of Nervos protocol, in order to explicitly show the type of cells. This may improve the readability of the transaction data, so that it is easier for the development or doing security audits.
 
 The scripts doesn't need to be included in the `type` directly. It can also refer to a script stored in another cell through the `reference` field. When the verification of a transaction has the dependencies of the cells derived from other transactions, these cells should be explicitly referred in the `deps` field of this transaction.
 
+
 > During the verification process, the specified scripts is loaded and executed in a CKB-VM instance. Check the [CKB-VM RFC](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm) to learn more about how it works in the CKB-VM.
+
 
 For learning about how to write `script` in practice, please refer [how to write contracts on Nervos CKB](https://github.com/nervosnetwork/ckb-demo-ruby-sdk/blob/develop/docs/how-to-write-contracts.md#script-model).
 

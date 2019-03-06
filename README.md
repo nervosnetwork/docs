@@ -8,7 +8,7 @@ This is a collection of Nervos docs, curated by Nervos Foundation, contributed b
 ## Start to Develop on Nervos
 ### Basic Concepts
 
-- [Introducing the basic concepts of CKB/Cell/Transaction/Block](https://github.com/nervosnetwork/docs/blob/master/basic-concepts.md)
+- [Introducing the basic concepts of CKB/Cell/Transaction/Block](https://github.com/nervosnetwork/docs/blob/master/basic-concepts-ckb-cell-transaction-block.md)
 
 ### Develop 
 - [How to Run a CKB Node](https://github.com/nervosnetwork/ckb)
@@ -25,6 +25,9 @@ This is a collection of Nervos docs, curated by Nervos Foundation, contributed b
 
 - [Nervos CKB White Paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md)
 - [CKB-VM Paper](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm)
+
+### RFCs
+- [Nervos RFCs](https://github.com/nervosnetwork/rfcs)
 
 ### Blogs
 - Token Economic Model
