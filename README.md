@@ -8,7 +8,7 @@ This is a collection of Nervos docs, curated by Nervos Foundation, contributed b
 ## Start to Develop on Nervos
 ### Basic Concepts
 
-- [Introducing the basic concepts of CKB/Cell/Transaction/Block](https://github.com/nervosnetwork/docs/blob/master/basic-concepts.md)
+- [Introducing the basic concepts of CKB/Cell/Transaction/Block](https://github.com/nervosnetwork/docs/blob/master/basic-concepts-ckb-cell-transaction-block.md)
 
 ### Develop 
 - [How to Run a CKB Node](https://github.com/nervosnetwork/ckb)
