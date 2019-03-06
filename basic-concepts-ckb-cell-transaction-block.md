@@ -48,7 +48,7 @@ After a CKB node received a transaction. It first get verified by the rules defi
 
 Apart from the rules defined by CKB system, a transaction also needs to be verified by the scripts specified by the `lock` of input cells and the `type` of output cells. This is the part that is crucial for understanding how to define the transition behavior of the on-chain state.
 
-As mentioned above, `lock` defines the ownership of the cell. In a transaction, there's an `unlock` script along with each of the input cells. Verification rules require that the hash of a cell's `unlock` script should match the hash stored in the `lock` filed of this cell. Then the `unlock` script will be executed and the ownership of this cell is verified.
+As mentioned above, `lock` defines the ownership of the cell. In a transaction, there is a group of `inputs`. Each of the `inputs` has two values: an input cell (which is noted as `previous_output`) and an `unlock` script. (I.e. the `inputs` field is an array of `{previous_output, unlock}`.) When the transaction is verified, it is required that the hash of the `unlock` script should be identical to the hash stored in the `lock` field of the corresponding cell. The `unlock` script will then be executed, so that the ownership of this cell is verified.
 
 A typical `unlock` script may contain the information of the cell owner's public key and the signature of the transaction. During the verification process, the script verifies if the signature match with the public key stored in the `unlock` script, to make sure the transaction is indeed signed by the owner of the input cells. This process is very similar to the [P2SH](https://en.bitcoin.it/wiki/Pay_to_script_hash) scheme in Bitcoin.
 
