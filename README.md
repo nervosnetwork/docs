@@ -11,8 +11,8 @@ This is a collection of Nervos docs, curated by Nervos Foundation, contributed b
 - [Introducing the basic concepts of CKB/Cell/Transaction/Block](https://github.com/nervosnetwork/docs/blob/master/basic-concepts-ckb-cell-transaction-block.md)
 
 ### Develop 
-- [Run a CKB Node](https://github.com/nervosnetwork/ckb)
-- [Play with Ruby SDK](https://github.com/nervosnetwork/ckb-demo-ruby-sdk)
+- [Run a CKB Node](https://github.com/nervosnetwork/ckb#build-dependencies)
+- [Play with Ruby SDK](https://github.com/nervosnetwork/ckb-demo-ruby-sdk#how-to-use)
 - [Write a Contract](https://github.com/nervosnetwork/ckb-demo-ruby-sdk/blob/develop/docs/how-to-write-contracts.md)
 
 ### API
