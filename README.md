@@ -42,6 +42,8 @@ This is a collection of Nervos docs, curated by Nervos Foundation, contributed b
 
 - Consensus Algorithm - NC-Max 
     - [Why We Love Nakamoto Consensus Algorithm](https://medium.com/nervosnetwork/why-we-love-nakamoto-consensus-5467c035fc55)
+    - [Forget about the TPS Competition](https://medium.com/nervosnetwork/forget-about-the-tps-competition-df40a45fdad8)
+    - [Breaking the Throughput Limit of Nakamoto Consensus](https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832)
 
 ### Videos
 - [A Deep Dive into Nervos' Layered Design](https://www.youtube.com/watch?v=5I24G-jNutw)
