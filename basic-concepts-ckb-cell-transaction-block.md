@@ -8,7 +8,7 @@ CKB offers storage to the most important data (or state) that needs to be stored
 
 [A figure for showing 3 structures]
 
-There are primarily 3 data structures you need to know in order to develop on CKB: Cell, Transaction and Block. We have prepared a [document](https://github.com/nervosnetwork/ckb/blob/master/docs/data-structures.md) for explaining every pieces of these data.
+There are primarily 3 data structures you need to know in order to develop on CKB: Cell, Transaction and Block. We have prepared a [document](https://github.com/nervosnetwork/rfcs/pull/91) for explaining every pieces of these data.
 
  <!--Up to here, bitcoiners may have noticed that CKB has a very similar structure to Bitcoin. That's why we have wrote up a quick guideline for you to bootstrap easily with your bitcoin background.--> 
 
