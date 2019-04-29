@@ -8,7 +8,7 @@ CKB offers storage to the most important data (or state) that needs to be stored
 
 [A figure for showing 3 structures]
 
-There are primarily 3 data structures you need to know in order to develop on CKB: Cell, Transaction and Block. We have prepared a [document](https://github.com/nervosnetwork/rfcs/pull/91) for explaining every pieces of these data.
+There are primarily 3 data structures you need to know in order to develop on CKB: Cell, Transaction and Block. We have prepared a [document](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md) for explaining every pieces of these data.
 
  <!--Up to here, bitcoiners may have noticed that CKB has a very similar structure to Bitcoin. That's why we have wrote up a quick guideline for you to bootstrap easily with your bitcoin background.--> 
 
@@ -20,7 +20,7 @@ Cell is the most basic element in CKB system. A cell can be used to store a stat
 
 A state cell may contain the information data of an application or an UDT (User-Defined-Asset), such as the balance of a user's ERC20 token. A script cell may contain the logic of an application or the rules of an UDT, such as the balance of an ERC20 token can not be negative. 
 
-> It is feasible to let a cell store both the state and the logic of an application, but if this application wants to leverage the power of [layer2 solutions](https://github.com/Awesome-Layer-2/Awesome-Layer-2#introduction-to-layer-2-solutions-1), this is really not recommended. This may result in the same problem of [why it is hard to implement EVM on Plasma](https://medium.com/@kelvinfichter/why-is-evm-on-plasma-hard-bf2d99c48df7).
+> It is feasible to let a cell store both the state and the logic of an application, but if this application wants to leverage the power of [layer2 solutions](https://github.com/Awesome-Layer-2/Awesome-Layer-2), this is really not recommended. This may result in the same problem of [why it is hard to implement EVM on Plasma](https://medium.com/@kelvinfichter/why-is-evm-on-plasma-hard-bf2d99c48df7).
 
 
 In a single cell, the `capacity` part limits the size of this cell. The `data`, `type` and `lock` are the three parts a developer needs to be considered about when designing an application. 
