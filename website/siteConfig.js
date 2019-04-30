@@ -37,7 +37,10 @@ const siteConfig = {
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
-  headerLinks: [ ],
+  headerLinks: [ 
+    { href: 'https://github.com/nervosnetwork', label: 'GitHub', external: true }
+      
+  ],
 
   // If you have users set above, you add it here:
   users,
@@ -82,6 +85,9 @@ const siteConfig = {
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
+
+  // Collapsible Categories
+  docsSideNavCollapsible: true,
 
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
