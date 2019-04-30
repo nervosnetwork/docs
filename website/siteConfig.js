@@ -20,6 +20,8 @@ const siteConfig = {
     //   url: 'https://facebook.github.io',
     //   baseUrl: '/test-site/',
 
+    docsUrl: '',
+
     // Used for publishing and more
     projectName: 'nervos-docs',
     organizationName: 'Nervos',
@@ -86,12 +88,15 @@ const siteConfig = {
     // Collapsible Categories
     docsSideNavCollapsible: true,
 
+    //base url for edit button
+    // editUrl: 'https://github.com/nervosnetwork/docs/edit/master/docs/',
+
 
     // Show documentation's last contributor's name.
     // enableUpdateBy: true,
 
     // Show documentation's last update time.
-    // enableUpdateTime: true,
+    enableUpdateTime: true,
 
     // You may provide arbitrary config keys to be used as needed by your
     // template. For example, if you need your repo's URL...
