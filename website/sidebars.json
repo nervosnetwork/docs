@@ -1,7 +1,8 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Introduction": ["welcome","nervos-intro","basic-concepts"],
+    "Guides": ["run-node","testnet"],
+    "API": ["RPC"],
+    "Advanced": ["papers","blogs","videos"]
   }
 }
