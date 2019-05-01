@@ -1,7 +1,8 @@
 {
   "docs": {
-    "Introduction": ["welcome","nervos-intro","basic-concepts"],
-    "Guides": ["run-node","testnet"],
+    "Introduction": ["introduction/welcome","introduction/nervos-intro"],
+    "Basic Concepts":["basic-concepts/prerequisites","basic-concepts/states-assets","basic-concepts/ckb","basic-concepts/scripts"],
+    "Guide": ["run-node","testnet"],
     "API": ["RPC"],
     "Advanced": ["papers","blogs","videos"]
   }

@@ -1,18 +1,18 @@
 ---
-id: basic-concepts
-title: Basic Concepts
-sidebar_label: Basic Concepts
+id: ckb
+title: CKB
 ---
 
-Here you can learn about the basic concepts of Nervos CKB. 
+![data-structure](assets/ckb-structure.png)
+
+
 
 There are primarily 3 data structures you need to know in order to develop on CKB: Cell, Transaction and Block. We have prepared a [document](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md) for explaining every pieces of these data.
 
  <!--Up to here, bitcoiners may have noticed that CKB has a very similar structure to Bitcoin. That's why we have wrote up a quick guideline for you to bootstrap easily with your bitcoin background.--> 
 
- ![data-structure](assets/ckb-structure.png)
-
-## Cell
+ 
+### Cell
 
 > More information about Cell can be found in the [Nervos whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md#42-cell).
 
@@ -30,7 +30,7 @@ In a single cell, the `capacity` part limits the size of this cell. The `data`, 
 
 We will explain how to these parts work in the next section.
 
-## Transaction
+### Transaction
 
 > More information about the Transaction of Nervos CKB can be found in [whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md#44-transaction).
 
@@ -70,8 +70,18 @@ The scripts doesn't need to be included in the `type` directly. It can also refe
 
 For learning about how to write `script` in practice, please refer [how to write contracts on Nervos CKB](https://github.com/nervosnetwork/ckb-demo-ruby-sdk/blob/develop/docs/how-to-write-contracts.md#script-model).
 
-## Block
+### Block
 
 Block contains a pack of transactions and a block header with some meta-data. It is the miner's job to pack transactions into a block and do the Proof-of-Work calculation to find a "seal" to seal the block, then broadcast it to the whole network. Other miners would receive this block, verify it, collect transactions and start to mine a new block based on this received block. 
 
 Basically, this part of knowledge is actually not necessary for the developers to be familiar with (unless it is the miner software you are looking to develop), please refer [this document](https://github.com/nervosnetwork/ckb/blob/master/docs/data-structures.md) for the detailed information of the block structure.
+
+
+## Scripts
+
+### Lock Script
+
+### Type Script
+
+### Computing Cycles and Transaction Size
+
