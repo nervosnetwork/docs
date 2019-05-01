@@ -1,18 +1,18 @@
-# Basic Concepts of CKB/Cell/Transaction/Block
-This document introduces some of the basic concepts you should know before you start to develop on CKB.
+---
+id: ckb
+title: CKB
+---
 
-## CKB
-Nervos Common Knowledge Base is a permission-less public blockchain system that supports smart contract functionality.
+![data-structure](assets/ckb-structure.png)
 
-CKB offers storage to the most important data (or state) that needs to be stored with absolute security and immutability, such as an agreement or a contract. Any altering attempts to the data or the state on CKB are verified by Turing-Complete verification scripts, which are also stored on-chain, with absolute security. So developing application on CKB is basically to make use of the state storage, and use the scripts to verify the state transitions.
 
-[A figure for showing 3 structures]
 
-There are primarily 3 data structures you need to know in order to develop on CKB: Cell, Transaction and Block. We have prepared a [document](https://github.com/nervosnetwork/ckb/blob/master/docs/data-structures.md) for explaining every pieces of these data.
+There are primarily 3 data structures you need to know in order to develop on CKB: Cell, Transaction and Block. We have prepared a [document](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md) for explaining every pieces of these data.
 
  <!--Up to here, bitcoiners may have noticed that CKB has a very similar structure to Bitcoin. That's why we have wrote up a quick guideline for you to bootstrap easily with your bitcoin background.--> 
 
-## Cell
+ 
+### Cell
 
 > More information about Cell can be found in the [Nervos whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md#42-cell).
 
@@ -20,7 +20,7 @@ Cell is the most basic element in CKB system. A cell can be used to store a stat
 
 A state cell may contain the information data of an application or an UDT (User-Defined-Asset), such as the balance of a user's ERC20 token. A script cell may contain the logic of an application or the rules of an UDT, such as the balance of an ERC20 token can not be negative. 
 
-> It is feasible to let a cell store both the state and the logic of an application, but if this application wants to leverage the power of [layer2 solutions](https://github.com/Awesome-Layer-2/Awesome-Layer-2#introduction-to-layer-2-solutions-1), this is really not recommended. This may result in the same problem of [why it is hard to implement EVM on Plasma](https://medium.com/@kelvinfichter/why-is-evm-on-plasma-hard-bf2d99c48df7).
+> It is feasible to let a cell store both the state and the logic of an application, but if this application wants to leverage the power of [layer2 solutions](https://github.com/Awesome-Layer-2/Awesome-Layer-2), this is really not recommended. This may result in the same problem of [why it is hard to implement EVM on Plasma](https://medium.com/@kelvinfichter/why-is-evm-on-plasma-hard-bf2d99c48df7).
 
 
 In a single cell, the `capacity` part limits the size of this cell. The `data`, `type` and `lock` are the three parts a developer needs to be considered about when designing an application. 
@@ -30,7 +30,7 @@ In a single cell, the `capacity` part limits the size of this cell. The `data`, 
 
 We will explain how to these parts work in the next section.
 
-## Transaction
+### Transaction
 
 > More information about the Transaction of Nervos CKB can be found in [whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md#44-transaction).
 
@@ -70,8 +70,18 @@ The scripts doesn't need to be included in the `type` directly. It can also refe
 
 For learning about how to write `script` in practice, please refer [how to write contracts on Nervos CKB](https://github.com/nervosnetwork/ckb-demo-ruby-sdk/blob/develop/docs/how-to-write-contracts.md#script-model).
 
-## Block
+### Block
 
 Block contains a pack of transactions and a block header with some meta-data. It is the miner's job to pack transactions into a block and do the Proof-of-Work calculation to find a "seal" to seal the block, then broadcast it to the whole network. Other miners would receive this block, verify it, collect transactions and start to mine a new block based on this received block. 
 
 Basically, this part of knowledge is actually not necessary for the developers to be familiar with (unless it is the miner software you are looking to develop), please refer [this document](https://github.com/nervosnetwork/ckb/blob/master/docs/data-structures.md) for the detailed information of the block structure.
+
+
+## Scripts
+
+### Lock Script
+
+### Type Script
+
+### Computing Cycles and Transaction Size
+
