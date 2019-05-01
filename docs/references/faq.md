@@ -5,4 +5,5 @@ title: FAQ
 
 Here's a collection of frequently asked questions.
 
-## What is the mining algorithm
+### What kind of PoW does Nervos CKB use?
+It's not decided yet. Stay tunned.
