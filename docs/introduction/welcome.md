@@ -6,9 +6,8 @@ sidebar_label: Welcome
 
 ![nervos-log](assets/nervos-logo.png)
 
-Welcome to the Nervos community. ❤
+Welcome to the Nervos community.
 
-This is the documentation site for Nervos.
+This is the documentation site for Nervos. Here you can learn the knowledge of Nervos CKB, as well as how to develop applications on it.
 
-Here you can learn about how to join the Nervos CKB network as a node or mine CKB tokens, as well as how to develop applications on CKB.
-
+Please notice that this document should be compatible with the latest version of CKB client release. More information about this can be found in [the CKB repo on GitHub](https://github.com/nervosnetwork/ckb).
