@@ -20,7 +20,7 @@ To get the CKB client software, you can choose to download the released binary d
 For linux user, you need to install `libssl` dynamic libraries before using the released binary.
 
 ```shell
-sudo apt-get install -y libssl1.0.0
+$ sudo apt-get install -y libssl1.0.0
 ```
 
 #### Download
@@ -29,17 +29,17 @@ sudo apt-get install -y libssl1.0.0
 
 After downloaded, you need to add it to your system `PATH`. In your downloaded folder:
 ```shell
-export PATH="$(pwd):$PATH"
+$ export PATH="$(pwd):$PATH"
 ```
 
 Or move it to a directory that is already in the `PATH`:
 ```shell
-ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
+$ ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
 ```shell
-ckb --version
+$ ckb --version
 ```
 
 ### Compile from Source
@@ -52,16 +52,16 @@ Then install dependencies with the following command:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Ubuntu and Debian-->
 ```shell
-sudo apt-get install -y git gcc libc6-dev pkg-config libssl-dev libclang-dev clang
+$ sudo apt-get install -y git gcc libc6-dev pkg-config libssl-dev libclang-dev clang
 ```
 <!--Arch Linux-->
 ```shell
-sudo pacman -Sy git gcc pkgconf clang
+$ sudo pacman -Sy git gcc pkgconf clang
 ```
 
 <!--macOS-->
 ```shell
-brew install autoconf libtool
+$ brew install autoconf libtool
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -72,19 +72,19 @@ Here we build from the source code on `Master` branch, which is the latest relea
 Get the source code:
 
 ```shell
-git clone https://github.com/nervosnetwork/ckb.git && \
-cd ckb && \
-git checkout master
+$ git clone https://github.com/nervosnetwork/ckb.git
+$ cd ckb
+$ git checkout master
 ```
 
 Install Rust (currently CKB is mainly tested with version `stable-1.34.1`):
 ```shell
-rustup override set 1.34.1
+$ rustup override set 1.34.1
 ```
 
 Build it:
 ```shell
-Make Build
+$ Make Build
 ```
 
 You will find the built executable binary in `target/release/ckb` folder.
@@ -92,17 +92,17 @@ You will find the built executable binary in `target/release/ckb` folder.
 Then you need to add it to your system `PATH`:
 
 ```shell
-export PATH="$(pwd)/target/release:$PATH"
+$ export PATH="$(pwd)/target/release:$PATH"
 ```
 
 Or move it to a directory that is already in the `PATH`:
 ```shell
-ln -snf "$(pwd)/target/release/ckb" /usr/local/bin/ckb
+$ ln -snf "$(pwd)/target/release/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
 ```shell
-ckb --version
+$ ckb --version
 ```
 ### Use Docker
 You can also use docker to run your CKB node. For the detailed guidance, please refer [this document on GitHub](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
@@ -110,20 +110,20 @@ You can also use docker to run your CKB node. For the detailed guidance, please 
 ## Run CKB
 First you need to have a workshop folder to run CKB:
 ```shell
-mkdir ckb-dev && \
-cd ckb-dev
+$ mkdir ckb-dev
+$ cd ckb-dev
 ```
 
 Then generate default configuration files:
 ```shell
-ckb init
+$ ckb init
 ```
 
 > See here for more details about how to [configure CKB](https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md).
 
 Then you can start the node:
 ```shell
-ckb run
+$ ckb run
 ```
 
 You should be seeing logs like:
@@ -143,7 +143,7 @@ The miner process of CKB is not integrated with the main CKB process. So to run 
 
 Then run command:
 ```shell
-ckb miner
+$ ckb miner
 ```
 
 
