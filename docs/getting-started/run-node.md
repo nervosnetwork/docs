@@ -137,20 +137,3 @@ You should be seeing logs like:
 2019-05-02 12:13:14.658 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmfABTZ46Ffdf6n5K9J1bVAktaKbQS5mUa5Cg4ZHGJBiMK
 2019-05-02 12:13:14.659 +08:00 tokio-runtime-worker-4 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
 ```
-
-## Mine CKB
-The miner process of CKB is not integrated with the main CKB process. So to run the miner of CKB, you need to open another shell instance while keeping the `ckb run` process still alive. 
-
-Then run command:
-```shell
-$ ckb miner
-```
-
-
-Wait for a moment and when you see message like this, it means you have mined a new block:
-```shell
-2019-05-02 12:19:23.463 +08:00 main INFO miner  found seal: Seal { nonce: 16607377657024071670, proof: 0xa2020000681b00005d27000018340000973d000083430000fc600000376600008c660000cc6800007970000015760000 }
-```
-
-## Troubleshooting
-If you encounter any trouble running the process above and you cannot solve them yourself, please feel free to create [issues on GitHub](https://github.com/nervosnetwork/ckb/issues) or find the [CKB dev team in telegram](https://t.me/nervos_ckb_dev).
