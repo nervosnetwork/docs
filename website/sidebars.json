@@ -1,7 +1,7 @@
 {
   "docs": {
     "Introduction": ["introduction/welcome","introduction/nervos-intro"],
-    "Basic Concepts":["basic-concepts/blockchain","basic-concepts/node-mining","basic-concepts/states-assets","basic-concepts/ckb","basic-concepts/scripts"],
+    "Basic Concepts":["basic-concepts/blockchain","basic-concepts/states-assets","basic-concepts/ckb","basic-concepts/scripts"],
     "Getting Started": ["getting-started/run-node","getting-started/interact","getting-started/mine","getting-started/testnet"],
     "Development Guide": ["dev-guide/scripts"],
     "API": ["api/rpc"],
