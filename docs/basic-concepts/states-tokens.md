@@ -38,9 +38,9 @@ Just like the native token CKB, UDTs are also described with Cells. It means tra
 
 ## Program Tokens
 
-Developers can program both CKB tokens and UDTs with turing-complete scripts. Typical applications are multisig wallet and atomic swaps. These can be easily done on CKB.
+Developers can program both CKB tokens and UDTs with turing-complete scripts. Typical applications are multisig wallet and atomic swaps, which can be easily done on CKB.
 
-CKB blockchain can also work with Layer 2 systems. More sophisticated applications can be built on Layer 2 to have better user experience and lower transaction fees. User can transfer their CKB or UDT to Layer 2 to use them in these applications.
+CKB blockchain can also work with Layer 2 systems. More sophisticated applications can be built on top of Layer 2 to have better user experience and lower transaction fees. User can transfer their CKB or UDT to Layer 2 to use them in these applications.
 
 ## Wallet
 A user's tokens (CKB or UDTs) are locked with this user's private key. Whoever has this private key will be able to unlock these tokens, and transfer them or destroy them. So it is very important to store and manage the private key securely, and this is what a wallet does.
