@@ -8,15 +8,14 @@ Here are some of the information you should be familiar with before you start yo
 ## Blockchain Structure
 To do
 
-## Bitcoin's UTXO Model
+## UTXO Model
 To do
 
-## Public Key Cryptography
+## Private Key
 To do
 
-## Other Basic Concepts To Add
+## Proof-of-Work
 To do
-
 
 ## Node
 CKB is structured as a peer-to-peer network on top of our existing internet. Here the term "peer-to-peer" means that the all the computers that participate in the network are peers to each other. In this context, we refer each of these computers as node.
@@ -33,5 +32,6 @@ In CKB, miners need to compete with each other on a game called Proof-of-Work. A
 
 > The hash function for CKB mining has not been decided yet.
 
+## Mastering Bitcoin
 
-Overall, CKB has a very similar structure to Bitcoin. So if you wanna learn more about blockchain node and mining, I would recommend you to have a look at this part in mastering Bitcoin.
+Overall, CKB has a very similar structure to Bitcoin. So if you wanna learn more basic knowledge , I would recommend you to have a look at [Mastering Bitcoin](https://github.com/bitcoinbook/bitcoinbook).
