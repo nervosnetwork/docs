@@ -79,8 +79,19 @@ During the verification process, the specified scripts is loaded and executed in
 
 To learn more about how to write `script` in practice, please refer [write script section](../dev-guide/scripts).
 
+
 ## Block
 
 Block contains a pack of transactions and a block header with some meta-data. It is the miner's job to pack transactions into a block and do the Proof-of-Work calculation to find a "seal" to seal the block, then broadcast it to the whole network. Other miners would receive this block, verify it, collect transactions and start to mine a new block based on this received block. 
 
 In CKB, a block also contains the information of uncle blocks in the block structure. It has the complete uncle block header as well as part of the transaction information. Please refer the [data structure RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#uncleblock) for more details.
+
+
+### Computing Cycles and Transaction Size
+
+There are two limitations for miners to select transactions to pack into a block: computing cycles and transaction size.
+
+In CKB, the computation resource consumed by transaction verification, specifically the scripts execution, is measured with `cycles`. Each instruction in CKB-VM may [cost different cycles](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0014-vm-cycle-limits/0014-vm-cycle-limits.md#instruction-cycles). The sum cycles cost by all the scripts executed when verifying all the transactions in a block is limited by a value defined by CKB protocol called `MAX_BLOCK_CYCLES`.
+
+The size of a transaction is measured in bytes. The sum size of all the transactions in a block should be lower than `MAX_BLOCK_BYTES`.
+
