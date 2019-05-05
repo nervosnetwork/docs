@@ -4,7 +4,7 @@
     "Basic Concepts":["basic-concepts/blockchain","basic-concepts/states-tokens","basic-concepts/ckb"],
     "Getting Started": ["getting-started/run-node","getting-started/interact","getting-started/mine","getting-started/testnet"],
     "Development Guide": ["dev-guide/scripts"],
-    "API": ["api/rpc"],
+    "API": ["api/rpc","api/mruby"],
     "References": ["references/troubleshooting","references/faq","references/nervos-design"]
   }
 }
