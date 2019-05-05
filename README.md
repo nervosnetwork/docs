@@ -20,7 +20,7 @@ yarn build
 The generated static files will be in `website/build`
 
 ## Docs
-All the documents goes into the `docs` folder. All the images should be in the `docs/assets` folder.
+All the documents go into the `docs` folder. All the images should be in the `docs/assets` folder.
 
 To add a document:
 * add the the document to `docs`
