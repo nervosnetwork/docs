@@ -50,6 +50,8 @@ end
 
 [mruby-ckb](https://github.com/nervosnetwork/mruby-contracts/tree/master/mruby-ckb) provides wrapper functions to interact with CKB.
 
+To learn more about how to interact with CKB in scripts, please refer [VM Syscalls RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0009-vm-syscalls/0009-vm-syscalls.md).
+
 ### Debug
 
 mruby-ckb provides a debug method to print debug messages to CKB:
@@ -74,10 +76,10 @@ We can see logs in CKB like following:
 ```
 
 Here we can see the whole transaction structure is returned by `CKB.load_tx`
-<!-- 
+
 ### Load Script Hash
 
-Following code can be used to load script hash:
+Following code can be used to load the hash of a script:
 
 ```ruby
 # Load cell input 1's unlock script hash, note lock and unlock refer to the same item.
@@ -92,19 +94,19 @@ CKB.load_script_hash(0, CKB::Source::CURRENT, CKB::Category::LOCK)
 
 ### Load Input OutPoint
 
-If we have the following snippet in a Ruby script:
+With the following code in a Ruby script:
 
 ```ruby
 CKB.debug "OutPoint: #{CKB.load_input_out_point(0, CKB::Source::CURRENT)}"
 ```
 
-We can then expect logs in CKB like following:
+We can expect output logs in CKB like:
 
 ```
 2018-12-17 16:10:44.185 +08:00 TransactionPoolService DEBUG script  Transaction f424348ef9d0..(omit 40)..8f79d68c82b4, input 0 DEBUG OUTPUT: OutPoint: {"tx_hash"=>"#~\x9ekK23\xc7\x0f%\xaa\n\xa1\xc8\xc0\x81<\x948`B\xab\x9e\xb5\xe0\xea8\xe3r\xd3\x9e\x99", "index"=>0}
 ```
 
-It's also possible to load input OutPoint from different index:
+It's also possible to load input OutPoint from a different index:
 
 ```ruby
 CKB.load_input_out_point(1, CKB::Source::INPUT)
@@ -128,4 +130,4 @@ unless length == 32
   raise "Lock hash has invalid length!"
 end
 contract_hash = CKB::CellField.new(CKB::Source::OUTPUT, 0, CKB::CellField::LOCK_HASH).read(16, 16)
-``` -->
+```
