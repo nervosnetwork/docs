@@ -71,7 +71,7 @@ For example, Alice has a cell, whose `data` field stores the balance of a kind o
 After received the transaction, the CKB node would first verify the `lock` script with the `args` of this input cell, to make sure that Alice indeed owns the cell. Then it verifies the `type` script of the output cell, which is same to the `type` script of the input cell, to make sure the UDT transaction is valid according to the rules defined by the `type` script.
 
 
-> In practice, the scripts code is NOT included in the `type` or `lock` directly. The actual code would be stored in another cell, and is referred by `type` and `lock` through their hash. This is done by refer these needed cells in the dependency cells field (`deps`) in the transaction using their `outpoint`, and put the hash of their `data` fields in `type` or `lock`'s `binary_hash` field.
+> In practice, the scripts code is NOT included in the `type` or `lock` directly. The actual code would be stored in another cell, and is referred by `type` and `lock` through their hash. This is done by refer these needed cells in the dependency cells field (`deps`) in the transaction using their `outpoint`, and put the hash of their `data` fields in `type` or `lock`'s `code_hash` field.
 
 
 During the verification process, the specified scripts is loaded and executed in a CKB-VM instance. Check the [CKB-VM RFC](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm) to learn more about how it works in the CKB-VM.
