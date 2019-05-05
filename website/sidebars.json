@@ -1,7 +1,7 @@
 {
   "docs": {
     "Introduction": ["introduction/welcome","introduction/nervos-intro"],
-    "Basic Concepts":["basic-concepts/blockchain","basic-concepts/states-tokens","basic-concepts/ckb"],
+    "Basic Concepts":["basic-concepts/architecture","basic-concepts/states-tokens","basic-concepts/node-mining"],
     "Getting Started": ["getting-started/run-node","getting-started/interact","getting-started/mine","getting-started/testnet"],
     "Development Guide": ["dev-guide/scripts"],
     "API": ["api/rpc","api/mruby"],

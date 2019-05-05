@@ -1,6 +1,6 @@
 ---
-id: ckb
-title: CKB
+id: architecture
+title: CKB Architecture
 ---
 
 ![data-structure](assets/ckb-structure.png)
@@ -94,4 +94,3 @@ There are two limitations for miners to select transactions to pack into a block
 In CKB, the computation resource consumed by transaction verification, specifically the scripts execution, is measured with `cycles`. Each instruction in CKB-VM may [cost different cycles](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0014-vm-cycle-limits/0014-vm-cycle-limits.md#instruction-cycles). The sum cycles cost by all the scripts executed when verifying all the transactions in a block is limited by a value defined by CKB protocol called `MAX_BLOCK_CYCLES`.
 
 The size of a transaction is measured in bytes. The sum size of all the transactions in a block should be lower than `MAX_BLOCK_BYTES`.
-
