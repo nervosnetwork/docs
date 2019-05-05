@@ -14,43 +14,27 @@ Both `lock` script and `type` script are [`Script`  data structure](https://gith
 
 `code_hash` is the hash of an ELF formatted RISC-V script binary.
 
-The actual script code MUST NOT be put in the `script` structure directly, instead it should always be stored in the `data` field of a `cell`.
+The actual script code MUST NOT be put in the `script` structure directly. Instead, it should always be stored in the `data` field of a `cell`.
 
-To use the script code in a [transaction](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#transaction), the `cell` that stores the script code should be used as a `deps` cell in the transaction. Upon the transaction verification, the CKB client will search the `deps` cell of this transaction for a cell whose `data` filed has the same hash with the `code_hash` of an input (or output) cell's `type` (or `lock`) script. Then this `deps` cell's `data` field will be loaded into an  CKB-VM instance to be executed as the actual `type` (or `lock`) script.
+To use the script code in a [transaction](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#transaction), the `cell` that stores the script code should be used as a `deps` cell in the transaction. Upon the transaction verification, the CKB client will search the `deps` cell of this transaction for a cell whose `data` filed has the same hash with the `code_hash` of an input (or output) cell's `type` (or `lock`) script. Then this `deps` cell's `data` field will be loaded into a CKB-VM instance to be executed as the actual `type` (or `lock`) script.
 
 ### `args`
 
 `args` is an array of arguments as the script input.
 
-CKB scripts use UNIX standard execution environment. Each script should contain a main function with the following arguments:
+CKB scripts use the UNIX standard execution environment. Each script should contain a main function with the following arguments:
 
 ```c
 int main(int argc, char* argv[]);
 ```
 
-When the script data is loaded into an CKB-VM instance, `args` will be used as arguments for the `argc`/`argv` part. (`argc` is the number of arguments in `args` and `argv` is a pointer that points to the start point of all the input arguments in the memory)
+When the script data is loaded into a CKB-VM instance, `args` will be used as arguments for the `argc`/`argv` part. (`argc` is the number of arguments in `args` and `argv` is a pointer that points to the start point of all the input arguments in the memory)
 
 ### Script Execution
 
 The script is executed in a CKB-VM instance, which is a RISC-V simulator. To learn more about how the CKB-VM works, please refer [CKB-VM paper](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm).
 
 When the script execution is terminated, the `main` function of the script should return a code. A return code of `0` means that the script execution was succeeded, other values may indicate that the execution was failed.
-
-In practice, one example script might look like this:
-
-```json
-{
-  "code_hash": "0x12b464bcab8f55822501cdb91ea35ea707d72ec970363972388a0c49b94d377c",
-  "args": [
-    "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01",
-    "0x3044022038f282cffdd26e2a050d7779ddc29be81a7e2f8a73706d2b7a6fde8a78e950ee0220538657b4c01be3e77827a82e92d33a923e864c55b88fd18cd5e5b25597432e9b",
-    "0x1"
-  ]
-}
-```
-
-This script structure uses `reference` field to refer to an existing cell for using its script's `binary`. [The referenced script here](https://github.com/nervosnetwork/ckb-ruby-scripts/blob/281936ed0d5fa0a9b0c259e08efc1740e8b66992/bitcoin_unlock.rb#L1-L10) is a cryptographic verification program that works like Bitcoin's unlock scripts. It can recover the signature of the transaction and verify it against a public key. In this example. the public key is in the `signed_args` and the signature of the transaction is in the `args`. (The second parameter of `args` is for specifing the type of `SIGHASH`.) By making use of this script here, you can unlock a cell with a `lock` that has a `type_hash` of this script, and use it as input of the transaction you want to send.
-
 
 
 ## Writing Scripts in Ruby
@@ -62,17 +46,17 @@ Here we will show how to write scripts in Ruby.
 ### CKB mruby
 [mruby](https://github.com/mruby/mruby) is the lightweight implementation of the Ruby language. On CKB, we made a customized [CKB mruby](https://github.com/nervosnetwork/mruby-contracts) to enable writing scripts in Ruby.
 
-The way we do it is to run the Ruby script on top of the mruby that is on top of the CKB-VM. When running a ruby script, first the CKB mruby binary will be loaded into a CKB-VM instance, creating a Ruby interpreter environment. Then the ruby script will be entered into the CKB mruby as input arguments, and then the actual arguments to the Ruby scripts will be entered afterwards.
+The way we do it is to run the Ruby script on top of the mruby that is on top of the CKB-VM. When running a ruby script, first the CKB mruby binary will be loaded into a CKB-VM instance, creating a Ruby interpreter environment. Then the ruby script will be entered into the CKB mruby as input arguments, and then the actual arguments to the Ruby scripts will be entered afterward.
 
-If the scripts works normal and is successfully executed, it should return a code `0`; otherwise, if there is any errors, the Ruby script throws an exception and the CKB-VM instance returns a non-zero code.
+If the script works normal and is successfully executed, it should return a code `0`; otherwise, if there are any errors, the Ruby script throws an exception and the CKB-VM instance returns a non-zero code.
 
 
-> It is also possible to do the same thing with [micropython](https://micropython.org/) or [duktape](https://duktape.org/) to enable writing scripts in python and Javascript.
+> It is also possible to do the same thing with [micropython](https://micropython.org/) or [duktape](https://duktape.org/) to enable writing scripts in Python and Javascript.
 
 ### Example Demo
 We have built a [Ruby demo example](https://github.com/nervosnetwork/ckb-demo-ruby) to show how this is done. Please refer its [README.md](https://github.com/nervosnetwork/ckb-demo-ruby/blob/develop/README.md) for the walkthrough.
 
-At the end of the day, a `script` that use Ruby might looks like this:
+At the end of the day, a `script` that use Ruby might look like this:
 
 ```json
 {
@@ -91,7 +75,7 @@ The `code_hash`  "0x12b46..." here is the hash of the compiled customized CKB `m
 
 The first argument in `args` is [the actual Ruby script](https://github.com/nervosnetwork/ckb-ruby-scripts/blob/master/secp256k1_blake2b_lock.rb) to be executed. From the second one to the fifth one are the arguments for this Ruby script.
 
-As you can see from the comments at the beginning of the code, these 4 input arguments for the Ruby scripts are: hash of pubkey, pubkey, signature and the flag of selecting SIGHASH type.
+As you can see from the comments at the beginning of the code, these four input arguments for the Ruby scripts are hash of pubkey, pubkey, signature and the flag for selecting SIGHASH type.
 
 
 ### Ruby Libraries

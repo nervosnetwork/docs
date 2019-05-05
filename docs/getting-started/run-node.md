@@ -3,11 +3,11 @@ id: run-node
 title: Run a CKB Node
 ---
 
-To get started on you journey with CKB, the first thing you can try is to run a CKB node yourself. 
+To get started on your journey with CKB, the first thing you can try is to run a CKB node yourself. 
 
 If you are not familiar with the concepts of node and mining yet, [here is a document](../basic-concepts/node-mining) you can learn from.
 
-> CKB testnet will be launched very soon. When it does, your node can join the testnet to be a part of it, or you can just interact with one of the existing testnet node without running your own node.
+> CKB testnet will be launched very soon. When it does, your node can join the testnet to be a part of it, or you can just interact with one of the existing testnet nodes without running your own node.
 
 ## Get CKB
 
@@ -17,7 +17,7 @@ To get the CKB client software, you can choose to download the released binary d
 
 #### Dependencies
 
-For linux user, you need to install `libssl` dynamic libraries before using the released binary.
+For Linux user, you need to install `libssl` dynamic libraries before using the released binary.
 
 ```shell
 $ sudo apt-get install -y libssl1.0.0
@@ -25,9 +25,9 @@ $ sudo apt-get install -y libssl1.0.0
 
 #### Download
 
- You can find the CKB releases on [GitHub Releases](https://github.com/nervosnetwork/ckb/releases). You can choose the file to download according to your operating system. (You can also find nightly build versions from the releases of the [ckb-builds repo](https://github.com/ckb-builds/ckb-builds/releases))
+ You can find the CKB releases on [GitHub Releases](https://github.com/nervosnetwork/ckb/releases). Just choose the file to download according to your operating system. (You can also find nightly build versions from the releases of the [ckb-builds repo](https://github.com/ckb-builds/ckb-builds/releases))
 
-After downloaded, you need to add it to your system `PATH`. In your downloaded folder:
+After it is downloaded, you need to add it to your system `PATH`. In your downloaded folder:
 ```shell
 $ export PATH="$(pwd):$PATH"
 ```
@@ -44,8 +44,8 @@ $ ckb --version
 
 ### Compile from Source
 
-#### Dependecies
-CKB is developed with Rust. To get Rust and its tools, please refer the [rustup website](https://www.rustup.rs/) for how to install rustup.
+#### Dependencies
+CKB is developed with Rust. To get Rust and its tools, please refer to the [rustup website](https://www.rustup.rs/) for how to install rustup.
 
 Then install dependencies with the following command:
 
@@ -77,7 +77,7 @@ $ cd ckb
 $ git checkout master
 ```
 
-Install Rust (currently CKB is mainly tested with version `stable-1.34.1`):
+Install Rust (currently, CKB is mainly tested with version `stable-1.34.1`):
 ```shell
 $ rustup override set 1.34.1
 ```
@@ -105,10 +105,10 @@ Then check if it works with:
 $ ckb --version
 ```
 ### Use Docker
-You can also use docker to run your CKB node. For the detailed guidance, please refer [this document on GitHub](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
+You can also use Docker to run your CKB node. For the detailed guidance, please refer to [this document on GitHub](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
 
 ## Run CKB
-First you need to have a workshop folder to run CKB:
+First, you need to have a workshop folder to run CKB:
 ```shell
 $ mkdir ckb-dev
 $ cd ckb-dev
@@ -126,7 +126,7 @@ Then you can start the node:
 $ ckb run
 ```
 
-You should be seeing logs like:
+Now, you should be seeing logs like:
 ```shell
 2019-05-02 12:13:14.552 +08:00 main INFO sentry  sentry is disabled
 2019-05-02 12:13:14.554 +08:00 main INFO ckb_db::rocksdb  Initialize a new database

@@ -38,7 +38,7 @@ Here you can find some blog posts that introduce features and designs of Nervos 
 
 ## Videos
 
-Here are some videos that introduces CKB components and designs.
+Here are some videos that introduce CKB components and designs.
 
 - [A Deep Dive into Nervos' Layered Design](https://www.youtube.com/watch?v=5I24G-jNutw)
 - [Nervos CKB-VM Walkthrough](https://www.youtube.com/watch?v=qUGU5_o5Lo4)
