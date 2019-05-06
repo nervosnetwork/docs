@@ -45,7 +45,7 @@ To learn more about NC-Max, please refer [this presentation video](https://www.y
 
 Nervos CKB adopts a generalized UTXO model called Cell model for describing and programming both native token CKB and User Defined Tokens (UDT).
 
-You can find this concept explained in a [latter section](../basic-concepts/ckb.md#cell), or you can refer to the [Nervos Whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md) where you can find a high-level comprehensive explanation.
+You can find this concept explained in a [latter section](../basic-concepts/architecture.md#cell), or you can refer to the [Nervos Whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md) where you can find a high-level comprehensive explanation.
 
 ### RISC-V Based CKB-VM
 CKB-VM is a virtual machine designed for CKB blockchain. It is a software simulator based on [RISC-V](https://riscv.org/) instruction set. With CKB-VM, you can program in any language that has a compiler supported by RISC-V, such as C/C++ and high-level programming languages such as Javascript, Python, and Ruby. Moreover, with CKB-VM you can execute any kinds of hash function and signature function on-chain, which means you will be able to define your own private key verification function for your assets/tokens, instead of limited by a set of predefined crypto primitives. 
