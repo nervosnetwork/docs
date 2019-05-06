@@ -5,6 +5,14 @@ This is the Nervos CKB documentation website.
 
 It is built with [docusaurus](https://docusaurus.io/).
 
+## Dependencies
+Install [yarn](https://yarnpkg.com/en/).
+
+In `website` folder:
+```shell
+yarn install
+```
+
 ## Preview
 In `website` folder:
 ```shell
