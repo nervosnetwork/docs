@@ -49,14 +49,23 @@ After a CKB node received a transaction, it first gets verified by the rules def
 
 Another example is that only the live cells can be used in a transaction as input. Every Cell has two conceptual status: live (unspent) or dead (spent).  After a transaction is mined and confirmed on-chain, its input cells become "dead", and the output cells get the status of "live". It is this mechanism that prevents double spending from happening.
 
+
 ## Scripts
 
 Apart from the rules defined by CKB system, a transaction also needs to be verified by the scripts specified by the `lock` script of input cells and the `type` script of output cells. This is the part that is crucial for understanding how to define the transition behavior of the on-chain state.
 
 ### `lock` script
-As mentioned above, the `lock` script defines the ownership of a cell. In a transaction, there is a group of `inputs`. Each of the `inputs` has two values: an input cell (which is noted as `previous_output`) and an array of `args`. Upon the transaction verification, the `lock` script will be executed with `args` as input, and only when the script is successfully executed (returns 0), the transaction is recognized as valid.
+As mentioned above, the `lock` script defines the ownership of a cell. 
 
-A typical `lock` script may contain the public key of the cell's owner, and to unlock it, the user needs to put the signature of the transaction in the `args` part. In this case, during the verification process, the `lock` script recover the signature and see if it match with the stored public key, to make sure the transaction is indeed signed by the owner of the input cells.
+In a transaction, there is a group of `inputs`, which are input cells. Each of the `inputs` has two values: an input cell and an array of `args`. 
+
+> The input cell here is actually named as `previous_output`. It is an outpoint that points to a previous transaction's output cell. This is same to the Bitcoin's UTXO.
+
+In the transaction, there is also a field named `witnesses`, which is an array of witness that corresponding to each of the `inputs`. This field is for implementing [SegWit protocol](https://en.bitcoin.it/wiki/Segregated_Witness) that can help to solve the [malleability problem](https://en.bitcoin.it/wiki/Transaction_malleability).
+
+Upon the transaction verification, the `lock` script will be executed with the `args` in `inputs` and the corresponding witness argument in `witnesses`. Only when the script is successfully executed (returns 0), the transaction is recognized as valid.
+
+A typical `lock` script may contain the information of the public key of the cell owner, and to unlock it, the user needs to put the signature of the transaction in the `witnesses` part. In this case, during the verification process, the `lock` script recover the signature and see if it match with the stored public key, to make sure the transaction is indeed signed by the owner of the input cells.
 
 > The signature function and the hash function used by `lock` script (or `type` script) is not defined by CKB protocol. Developers are free to design and implement their own signature functions in the `lock` script.
 
@@ -68,7 +77,7 @@ For example, Alice has a cell, whose `data` field stores the balance of a kind o
 
 ### Script Verification
 
-After receiving the transaction, the CKB node would first verify the `lock` script with the `args` of this input cell, to make sure that Alice indeed owns the cell. Then it verifies the `type` script of the output cell, which is same to the `type` script of the input cell, to make sure the UDT transaction is valid according to the rules defined by the `type` script.
+After receiving the transaction, the CKB node would first verify the `lock` script with the `args` of this input cell, as well as the `witness`, to make sure that Alice indeed owns the cell. Then it verifies the `type` script of the output cell, which is same to the `type` script of the input cell, to make sure the UDT transaction is valid according to the rules defined by the `type` script.
 
 
 > In practice, the scripts code is NOT included in the `type` or `lock` directly. The actual code would be stored in another cell and is referred by `type` and `lock` through their hash. This is done by referring these needed cells in the dependency cells field (`deps`) in the transaction using their `outpoint`, and put the hash of their `data` fields in the `code_hash` field of `type` or `lock`.
