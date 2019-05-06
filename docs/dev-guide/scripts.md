@@ -8,7 +8,9 @@ This document introduces how the script works in CKB system, and how can you pro
 
 ## Script Model
 
-Both `lock` script and `type` script are [`Script`  data structure](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#Script), which has two parts: `code_hash` and `args`.
+Both `lock` script and `type` script are [`script`  data structure](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#Script), which has two parts: `code_hash` and `args`.
+
+> the `args` in a `script` is different from the `args` in the `inputs` of a transaction. The `args` in `script` is part of the `lock` (or `type`) script itself, while the `args` in `inputs` is for unlocking the input cells.
 
 ### `code_hash`
 
@@ -28,7 +30,9 @@ CKB scripts use the UNIX standard execution environment. Each script should cont
 int main(int argc, char* argv[]);
 ```
 
-When the script data is loaded into a CKB-VM instance, `args` will be used as arguments for the `argc`/`argv` part. (`argc` is the number of arguments in `args` and `argv` is a pointer that points to the start point of all the input arguments in the memory)
+When the script data is loaded into a CKB-VM instance, along with the `args` in the `lock` script, the `args` in the `inputs` of the transaction as well as the `witness` will be concatenated (`args` in script + `args` in `inputs` + `witness`) and used as input arguments for the script. This group of input arguments will fill in the `argc`/`argv` part in the `main` function. (`argc` is the number of arguments in `args` and `argv` is a pointer that points to the start point of all the input arguments in the memory)
+
+
 
 ### Script Execution
 
@@ -56,27 +60,32 @@ If the script works normal and is successfully executed, it should return a code
 ### Example Demo
 We have built a [Ruby demo example](https://github.com/nervosnetwork/ckb-demo-ruby) to show how this is done. Please refer its [README.md](https://github.com/nervosnetwork/ckb-demo-ruby/blob/develop/README.md) for the walkthrough.
 
+
 At the end of the day, a `script` that use Ruby might look like this:
 
 ```json
 {
   "code_hash": "0x12b464bcab8f55822501cdb91ea35ea707d72ec970363972388a0c49b94d377c",
   "args": [
-    "# This contract needs 4 required arguments:\n# 0. pubkey hash, double blake2b hash of pubkey, used to shield the real\n# pubkey in lock script.\n# 1. pubkey, real pubkey used to identify token owner\n# 2. signature, signature used to present ownership\n# 3. type, SIGHASH type\n# One optional argument is supported here:\n# 4. output(s), this is only used for SIGHASH_SINGLE and SIGHASH_MULTIPLE types,\n# for SIGHASH_SINGLE, it stores an integer denoting the index of output to be\n# signed; for SIGHASH_MULTIPLE, it stores a string of `,` separated array denoting\n# outputs to sign\nif ARGV.length != 3 && ARGV.length != 4\n  raise \"Wrong number of arguments!\"\nend\n\nSIGHASH_ALL = 0x1\nSIGHASH_NONE = 0x2\nSIGHASH_SINGLE = 0x3\nSIGHASH_MULTIPLE = 0x4\nSIGHASH_ANYONECANPAY = 0x80\n\ndef hex_to_bin(s)\n  if s.start_with?(\"0x\")\n    s = s[2..-1]\n  end\n  [s].pack(\"H*\")\nend\n\n\ntx = CKB.load_tx\nblake2b = Blake2b.new\n\nblake2b.update(ARGV[2])\nsighash_type = ARGV[2].to_i\n\nif sighash_type & SIGHASH_ANYONECANPAY != 0\n  # Only hash current input\n  out_point = CKB.load_input_out_point(0, CKB::Source::CURRENT)\n  blake2b.update(out_point[\"hash\"])\n  blake2b.update(out_point[\"index\"].to_s)\n  blake2b.update(CKB::CellField.new(CKB::Source::CURRENT, 0, CKB::CellField::LOCK_HASH).readall)\nelse\n  # Hash all inputs\n  tx[\"inputs\"].each_with_index do |input, i|\n    blake2b.update(input[\"hash\"])\n    blake2b.update(input[\"index\"].to_s)\n    blake2b.update(CKB.load_script_hash(i, CKB::Source::INPUT, CKB::Category::LOCK))\n  end\nend\n\ncase sighash_type & (~SIGHASH_ANYONECANPAY)\nwhen SIGHASH_ALL\n  tx[\"outputs\"].each_with_index do |output, i|\n    blake2b.update(output[\"capacity\"].to_s)\n    blake2b.update(output[\"lock\"])\n    if hash = CKB.load_script_hash(i, CKB::Source::OUTPUT, CKB::Category::TYPE)\n      blake2b.update(hash)\n    end\n  end\nwhen SIGHASH_SINGLE\n  raise \"Not enough arguments\" unless ARGV[3]\n  output_index = ARGV[3].to_i\n  output = tx[\"outputs\"][output_index]\n  blake2b.update(output[\"capacity\"].to_s)\n  blake2b.update(output[\"lock\"])\n  if hash = CKB.load_script_hash(output_index, CKB::Source::OUTPUT, CKB::Category::TYPE)\n    blake2b.update(hash)\n  end\nwhen SIGHASH_MULTIPLE\n  raise \"Not enough arguments\" unless ARGV[3]\n  ARGV[3].split(\",\").each do |output_index|\n    output_index = output_index.to_i\n    output = tx[\"outputs\"][output_index]\n    blake2b.update(output[\"capacity\"].to_s)\n    blake2b.update(output[\"lock\"])\n    if hash = CKB.load_script_hash(output_index, CKB::Source::OUTPUT, CKB::Category::TYPE)\n      blake2b.update(hash)\n    end\n  end\nend\nhash = blake2b.final\n\npubkey = ARGV[0]\nsignature = ARGV[1]\n\nunless Secp256k1.verify(hex_to_bin(pubkey), hex_to_bin(signature), hash)\n  raise \"Signature verification error!\"\nend\n",
-    "0x64886cbe860703f6b4f3fdded7958f38ed3f54ac75d773ba6f323ab063fe5bb2",
-    "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01",
-    "0x3044022038f282cffdd26e2a050d7779ddc29be81a7e2f8a73706d2b7a6fde8a78e950ee0220538657b4c01be3e77827a82e92d33a923e864c55b88fd18cd5e5b25597432e9b",
-    "0x1"
+    "# This contract needs 3 required arguments:\n# 0. pubkey hash, double blake2b hash of pubkey, used to shield the real\n# pubkey in lock script.\n# 1. pubkey, real pubkey used to identify token owner\n# 2. signature, signature used to present ownership\nif ARGV.length != 3\n  raise \"Wrong number of arguments!\"\nend\n\ndef hex_to_bin(s)\n  if s.start_with?(\"0x\")\n    s = s[2..-1]\n  end\n  [s].pack(\"H*\")\nend\n\npubkey_hash = hex_to_bin(ARGV[0])\npubkey = hex_to_bin(ARGV[1])\nhash = Blake2b.new.update(Blake2b.new.update(pubkey).final).final\nunless hash == pubkey_hash\n  raise \"Invalid pubkey!\"\nend\n\ntx = CKB.load_tx\nblake2b = Blake2b.new\n\ntx[\"inputs\"].each_with_index do |input, i|\n  blake2b.update(input[\"hash\"])\n  blake2b.update(input[\"index\"].to_s)\nend\ntx[\"outputs\"].each_with_index do |output, i|\n  blake2b.update(output[\"capacity\"].to_s)\n  blake2b.update(CKB.load_script_hash(i, CKB::Source::OUTPUT, CKB::HashType::LOCK))\n  if hash = CKB.load_script_hash(i, CKB::Source::OUTPUT, CKB::HashType::TYPE)\n    blake2b.update(hash)\n  end\nend\nhash = blake2b.final\npubkey = ARGV[0]\nsignature = ARGV[1]\n\nunless Secp256k1.verify(hex_to_bin(pubkey), hex_to_bin(signature), hash)\n  raise \"Signature verification error!\"\nend\n",
+    "0x64886cbe860703f6b4f3fdded7958f38ed3f54ac75d773ba6f323ab063fe5bb2"
   ]
 }
 ```
 
 The `code_hash`  "0x12b46..." here is the hash of the compiled customized CKB `mruby` binary, which is stored in a `deps` cell. 
 
-The first argument in `args` is [the actual Ruby script](https://github.com/nervosnetwork/ckb-ruby-scripts/blob/master/secp256k1_blake2b_lock.rb) to be executed. From the second one to the fifth one are the arguments for this Ruby script.
+The first argument in `args` is [the actual Ruby script](https://gist.github.com/Mine77/c6dca07d306304a579e80f9184397065) to be executed. The second on is a hashed pubkey. (This pubkey is hashed for verifying the owner of the cell without disclose the identity of the cell before it is used.)
 
-As you can see from the comments at the beginning of the code, these four input arguments for the Ruby scripts are hash of pubkey, pubkey, signature and the flag for selecting SIGHASH type.
-
+To use one of the cells that is locked by this `lock` script, put the following data in the `witness` part of the transaction.
+```json
+"witnesses":[{
+    "data":[
+  "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01",
+  "0x3044022038f282cffdd26e2a050d7779ddc29be81a7e2f8a73706d2b7a6fde8a78e950ee0220538657b4c01be3e77827a82e92d33a923e864c55b88fd18cd5e5b25597432e9b"
+]
+}]
+```
 
 ### Ruby Libraries
 
