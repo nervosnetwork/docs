@@ -23,7 +23,7 @@ const siteConfig = {
     docsUrl: '',
 
     // Used for publishing and more
-    projectName: 'nervos-docs',
+    projectName: 'docs',
     organizationName: 'Nervos',
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
@@ -85,11 +85,13 @@ const siteConfig = {
     // No .html extensions for paths.
     cleanUrl: true,
 
+    // edit url for
+
     // Collapsible Categories
     docsSideNavCollapsible: true,
 
     //base url for edit button
-    // editUrl: 'https://github.com/nervosnetwork/docs/edit/master/docs/',
+    editUrl: 'https://github.com/nervosnetwork/docs/edit/develop/docs/',
 
 
     // Show documentation's last contributor's name.
