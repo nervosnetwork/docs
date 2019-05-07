@@ -34,7 +34,7 @@ One of the typical usages of CKB is to issue User Defined Tokens (UDT) on it. It
 
 Just like the native token CKB, UDTs are also stored in Cells. It means you can transfer UDTs in the same way that you transfer CKB tokens. This is different from Ethereum that the UDT on Ethereum (e.g. ERC20 or ERC721) are issued and stored by smart contract accounts, so that users can only control their UDT assets through the contract instead of controlling them directly by users themselves. 
 
-## Program Tokens
+## Program the Tokens
 
 Developers can program both CKB tokens and UDTs with Turing-complete scripts. Typical applications are multisig wallet and atomic swaps, which can be easily done on CKB.
 
