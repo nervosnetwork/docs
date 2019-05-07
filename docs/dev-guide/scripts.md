@@ -14,7 +14,7 @@ Both `lock` script and `type` script are [`script`  data structure](https://gith
 
 ### `code_hash`
 
-`code_hash` is the hash of an ELF formatted RISC-V script binary.
+`code_hash` is the hash of a Linux [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) formatted [RISC-V](https://riscv.org/) script binary.
 
 The actual script code MUST NOT be put in the `script` structure directly. Instead, it should always be stored in the `data` field of a `cell`.
 
@@ -36,7 +36,7 @@ When the script data is loaded into a CKB-VM instance, along with the `args` in 
 
 ### Script Execution
 
-The script is executed in a CKB-VM instance, which is a RISC-V simulator. To learn more about how the CKB-VM works, please refer [CKB-VM paper](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm).
+The script is executed in a CKB-VM instance, which is a [RISC-V](https://riscv.org/) simulator. To learn more about how the CKB-VM works, please refer [CKB-VM paper](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm).
 
 When the script execution is terminated, the `main` function of the script should return a code. A return code of `0` means that the script execution was succeeded, other values may indicate that the execution was failed.
 
@@ -45,7 +45,7 @@ When the script execution is terminated, the `main` function of the script shoul
 
 Here we will show how to write scripts in Ruby.
 
-> We only use Ruby here as an example. Please note that it's also possible to write scripts in language that is supported by RISC-V, such as Javascript or Python as well as C/C++.
+> We only use Ruby here as an example. Please note that it's also possible to write scripts in language that is supported by [RISC-V](https://riscv.org/), such as Javascript or Python as well as C/C++.
 
 ### CKB mruby
 [mruby](https://github.com/mruby/mruby) is the lightweight implementation of the Ruby language. On CKB, we made a customized [CKB mruby](https://github.com/nervosnetwork/mruby-contracts) to enable writing scripts in Ruby.

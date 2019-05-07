@@ -5,11 +5,20 @@ This is the Nervos CKB documentation website.
 
 It is built with [docusaurus](https://docusaurus.io/).
 
+## Dependencies
+Install [yarn](https://yarnpkg.com/en/).
+
+In `website` folder:
+```shell
+yarn install
+```
+
 ## Preview
 In `website` folder:
 ```shell
 yarn start
 ```
+
 
 ## Build
 In `website` folder:
@@ -17,7 +26,11 @@ In `website` folder:
 yarn build
 ```
 
-The generated static files will be in `website/build`
+The generated static files will be in `website/build`.
+
+## Deploy
+Just serve the generated static files in `website/build`.
+
 
 ## Docs
 All the documents go into the `docs` folder. All the images should be in the `docs/assets` folder.
