@@ -11,7 +11,7 @@ The mission of Nervos is to build this infrastructure.
 
 ![nervos-log](assets/nervos-layers.png)
 
-Nervos has a layered architecture, which has a Layer 1 named Common Knowledge Base (CKB) as the foundation layer for issuing all kinds of tokens and securely storing them. There are also Layer 2 systems works around CKB as plugins for enabling lower transaction fee and better transaction user experience for transferring these token between users.
+Nervos has a layered architecture, which has a Layer 1 named Common Knowledge Base (CKB) as the foundation layer for issuing all kinds of tokens and securely storing them. Developers will be able to construct their own layer2 solutions rooted in CKB as an interoperable layer focusing on functionalities and performance.
 
 > To learn more about the layered architecture of Nervos, please refer [Nervos Whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md).
 
