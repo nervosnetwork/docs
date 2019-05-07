@@ -19,13 +19,18 @@ In `website` folder:
 yarn start
 ```
 
+
 ## Build
 In `website` folder:
 ```shell
 yarn build
 ```
 
-The generated static files will be in `website/build`
+The generated static files will be in `website/build`.
+
+## Deploy
+Just serve the generated static files in `website/build`.
+
 
 ## Docs
 All the documents go into the `docs` folder. All the images should be in the `docs/assets` folder.
