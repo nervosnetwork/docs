@@ -5,6 +5,7 @@
     "Getting Started": ["getting-started/run-node","getting-started/interact","getting-started/mine","getting-started/transfer","getting-started/testnet"],
     "Development Guide": ["dev-guide/scripts"],
     "API": ["api/rpc"],
+    "Tutorials": ["tutorials/intro-tutorial","tutorials/step1","tutorials/step2","tutorials/step3","tutorials/step4","tutorials/step5"],
     "References": ["references/troubleshooting","references/faq","references/nervos-design"]
   }
 }
