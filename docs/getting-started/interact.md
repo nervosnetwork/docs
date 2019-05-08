@@ -3,7 +3,7 @@ id: interact
 title: Interacting with CKB
 ---
 
-Once you have successfully started running your own CKB node and the miner program with it, you can try to interact with your node now.
+Once you have successfully started [running your own CKB node](run-node) and the miner program with it, you can try to interact with your node now.
 
 Here you can learn about how to do this with RPC commands for some basic operations. Also, we have provided a simple SDK made with Ruby, which has wallet functionalities for you to interact with your node easily. 
 
@@ -13,7 +13,7 @@ You can interact with your CKB node client via RPC port. Here's an example showi
 
 In a new shell (note that you should have the `ckb run` running):
 ```shell
-$ curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
+curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
 ```
 
 The response message will be:
@@ -35,36 +35,39 @@ First please refer the [Ruby official guidance](https://www.ruby-lang.org/en/dow
 
 Install bundler in case you have not installed it yet:
 ```shell
-$ gem install bundler
+gem install bundler
 ```
 
 Then clone the Ruby SDK repo:
 ```shell
-$ git clone https://github.com/nervosnetwork/ckb-sdk-ruby && cd ckb-sdk-ruby
+git clone https://github.com/nervosnetwork/ckb-sdk-ruby && cd ckb-sdk-ruby
+```
+
+Checkout to `master` branch:
+```shell
+git checkout master
 ```
 
 Run bundler:
 ```shell
-$ bundle
+bundle
 ```
 
 ### Use API
 
 Use this command to enter an interactive console:
 ```shell
-$ bin/console
-[1] pry(main)>
+bin/console
 ```
 
 In the console, create an API instance:
 ```ruby
-[1] pry(main)> api = CKB::API.new
-=> #<API@http://localhost:8114>
+api = CKB::API.new
 ```
 
 Then call RPC command with it:
 ```ruby
-[2] pry(main)> api.get_tip_header
+api.get_tip_header
 ```
 
 > In the [GitHub repo](https://github.com/nervosnetwork/ckb-sdk-ruby/blob/master/lib/ckb/api.rb), you can find all the available RPC API in this Ruby SDK.
@@ -72,35 +75,56 @@ Then call RPC command with it:
 ### Create Wallet
 To create a wallet, we first need to generate a private key:
 ``` ruby
-[1] pry(main)> privkey = SecureRandom.hex(32)
-=> "<omitted ..>"
+privkey = "0x" + SecureRandom.hex(32)
 ``` 
 
-> Note that your private key is identical to your tokens and assets. Losing private key or give it to others is as same as losing your tokens or give them away.
+It will give you a private key like this:
+```ruby
+=> "0x9379dda1d4a8791555b3460b1c9033982563c8563fc6a69ce28f67fa2ca77e14"
+```
+
+You need to write down the returned privkey in order to use it later.
+
+> Note that your private key is the only key to your tokens and assets. Losing private key or give it to others is as same as losing your tokens or give them away.
 
 Then create an API instance:
 ```ruby
-[2] pry(main)> api = CKB::API.new
-=> #<API@http://localhost:8114>
+api = CKB::API.new
 ```
 
 Then we create a wallet with our private key:
 ```ruby
-[3] pry(main)> wallet = CKB::Wallet.from_hex(api, privkey)
-=> #<CKB::Wallet:0x00005563817dda68 @api=#<API@http://localhost:8114>, @privkey="<omitted ..>">
+wallet = CKB::Wallet.from_hex(api, privkey)
 ```
 
-Now we have successfully created a wallet instance from the generated private key in the Ruby SDK environment. 
-
-To make this wallet be the wallet that receives mining reward when mining CKB, we need to generate parameters for the miner configuration. Still in the Ruby console:
+You should see response message like this:
 ```ruby
-[4] pry(main)> puts wallet.block_assembler_config
-[block_assembler]
-code_hash = "0xfe1cf5a297023a3c5282ecd9b0ca88d6736424d75fbe4dcf47a7c8b303e4d339"
-args = [[56, 50, 52, 57, 53, 49, 51, 98, 51, 57, 56, 98, 99, 50, 51, 98, 98, 49, 50, 48, 99, 102, 102, 55, 99, 55, 97, 99, 51, 51, 54, 57, 102, 100, 50, 49, 52, 52, 54, 98, 55, 49, 57, 48, 97, 56, 98, 101, 52, 54, 98, 48, 97, 53, 53, 98, 57, 53, 52, 97, 52, 97, 97, 56]]
+=> #<CKB::Wallet:0x00007fce84a9a060
+ @api=#<CKB::API:0x3fe74250b4a0>,
+ @key=
+  #<CKB::Key:0x00007fce84a9a858
+   @address=
+    #<CKB::Address:0x00007fce84a9a088
+     @prefix="ckt",
+     @pubkey=
+      "0x03ed9721742f278a2bba09a9846ced887d93ca0241a23b309957917a11a8f11098">,
+   @privkey=
+    "0x92d583ca62524c1c48bb4c33892cf9c704b1c5013c4a7b6254218052e62daf52",
+   @pubkey=
+    "0x03ed9721742f278a2bba09a9846ced887d93ca0241a23b309957917a11a8f11098">>
 ```
 
-The output information here will be used in the next section for setting the configurations of mining CKB.
+We can check the address of our wallet:
+```ruby
+wallet.address
+```
+
+Response should be like:
+```ruby
+=> "ckt1q9gry5zgq657y04q7yyf4whx93vtrufvhl6nxq087eg9kg"
+```
+
+Now we have successfully created a wallet instance from the generated private key in the Ruby SDK environment. If you encountered any problems, don't worry, check out the [trouble shooting document](../references/troubleshooting).
 
 > In the [GitHub repo](https://github.com/nervosnetwork/ckb-sdk-ruby/blob/master/lib/ckb/wallet.rb), you can find all the available Wallet API in this Ruby SDK.
 

@@ -3,12 +3,25 @@ id: mine
 title: Mine CKB
 ---
 
-Now you have tried running a node and interact with it using SDK as well as creating a wallet. The next step is to run the miner program and earn some CKB.
+Now you have tried [running a node](run-node) and [interact with it](interact) using SDK as well as creating a wallet. The next step is to run the miner program and earn some CKB.
 
 
 ## Configurations
+We first need to generate the miner wallet configuration parameters. Our Ruby SDK can help us to do it.
 
-In [the last document](interact#create-wallet), after you created a wallet with the Ruby SDK, you should also have generated the `block_assembler` parameter like this:
+In [the last document](interact#create-wallet), after you have created a wallet with the Ruby SDK:
+```ruby
+[1] pry(main)> privkey = "0x" + SecureRandom.hex(32)
+[2] pry(main)> api = CKB::API.new
+[3] pry(main)> wallet = CKB::Wallet.from_hex(api, privkey)
+```
+
+You can use this command to generate the block assembler config parameters:
+```ruby
+puts wallet.block_assembler_config
+```
+
+The output should be something like:
 ```ruby
 [block_assembler]
 code_hash = "0xfe1cf5a297023a3c5282ecd9b0ca88d6736424d75fbe4dcf47a7c8b303e4d339"
@@ -33,13 +46,26 @@ The miner process of CKB is not integrated with the main CKB process. So to run 
 
 In another shell:
 ```shell
-$ ckb miner
+ckb miner
 ```
 
 Then both the main process and the miner should be working now.
 
-Wait for a moment and when you see message like this, it means you have mined a new block:
+Wait for around a minute and when you see message like this, it means you have mined a new block:
 ```shell
 2019-05-02 12:19:23.463 +08:00 main INFO miner  found seal: Seal { nonce: 16607377657024071670, proof: 0xa2020000681b00005d27000018340000973d000083430000fc600000376600008c660000cc6800007970000015760000 }
 ```
 
+Now you can check your CKB balance with Ruby SDK:
+```ruby
+wallet.get_balance
+```
+
+It shoud be:
+```ruby
+=> 10000000000000
+```
+
+If you see many zeros here, congratulations! You just mined some CKB!
+
+If not, don't worry, check out the [trouble shooting document](../references/troubleshooting).

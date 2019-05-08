@@ -20,26 +20,21 @@ To get the CKB client software, you can choose to download the released binary d
 For Linux user, you need to install `libssl` dynamic libraries before using the released binary.
 
 ```shell
-$ sudo apt-get install -y libssl1.0.0
+sudo apt-get install -y libssl1.0.0
 ```
 
 #### Download
 
  You can find the CKB releases on [GitHub Releases](https://github.com/nervosnetwork/ckb/releases). Just choose the file to download according to your operating system. (You can also find nightly build versions from the releases of the [ckb-builds repo](https://github.com/ckb-builds/ckb-builds/releases))
 
-After it is downloaded, you need to add it to your system `PATH`. In your downloaded folder:
+After it is downloaded, you need to move it to a `PATH` directory:
 ```shell
-$ export PATH="$(pwd):$PATH"
-```
-
-Or move it to a directory that is already in the `PATH`:
-```shell
-$ ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
+ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
 ```shell
-$ ckb --version
+ckb --version
 ```
 
 ### Compile from Source
@@ -52,16 +47,16 @@ Then install dependencies with the following command:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Ubuntu and Debian-->
 ```shell
-$ sudo apt-get install -y git gcc libc6-dev pkg-config libssl-dev libclang-dev clang
+sudo apt-get install -y git gcc libc6-dev pkg-config libssl-dev libclang-dev clang
 ```
 <!--Arch Linux-->
 ```shell
-$ sudo pacman -Sy git gcc pkgconf clang
+sudo pacman -Sy git gcc pkgconf clang
 ```
 
 <!--macOS-->
 ```shell
-$ brew install autoconf libtool
+brew install autoconf libtool
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -72,37 +67,31 @@ Here we build from the source code on `Master` branch, which is the latest relea
 Get the source code:
 
 ```shell
-$ git clone https://github.com/nervosnetwork/ckb.git
-$ cd ckb
-$ git checkout master
+git clone https://github.com/nervosnetwork/ckb.git
+cd ckb
+git checkout master
 ```
 
 Install Rust (currently, CKB is mainly tested with version `stable-1.34.1`):
 ```shell
-$ rustup override set 1.34.1
+rustup override set 1.34.1
 ```
 
 Build it:
 ```shell
-$ Make Build
+Make Build
 ```
 
 You will find the built executable binary in `target/release/ckb` folder.
 
-Then you need to add it to your system `PATH`:
-
+Then you need to move it to a `PATH` directory:
 ```shell
-$ export PATH="$(pwd)/target/release:$PATH"
-```
-
-Or move it to a directory that is already in the `PATH`:
-```shell
-$ ln -snf "$(pwd)/target/release/ckb" /usr/local/bin/ckb
+ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
 ```shell
-$ ckb --version
+ckb --version
 ```
 ### Use Docker
 You can also use Docker to run your CKB node. For the detailed guidance, please refer to [this document on GitHub](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
@@ -110,20 +99,20 @@ You can also use Docker to run your CKB node. For the detailed guidance, please 
 ## Run CKB
 First, you need to have a workshop folder to run CKB:
 ```shell
-$ mkdir ckb-dev
-$ cd ckb-dev
+mkdir ckb-dev
+cd ckb-dev
 ```
 
 Then generate default configuration files:
 ```shell
-$ ckb init
+ckb init
 ```
 
 > See here for more details about how to [configure CKB](https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md).
 
 Then you can start the node:
 ```shell
-$ ckb run
+ckb run
 ```
 
 Now, you should be seeing logs like:
@@ -137,3 +126,7 @@ Now, you should be seeing logs like:
 2019-05-02 12:13:14.658 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmfABTZ46Ffdf6n5K9J1bVAktaKbQS5mUa5Cg4ZHGJBiMK
 2019-05-02 12:13:14.659 +08:00 tokio-runtime-worker-4 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
 ```
+
+If you see the same response above, congratulations! You just started a CKB node!
+
+If not, don't worry, check out the [trouble shooting document](../references/troubleshooting).
