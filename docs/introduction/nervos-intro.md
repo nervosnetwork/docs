@@ -3,9 +3,9 @@ id: nervos-intro
 title: What is Nervos?
 ---
 
-Nervos envision a future called Crypto Economies, where users' assets are represented by different kinds of tokens and are traded in a financial system that is open and programmable. In such world, the trading friction of different assets are largely lower than the original economy system, and the social resource can be allocated to the right hand in a faster and better way, which will eventually make this world a better place.
+Nervos envisions a future called Crypto Economies, where users' assets are represented by different kinds of tokens and are traded in a financial system that is open and programmable. In such a world, the trading friction of different assets are largely lower than the original economy system, and the social resource can be allocated to the right hand in a faster and better way, which will eventually make this world a better place.
 
-To realize this vision, we will need an infrastructure for securely storing users' assets (tokens) as well as making them programmable, so that we can design different tokens and transact them intelligently. 
+To realize this vision, we will need an infrastructure for securely storing users' assets (tokens) as well as making them programmable, so that we can design different tokens and transact them intelligently.
 
 The mission of Nervos is to build this infrastructure.
 
@@ -23,13 +23,13 @@ In Nervos, there is a utility token named CKB that users can use to pay for bloc
 
 ## Nervos CKB
 
-Nervos Common Knowledge Base (CKB) is a permission-less public blockchain system. On CKB platform, both CKB token and the User Defined Tokens (UDT) can be programmed with Turing complete scripts.
+Nervos Common Knowledge Base (CKB) is a permission-less public blockchain system. On the CKB platform, both the Native Token(CKB) and the User Defined Tokens (UDT) can be programmed with Turing complete scripts.
 
 In a blockchain context, common knowledge refers to states verified by global consensus and Nervos CKB is designed to be a state verification system.
 
-Comparing with Bitcoin, which was designed to be programmable money, CKB is designed to be a programmable assets platform, as not only the native CKB itself can be programmed with Turing complete scripts, but also all the User Defined Tokens (UDTs) can be programmed in the same the CKB token is.
+Comparing with Bitcoin, which was designed to be programmable money, CKB is designed to be a programmable assets platform, as not only the native CKB itself can be programmed with Turing complete scripts, but also all the User Defined Tokens (UDTs) can be programmed in the same way the CKB token is.
 
-Ethereum was designed to be a world computer that provides functions of programmable escort account. On Ethereum you also can program the behavior of non-custodian accounts (i.e. smart contracts) to make UDTs such as ERC20 or ERC721. To compare with, CKB let users program token directly without going through an account. This design philosophy difference leads to two different programming models, which you will be learning about in the later parts of this documentation.
+Ethereum was designed to be a world computer that provides functions of programmable escrow account. On Ethereum, you also can program the behavior of non-custodian accounts (i.e. smart contracts) to make UDTs such as ERC20 or ERC721. To compare with, CKB let users program token directly without going through an account. This design philosophy difference leads to two different programming models, which you will be learning about in the later parts of this documentation.
 
 
 ## CKB Features
@@ -48,7 +48,7 @@ Nervos CKB adopts a generalized UTXO model called Cell model for describing and 
 You can find this concept explained in a [latter section](../basic-concepts/architecture.md#cell), or you can refer to the [Nervos Whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md) where you can find a high-level comprehensive explanation.
 
 ### RISC-V Based CKB-VM
-CKB-VM is a virtual machine designed for CKB blockchain. It is a software simulator based on [RISC-V](https://riscv.org/) instruction set. With CKB-VM, you can program in any language that has a compiler supported by RISC-V, such as C/C++ and high-level programming languages such as Javascript, Python, and Ruby. Moreover, with CKB-VM you can execute any kinds of hash function and signature function on-chain, which means you will be able to define your own private key verification function for your assets/tokens, instead of limited by a set of predefined crypto primitives. 
+CKB-VM is a virtual machine designed for CKB blockchain. It is a software simulator based on [RISC-V](https://riscv.org/) instruction set. With CKB-VM, you can program in any language that has a compiler supported by RISC-V, such as C/C++ and high-level programming languages such as Javascript, Python, and Ruby. Moreover, with CKB-VM you can execute any kinds of hash function and signature function on-chain, which means you will be able to define your own private key verification function for your assets/tokens, instead of limited by a set of predefined crypto primitives.
 
 To learn more about CKB-VM, please refer [CKB-VM paper](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm).
 
