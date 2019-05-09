@@ -25,7 +25,7 @@ const siteConfig = {
     scrollToTop:true,
 
     // Used for publishing and more
-    projectName: 'docs',
+    projectName: '',
     organizationName: 'Nervos',
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
