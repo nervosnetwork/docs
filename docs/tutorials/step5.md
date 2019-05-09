@@ -47,25 +47,25 @@ To aid in the creation of transaction inputs, we define a function to help us:
 19    end
 ```
 
-* Line  1 - Defines a function to return unspent cells, total capacity that they occupy and the public keys for these cells
+* __Line  1__ - Defines a function to return unspent cells, total capacity that they occupy and the public keys for these cells
 
-* Line 2 - Validator to check that the capacity provided as input is not less than a cell’s minimum capacity
+* __Line 2__ - Validator to check that the capacity provided as input is not less than a cell’s minimum capacity
 
-* Line 3 - 5 - variables to store values that will be returning
+* __Line 3-5__ - These variables will be used to store values that will be returning at the end of the function.
 
-* Line 6 - 11 We retrieve all the unspent cells for this wallet and for each cell,  we create a subsequent input cell using the unspent cells outpoint <Add more explanation here on why we do this>
+* __Line 6-11__ We retrieve all the unspent cells for this wallet and for each cell,  we create a subsequent input cell using the unspent cells outpoint <Add more explanation here on why we do this>
 
-* Line 12 - 14 - We store the public keys, input cell and input capacities to return at the end of the function
+* __Line 12-14__ - We store the public keys, input cell and input capacities to return at the end of the function
 
-* Line 15 - 16 - We stop looking for additional cells once the amount of input capacities is greater than or equal to the amount we want to send and greater than the minimum capacity for a cell
+* __Line 15-16__ - We stop looking for additional cells once the amount of input capacities is greater than or equal to the amount we want to send and greater than the minimum capacity for a cell
 
-* Line 17 - Raises an error if the capacities that are included in the inputs are less than the amount of capacity we want to send in the outputs
+* __Line 17__ - Raises an error if the capacities that are included in the inputs are less than the amount of capacity we want to send in the outputs
 
-* Line 18 -  Returns the Transaction Inputs, total capacities and the public keys
+* __Line 18__ -  Returns the Transaction Inputs, total capacities and the public keys
 
 # 5.2 Transaction Outputs
 
-	Outputs to transactions are called Transaction Outputs. They are newly created Cells as seen in Step 4. In this example to send new native tokens to someone, we will have to create a new Cell, with new tokens, where the Kock Script can only be unlocked by the users wallet that you are sending the native tokens to
+	Outputs to transactions are called Transaction Outputs. They are newly created Cells as seen in Step 4. In this example to send new native tokens to someone, we will have to create a new Cell, with new tokens, where the Lock Script can only be unlocked by the users wallet that you are sending the native tokens to
 
 ```
 1 def generate_outputs(input_capacities, capacity)

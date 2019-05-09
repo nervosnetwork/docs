@@ -56,7 +56,7 @@ There are instances where cells are created as change to send back to the origin
 
 * __Line 2__ - If true, we create a new cell to be placed as a Cell Output
 
-* __Lines 3__ - The capacity we send is the left over capacity not included in the outpts, so we can send it back to ourselves as change
+* __Lines 3__ - The capacity we send is the left over capacity not included in the outputs, so we can send it back to ourselves as change
 
 * __Lines 4__ - The data field is left blank as it is not required.
 
@@ -72,7 +72,7 @@ The data field of a cell contains binary data that you wish to store.  In this e
 1 data = “”
 ```
 
-* Line 1 - Defines binary data that is included in this cell. For transferring native tokens, this can be left empty.
+* __Line 1__ - Defines binary data that is included in this cell. For transferring native tokens, this can be left empty.
 
 # 4.3 Cell Type Script
 

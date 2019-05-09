@@ -11,7 +11,7 @@ Similar to bitcoin, we can sign inputs and outputs of a transaction in many ways
 Signature applies to all inputs and outputs
 
 * __SIGHASH NONE__ -  0x02
-Signature applies to all inputs, mone of the outputs
+Signature applies to all inputs, none of the outputs
 
 * __SIGHASH SINGLE__  0x03
 Signature applies to all inputs but only the one output with the same index number as the signed input
@@ -63,9 +63,9 @@ __Line 3__ - Selects how we would like to sign this transaction, in this situati
 
 __Line 4__ - We then update the pre-image of the hash with the sighash type
 
-__Lines 5-8__ - For each input, do this
+__Lines 5-8__ - For each input, update the pre-image hash for the transaction and and index.
 
-__Lines 9-15__ - For Each output, do this
+__Lines 9-15__ - For Each output, update the pre-image of the capacity and lock script hash.
 
 __Line 16__ - This creates a new private key using the Secp256k1 algorithm
 
@@ -73,4 +73,4 @@ __Line 17__ - This creates a signature by having the private key sign the data f
 
 __Line 18__ - This converts the signature binary to hex format.
 
-__Lines 19-22__ -  
+__Lines 19-22__ -  For each input, we build the arguments to sign their values.
