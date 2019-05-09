@@ -1,5 +1,6 @@
 ---
 id: intro-tutorial
+sidebar_label: Overview
 title: Overview: How to transfer Nervos CKB native tokens
 ---
 
