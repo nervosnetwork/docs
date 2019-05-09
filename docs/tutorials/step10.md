@@ -11,6 +11,6 @@ To retrieve a transaction from the network, we retrieve it by obtaining the hash
 3  end
 ```
 
-Line 1 - This defines a function that takes the hash of a transaction in hex format
+__Line 1__ - This defines a function that takes the hash of a transaction in hex format
 
-Line 2 - This uses the hash of the transaction in hex format to retrieve the transaction
+__Line 2__ - This uses the hash of the transaction in hex format to retrieve the transaction

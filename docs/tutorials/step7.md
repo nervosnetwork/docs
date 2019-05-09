@@ -27,4 +27,6 @@ Each script has a reference to the current transaction scope to which it is crea
 
 We retrieve the transaction by:
 
+```
 tx = CKB.load_tx
+```

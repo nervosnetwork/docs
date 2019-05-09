@@ -23,13 +23,13 @@ The cell to transfer tokens has no data in its data field, just capacity and the
 5    }
 ```
 
-* Line 1 - Defines the cell variable we will store the newly cell in
+* __Line 1__ - Defines the cell variable we will store the newly cell in
 
-* Line 2 - We have defined this cell to be created with 500 native tokens
+* __Line 2__ - We have defined this cell to be created with 500 native tokens
 
-* Lines 3 - We leave the data field empty, because all we are concerned about is transferring native tokens, which do not require any data to be stored in this field.
+* __Lines 3__ - We leave the data field empty, because all we are concerned about is transferring native tokens, which do not require any data to be stored in this field.
 
-* Lines 4 - Specifies the lock script of who can unlock the cell and use it as a Cell Input in a subsequent transaction.
+* __Lines 4__ - Specifies the lock script of who can unlock the cell and use it as a Cell Input in a subsequent transaction.
 
 ## Calculating Cell Capacity
 
@@ -52,15 +52,15 @@ There are instances where cells are created as change to send back to the origin
 6        }
 ```
 
-* Line 1 - Checks to see if the total input capacities in the transaction are greater than the outputs that are being sent
+* __Line 1__ - Checks to see if the total input capacities in the transaction are greater than the outputs that are being sent
 
-* Line 2 - If true, we create a new cell to be placed as a Cell Output
+* __Line 2__ - If true, we create a new cell to be placed as a Cell Output
 
-* Lines 3  The capacity we send is the left over capacity not included in the outpts, so we can send it back to ourselves as change
+* __Lines 3__ - The capacity we send is the left over capacity not included in the outpts, so we can send it back to ourselves as change
 
-* Lines 4 - The data field is left blank as it is not required.
+* __Lines 4__ - The data field is left blank as it is not required.
 
-* Lines 5 - We put the lock script of the owner of the wallet.
+* __Lines 5__ - We put the lock script of the owner of the wallet.
 
 Note: if we don’t construct a cell to send the left over capacity back to yourself, all left over capacity will be sent to the miner as a transaction fee!
 

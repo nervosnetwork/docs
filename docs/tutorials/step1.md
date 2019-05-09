@@ -89,4 +89,4 @@ gem "rbnacl", "~> 6.0", ">= 6.0.1"
 gem "bitcoin-secp256k1", "~> 0.5.0"
 ```
 
-Now that we have all of our dependencies for the project set up, we will start creating a Wallet Class to hold our tokens.
+Now that we have all of our dependencies for the project set up, we will start creating a __Wallet Class__ to hold our tokens.

@@ -88,11 +88,11 @@ To aid in the creation of transaction inputs, we define a function to help us:
 18     end
 19   end
 ```
-Line 1 - Defines a function name to generate the output cell for the wallet we are sending the tokens to
+__Line 1__ - Defines a function name to generate the output cell for the wallet we are sending the tokens to
 
-Line 3-9 - Define an array of output cells, where each cell has a fixed capacity and the lock script of the target wallet that can unlock the newly created cell
+__Line 3-9__ - Define an array of output cells, where each cell has a fixed capacity and the lock script of the target wallet that can unlock the newly created cell
 
-Lines 12 - 17 - If there is more capacity to in the input cells than the output cells, we construct an additional output cell to send back to ourselves.
+__Lines 12__ - 17 - If there is more capacity to in the input cells than the output cells, we construct an additional output cell to send back to ourselves.
 
 # 5.3 Generating a Transaction
 
@@ -111,15 +111,15 @@ We will now define a function to generate a transaction:
 11    end
 ```
 
-* Line 1 - Defines the function name for generating a transaction it takes the lock script of the person you would like to send it to and the capacity to send.
+* __Line 1__ - Defines the function name for generating a transaction it takes the lock script of the person you would like to send it to and the capacity to send.
 
-* Line 2 - Calls the function you created in 5.1 to create the input cells
+* __Line 2__ - Calls the function you created in 5.1 to create the input cells
 
-* Line 3 - Assigns the total amount of capacities in the input cells
+* __Line 3__ - Assigns the total amount of capacities in the input cells
 
-* Line 4 - Calls the function you created in 5.3 to generate the output cells with the specified capacity.
+* __Line 4__ - Calls the function you created in 5.3 to generate the output cells with the specified capacity.
 
-* Lines 5 - 10 - We construct a transaction object with the following values:
+* __Lines 5 - 10__ - We construct a transaction object with the following values:
 
 	Version - The version number associated to the cell
 	Deps - We include the mruby outpoint reference cell to be able to compile and execute ruby code
