@@ -9,26 +9,25 @@ The SDK is provided to aid in the development of generator code by providing use
 
 In order to begin working with the SDK we need to clone it from the master branch:
 
-```git clone --recursive https://github.com/nervosnetwork/ckb-sdk-ruby
-```
+`git clone --recursive https://github.com/nervosnetwork/ckb-sdk-ruby`
 
 # 1.2 Installing Dependencies
 
-	The following dependencies are required to be able to run and execute the SDK
+The following dependencies are required to be able to run and execute the SDK
+
 * bitcoin-secp256k1 gem
 * rbnacl gem
 * Manual install of secp256k1
 * libsodium library
 * Mruby Contract - this is required to compile and execute ruby c
 
-Follow this and this to install them locally.
+Follow the installation guide [here](../tutorials/step1) to install them locally.
 
 # 1.3 Install SDK
 
 Add this line to your application's Gemfile:
 
-```gem 'ckb-sdk-ruby', github: 'nervosnetwork/ckb-sdk-ruby', require: 'ckb'
-```
+`gem 'ckb-sdk-ruby', github: 'nervosnetwork/ckb-sdk-ruby', require: 'ckb'`
 
 ``` $ cd ckb-sdk-ruby
 $ bundle
@@ -37,7 +36,7 @@ $ bundle
 
 Mruby contract is required to compile and execute Ruby code in the CKB-VM. This will allow you to create, compile and execute the Scripts that we will be creating later in the tutorial.
 
-	Using the argv file you installed before at: /path/to/argv_source_entry . We can install the mruby contract here:
+Using the argv file you installed before at: /path/to/argv_source_entry . We can install the mruby contract here:
 
 ```[1] pry(main)> asw = Ckb::AlwaysSuccessWallet.new(api)
 [2] pry(main)> conf = asw.install_mruby_cell!("/path/to/argv_source_entry")
@@ -64,3 +63,30 @@ Validate your successful installation by doing the following:
 ``` $ cd ckb-sdk-ruby
 $ bundle
 ```
+
+# 1.6 Create Gem File to manage Dependencies
+
+
+Create a Gemfile and add the following dependencies to the Gemfile to be able to build the project.
+
+
+```
+ruby "2.4.1"
+#gem 'ckb-sdk-ruby', github: 'nervosnetwork/ckb-sdk-ruby', require: 'ckb'
+gem 'minitest'
+#gem 'pry'
+gem 'dotenv'
+
+# Until ckb-sdk gem is ready:
+
+#gem "bundler", "~> 2.0"
+gem "rake", "~> 10.0"
+gem "rspec", "~> 3.0"
+gem "rubocop", "~> 0.66.0"
+gem "pry", "~> 0.12.2"
+
+gem "rbnacl", "~> 6.0", ">= 6.0.1"
+gem "bitcoin-secp256k1", "~> 0.5.0"
+```
+
+Now that we have all of our dependencies for the project set up, we will start creating a Wallet Class to hold our tokens.
