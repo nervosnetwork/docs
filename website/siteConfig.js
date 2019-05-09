@@ -22,26 +22,22 @@ const siteConfig = {
 
     docsUrl: '',
     
+    // enable scroll to top button
     scrollToTop:true,
 
     // Used for publishing and more
-    projectName: 'docs',
+    projectName: '',
     organizationName: 'Nervos',
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
     //   organizationName: 'JoelMarcey'
 
     // For no header links in the top nav bar -> headerLinks: [],
-    headerLinks: [{
-            href: 'https://github.com/nervosnetwork',
-            label: 'GitHub',
-            external: true
-        }
-
+    headerLinks: [
+        {doc:'introduction/welcome', label:'Docs'},
+        {doc:'tutorials/intro-tutorial', label:'Tutorial'},
+        {href: 'https://github.com/nervosnetwork',label: 'GitHub',external: true}
     ],
-
-    // If you have users set above, you add it here:
-    users,
 
     /* path to images for header/footer */
     headerIcon: 'img/nervos-logo.png',
@@ -52,20 +48,6 @@ const siteConfig = {
         primaryColor: '#11356f',
         secondaryColor: '#4bbc8e',
     },
-
-    /* Custom fonts for website */
-    /*
-    fonts: {
-      myFont: [
-        "Times New Roman",
-        "Serif"
-      ],
-      myOtherFont: [
-        "-apple-system",
-        "system-ui"
-      ]
-    },
-    */
 
     highlight: {
         // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -87,24 +69,14 @@ const siteConfig = {
     // No .html extensions for paths.
     cleanUrl: true,
 
-    // edit url for
-
     // Collapsible Categories
     docsSideNavCollapsible: true,
 
     //base url for edit button
     editUrl: 'https://github.com/nervosnetwork/docs/edit/develop/docs/',
 
-
-    // Show documentation's last contributor's name.
-    // enableUpdateBy: true,
-
     // Show documentation's last update time.
     enableUpdateTime: true,
-
-    // You may provide arbitrary config keys to be used as needed by your
-    // template. For example, if you need your repo's URL...
-    //   repoUrl: 'https://github.com/facebook/test-site',
 };
 
 module.exports = siteConfig;
