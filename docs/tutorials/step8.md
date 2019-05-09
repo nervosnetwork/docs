@@ -3,17 +3,17 @@ id: step8
 title: 8. Creating Lock Script
 ---
 
-A Lock Script is created and when attached to a cell, outlines who can unlock the cell when it is part of an input cell in a transaction.
-8.1 Lock Script for a Cell
+A __Lock Script__ is created and when attached to a cell, outlines who can unlock the cell when it is part of an input cell in a transaction.
 
-Arguments for the script
+# 8.1 Lock Script for a Cell
 
-Argument 1 - public key, used to identify the token owner
+## Arguments for the script
 
-Argument 2 - signature, used to present ownership
+* __Argument 1__ - public key, used to identify the token owner
+* __Argument 2__ - signature, used to present ownership
 
-Script
-
+__Script__
+```
 1 if ARGV.length != 2
 2   raise "Wrong number of arguments!"
 3 end
@@ -47,25 +47,25 @@ Script
 26 unless Secp256k1.verify(hex_to_bin(pubkey), hex_to_bin(signature), hash)
 27  raise "Signature verification error!"
 end
+```
 
 
+__Lines 1-3__  - We perform argument validation to check we’re only submitting two arguments
 
-Lines 1 - 3  - We perform argument validation to check we’re only submitting two arguments
+__Line 4-9__  - Defines a function to convert hex to binary
 
-Line 4 - 9  - Defines a function to convert hex to binary
+__Line 10__ - We load in the transaction object into the script
 
-Line 10 - We load in the transaction object into the script
+__Line 11__ - Instantiate the Blake2b pre-image
 
-Line 11 - Instantiate the Blake2b pre-image
+__Lines 12-15__  - we update the hash with the inputs to the transaction
 
-Lines 12 - 15  - we update the hash with the inputs to the transaction
+__Line 16-22__  - For each output of the transaction, we update the hash with the capacity, the hash of the lock script. If there is a type script on the output cell, we also update the hash with this.
 
-Line 16 - 22  - For each output of the transaction, we update the hash with the capacity, the hash of the lock script. If there is a type script on the output cell, we also update the hash with this.
+__Line 23__ - Create the hash of the data using the Blake2b algorithm
 
-Line 23 - Create the hash of the data using the blake2b algorithm
+__Line 24__ - Assign the first argument as the pubic key
 
-Line 24 - Assign the first argument as the pubic key
+__Line 25__ - Assign the second argument as the signature
 
-Line 25 - Assign the second argument as the signature
-
-Line 26 - 27 - We validate the signature, public key and data objects to determine if it’s valid.
+__Line 26-27__ - We validate the signature, public key and data objects to determine if it’s valid.

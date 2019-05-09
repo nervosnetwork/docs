@@ -1,18 +1,19 @@
 ---
 id: step1
-title: 1. How to get started and install SDK
+title: 1. Installing the Nervos CKB SDK
 ---
 
 The SDK is provided to aid in the development of generator code by providing useful APIs. The mruby system cell is provided to enable us to deploy ruby scripts to cells and also exposes select APIs that allow us to do things like view all of the data in the transaction has triggered the script execution in the first place.
 
 # 1.1 Download the SDK
 
-	In order to begin working with the SDK we need to clone it from the master branch:
+In order to begin working with the SDK we need to clone it from the master branch:
 
 ```git clone --recursive https://github.com/nervosnetwork/ckb-sdk-ruby
 ```
 
 # 1.2 Installing Dependencies
+
 	The following dependencies are required to be able to run and execute the SDK
 * bitcoin-secp256k1 gem
 * rbnacl gem
@@ -23,7 +24,13 @@ The SDK is provided to aid in the development of generator code by providing use
 Follow this and this to install them locally.
 
 # 1.3 Install SDK
-```$ cd ckb-sdk-ruby
+
+Add this line to your application's Gemfile:
+
+```gem 'ckb-sdk-ruby', github: 'nervosnetwork/ckb-sdk-ruby', require: 'ckb'
+```
+
+``` $ cd ckb-sdk-ruby
 $ bundle
 ```
 # 1.4 Install mruby contract
@@ -44,12 +51,16 @@ Mruby contract is required to compile and execute Ruby code in the CKB-VM. This 
 ```
 # Optional:
 
-Now you have the mruby contract installed in CKB, and the relevant configuration in conf structure. You can inform apiobject to use this configuration:
+Now you have the mruby contract installed in CKB, and the relevant configuration in conf structure. You can inform api object to use this configuration:
+
+```
 [1] pry(main)> api.set_and_save_default_configuration!(conf)
-	1.5 Successful Installation
+```
 
-	Validate your successful installation by doing the following:
+# 1.5 Successful Installation
 
-```$ cd ckb-sdk-ruby
+Validate your successful installation by doing the following:
+
+``` $ cd ckb-sdk-ruby
 $ bundle
 ```
