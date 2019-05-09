@@ -65,7 +65,7 @@ To aid in the creation of transaction inputs, we define a function to help us:
 
 # 5.2 Transaction Outputs
 
-	Outputs to transactions are called Transaction Outputs. They are newly created Cells as seen in Step 4. In this example to send new native tokens to someone, we will have to create a new Cell, with new tokens, where the Lock Script can only be unlocked by the users wallet that you are sending the native tokens to
+Outputs to transactions are called Transaction Outputs. They are newly created Cells as seen in Step 4. In this example to send new native tokens to someone, we will have to create a new Cell, with new tokens, where the Lock Script can only be unlocked by the users wallet that you are sending the native tokens to
 
 ```
 1 def generate_outputs(input_capacities, capacity)

@@ -1,6 +1,6 @@
 ---
 id: step12
-title: Finishing up
+title: 12. Finishing up
 ---
 
 __Find the code on Github__

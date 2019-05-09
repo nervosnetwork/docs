@@ -69,7 +69,7 @@ __Lines 9-15__ - For Each output, update the pre-image of the capacity and lock 
 
 __Line 16__ - This creates a new private key using the Secp256k1 algorithm
 
-__Line 17__ - This creates a signature by having the private key sign the data from the hash function using the ecdsa algorithm. It then serializes it to binary.
+__Line 17__ - This creates a signature by having the private key sign the data from the hash function using the ECDSA algorithm. It then serializes it to binary.
 
 __Line 18__ - This converts the signature binary to hex format.
 

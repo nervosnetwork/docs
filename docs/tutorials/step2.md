@@ -24,12 +24,12 @@ In order to fulfill this, from a development perspective, we will need to:
 
 # 2.1 CKB Instance
 
-The CKB Instance enables developers to interface with CKB-VM in a statically typed manner:
+The CKB Instance enables developers to interface with CKB-VM in a statically typed manner. On the command-line you can execute the following commands:
 ```
 [1] pry(main)> api = Ckb::Api.new
 [2] pry(main)> api.load_default_configuration!
 ```
-CKB-VM is the blockchain implementation using RISC-V instruction set. From the CKB Instance, you are able to instantiate the interface between your code and the blockchain and perform specific functions to interface with the blockchain.
+CKB-VM is the blockchain implementation using RISC-V instruction set. From the CKB Instance, you are able to instantiate the interface between your code and the blockchain and perform specific functions.
 
 # 2.2 Create a Wallet Class
 
@@ -44,17 +44,15 @@ __Private Key__ - This is the private key that is owned by the wallet holder.
 
 
 ```
- 1  class Wallet
-
-2	attr_reader :api
-3   	 attr_reader :privkey
-
-4   # initialize wallet with private key and api object
+1  class Wallet
+2	      attr_reader :api
+3   	  attr_reader :privkey
+4    # initialize wallet with private key and api object
 5    def initialize(api, privkey)
 6      unless privkey.instance_of?(String) && privkey.size == 32
 7       raise ArgumentError, "invalid privkey!"
 8      end
- 9     @api = api
+9     @api = api
 10     @privkey = privkey
 11   end
 12  end

@@ -76,8 +76,8 @@ The data field of a cell contains binary data that you wish to store.  In this e
 
 # 4.3 Cell Type Script
 
-Type Scripts  are optional scripts that are created to dictate how a cell can be used and spent. In this example, we will not create a type script because it is not required to send native tokens.
+Type Scripts  are __optional__ scripts that are created to dictate how a cell can be used and spent. In this example, we will not create a type script because it is not required to send native tokens.
 
 # 4.4 Cell Lock Script
 
-Lock Scripts are created to determine who can unlock a previous cell output when included in a Cell Input. In other words, a Lock Script is created at the time of the Cell being created, but it is executed and verified at the time the Cell is being spent(as part of a Cell Input in a Transaction Object)
+Lock Scripts are __mandatory__  scripts that are created to determine who can unlock a previous Transaction Output when included in a Transaction Input. In other words, a Lock Script is created at the time of the Cell being created, but it is executed and verified at the time the Cell is being spent(as part of a Cell Input in a Transaction Object)
