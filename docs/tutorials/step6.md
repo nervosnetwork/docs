@@ -74,3 +74,5 @@ __Line 17__ - This creates a signature by having the private key sign the data f
 __Line 18__ - This converts the signature binary to hex format.
 
 __Lines 19-22__ -  For each input, we build the arguments to sign their values.
+
+Now that we understand one way that a transaction can be signed, we now proceed on to learning how scripts are generated and used to verify a transactions.

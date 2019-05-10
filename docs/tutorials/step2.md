@@ -170,6 +170,7 @@ We will create 3 helper function to allow our development to be easier moving fo
 
 * __Lines 7-14__ - We create and return a Script data structure that includes the hash of the mruby cell and the args to the lock script, in this case the public key hash in hexadecimal format.  
 
+# 2.5 Putting things together
 Your __wallet.rb__ file should now look like this:
 
 ```

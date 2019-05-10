@@ -11,13 +11,18 @@ Fig A.
 
 # 5.1 Transaction Inputs
 
-	Inputs to transactions are called Cell Inputs. They are live cells that have been included in a Cell Output to a previous transaction, and have not been spent already. There can be many Cell Inputs included in a transaction. Cell Inputs reference the cell by its outpoint and index of the cell in the transaction output.
-Outpoint
+Inputs to transactions are called Cell Inputs. They are live cells that have been included in a Cell Output to a previous transaction, and have not been spent already. There can be many Cell Inputs included in a transaction. Cell Inputs reference the cell by its outpoint and index of the cell in the transaction output.
+
+__Outpoint__
+
 An outpoint is a reference to a cell output in a previous committed transaction.
+
 It consists of the following:
-{hash: <hash_of_tx>,
-index: <index_of_target_cell_in_tx_outputs>}
-Transaction Index
+* {hash: <hash_of_tx>,
+* index: <index_of_target_cell_in_tx_outputs>}
+
+__Transaction Index__
+
 The transaction index of an outpoint indicates the index of the output transaction.
 
 To aid in the creation of transaction inputs, we define a function to help us:
