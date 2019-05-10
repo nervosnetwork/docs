@@ -14,3 +14,5 @@ To retrieve a transaction from the network, we retrieve it by obtaining the hash
 __Line 1__ - This defines a function that takes the hash of a transaction in hex format
 
 __Line 2__ - This uses the hash of the transaction in hex format to retrieve the transaction
+
+Now that you have been able to retrieve the hash of the transaction, let's get Alice's wallet to send you some tokens.

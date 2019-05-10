@@ -12,3 +12,5 @@ To receive tokens, we must get Alice's wallet to send tokens outlining the lock 
 [2] pry(main)> my_wallet.get_balance
 => 2000000
 ```
+
+Great! You have now been able to send a transaction that included native tokens and were able to receive native tokens to your wallet.
