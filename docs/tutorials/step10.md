@@ -1,6 +1,6 @@
 ---
 id: step10
-title: 10. Retrieving information about a transaction
+title: 10. Retrieving Transaction Information
 ---
 
 To retrieve a transaction from the network, we retrieve it by obtaining the hash of a transaction and calling api.get_Transaction(hash_hex). We can create a convenience method to this as follows:

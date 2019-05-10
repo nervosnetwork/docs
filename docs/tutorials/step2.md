@@ -35,12 +35,13 @@ CKB-VM is the blockchain implementation using RISC-V instruction set. From the C
 
 The first step of managing native tokens is to have a place to store them. We do this by creating a wallet. This wallet will be used in to interface with CKB via the SDK.
 
-To create a wallet, open your editor and first create a __Wallet Class__ with an initializer that takes in 2 input arguments:
+To create a wallet, open your editor and first create a __Wallet Class__ called __wallet.rb__ with an initializer that takes in 2 input arguments:
 
 __CKB Api__ - This is a reference to the CKB API SDK that was instantiated above
 private key - the private key represents the key of the user that owns’ the wallet
 
 __Private Key__ - This is the private key that is owned by the wallet holder.
+
 
 
 ```
@@ -168,5 +169,57 @@ We will create 3 helper function to allow our development to be easier moving fo
 * __Lines 4-6__  - Given the public key in binary format, we create a hash of this twice to represent the hash of public key
 
 * __Lines 7-14__ - We create and return a Script data structure that includes the hash of the mruby cell and the args to the lock script, in this case the public key hash in hexadecimal format.  
+
+Your __wallet.rb__ file should now look like this:
+
+```
+1  class Wallet
+2	      attr_reader :api
+3   	  attr_reader :privkey
+4    # initialize wallet with private key and api object
+5    def initialize(api, privkey)
+6      unless privkey.instance_of?(String) && privkey.size == 32
+7       raise ArgumentError, "invalid privkey!"
+8      end
+9     @api = api
+10     @privkey = privkey
+11   end
+12
+13  def get_unspent_cells
+14    to = api.get_tip_number
+15    results = []
+16    current_from = 1
+17    while current_from <= to
+18      current_to = [current_from + 100, to].min
+19      cells = api.get_cells_by_lock_hash(verify_script_hash, current_from, current_to)
+20      results.concat(cells)
+21      current_from = current_to + 1
+22   end
+23  results
+24  end
+25
+26  def get_balance
+27     get_unspent_cells.map { |c| c[:capacity] }.reduce(0, &:+)
+28  end
+29
+30  def pubkey_bin
+31    Ckb::Utils.extract_pubkey_bin(privkey)
+32   end
+33
+34  def pubkey_hash_bin
+35    Ckb::Blake2b.digest(Ckb::Blake2b.digest(pubkey_bin))
+36  end
+37
+38 def verify_script_json_object
+39    {
+40      binary_hash: api.mruby_cell_hash,
+41      args: [
+42        Ckb::Utils.bin_to_hex(pubkey_hash_bin)
+43      ]
+44    }
+45  end
+46  end
+```
+
 
 Now that we have a basic wallet created and helper functions, we will begin to fill the wallet with some tokens.
