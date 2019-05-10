@@ -37,6 +37,6 @@ After having the mining process executing after a  while, you can check how much
 
 ```[3] pry(main)> asw.send_capacity(my_wallet.lock, 300000 * 10 ** 8)
 [4] pry(main)> # wait a while
-[5] pry(main)> bob.get_balance
+[5] pry(main)> my_wallet.get_balance
 => 30000000000000
 ```

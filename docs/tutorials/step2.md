@@ -173,52 +173,61 @@ We will create 3 helper function to allow our development to be easier moving fo
 Your __wallet.rb__ file should now look like this:
 
 ```
-1  class Wallet
-2	      attr_reader :api
-3   	  attr_reader :privkey
-4    # initialize wallet with private key and api object
-5    def initialize(api, privkey)
-6      unless privkey.instance_of?(String) && privkey.size == 32
-7       raise ArgumentError, "invalid privkey!"
-8      end
-9     @api = api
-10     @privkey = privkey
-11   end
-12
-13  def get_unspent_cells
-14    to = api.get_tip_number
-15    results = []
-16    current_from = 1
-17    while current_from <= to
-18      current_to = [current_from + 100, to].min
-19      cells = api.get_cells_by_lock_hash(verify_script_hash, current_from, current_to)
-20      results.concat(cells)
-21      current_from = current_to + 1
-22   end
-23  results
-24  end
-25
-26  def get_balance
-27     get_unspent_cells.map { |c| c[:capacity] }.reduce(0, &:+)
-28  end
-29
-30  def pubkey_bin
-31    Ckb::Utils.extract_pubkey_bin(privkey)
-32   end
-33
-34  def pubkey_hash_bin
-35    Ckb::Blake2b.digest(Ckb::Blake2b.digest(pubkey_bin))
-36  end
-37
-38 def verify_script_json_object
-39    {
-40      binary_hash: api.mruby_cell_hash,
-41      args: [
-42        Ckb::Utils.bin_to_hex(pubkey_hash_bin)
-43      ]
-44    }
+1 require_relative "../ckb-sdk-ruby/lib/ckb.rb"
+2 require_relative "../ckb-sdk-ruby/lib/api"
+3 require_relative "../ckb-sdk-ruby/lib/always_success_wallet"
+4 require_relative "../ckb-sdk-ruby/lib/utils"
+5 require_relative "../ckb-sdk-ruby/lib/version"
+6 require_relative "../ckb-sdk-ruby/lib/blake2b"
+7
+8  LOCK_SCRIPT = File.read(File.expand_path("../../../scripts/sighash_all.rb", __FILE__))
+9
+10  class Wallet
+11	      attr_reader :api
+12   	  attr_reader :privkey
+13    # initialize wallet with private key and api object
+14    def initialize(api, privkey)
+15      unless privkey.instance_of?(String) && privkey.size == 32
+16       raise ArgumentError, "invalid privkey!"
+17      end
+18     @api = api
+19     @privkey = privkey
+20   end
+21
+22  def get_unspent_cells
+23    to = api.get_tip_number
+24    results = []
+25    current_from = 1
+26    while current_from <= to
+27      current_to = [current_from + 100, to].min
+28      cells = api.get_cells_by_lock_hash(verify_script_hash, current_from, current_to)
+29      results.concat(cells)
+30      current_from = current_to + 1
+31   end
+32  results
+33  end
+34
+35  def get_balance
+36     get_unspent_cells.map { |c| c[:capacity] }.reduce(0, &:+)
+37  end
+38
+39  def pubkey_bin
+40    Ckb::Utils.extract_pubkey_bin(privkey)
+41   end
+42
+43  def pubkey_hash_bin
+44    Ckb::Blake2b.digest(Ckb::Blake2b.digest(pubkey_bin))
 45  end
-46  end
+46
+47 def verify_script_json_object
+48    {
+49      binary_hash: api.mruby_cell_hash,
+50      args: [
+51        Ckb::Utils.bin_to_hex(pubkey_hash_bin)
+52      ]
+53    }
+54  end
+55  end
 ```
 
 

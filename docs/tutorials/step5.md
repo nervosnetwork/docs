@@ -7,6 +7,7 @@ A transaction is an intent to transfer ownership of an asset that is broadcasted
 
 Fig A.
 
+![data-structure](assets/ckb-structure.png)
 
 # 5.1 Transaction Inputs
 
