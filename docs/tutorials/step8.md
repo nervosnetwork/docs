@@ -13,6 +13,9 @@ A __Lock Script__ is created and when attached to a cell, outlines who can unloc
 * __Argument 2__ - signature, used to present ownership
 
 __Script__
+
+In a file called __lock_script.rb__ you can write the following file:
+
 ```
 1 if ARGV.length != 2
 2   raise "Wrong number of arguments!"

@@ -56,7 +56,7 @@ There are instances where cells are created as change to send back to the origin
 
 * __Line 2__ - If true, we create a new cell to be placed as a Cell Output
 
-* __Lines 3__ - The capacity we send is the left over capacity not included in the outpts, so we can send it back to ourselves as change
+* __Lines 3__ - The capacity we send is the left over capacity not included in the outputs, so we can send it back to ourselves as change
 
 * __Lines 4__ - The data field is left blank as it is not required.
 
@@ -72,12 +72,12 @@ The data field of a cell contains binary data that you wish to store.  In this e
 1 data = “”
 ```
 
-* Line 1 - Defines binary data that is included in this cell. For transferring native tokens, this can be left empty.
+* __Line 1__ - Defines binary data that is included in this cell. For transferring native tokens, this can be left empty.
 
 # 4.3 Cell Type Script
 
-Type Scripts  are optional scripts that are created to dictate how a cell can be used and spent. In this example, we will not create a type script because it is not required to send native tokens.
+Type Scripts  are __optional__ scripts that are created to dictate how a cell can be used and spent. In this example, we will not create a type script because it is not required to send native tokens.
 
 # 4.4 Cell Lock Script
 
-Lock Scripts are created to determine who can unlock a previous cell output when included in a Cell Input. In other words, a Lock Script is created at the time of the Cell being created, but it is executed and verified at the time the Cell is being spent(as part of a Cell Input in a Transaction Object)
+Lock Scripts are __mandatory__  scripts that are created to determine who can unlock a previous Transaction Output when included in a Transaction Input. In other words, a Lock Script is created at the time of the Cell being created, but it is executed and verified at the time the Cell is being spent(as part of a Cell Input in a Transaction Object)

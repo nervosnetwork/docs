@@ -9,6 +9,12 @@ The SDK is provided to aid in the development of generator code by providing use
 
 In order to begin working with the SDK we need to clone it from the master branch:
 
+Start a new project in a folder called __nervos_demos__:
+
+`mkdir nervos_demos`
+
+Clone the CKB Ruby SDK in this folder:
+
 `git clone --recursive https://github.com/nervosnetwork/ckb-sdk-ruby`
 
 # 1.2 Installing Dependencies

@@ -29,14 +29,14 @@ To be able to obtain capacity, one must successfully mine blocks and obtain a bl
 
 After having the mining process executing after a  while, you can check how much capacity you have mined by performing the following command on your wallet:
 
-```[2] pry(main)> bob.get_balance
+```[2] pry(main)> my_wallet.get_balance
 => 100000
 ```
 
 # 3.4 Sending tokens to the Wallet
 
-```[3] pry(main)> asw.send_capacity(bob.lock, 300000 * 10 ** 8)
+```[3] pry(main)> asw.send_capacity(my_wallet.lock, 300000 * 10 ** 8)
 [4] pry(main)> # wait a while
-[5] pry(main)> bob.get_balance
+[5] pry(main)> my_wallet.get_balance
 => 30000000000000
 ```
