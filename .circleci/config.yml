@@ -14,12 +14,13 @@ jobs:
             git config --global user.name "Mine77"
             echo "machine github.com login Mine77 password $GITHUB_TOKEN" > ~/.netrc
             cd website && yarn install && GIT_USER=Mine77 yarn run publish-gh-pages
-    
+
 workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - deploy
-        filters:
-          branches:
-            only: master
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
