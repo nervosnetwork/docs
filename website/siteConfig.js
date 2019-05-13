@@ -27,6 +27,10 @@ const siteConfig = {
     //   organizationName: 'JoelMarcey'
 
     docsUrl: '',
+
+    //GA settings
+    gaTrackingId: 'UA-139882771-1',
+    gaGtag: true,
     
     // enable scroll to top button
     scrollToTop:true,
