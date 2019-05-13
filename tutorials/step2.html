@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>2. How to create a Wallet · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Similar to Bitcoin, in Nervos CKB, a wallet is an abstraction that computes its balance by traversing over the transactions that have unspent transaction outputs and sums up the total amount of unspent cell capacities to determine its balance. It does not follow an Account Model where the balance is stored and updated in one place.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="2. How to create a Wallet · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="&lt;p&gt;Similar to Bitcoin, in Nervos CKB, a wallet is an abstraction that computes its balance by traversing over the transactions that have unspent transaction outputs and sums up the total amount of unspent cell capacities to determine its balance. It does not follow an Account Model where the balance is stored and updated in one place.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.png" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/introduction/welcome" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/tutorials/intro-tutorial" target="_self">Tutorial</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Tutorial</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorial<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/tutorials/intro-tutorial">Overview</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step1">1. Installing the Nervos CKB SDK</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/tutorials/step2">2. How to create a Wallet</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step3">3. Mining native tokens</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step4">4. Constructing a Cell</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step5">5. Constructing a Transaction</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step6">6. Transaction Signing</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step7">7. Scripts</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step8">8. Creating Lock Script</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step9">9. Sending a transaction</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step10">10. Retrieving Transaction Information</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step11">11. Receiving Native Tokens</a></li><li class="navListItem"><a class="navItem" href="/tutorials/step12">12. Finishing up</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/tutorials/step2.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">2. How to create a Wallet</h1></header><article><div><span><p>Similar to Bitcoin, in Nervos CKB, a wallet is an abstraction that computes its balance by traversing over the transactions that have unspent transaction outputs and sums up the total amount of unspent cell capacities to determine its balance. It does not follow an Account Model where the balance is stored and updated in one place.</p>
+<p>Our wallet will serve the following functions:</p>
+<ul>
+<li>Storing Nervos native tokens(CKBytes)</li>
+<li>Transferring native tokens</li>
+<li>Getting current balance</li>
+</ul>
+<p>In order to fulfill this, from a development perspective, we will need to:</p>
+<ul>
+<li>Interface with <strong>CKB</strong> using the <strong>SDK</strong></li>
+<li>Create a <strong>Wallet</strong> Class that abstracts functions away from  CKB</li>
+<li>Create some <strong>Helper functions</strong> to be able to make coding easier</li>
+<li><strong>Mine native tokens</strong> on Testnet and transfer them to your Wallet Class</li>
+<li>Create a <strong>Lock Script</strong> to verify Cell ownership</li>
+<li><strong>Construct new Cell Outputs</strong> to store the new state</li>
+<li><strong>Construct, sign and send</strong> new Transactions to be validated and committed to CKB blockchain</li>
+<li>Retrieve data about the transaction after it’s committed</li>
+</ul>
+<h1><a class="anchor" aria-hidden="true" id="21-ckb-instance"></a><a href="#21-ckb-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1 CKB Instance</h1>
+<p>The CKB Instance enables developers to interface with CKB-VM in a statically typed manner. On the command-line you can execute the following commands:</p>
+<pre><code class="hljs"><span class="hljs-literal">[<span class="hljs-number">1</span>]</span> pry(main)&gt; api = Ckb::<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Api</span>.</span></span><span class="hljs-keyword">new</span>
+<span class="hljs-literal">[<span class="hljs-number">2</span>]</span> pry(main)&gt; api.load_default_configuration!
+</code></pre>
+<p>CKB-VM is the blockchain implementation using RISC-V instruction set. From the CKB Instance, you are able to instantiate the interface between your code and the blockchain and perform specific functions.</p>
+<h1><a class="anchor" aria-hidden="true" id="22-create-a-wallet-class"></a><a href="#22-create-a-wallet-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2 Create a Wallet Class</h1>
+<p>The first step of managing native tokens is to have a place to store them. We do this by creating a wallet. This wallet will be used in to interface with CKB via the SDK.</p>
+<p>To create a wallet, open your editor and first create a <strong>Wallet Class</strong> called <strong>wallet.rb</strong> with an initializer that takes in 2 input arguments:</p>
+<p><strong>CKB Api</strong> - This is a reference to the CKB API SDK that was instantiated above
+private key - the private key represents the key of the user that owns’ the wallet</p>
+<p><strong>Private Key</strong> - This is the private key that is owned by the wallet holder.</p>
+<pre><code class="hljs"><span class="hljs-symbol">1 </span> class Wallet
+<span class="hljs-symbol">2 </span>        attr_reader :api
+<span class="hljs-symbol">3 </span>        attr_reader :privkey
+<span class="hljs-symbol">4 </span>   # initialize wallet with private <span class="hljs-keyword">key</span> <span class="hljs-keyword">and</span> api object
+<span class="hljs-symbol">5 </span>   <span class="hljs-keyword">def</span> initialize(api, privkey)
+<span class="hljs-symbol">6 </span>     unless privkey.instance_of?(String) &amp;&amp; privkey.size == <span class="hljs-number">32</span>
+<span class="hljs-symbol">7 </span>      raise ArgumentError, <span class="hljs-string">"invalid privkey!"</span>
+<span class="hljs-symbol">8 </span>     <span class="hljs-keyword">end</span>
+<span class="hljs-symbol">9 </span>    @api = api
+<span class="hljs-symbol">10 </span>    @privkey = privkey
+<span class="hljs-symbol">11 </span>  <span class="hljs-keyword">end</span>
+<span class="hljs-symbol">12 </span> <span class="hljs-keyword">end</span>
+</code></pre>
+<ul>
+<li><strong>Line 1</strong> - Defines the Wallet Class</li>
+<li><strong>Line 2-3</strong> - Define the private variables to store the CKB API object and private key of the user who owns the wallet</li>
+<li><strong>Line 5</strong> - Defines the constructor for the class</li>
+<li><strong>Lines 6-8</strong> - Checks to see if the private key being sent is a String data type and has a length of 32, otherwise, it throws an error</li>
+<li><strong>Lines 9-10</strong> - assigns the api and private key for storage</li>
+</ul>
+<p>Now in the command line you can execute the following. First we create a private key using the SecureRandom method and pass it into the wallet constructor along with the api we instantiated in 2.1</p>
+<pre><code class="hljs">[<span class="hljs-number">1</span>] pry(main)&gt; privkey = SecureRandom.hex(<span class="hljs-number">32</span>)
+=&gt; <span class="hljs-string">"&lt;omitted ..&gt;"</span>
+
+[<span class="hljs-number">2</span>] pry(main)&gt; my_wallet = C<span class="hljs-symbol">kb:</span><span class="hljs-symbol">:Wa</span>llet(api, privkey)
+</code></pre>
+<h1><a class="anchor" aria-hidden="true" id="23-retrieving-the-wallet-balance"></a><a href="#23-retrieving-the-wallet-balance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3 Retrieving the Wallet balance</h1>
+<p>Once we have the wallet object created, we can retrieve the balance of the wallet from looking at all the cells in the blockchain where the owner, designated by its public key, has unspent cells(Cell Outputs that have not been included in Cell Inputs of a subsequent transaction) .</p>
+<p>We must go through all the blocks in the chain and save all the cells that are owned by the public key of the wallet. We say a cell is unspent if the cell is live and has not been used as part of an input to a transaction.</p>
+<p><strong>Retrieving unspent cells</strong></p>
+<pre><code class="hljs">   <span class="hljs-number">1</span>  def get_unspent_cells
+   <span class="hljs-number">2</span>    to = api.get_tip_number
+   <span class="hljs-number">3</span>    results = []
+   <span class="hljs-number">4</span>    current_from = <span class="hljs-number">1</span>
+   <span class="hljs-number">5</span>    <span class="hljs-keyword">while</span> current_from &lt;= to
+   <span class="hljs-number">6</span>      current_to = [current_from + <span class="hljs-number">100</span>, to].min
+   <span class="hljs-number">7</span>      cells = api.get_cells_by_lock_hash(verify_script_hash, current_from, current_to)
+   <span class="hljs-number">8</span>      results.concat(cells)
+   <span class="hljs-number">9</span>      current_from = current_to + <span class="hljs-number">1</span>
+   <span class="hljs-number">10</span>   end
+   <span class="hljs-number">11</span>  results
+   <span class="hljs-number">12</span>  end
+</code></pre>
+<ul>
+<li><p><strong>Line 1</strong> - Defines the function to retrieve the unspent cells for a specific owner</p></li>
+<li><p><strong>Line 2</strong> -  [api.get_tip_number](Type Scripts) returns the block number with the most height on the* canonical chain, we need this to iterate over all blocks to find the cells  with the lock hash</p></li>
+<li><p><strong>Line 3</strong> - We will store the unspent cells in this variable</p></li>
+<li><p><strong>Lines 4</strong>  - This is a moving index that defines the current index to start iterating through blocks</p></li>
+<li><p><strong>Lines 5</strong>  -  We continue iterating over the blocks until we reach the highest block</p></li>
+<li><p><strong>Line 6</strong> - We set the local max block numbers by increasing blocks by 100 (this is arbitrary and can be changed based on performance evaluation)</p></li>
+<li><p><strong>Lines 7</strong> - We use the [api.get_cells_by_lock_hash](Type Scripts) method to retrieve cells between the block index range[current_from and current_to] and retrieve cells that a have a lock script hash of defined by verify_script_hash</p></li>
+<li><p><strong>Lines 8</strong> - For the cells returned, we add them to the list</p></li>
+<li><p><strong>Lines 9-10</strong> - We increment the block number to start the next iteration of block traversal</p></li>
+<li><p><strong>Lines 11-12</strong> -  Return the unspent cells referred to by the verify_script_hash</p></li>
+</ul>
+<p>Now we create a convenience method to sum all the capacities from the unspent cells:</p>
+<p>Retrieving the wallet balance</p>
+<pre><code class="hljs"><span class="hljs-symbol">1 </span><span class="hljs-keyword">def</span> get_balance
+<span class="hljs-symbol">2 </span>    get_unspent_cells.map { |c| c[:capacity] }.reduce(<span class="hljs-number">0</span>, &amp;:+)
+<span class="hljs-symbol">3 </span> <span class="hljs-keyword">end</span>
+</code></pre>
+<ul>
+<li><p><strong>Line 1</strong> - Defines get balance function with no parameters.</p></li>
+<li><p><strong>Line 2</strong> - This calls the function we created above, retrieves the capacity in each unspent cell and sums it up.</p></li>
+<li><p><strong>Lines 3</strong> - Ends the function.</p></li>
+</ul>
+<p>Now in the command line you can execute the following:</p>
+<pre><code class="hljs">[<span class="hljs-number">2</span>] pry(main)&gt; my_wallet.get_balance
+=&gt; <span class="hljs-number">0</span>
+</code></pre>
+<p>Notice that the balance of your wallet is 0. Do you know why? Of course! It’s because the owner, who has a public key, does not own any cells that are unspent on the network.</p>
+<h1><a class="anchor" aria-hidden="true" id="24-helper-functions"></a><a href="#24-helper-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.4 Helper Functions</h1>
+<p>We will create 3 helper function to allow our development to be easier moving forward:</p>
+<ul>
+<li>Retrieve the public key binary from the users private key</li>
+<li>Retrieve the hash of the public key binary using Blake2b hashing function</li>
+<li>Retrieve the Script data structure that we will use as input arguments to the Lock Script (don’t worry if this is a bit confusing right now, we will explain this in detail later:</li>
+</ul>
+<pre><code class="hljs">  <span class="hljs-number">1</span>  def pubkey_bin
+  <span class="hljs-number">2</span>    Ckb::Utils.extract_pubkey_bin(privkey)
+  <span class="hljs-number">3</span>   end
+
+  <span class="hljs-number">4</span>  def pubkey_hash_bin
+  <span class="hljs-number">5</span>    Ckb::Blake2b.digest(Ckb::Blake2b.digest(pubkey_bin))
+  <span class="hljs-number">6</span>  end
+
+  <span class="hljs-number">7</span> def verify_script_json_object
+  <span class="hljs-number">8</span>    {
+  <span class="hljs-number">9</span>      binary_hash: api.mruby_cell_hash,
+  <span class="hljs-number">10</span>      args: [
+  <span class="hljs-number">11</span>        Ckb::Utils.bin_to_hex(pubkey_hash_bin)
+  <span class="hljs-number">12</span>      ]
+  <span class="hljs-number">13</span>    }
+  <span class="hljs-number">14</span>  end
+</code></pre>
+<ul>
+<li><p><strong>Line 1-3</strong>  - Given the private key listed in privkey, we extract the public key in binary format.</p></li>
+<li><p><strong>Lines 4-6</strong>  - Given the public key in binary format, we create a hash of this twice to represent the hash of public key</p></li>
+<li><p><strong>Lines 7-14</strong> - We create and return a Script data structure that includes the hash of the mruby cell and the args to the lock script, in this case the public key hash in hexadecimal format.</p></li>
+</ul>
+<h1><a class="anchor" aria-hidden="true" id="25-putting-things-together"></a><a href="#25-putting-things-together" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.5 Putting things together</h1>
+<p>Your <strong>wallet.rb</strong> file should now look like this:</p>
+<pre><code class="hljs"><span class="hljs-symbol">1 </span>require_relative <span class="hljs-string">"../ckb-sdk-ruby/lib/ckb.rb"</span>
+<span class="hljs-symbol">2 </span>require_relative <span class="hljs-string">"../ckb-sdk-ruby/lib/api"</span>
+<span class="hljs-symbol">3 </span>require_relative <span class="hljs-string">"../ckb-sdk-ruby/lib/always_success_wallet"</span>
+<span class="hljs-symbol">4 </span>require_relative <span class="hljs-string">"../ckb-sdk-ruby/lib/utils"</span>
+<span class="hljs-symbol">5 </span>require_relative <span class="hljs-string">"../ckb-sdk-ruby/lib/version"</span>
+<span class="hljs-symbol">6 </span>require_relative <span class="hljs-string">"../ckb-sdk-ruby/lib/blake2b"</span>
+<span class="hljs-number">7</span>
+<span class="hljs-symbol">8 </span> LOCK_SCRIPT = File.<span class="hljs-keyword">read</span>(File.expand_path(<span class="hljs-string">"../../../scripts/sighash_all.rb"</span>, __FILE__))
+<span class="hljs-number">9</span>
+<span class="hljs-symbol">10 </span> class Wallet
+<span class="hljs-symbol">11 </span>       attr_reader :api
+<span class="hljs-symbol">12 </span>       attr_reader :privkey
+<span class="hljs-symbol">13 </span>   # initialize wallet with private <span class="hljs-keyword">key</span> <span class="hljs-keyword">and</span> api object
+<span class="hljs-symbol">14 </span>   <span class="hljs-keyword">def</span> initialize(api, privkey)
+<span class="hljs-symbol">15 </span>     unless privkey.instance_of?(String) &amp;&amp; privkey.size == <span class="hljs-number">32</span>
+<span class="hljs-symbol">16 </span>      raise ArgumentError, <span class="hljs-string">"invalid privkey!"</span>
+<span class="hljs-symbol">17 </span>     <span class="hljs-keyword">end</span>
+<span class="hljs-symbol">18 </span>    @api = api
+<span class="hljs-symbol">19 </span>    @privkey = privkey
+<span class="hljs-symbol">20 </span>  <span class="hljs-keyword">end</span>
+<span class="hljs-number">21</span>
+<span class="hljs-symbol">22 </span> <span class="hljs-keyword">def</span> get_unspent_cells
+<span class="hljs-symbol">23 </span>   <span class="hljs-keyword">to</span> = api.get_tip_number
+<span class="hljs-symbol">24 </span>   results = []
+<span class="hljs-symbol">25 </span>   current_from = <span class="hljs-number">1</span>
+<span class="hljs-symbol">26 </span>   <span class="hljs-keyword">while</span> current_from &lt;= <span class="hljs-keyword">to</span>
+<span class="hljs-symbol">27 </span>     current_to = [current_from + <span class="hljs-number">100</span>, <span class="hljs-keyword">to</span>].min
+<span class="hljs-symbol">28 </span>     cells = api.get_cells_by_lock_hash(verify_script_hash, current_from, current_to)
+<span class="hljs-symbol">29 </span>     results.concat(cells)
+<span class="hljs-symbol">30 </span>     current_from = current_to + <span class="hljs-number">1</span>
+<span class="hljs-symbol">31 </span>  <span class="hljs-keyword">end</span>
+<span class="hljs-symbol">32 </span> results
+<span class="hljs-symbol">33 </span> <span class="hljs-keyword">end</span>
+<span class="hljs-number">34</span>
+<span class="hljs-symbol">35 </span> <span class="hljs-keyword">def</span> get_balance
+<span class="hljs-symbol">36 </span>    get_unspent_cells.map { |c| c[:capacity] }.reduce(<span class="hljs-number">0</span>, &amp;:+)
+<span class="hljs-symbol">37 </span> <span class="hljs-keyword">end</span>
+<span class="hljs-number">38</span>
+<span class="hljs-symbol">39 </span> <span class="hljs-keyword">def</span> pubkey_bin
+<span class="hljs-symbol">40 </span>   Ckb::Utils.extract_pubkey_bin(privkey)
+<span class="hljs-symbol">41 </span>  <span class="hljs-keyword">end</span>
+<span class="hljs-number">42</span>
+<span class="hljs-symbol">43 </span> <span class="hljs-keyword">def</span> pubkey_hash_bin
+<span class="hljs-symbol">44 </span>   Ckb::Blake2b.digest(Ckb::Blake2b.digest(pubkey_bin))
+<span class="hljs-symbol">45 </span> <span class="hljs-keyword">end</span>
+<span class="hljs-number">46</span>
+<span class="hljs-symbol">47 </span><span class="hljs-keyword">def</span> verify_script_json_object
+<span class="hljs-symbol">48 </span>   {
+<span class="hljs-symbol">49 </span>     binary_hash: api.mruby_cell_hash,
+<span class="hljs-symbol">50 </span>     args: [
+<span class="hljs-symbol">51 </span>       Ckb::Utils.bin_to_hex(pubkey_hash_bin)
+<span class="hljs-symbol">52 </span>     ]
+<span class="hljs-symbol">53 </span>   }
+<span class="hljs-symbol">54 </span> <span class="hljs-keyword">end</span>
+<span class="hljs-symbol">55 </span> <span class="hljs-keyword">end</span>
+</code></pre>
+<p>Now that we have a basic wallet created and helper functions, we will begin to fill the wallet with some tokens.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/10/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/tutorials/step1"><span class="arrow-prev">← </span><span>1. Installing the Nervos CKB SDK</span></a><a class="docs-next button" href="/tutorials/step3"><span>3. Mining native tokens</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div></div></body></html>

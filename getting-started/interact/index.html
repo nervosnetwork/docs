@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Interacting with CKB · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Once you have successfully started &lt;a href=&quot;run-node&quot;&gt;running your own CKB node&lt;/a&gt; and the miner program with it, you can try to interact with your node now.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Interacting with CKB · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="&lt;p&gt;Once you have successfully started &lt;a href=&quot;run-node&quot;&gt;running your own CKB node&lt;/a&gt; and the miner program with it, you can try to interact with your node now.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.png" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/introduction/welcome" target="_self">Docs</a></li><li class=""><a href="/tutorials/intro-tutorial" target="_self">Tutorial</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/introduction/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/introduction/nervos-intro">What is Nervos?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Basic Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/basic-concepts/architecture">CKB Architecture</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/states-tokens">States and Tokens</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/node-mining">Node and Mining</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/getting-started/run-node">Run a CKB Node</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/getting-started/interact">Interacting with CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/mine">Mine CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/transfer">Transfer CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/testnet">CKB Testnet</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/dev-guide/scripts">Write Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/api/rpc">JSON-RPC Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/references/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/references/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/references/nervos-design">Nervos System Design</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/getting-started/interact.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Interacting with CKB</h1></header><article><div><span><p>Once you have successfully started <a href="run-node">running your own CKB node</a> and the miner program with it, you can try to interact with your node now.</p>
+<p>Here you can learn about how to do this with RPC commands for some basic operations. Also, we have provided a simple SDK made with Ruby, which has wallet functionalities for you to interact with your node easily.</p>
+<h2><a class="anchor" aria-hidden="true" id="use-rpc-command"></a><a href="#use-rpc-command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use RPC Command</h2>
+<p>You can interact with your CKB node client via RPC port. Here's an example showing how to get the header information of the tip block (the latest block).</p>
+<p>In a new shell (note that you should have the <code>ckb run</code> running):</p>
+<pre><code class="hljs css language-shell">curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
+</code></pre>
+<p>The response message will be:</p>
+<pre><code class="hljs css language-shell">{"jsonrpc":"2.0","result":{"difficulty":"0x100","hash":"0xabe655029aa05408ff0ae846ecc32b40b9edf703440627bcaeda3626cf07f8db","number":"0","parent_hash":"0x0000000000000000000000000000000000000000000000000000000000000000","proposals_root":"0x0000000000000000000000000000000000000000000000000000000000000000","seal":{"nonce":"0","proof":"0x00"},"timestamp":"0","transactions_root":"0x013d8bd8c65e22655cc907c146c8ca8eaa2cfef46bf5b5f08dc145d72bf65a60","uncles_count":0,"uncles_hash":"0x0000000000000000000000000000000000000000000000000000000000000000","version":0,"witnesses_root":"0x0000000000000000000000000000000000000000000000000000000000000000"},"id":1}
+</code></pre>
+<blockquote>
+<p>The RPC port can be set in your <a href="https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md">node configuration</a> file. By default, it uses port 8114.</p>
+</blockquote>
+<p>You can find all the RPC commands in the <a href="../api/rpc">RPC API document</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="use-ruby-sdk"></a><a href="#use-ruby-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use Ruby SDK</h2>
+<p>The current version of CKB client implementation does not have a very comprehensive Command Line Interface (CLI) ready to use. However, there's a simple Ruby SDK that can help you to work with your node.</p>
+<h3><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h3>
+<p>First please refer the <a href="https://www.ruby-lang.org/en/downloads/">Ruby official guidance</a> for installing the latest version of Ruby.</p>
+<p>Install bundler in case you have not installed it yet:</p>
+<pre><code class="hljs css language-shell">gem install bundler
+</code></pre>
+<p>Then clone the Ruby SDK repo:</p>
+<pre><code class="hljs css language-shell">git clone https://github.com/nervosnetwork/ckb-sdk-ruby &amp;&amp; cd ckb-sdk-ruby
+</code></pre>
+<p>Checkout to <code>master</code> branch:</p>
+<pre><code class="hljs css language-shell">git checkout master
+</code></pre>
+<p>Run bundler:</p>
+<pre><code class="hljs css language-shell">bundle
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="use-api"></a><a href="#use-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use API</h3>
+<p>Use this command to enter an interactive console:</p>
+<pre><code class="hljs css language-shell">bin/console
+</code></pre>
+<p>In the console, create an API instance:</p>
+<pre><code class="hljs css language-ruby">api = CKB::API.new
+</code></pre>
+<p>Then call RPC command with it:</p>
+<pre><code class="hljs css language-ruby">api.get_tip_header
+</code></pre>
+<blockquote>
+<p>In the <a href="https://github.com/nervosnetwork/ckb-sdk-ruby/blob/master/lib/ckb/api.rb">GitHub repo</a>, you can find all the available RPC API in this Ruby SDK.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="create-wallet"></a><a href="#create-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Wallet</h3>
+<p>To create a wallet, we first need to generate a private key:</p>
+<pre><code class="hljs css language-ruby">privkey = <span class="hljs-string">"0x"</span> + SecureRandom.hex(<span class="hljs-number">32</span>)
+</code></pre>
+<p>It will give you a private key like this:</p>
+<pre><code class="hljs css language-ruby">=&gt; <span class="hljs-string">"0x9379dda1d4a8791555b3460b1c9033982563c8563fc6a69ce28f67fa2ca77e14"</span>
+</code></pre>
+<p>You need to write down the returned privkey in order to use it later.</p>
+<blockquote>
+<p>Note that your private key is the only key to your tokens and assets. Losing private key or give it to others is as same as losing your tokens or give them away.</p>
+</blockquote>
+<p>Then create an API instance:</p>
+<pre><code class="hljs css language-ruby">api = CKB::API.new
+</code></pre>
+<p>Then we create a wallet with our private key:</p>
+<pre><code class="hljs css language-ruby">wallet = CKB::Wallet.from_hex(api, privkey)
+</code></pre>
+<p>You should see response message like this:</p>
+<pre><code class="hljs css language-ruby">=&gt; #&lt;CKB::Wallet:0x00007fce84a9a060
+ @api=#&lt;CKB::API:0x3fe74250b4a0&gt;,
+ @key=
+  #&lt;CKB::Key:0x00007fce84a9a858
+   @address=
+    #&lt;CKB::Address:0x00007fce84a9a088
+     @prefix="ckt",
+     @pubkey=
+      "0x03ed9721742f278a2bba09a9846ced887d93ca0241a23b309957917a11a8f11098"&gt;,
+   @privkey=
+    <span class="hljs-string">"0x92d583ca62524c1c48bb4c33892cf9c704b1c5013c4a7b6254218052e62daf52"</span>,
+   @pubkey=
+    <span class="hljs-string">"0x03ed9721742f278a2bba09a9846ced887d93ca0241a23b309957917a11a8f11098"</span>&gt;&gt;
+</code></pre>
+<p>We can check the address of our wallet:</p>
+<pre><code class="hljs css language-ruby">wallet.address
+</code></pre>
+<p>Response should be like:</p>
+<pre><code class="hljs css language-ruby">=&gt; <span class="hljs-string">"ckt1q9gry5zgq657y04q7yyf4whx93vtrufvhl6nxq087eg9kg"</span>
+</code></pre>
+<p>Now we have successfully created a wallet instance from the generated private key in the Ruby SDK environment. If you encountered any problems, don't worry, check out the <a href="../references/troubleshooting">trouble shooting document</a>.</p>
+<blockquote>
+<p>In the <a href="https://github.com/nervosnetwork/ckb-sdk-ruby/blob/master/lib/ckb/wallet.rb">GitHub repo</a>, you can find all the available Wallet API in this Ruby SDK.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="more-sdks"></a><a href="#more-sdks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More SDKs</h2>
+<p>SDKs in other languages are also available to use. Their documents will be supplemented soon. For now, please kindly refer the tests as usage examples.</p>
+<ul>
+<li><a href="https://github.com/nervosnetwork/ckb-sdk-ruby">Ruby SDK</a></li>
+<li><a href="https://github.com/nervosnetwork/ckb-sdk-js">Javascript SDK</a></li>
+<li><a href="https://github.com/nervosnetwork/ckb-sdk-java">Java SDK</a></li>
+<li><a href="https://github.com/nervosnetwork/ckb-sdk-swift">Swift SDK</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/8/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/run-node"><span class="arrow-prev">← </span><span>Run a CKB Node</span></a><a class="docs-next button" href="/getting-started/mine"><span>Mine CKB</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#use-rpc-command">Use RPC Command</a></li><li><a href="#use-ruby-sdk">Use Ruby SDK</a><ul class="toc-headings"><li><a href="#installation">Installation</a></li><li><a href="#use-api">Use API</a></li><li><a href="#create-wallet">Create Wallet</a></li></ul></li><li><a href="#more-sdks">More SDKs</a></li></ul></nav></div></div></body></html>

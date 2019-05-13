@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Nervos System Design · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Here is a collection of all the materials that can help you to understand the design philosophy of Nervos CKB in deep.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Nervos System Design · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="&lt;p&gt;Here is a collection of all the materials that can help you to understand the design philosophy of Nervos CKB in deep.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.png" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/introduction/welcome" target="_self">Docs</a></li><li class=""><a href="/tutorials/intro-tutorial" target="_self">Tutorial</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>References</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/introduction/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/introduction/nervos-intro">What is Nervos?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Basic Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/basic-concepts/architecture">CKB Architecture</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/states-tokens">States and Tokens</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/node-mining">Node and Mining</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/getting-started/run-node">Run a CKB Node</a></li><li class="navListItem"><a class="navItem" href="/getting-started/interact">Interacting with CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/mine">Mine CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/transfer">Transfer CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/testnet">CKB Testnet</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/dev-guide/scripts">Write Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/api/rpc">JSON-RPC Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/references/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/references/faq">FAQ</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/references/nervos-design">Nervos System Design</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/references/nervos-design.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Nervos System Design</h1></header><article><div><span><p>Here is a collection of all the materials that can help you to understand the design philosophy of Nervos CKB in deep.</p>
+<h2><a class="anchor" aria-hidden="true" id="papers"></a><a href="#papers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Papers</h2>
+<p>These are all the important papers the illustrate the design of CKB.</p>
+<ul>
+<li><a href="https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md">Nervos CKB White Paper</a></li>
+<li><a href="https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm">CKB-VM Paper</a></li>
+<li><a href="https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md">Token Economic Paper</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="rfcs"></a><a href="#rfcs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RFCs</h2>
+<p>Nervos is initiated to be a community driven project. It uses a request for comment process for the community to propose changes to the Nervos protocol. In <a href="https://github.com/nervosnetwork/rfcs">Nervos RFCs repo</a> you can find all the related information and the existing RFCs.</p>
+<h2><a class="anchor" aria-hidden="true" id="blogs"></a><a href="#blogs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blogs</h2>
+<p>Here you can find some blog posts that introduce features and designs of Nervos CKB.</p>
+<ul>
+<li><p>Token Economic Model</p>
+<ul>
+<li><a href="https://medium.com/nervosnetwork/smart-contract-platforms-have-to-be-store-of-value-323745fac0a5">Smart Contract Platforms Have to be Store of Value</a></li>
+</ul></li>
+<li><p>Programming Model - Cell Model</p>
+<ul>
+<li><a href="https://medium.com/nervosnetwork/first-class-asset-ff4feaf370c4">First-class Asset</a></li>
+</ul></li>
+<li><p>Virtual Machine - CKB-VM</p>
+<ul>
+<li><a href="https://medium.com/nervosnetwork/an-introduction-to-ckb-vm-9d95678a7757">An Introduction to Nervos CKB-VM</a></li>
+<li><a href="https://medium.com/nervosnetwork/ckb-vm-lite-paper-1d9b0dab57ba">CKB-VM Lite Paper</a></li>
+</ul></li>
+<li><p>Consensus Algorithm - NC-Max</p>
+<ul>
+<li><a href="https://medium.com/nervosnetwork/why-we-love-nakamoto-consensus-5467c035fc55">Why We Love Nakamoto Consensus Algorithm</a></li>
+<li><a href="https://medium.com/nervosnetwork/forget-about-the-tps-competition-df40a45fdad8">Forget about the TPS Competition</a></li>
+<li><a href="https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832">Breaking the Throughput Limit of Nakamoto Consensus</a></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="videos"></a><a href="#videos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Videos</h2>
+<p>Here are some videos that introduce CKB components and designs.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=5I24G-jNutw">A Deep Dive into Nervos' Layered Design</a></li>
+<li><a href="https://www.youtube.com/watch?v=qUGU5_o5Lo4">Nervos CKB-VM Walkthrough</a></li>
+<li><a href="https://www.youtube.com/watch?v=HSXzbgVRH_M">How to Safely Improve the Scalability while Keeping the Decentralized Nature of Bitcoin Network</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/5/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/references/faq"><span class="arrow-prev">← </span><span>FAQ</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#papers">Papers</a></li><li><a href="#rfcs">RFCs</a></li><li><a href="#blogs">Blogs</a></li><li><a href="#videos">Videos</a></li></ul></nav></div></div></body></html>

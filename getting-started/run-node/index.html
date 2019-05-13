@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Run a CKB Node · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;To get started on your journey with CKB, the first thing you can try is to run a CKB node yourself.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Run a CKB Node · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="&lt;p&gt;To get started on your journey with CKB, the first thing you can try is to run a CKB node yourself.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.png" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/introduction/welcome" target="_self">Docs</a></li><li class=""><a href="/tutorials/intro-tutorial" target="_self">Tutorial</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/introduction/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/introduction/nervos-intro">What is Nervos?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Basic Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/basic-concepts/architecture">CKB Architecture</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/states-tokens">States and Tokens</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/node-mining">Node and Mining</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/getting-started/run-node">Run a CKB Node</a></li><li class="navListItem"><a class="navItem" href="/getting-started/interact">Interacting with CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/mine">Mine CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/transfer">Transfer CKB</a></li><li class="navListItem"><a class="navItem" href="/getting-started/testnet">CKB Testnet</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/dev-guide/scripts">Write Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/api/rpc">JSON-RPC Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/references/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/references/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/references/nervos-design">Nervos System Design</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/getting-started/run-node.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Run a CKB Node</h1></header><article><div><span><p>To get started on your journey with CKB, the first thing you can try is to run a CKB node yourself.</p>
+<p>If you are not familiar with the concepts of node and mining yet, <a href="../basic-concepts/node-mining">here is a document</a> you can learn from.</p>
+<blockquote>
+<p>CKB testnet will be launched very soon. When it does, your node can join the testnet to be a part of it, or you can just interact with one of the existing testnet nodes without running your own node.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="get-ckb"></a><a href="#get-ckb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get CKB</h2>
+<p>To get the CKB client software, you can choose to download the released binary directly, or build it from the source code, or <a href="https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md">run it in a docker</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="download-from-release"></a><a href="#download-from-release" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Download from Release</h3>
+<h4><a class="anchor" aria-hidden="true" id="dependencies"></a><a href="#dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dependencies</h4>
+<p>For Linux user, you need to install <code>libssl</code> dynamic libraries before using the released binary.</p>
+<pre><code class="hljs css language-shell">sudo apt-get install -y libssl1.0.0
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="download"></a><a href="#download" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Download</h4>
+<p>You can find the CKB releases on <a href="https://github.com/nervosnetwork/ckb/releases">GitHub Releases</a>. Just choose the file to download according to your operating system. (You can also find nightly build versions from the releases of the <a href="https://github.com/ckb-builds/ckb-builds/releases">ckb-builds repo</a>)</p>
+<p>After it is downloaded, you need to move it to a <code>PATH</code> directory:</p>
+<pre><code class="hljs css language-shell">ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
+</code></pre>
+<p>Then check if it works with:</p>
+<pre><code class="hljs css language-shell">ckb --version
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="compile-from-source"></a><a href="#compile-from-source" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile from Source</h3>
+<h4><a class="anchor" aria-hidden="true" id="dependencies-1"></a><a href="#dependencies-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dependencies</h4>
+<p>CKB is developed with Rust. To get Rust and its tools, please refer to the <a href="https://www.rustup.rs/">rustup website</a> for how to install rustup.</p>
+<p>Then install dependencies with the following command:</p>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-1-tab-2" class="nav-link active" data-group="group_1" data-tab="tab-group-1-content-2">Ubuntu and Debian</div><div id="tab-group-1-tab-3" class="nav-link" data-group="group_1" data-tab="tab-group-1-content-3">Arch Linux</div><div id="tab-group-1-tab-4" class="nav-link" data-group="group_1" data-tab="tab-group-1-content-4">macOS</div></div><div class="tab-content"><div id="tab-group-1-content-2" class="tab-pane active" data-group="group_1" tabindex="-1"><div><span><pre><code class="hljs css language-shell">sudo apt-get install -y git gcc libc6-dev pkg-config libssl-dev libclang-dev clang<br /></code></pre>
+</span></div></div><div id="tab-group-1-content-3" class="tab-pane" data-group="group_1" tabindex="-1"><div><span><pre><code class="hljs css language-shell">sudo pacman -Sy git gcc pkgconf clang<br /></code></pre>
+</span></div></div><div id="tab-group-1-content-4" class="tab-pane" data-group="group_1" tabindex="-1"><div><span><pre><code class="hljs css language-shell">brew install autoconf libtool<br /></code></pre>
+</span></div></div></div></div>
+<h4><a class="anchor" aria-hidden="true" id="build"></a><a href="#build" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build</h4>
+<p>Here we build from the source code on <code>Master</code> branch, which is the latest release version. For other versions and branches, please refer <a href="https://github.com/nervosnetwork/ckb">CKB repo</a> for more information.</p>
+<p>Get the source code:</p>
+<pre><code class="hljs css language-shell">git clone https://github.com/nervosnetwork/ckb.git
+cd ckb
+git checkout master
+</code></pre>
+<p>Install Rust (currently, CKB is mainly tested with version <code>stable-1.34.1</code>):</p>
+<pre><code class="hljs css language-shell">rustup override set 1.34.1
+</code></pre>
+<p>Build it:</p>
+<pre><code class="hljs css language-shell">Make Build
+</code></pre>
+<p>You will find the built executable binary in <code>target/release/ckb</code> folder.</p>
+<p>Then you need to move it to a <code>PATH</code> directory:</p>
+<pre><code class="hljs css language-shell">ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
+</code></pre>
+<p>Then check if it works with:</p>
+<pre><code class="hljs css language-shell">ckb --version
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="use-docker"></a><a href="#use-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use Docker</h3>
+<p>You can also use Docker to run your CKB node. For the detailed guidance, please refer to <a href="https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md">this document on GitHub</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="run-ckb"></a><a href="#run-ckb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run CKB</h2>
+<p>First, you need to have a workshop folder to run CKB:</p>
+<pre><code class="hljs css language-shell">mkdir ckb-dev
+cd ckb-dev
+</code></pre>
+<p>Then generate default configuration files:</p>
+<pre><code class="hljs css language-shell">ckb init
+</code></pre>
+<blockquote>
+<p>See here for more details about how to <a href="https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md">configure CKB</a>.</p>
+</blockquote>
+<p>Then you can start the node:</p>
+<pre><code class="hljs css language-shell">ckb run
+</code></pre>
+<p>Now, you should be seeing logs like:</p>
+<pre><code class="hljs css language-shell">2019-05-02 12:13:14.552 +08:00 main INFO sentry  sentry is disabled
+2019-05-02 12:13:14.554 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
+2019-05-02 12:13:14.650 +08:00 main INFO main  chain genesis hash: 0xabe655029aa05408ff0ae846ecc32b40b9edf703440627bcaeda3626cf07f8db
+2019-05-02 12:13:14.650 +08:00 main INFO network  Generate random key
+2019-05-02 12:13:14.651 +08:00 main INFO network  write random secret key to "/Users/username/ckb-dev/data/network/secret_key"
+2019-05-02 12:13:14.657 +08:00 main INFO network  No peer in peer store, start seeding...
+2019-05-02 12:13:14.658 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmfABTZ46Ffdf6n5K9J1bVAktaKbQS5mUa5Cg4ZHGJBiMK
+2019-05-02 12:13:14.659 +08:00 tokio-runtime-worker-4 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
+</code></pre>
+<p>If you see the same response above, congratulations! You just started a CKB node!</p>
+<p>If not, don't worry, check out the <a href="../references/troubleshooting">trouble shooting document</a>.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/8/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/basic-concepts/node-mining"><span class="arrow-prev">← </span><span>Node and Mining</span></a><a class="docs-next button" href="/getting-started/interact"><span>Interacting with CKB</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#get-ckb">Get CKB</a><ul class="toc-headings"><li><a href="#download-from-release">Download from Release</a></li><li><a href="#compile-from-source">Compile from Source</a></li><li><a href="#use-docker">Use Docker</a></li></ul></li><li><a href="#run-ckb">Run CKB</a></li></ul></nav></div></div></body></html>
