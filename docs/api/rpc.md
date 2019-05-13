@@ -3,9 +3,11 @@ id: rpc
 title: JSON-RPC Commands
 ---
 
+<!-- Todo update rpc document -->
+
 > This RPC API document is compatible with `ckb 0.12.0-pre (rylai23 2019-05-12)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. 
 
-<!-- Todo update rpc document -->
+[Here](https://gist.github.com/Mine77/cb26558a993088a298a2bc1862bb9662) is a `paw` file you can use to import into Rest API softwares such as [Insomnia](https://www.insomnia.rest/)
 
 ## `_compute_transaction_hash`
 
