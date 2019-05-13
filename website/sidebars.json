@@ -1,0 +1,48 @@
+{
+    "docs": {
+        "Introduction": [
+            "introduction/welcome",
+            "introduction/nervos-intro"
+        ],
+        "Basic Concepts": [
+            "basic-concepts/architecture",
+            "basic-concepts/states-tokens",
+            "basic-concepts/node-mining"
+        ],
+        "Getting Started": [
+            "getting-started/run-node",
+            "getting-started/interact",
+            "getting-started/mine",
+            "getting-started/transfer",
+            "getting-started/testnet"
+        ],
+        "Development Guide": [
+            "dev-guide/scripts"
+        ],
+        "API": [
+            "api/rpc"
+        ],
+        "References": [
+            "references/troubleshooting",
+            "references/faq",
+            "references/nervos-design"
+        ]
+    },
+    "tutorial": {
+        "Tutorial": [
+            "tutorials/intro-tutorial",
+            "tutorials/step1",
+            "tutorials/step2",
+            "tutorials/step3",
+            "tutorials/step4",
+            "tutorials/step5",
+            "tutorials/step6",
+            "tutorials/step7",
+            "tutorials/step8",
+            "tutorials/step9",
+            "tutorials/step10",
+            "tutorials/step11",
+            "tutorials/step12"
+        ]
+    }
+}
