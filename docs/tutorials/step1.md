@@ -42,7 +42,7 @@ $ bundle
 
 Mruby contract is required to compile and execute Ruby code in the CKB-VM. This will allow you to create, compile and execute the Scripts that we will be creating later in the tutorial.
 
-Using the argv file you installed before at: /path/to/argv_source_entry . We can install the mruby contract here:
+Using the argv file you installed before at: /path/to/argv_source_entry . We can install the mruby contract [here](https://github.com/nervosnetwork/mruby-contracts):
 
 ```[1] pry(main)> asw = Ckb::AlwaysSuccessWallet.new(api)
 [2] pry(main)> conf = asw.install_mruby_cell!("/path/to/argv_source_entry")
@@ -77,7 +77,9 @@ Create a Gemfile and add the following dependencies to the Gemfile to be able to
 
 
 ```
-ruby "2.4.1"
+ruby "2.3.7"
+source 'https://rubygems.org'
+
 #gem 'ckb-sdk-ruby', github: 'nervosnetwork/ckb-sdk-ruby', require: 'ckb'
 gem 'minitest'
 #gem 'pry'

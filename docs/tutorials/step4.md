@@ -35,9 +35,7 @@ The cell to transfer tokens has no data in its data field, just capacity and the
 
 One cell can have a maximum capacity of 1000 Kb and a minimum capacity of Y such that 0 < X < 1000, where X is the capacity of a cell being created.
 
-In this example, we will set capacity = 500
-
-1 capacity = 500
+In this example, we will set cell capacity = 500.
 
 ## Cell Capacities as Change
 

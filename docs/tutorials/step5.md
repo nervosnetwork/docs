@@ -127,9 +127,10 @@ We will now define a function to generate a transaction:
 
 * __Lines 5 - 10__ - We construct a transaction object with the following values:
 
-	Version - The version number associated to the cell
-	Deps - We include the mruby outpoint reference cell to be able to compile and execute ruby code
+* __Version__ - The version number associated to the cell
 
-Signed inputs -  We sign all the inputs from line 2 and outputs of the transaction using the private key of this wallet.
+*	__Deps__ - We include the mruby outpoint reference cell to be able to compile and execute ruby code
 
-Outputs - These are the included output cells from line 4
+* __Signed inputs__ -  We sign all the inputs from line 2 and outputs of the transaction using the private key of this wallet.
+
+* __Outputs__ - These are the included output cells from line 4
