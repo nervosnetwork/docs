@@ -1,6 +1,8 @@
 
 # Nervos CKB Documentation Website
 
+[![CircleCI](https://circleci.com/gh/nervosnetwork/docs.svg?style=svg)](https://circleci.com/gh/nervosnetwork/docs)
+
 This is the Nervos CKB documentation website. 
 
 It is built with [docusaurus](https://docusaurus.io/).
