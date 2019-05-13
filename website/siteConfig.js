@@ -8,22 +8,14 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-// List of projects/orgs using your project for the users page.
-const users = [];
-
 const siteConfig = {
     title: 'Nervos CKB', // Title for your website.
     tagline: 'Nervos CKB Documentations',
-    url: 'https://docs.staging.nervos.org', // Your website URL
+    url: 'https://docs.nervos.org', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
     //   baseUrl: '/test-site/',
-
-    docsUrl: '',
-    
-    // enable scroll to top button
-    scrollToTop:true,
 
     // Used for publishing and more
     projectName: '',
@@ -31,6 +23,11 @@ const siteConfig = {
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
     //   organizationName: 'JoelMarcey'
+
+    docsUrl: '',
+    
+    // enable scroll to top button
+    scrollToTop:true,
 
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
@@ -61,9 +58,6 @@ const siteConfig = {
         '/js/code-block-buttons.js',
     ],
 
-    // Add custom style sheets here
-    stylesheets: ['/css/code-block-buttons.css'],
-
     // On page navigation for the current documentation page.
     onPageNav: 'separate',
     // No .html extensions for paths.
@@ -73,7 +67,7 @@ const siteConfig = {
     docsSideNavCollapsible: true,
 
     //base url for edit button
-    editUrl: 'https://github.com/nervosnetwork/docs/edit/develop/docs/',
+    editUrl: 'https://github.com/nervosnetwork/docs/edit/master/docs/',
 
     // Show documentation's last update time.
     enableUpdateTime: true,
