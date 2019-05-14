@@ -22,7 +22,7 @@ You can use Docker to run your CKB node. For the detailed guidance, please refer
 
 #### Dependencies
 
-For Linux user, you need to install `libssl` dynamic libraries before using the released binary.
+For Linux user (not necessary for MacOS user), you need to install `libssl` dynamic libraries before using the released binary.
 
 ```shell
 sudo apt-get install -y libssl1.0.0
@@ -32,7 +32,7 @@ sudo apt-get install -y libssl1.0.0
 
 <!-- Todo: change the version here -->
 
- You can find the CKB releases on [GitHub Releases](https://github.com/nervosnetwork/ckb/releases). Just choose the file to download according to your operating system. (For MacOS user, please choose `darwin`) You can also find nightly build versions from the releases of the [ckb-builds repo](https://github.com/ckb-builds/ckb-builds/releases)
+ Go to the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases). Then choose the file to download according to your operating system. (For MacOS user, please choose `darwin`) You can also find nightly build versions from the releases of the [ckb-builds repo](https://github.com/ckb-builds/ckb-builds/releases).
 
 After it is downloaded and unzipped, you need to copy the `ckb` binary file to a `PATH` directory. In the unzipped folder:
 ```shell
