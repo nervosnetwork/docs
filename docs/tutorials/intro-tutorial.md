@@ -8,7 +8,7 @@ title: Overview: How to transfer Nervos CKB native tokens
 
 This tutorial will teach you how to start building dApps with Nervos CKB. With the available SDK that is provided below, we will walk you through the major functions of the SDK and how to start transferring Nervos native tokens from one wallet to another.
 
-Before starting this tutorial, it is helpful to understand the key concepts of __Nervos CKB__ as outlined in the [Basic Concepts](https://github.com/nervosnetwork/ckb-sdk-ruby) in order to have the sufficient background required to complete this tutorial.
+Before starting this tutorial, it is helpful to understand the key concepts of __Nervos CKB__ as outlined in the [Basic Concepts](../basic-concepts/architecture) in order to have the sufficient background required to complete this tutorial.
 
 ## Native tokens on CKB
 The native token for Nervos CKB is CKBytes. 1 CKByte represents 1 byte of storage on the Nervos network.

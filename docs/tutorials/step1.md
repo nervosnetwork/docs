@@ -27,7 +27,7 @@ The following dependencies are required to be able to run and execute the SDK
 * libsodium library
 * Mruby Contract - this is required to compile and execute ruby c
 
-Follow the installation guide [here](../tutorials/step1) to install them locally.
+Follow the installation guide [here](https://github.com/nervosnetwork/ckb-sdk-ruby#prerequisites) to install them locally.
 
 # 1.3 Install SDK
 
@@ -35,7 +35,8 @@ Add this line to your application's Gemfile:
 
 `gem 'ckb-sdk-ruby', github: 'nervosnetwork/ckb-sdk-ruby', require: 'ckb'`
 
-``` $ cd ckb-sdk-ruby
+``` 
+$ cd ckb-sdk-ruby
 $ bundle
 ```
 # 1.4 Install mruby contract
