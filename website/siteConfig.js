@@ -39,7 +39,8 @@ const siteConfig = {
     headerLinks: [
         {doc:'introduction/welcome', label:'Docs'},
         {doc:'tutorials/intro-tutorial', label:'Tutorial'},
-        {href: 'https://github.com/nervosnetwork',label: 'GitHub',external: true}
+        {href: 'https://github.com/nervosnetwork',label: 'GitHub',external: true},
+        {search:true}
     ],
 
     /* path to images for header/footer */
@@ -63,6 +64,12 @@ const siteConfig = {
         'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
         '/js/code-block-buttons.js',
     ],
+
+    algolia: {
+        apiKey: 'ef49666369943baa0a93aedc37511318',
+        indexName: 'nervos-ckb',
+        algoliaOptions: {} // Optional, if provided by Algolia
+      },
 
     // On page navigation for the current documentation page.
     onPageNav: 'separate',
