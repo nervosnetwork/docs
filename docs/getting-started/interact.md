@@ -11,7 +11,7 @@ Here you can learn about how to do this with RPC commands for some basic operati
 ## Use RPC Command
 You can interact with your CKB node client via RPC port. Here's an example showing how to get the header information of the tip block (the latest block).
 
-In a new shell (note that you should have the `ckb run` running):
+Open a new shell, and use this command to get the tip block header (note that you should have the `ckb run` running):
 ```shell
 curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
 ```
@@ -61,9 +61,23 @@ gem install bundler
 ```
 
 #### Dependencies
-Following dependencies are needed for this SDK. Please click in to find the guidance for installing them:
-* [ruby-bitcoin-secp256k1](https://github.com/cryptape/ruby-bitcoin-secp256k1#ruby-bitcoin-secp256k1)
-* [rbnacl](https://github.com/crypto-rb/rbnacl#installation)
+[bitcoin-secp256k1](https://github.com/bitcoin-core/secp256k1) and [libsodium](https://download.libsodium.org/doc/) are needed as dependencies for this SDK.
+
+To install bitcoin-secp256k1 (you will need to enter your sudo password for the last step):
+```shell
+git clone https://github.com/bitcoin-core/secp256k1.git && \
+cd secp256k1 && \
+./autogen.sh && \
+./configure && \
+make && \
+sudo make install
+```
+
+To install libsodium, for MacOS user you can use brew (other user please refer to the [libsodium doc](https://download.libsodium.org/doc/)):
+```shell
+brew install libsodium
+```
+
 
 #### Install SDK
 Then clone the Ruby SDK repo:
@@ -96,7 +110,7 @@ $ bin/console
 ```
 </details>
 
-In the console, create an API instance:
+In the console, create an API instance (you need to keep the `ckb run` process alive for using API):
 ```ruby
 api = CKB::API.new
 ```

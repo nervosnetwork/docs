@@ -96,7 +96,7 @@ rustup override set 1.34.1
 
 Build it:
 ```shell
-Make Build
+make build
 ```
 
 You will find the built executable binary in `target/release/ckb` folder.
@@ -122,7 +122,7 @@ ckb 0.12.0-pre (rylai17 2019-05-07)
 </details>
 
 ## Run CKB
-First, you need to have a workshop folder to run CKB:
+First, you need to have a workshop folder to run CKB (you can create this folder anywhere you like. It does not need to be in the cloned folder.):
 ```shell
 mkdir ckb-dev && \
 cd ckb-dev
