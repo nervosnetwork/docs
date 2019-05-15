@@ -65,7 +65,7 @@
 <p>Here you can learn about how to do this with RPC commands for some basic operations. Also, we have provided a simple SDK made with Ruby, which has wallet functionalities for you to interact with your node easily.</p>
 <h2><a class="anchor" aria-hidden="true" id="use-rpc-command"></a><a href="#use-rpc-command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use RPC Command</h2>
 <p>You can interact with your CKB node client via RPC port. Here's an example showing how to get the header information of the tip block (the latest block).</p>
-<p>In a new shell (note that you should have the <code>ckb run</code> running):</p>
+<p>Open a new shell, and use this command to get the tip block header (note that you should have the <code>ckb run</code> running):</p>
 <pre><code class="hljs css language-shell">curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
 </code></pre>
 <p><details>
@@ -104,11 +104,18 @@
 <pre><code class="hljs css language-shell">gem install bundler
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="dependencies"></a><a href="#dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dependencies</h4>
-<p>Following dependencies are needed for this SDK. Please click in to find the guidance for installing them:</p>
-<ul>
-<li><a href="https://github.com/cryptape/ruby-bitcoin-secp256k1#ruby-bitcoin-secp256k1">ruby-bitcoin-secp256k1</a></li>
-<li><a href="https://github.com/crypto-rb/rbnacl#installation">rbnacl</a></li>
-</ul>
+<p><a href="https://github.com/bitcoin-core/secp256k1">bitcoin-secp256k1</a> and <a href="https://download.libsodium.org/doc/">libsodium</a> are needed as dependencies for this SDK.</p>
+<p>To install bitcoin-secp256k1 (you will need to enter your sudo password for the last step):</p>
+<pre><code class="hljs css language-shell">git clone https://github.com/bitcoin-core/secp256k1.git &amp;&amp; \
+cd secp256k1 &amp;&amp; \
+./autogen.sh &amp;&amp; \
+./configure &amp;&amp; \
+make &amp;&amp; \
+sudo make install
+</code></pre>
+<p>To install libsodium, for MacOS user you can use brew (other user please refer to the <a href="https://download.libsodium.org/doc/">libsodium doc</a>):</p>
+<pre><code class="hljs css language-shell">brew install libsodium
+</code></pre>
 <h4><a class="anchor" aria-hidden="true" id="install-sdk"></a><a href="#install-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install SDK</h4>
 <p>Then clone the Ruby SDK repo:</p>
 <pre><code class="hljs css language-shell">git clone https://github.com/nervosnetwork/ckb-sdk-ruby &amp;&amp; cd ckb-sdk-ruby
@@ -129,7 +136,7 @@
 [1] pry(main)&gt; 
 </code></pre>
 <p></details></p>
-<p>In the console, create an API instance:</p>
+<p>In the console, create an API instance (you need to keep the <code>ckb run</code> process alive for using API):</p>
 <pre><code class="hljs css language-ruby">api = CKB::API.new
 </code></pre>
 <p><details>
@@ -225,7 +232,7 @@
 <li><a href="https://github.com/nervosnetwork/ckb-sdk-java">Java SDK</a></li>
 <li><a href="https://github.com/nervosnetwork/ckb-sdk-swift">Swift SDK</a></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/13/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/run-node"><span class="arrow-prev">← </span><span>Run a CKB Node</span></a><a class="docs-next button" href="/getting-started/mine"><span>Mine CKB</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#use-rpc-command">Use RPC Command</a></li><li><a href="#use-ruby-sdk">Use Ruby SDK</a><ul class="toc-headings"><li><a href="#installation">Installation</a></li><li><a href="#use-api">Use API</a></li><li><a href="#create-wallet">Create Wallet</a></li></ul></li><li><a href="#more-sdks">More SDKs</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/15/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/run-node"><span class="arrow-prev">← </span><span>Run a CKB Node</span></a><a class="docs-next button" href="/getting-started/mine"><span>Mine CKB</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#use-rpc-command">Use RPC Command</a></li><li><a href="#use-ruby-sdk">Use Ruby SDK</a><ul class="toc-headings"><li><a href="#installation">Installation</a></li><li><a href="#use-api">Use API</a></li><li><a href="#create-wallet">Create Wallet</a></li></ul></li><li><a href="#more-sdks">More SDKs</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
