@@ -44,13 +44,13 @@ const siteConfig = {
     ],
 
     /* path to images for header/footer */
-    headerIcon: 'img/nervos-logo.png',
+    headerIcon: 'img/nervos-logo.svg',
     favicon: 'img/favicon.ico',
 
     /* Colors for website */
     colors: {
-        primaryColor: '#11356f',
-        secondaryColor: '#4bbc8e',
+        primaryColor: '#000000',
+        secondaryColor: '#3cc68a',
     },
 
     highlight: {
