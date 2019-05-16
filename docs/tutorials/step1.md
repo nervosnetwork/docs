@@ -68,38 +68,5 @@ To install libsodium, for MacOS user you can use brew (other user please refer t
 brew install libsodium
 ```
 
-# 1.4 Install mruby contract
-
-Mruby contract is required to compile and execute Ruby code in the CKB-VM. This will allow you to create, compile and execute the Scripts that we will be creating later in the tutorial.
-
-Using the argv file you installed before at: /path/to/argv_source_entry . We can install the mruby contract [here](https://github.com/nervosnetwork/mruby-contracts):
-
-```[1] pry(main)> asw = Ckb::AlwaysSuccessWallet.new(api)
-[2] pry(main)> conf = asw.install_mruby_cell!("/path/to/argv_source_entry")
-=> {:out_point=>{:tx_hash=>"0x20b849ffe67eb5872eca0d68fff1de193f07354ea903948ade6a3c170d89e282", :index=>0},
- :cell_hash=>"0x03dba46071a6702b39c1e626f469b4ed9460ed0ad92cf2e21456c34e1e2b04fd"}
-[3] pry(main)> asw.configuration_installed?(conf)
-=> false
-[3] pry(main)> # Wait a while till this becomes true
-[4] pry(main)> asw.configuration_installed?(conf)
-=> true
-```
-# Optional:
-
-Now you have the mruby contract installed in CKB, and the relevant configuration in conf structure. You can inform api object to use this configuration:
-
-```
-[1] pry(main)> api.set_and_save_default_configuration!(conf)
-```
-
-# 1.5 Successful Installation
-
-Validate your successful installation by doing the following in your __nervos_demos__ directory:
-
-``` $ cd nervos_demos
-$ bundle
-```
-
-
 
 Now that we have all of our dependencies for the project set up, we will start creating a __Wallet Class__ to hold our tokens.
