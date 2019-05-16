@@ -30,25 +30,21 @@ To aid in the creation of transaction inputs, we define a function to help us:
 ```
 1 def gather_inputs(capacity, min_capacity)
 2      raise "capacity cannot be less than #{min_capacity}" if capacity < min_capacity
-
 3      input_capacities = 0
 4      inputs = []
 5      pubkeys = []
 6      get_unspent_cells.each do |cell|
-7        input = {
-8          previous_output: cell[:out_point],
+7        input = Types::Input.new(
+8          previous_output: cell.out_point,
 9          args: [],
-10          valid_since: "0"
-11        }
+10          since: "0"
+11        )
 12        pubkeys << pubkey
 13        inputs << input
-14       input_capacities += cell[:capacity].to_i
-
+14       input_capacities += cell.capacity.to_i
 15        break if input_capacities >= capacity && (input_capacities - capacity) >= min_capacity
 16      end
-
- 17     raise "Not enough capacity!" if input_capacities < capacity
-
+17     raise "Not enough capacity!" if input_capacities < capacity
 18     OpenStruct.new(inputs: inputs, capacities: input_capacities, pubkeys: pubkeys)
 19    end
 ```
@@ -74,25 +70,23 @@ To aid in the creation of transaction inputs, we define a function to help us:
 Outputs to transactions are called Transaction Outputs. They are newly created Cells as seen in Step 4. In this example to send new native tokens to someone, we will have to create a new Cell, with new tokens, where the Lock Script can only be unlocked by the users wallet that you are sending the native tokens to
 
 ```
-1 def generate_outputs(input_capacities, capacity)
+1 def generate_outputs(target_address,input_capacities, capacity)
 2    
 3   outputs = [
-4        {
+4        Types::Output.new(
 5          capacity: capacity,
-6          data: "",
-7          lock: target_lock
-8        }
-9      ]
-10     # if input capacities greater than output, send
-11      # back input remaining capacities as change
-12     if input_capacities > capacity
-13        outputs << {
-14         capacity: input_capacities - capacity,
-15          data: "",
-16          lock: lock
-17        }
-18     end
-19   end
+6          lock: Types::Script.generate_lock(
+7            key.address.parse(target_address),
+8            api.system_script_code_hash
+9          )
+10        )
+11      ]
+12      if input_capacities > capacity
+13        outputs << Types::Output.new(
+14          capacity: input_capacities - capacity,
+15          lock: lock
+16        )
+17   end
 ```
 __Line 1__ - Defines a function name to generate the output cell for the wallet we are sending the tokens to
 
@@ -104,17 +98,20 @@ __Lines 12__ - 17 - If there is more capacity to in the input cells than the out
 
 We will now define a function to generate a transaction:
 ```
-1 def generate_tx(target_lock, capacity)
+1 def generate_tx(target_address, capacity)
 2     i = gather_inputs(capacity, MIN_CELL_CAPACITY)
 3      input_capacities = i.capacities
-4       outputs  = generate_outputs(input_capacities, capacity);
-5     {
+4       outputs  = generate_outputs(target_address,input_capacities, capacity);
+5       tx = Types::Transaction.new(
 6        version: 0,
-7       deps: [api.mruby_out_point],
-8        inputs: Ckb::Utils.sign_sighash_all_inputs(i.inputs, outputs, privkey),
+7        deps: [api.system_script_out_point],
+8        inputs: i.inputs,
 9        outputs: outputs
-10     }
-11    end
+10      )
+11      tx_hash = api.compute_transaction_hash(tx)
+12
+13      tx.sign(key, tx_hash)
+14    end
 ```
 
 * __Line 1__ - Defines the function name for generating a transaction it takes the lock script of the person you would like to send it to and the capacity to send.
