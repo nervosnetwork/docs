@@ -68,7 +68,7 @@ __Private Key__ - This is the private key that is owned by the wallet holder.
 Now in the command line you can execute the following. First we create a private key using the SecureRandom method and pass it into the wallet constructor along with the api we instantiated in 2.1
 
 ```
-[1] pry(main)> privkey = SecureRandom.hex(32)
+[1] pry(main)> privkey = CKB::Key.random_private_key
 => "<omitted ..>"
 
 [2] pry(main)> my_wallet = Ckb::Wallet(api, privkey)
