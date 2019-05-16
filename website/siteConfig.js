@@ -8,45 +8,49 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-// List of projects/orgs using your project for the users page.
-const users = [];
-
 const siteConfig = {
     title: 'Nervos CKB', // Title for your website.
     tagline: 'Nervos CKB Documentations',
-    url: 'https://docs.staging.nervos.org', // Your website URL
+    url: 'https://docs.nervos.org', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
     //   baseUrl: '/test-site/',
 
-    docsUrl: '',
-    
-    // enable scroll to top button
-    scrollToTop:true,
+    cname: 'docs.nervos.org',
 
     // Used for publishing and more
-    projectName: '',
+    projectName: 'docs',
     organizationName: 'Nervos',
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
     //   organizationName: 'JoelMarcey'
 
+    docsUrl: '',
+
+    //GA settings
+    gaTrackingId: 'UA-139882771-1',
+    gaGtag: true,
+    
+    // enable scroll to top button
+    scrollToTop:true,
+
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
         {doc:'introduction/welcome', label:'Docs'},
         {doc:'tutorials/intro-tutorial', label:'Tutorial'},
-        {href: 'https://github.com/nervosnetwork',label: 'GitHub',external: true}
+        {href: 'https://github.com/nervosnetwork',label: 'GitHub',external: true},
+        {search:true}
     ],
 
     /* path to images for header/footer */
-    headerIcon: 'img/nervos-logo.png',
+    headerIcon: 'img/nervos-logo.svg',
     favicon: 'img/favicon.ico',
 
     /* Colors for website */
     colors: {
-        primaryColor: '#11356f',
-        secondaryColor: '#4bbc8e',
+        primaryColor: '#000000',
+        secondaryColor: '#3cc68a',
     },
 
     highlight: {
@@ -61,8 +65,11 @@ const siteConfig = {
         '/js/code-block-buttons.js',
     ],
 
-    // Add custom style sheets here
-    stylesheets: ['/css/code-block-buttons.css'],
+    algolia: {
+        apiKey: 'ef49666369943baa0a93aedc37511318',
+        indexName: 'nervos-ckb',
+        algoliaOptions: {} // Optional, if provided by Algolia
+      },
 
     // On page navigation for the current documentation page.
     onPageNav: 'separate',
@@ -73,7 +80,7 @@ const siteConfig = {
     docsSideNavCollapsible: true,
 
     //base url for edit button
-    editUrl: 'https://github.com/nervosnetwork/docs/edit/develop/docs/',
+    editUrl: 'https://github.com/nervosnetwork/docs/edit/master/docs/',
 
     // Show documentation's last update time.
     enableUpdateTime: true,
