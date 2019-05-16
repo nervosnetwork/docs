@@ -26,7 +26,7 @@ In order to fulfill this, from a development perspective, we will need to:
 
 The CKB Instance enables developers to interface with CKB-VM in a statically typed manner. On the command-line you can execute the following commands:
 ```
-[1] pry(main)> api = Ckb::Api.new
+[1] pry(main)> api = CKB::API.new
 [2] pry(main)> api.load_default_configuration!
 ```
 CKB-VM is the blockchain implementation using RISC-V instruction set. From the CKB Instance, you are able to instantiate the interface between your code and the blockchain and perform specific functions.

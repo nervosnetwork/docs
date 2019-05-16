@@ -7,7 +7,18 @@ The __SDK__ is provided to aid in the development of generator code by providing
 
 The __mruby system cell__ is provided to enable us to deploy ruby scripts to cells and also exposes select APIs that allow us to do things like view all of the data in the transaction or trigger the script execution.
 
-# 1.1 Download the SDK
+
+# 1.1 Install Ruby
+
+First please refer the [Ruby official guidance](https://www.ruby-lang.org/en/downloads/) for installing the latest version of Ruby.
+
+Then, install bundler in case you have not installed it yet:
+
+```
+gem install bundler
+```
+
+# 1.2 Download the SDK
 
 In order to begin working with the SDK we need to clone it from the master branch.
 
@@ -19,9 +30,16 @@ Start a new project in a folder called __nervos_demos__:
 Clone the CKB Ruby SDK in this folder:
 
 `cd nervos_demos`
-`git clone --recursive https://github.com/nervosnetwork/ckb-sdk-ruby`
 
-# 1.2 Installing Dependencies
+`git clone --recursive https://github.com/nervosnetwork/ckb-sdk-ruby && cd ckb-sdk-ruby`
+
+Checkout to master branch:
+
+```
+git checkout master
+```
+
+# 1.3 Installing Dependencies
 
 The following dependencies are required to be able to run and execute the SDK
 
@@ -31,42 +49,26 @@ The following dependencies are required to be able to run and execute the SDK
 * libsodium library
 * Mruby Contract - this is required to compile and execute ruby c
 
-We will install them locally in the next couple steps.
+We can install them locally by following these steps:
 
-# 1.3 Create Gem File to manage Dependencies
+[bitcoin-secp256k1](https://github.com/bitcoin-core/secp256k1) and [libsodium](https://download.libsodium.org/doc/) are needed as dependencies for this SDK.
 
-
-Create a Gemfile and add the following dependencies to the Gemfile to be able to build the project.
-
-```
-ruby "2.3.7"
-source 'https://rubygems.org'
-
-#gem 'ckb-sdk-ruby', github: 'nervosnetwork/ckb-sdk-ruby', require: 'ckb'
-gem 'minitest'
-#gem 'pry'
-gem 'dotenv'
-
-# Until ckb-sdk gem is ready:
-
-#gem "bundler", "~> 2.0"
-gem "rake", "~> 10.0"
-gem "rspec", "~> 3.0"
-gem "rubocop", "~> 0.66.0"
-gem "pry", "~> 0.12.2"
-
-gem "rbnacl", "~> 6.0", ">= 6.0.1"
-gem "bitcoin-secp256k1", "~> 0.5.0"
+To install bitcoin-secp256k1 (you will need to enter your sudo password for the last step):
+```shell
+git clone https://github.com/bitcoin-core/secp256k1.git && \
+cd secp256k1 && \
+./autogen.sh && \
+./configure && \
+make && \
+sudo make install
 ```
 
-# 1.4 Install SDK
+To install libsodium, for MacOS user you can use brew (other user please refer to the [libsodium doc](https://download.libsodium.org/doc/)):
+```shell
+brew install libsodium
+```
 
-Add this line to your application's Gemfile:
-
-`gem 'ckb-sdk-ruby', github: 'nervosnetwork/ckb-sdk-ruby', require: 'ckb'`
-
-
-# 1.5 Install mruby contract
+# 1.4 Install mruby contract
 
 Mruby contract is required to compile and execute Ruby code in the CKB-VM. This will allow you to create, compile and execute the Scripts that we will be creating later in the tutorial.
 
@@ -90,7 +92,7 @@ Now you have the mruby contract installed in CKB, and the relevant configuration
 [1] pry(main)> api.set_and_save_default_configuration!(conf)
 ```
 
-# 1.6 Successful Installation
+# 1.5 Successful Installation
 
 Validate your successful installation by doing the following in your __nervos_demos__ directory:
 
