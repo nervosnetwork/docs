@@ -4,7 +4,7 @@ title: Welcome to Nervos
 sidebar_label: Welcome
 ---
 
-![nervos-log](assets/nervos-logo.png)
+![nervos-log](assets/nervos-logo-title.svg)
 
 Welcome to the Nervos community.
 
