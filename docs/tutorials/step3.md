@@ -17,6 +17,21 @@ ckb run
 ```
 
 You should see a new process running.
+<details>
+<summary>(click here to view response)</summary>
+```shell
+$ ckb run
+2019-05-13 17:55:16.057 +08:00 main INFO sentry  sentry is disabled
+2019-05-13 17:55:16.068 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
+2019-05-13 17:55:16.204 +08:00 main INFO main  chain genesis hash: 0x6448adcb403733f7976576eeffcdfa6929cd7af07d25fb925e0d9236dcc0c6f5
+2019-05-13 17:55:16.205 +08:00 main INFO network  Generate random key
+2019-05-13 17:55:16.205 +08:00 main INFO network  write random secret key to "/Users/haichaozhu/Desktop/ckb-dev/data/network/secret_key"
+2019-05-13 17:55:16.219 +08:00 main INFO network  No peer in peer store, start seeding...
+2019-05-13 17:55:16.221 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmRtEZwdSRPpTJHf4gPmwR8YobzpxwZDH4UtVPNJftwynh
+2019-05-13 17:55:16.223 +08:00 tokio-runtime-worker-0 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
+```
+</details>
+
 
 # 3.1 Test Method calls against CKB using RPC
 Find RPC port in the log output, the following command assumes 8114 is used:
@@ -44,7 +59,7 @@ After having the mining process executing after a  while, you can check how much
 
 # 3.4 Sending tokens to the Wallet
 
-We will use the AlwaysSuccessWallet to mine capacities and distribute to your wallet by executing the following commands:
+Once testnet is live, we can mine capacities from the testnet chain. While we wait, we can use the AlwaysSuccessWallet to mine capacities and distribute to your wallet by executing the following commands:
 
 ```
 [1] pry(main)> asw = Ckb::AlwaysSuccessWallet.new(api)

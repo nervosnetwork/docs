@@ -126,7 +126,7 @@ We will now define a function to generate a transaction:
 
 * __Version__ - The version number associated to the cell
 
-*	__Deps__ - We include the mruby outpoint reference cell to be able to compile and execute ruby code
+*	__Deps__ - We include the mruby outpoint system cell to be able to compile and execute ruby code.
 
 * __Signed inputs__ -  We sign all the inputs from line 2 and outputs of the transaction using the private key of this wallet.
 

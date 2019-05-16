@@ -123,7 +123,7 @@ __Retrieving unspent cells__
 
 Now we create a convenience method to sum all the capacities from the unspent cells:
 
-Retrieving the wallet balance
+## Retrieving the wallet balance
 ```
 1 def get_balance
 2     get_unspent_cells.map { |cell| cell[:capacity].to_i }.reduce(0, &:+)
@@ -186,7 +186,7 @@ Your __wallet.rb__ file should now look like this:
 4 require_relative "../ckb-sdk-ruby/lib/utils"
 5 require_relative "../ckb-sdk-ruby/lib/version"
 6 require_relative "../ckb-sdk-ruby/lib/blake2b"
-7
+7  module CKB
 8  LOCK_SCRIPT = File.read(File.expand_path("../../../scripts/sighash_all.rb", __FILE__))
 9
 10  class Wallet
@@ -238,6 +238,7 @@ Your __wallet.rb__ file should now look like this:
 56      )
 57    end
 58  end
+59 end
 ```
 
 
