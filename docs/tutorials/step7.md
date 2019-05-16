@@ -5,8 +5,8 @@ title: 7. Scripts
 
 Scripts in CKB are used to determine:
 
-* How cells can be used [(Type Scripts)](https://github.com/nervosnetwork/ckb-sdk-ruby)
-* Who has the right to spend them. [(Lock Scripts)](https://github.com/nervosnetwork/ckb-sdk-ruby)
+* How cells can be used [(Type Scripts)](/dev-guide/scripts)
+* Who has the right to spend them. [(Lock Scripts)](/dev-guide/scripts)
 
 For a more in-depth review of scripts please go [here](/dev-guide/scripts)
 
