@@ -5,7 +5,7 @@ title: 12. Finishing up
 
 __Find the code on Github__
 
-You can find the all the code in this tutorial here on Github: [Download the code on Github](https://www.github.com)
+You can find the all the code in this tutorial here on Github: [Download the code on Github](https://github.com/ragobech/nervos_demos)
 
 
 __What’s Next__

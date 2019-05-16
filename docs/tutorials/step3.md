@@ -4,7 +4,11 @@ title: 3. Mining native tokens
 ---
 
 We’ve been able to create an abstracted Wallet class, and retrieve the balance of the wallet, which is the unspent cells owned by a specific user’s public key.
-Now we will mine some tokens, transfer it into your wallet so that you can send it to another wallet.  You can follow the instructions [here](https://github.com/nervosnetwork/ckb/blob/develop/docs/quick-start.md) to install CKB if you haven't already.
+Now we will mine some tokens, transfer it into your wallet so that you can send it to another wallet.
+
+
+
+> You can follow the instructions [here](../getting-started/run-node) to install CKB if you haven't already.
 
 Start the node from the directory that ckb is installed from and execute:
 
