@@ -56,7 +56,11 @@ __Private Key__ - This is the private key that is owned by the wallet holder.
 9     @api = api
 10     @privkey = privkey
 11   end
-12  end
+12
+13    def self.from_hex(api, privkey_hex)
+14      self.new(api, CKB::Utils.hex_to_bin(privkey_hex))
+15    end
+16  end
 ```
 
 * __Line 1__ - Defines the Wallet Class
@@ -64,6 +68,8 @@ __Private Key__ - This is the private key that is owned by the wallet holder.
 * __Line 5__ - Defines the constructor for the class
 * __Lines 6-8__ - Checks to see if the private key being sent is a String data type and has a length of 32, otherwise, it throws an error
 * __Lines 9-10__ - assigns the api and private key for storage
+* __Lines 13-15__ - assigns the api and private key for storage
+
 
 Now in the command line you can execute the following. First we create a private key using the SecureRandom method and pass it into the wallet constructor along with the api we instantiated in 2.1
 
@@ -83,12 +89,12 @@ We must go through all the blocks in the chain and save all the cells that are o
 __Retrieving unspent cells__
 ```  
    1  def get_unspent_cells
-   2    to = api.get_tip_number
+   2    to = api.get_tip_block_number.to_i
    3    results = []
    4    current_from = 1
    5    while current_from <= to
    6      current_to = [current_from + 100, to].min
-   7      cells = api.get_cells_by_lock_hash(verify_script_hash, current_from, current_to)
+   7      cells = api.get_cells_by_lock_hash(lock_hash, current_from.to_s, current_to.to_s)
    8      results.concat(cells)
    9      current_from = current_to + 1
    10   end
@@ -120,7 +126,7 @@ Now we create a convenience method to sum all the capacities from the unspent ce
 Retrieving the wallet balance
 ```
 1 def get_balance
-2     get_unspent_cells.map { |c| c[:capacity] }.reduce(0, &:+)
+2     get_unspent_cells.map { |cell| cell[:capacity].to_i }.reduce(0, &:+)
 3  end
 ```
 * __Line 1__ - Defines get balance function with no parameters.
