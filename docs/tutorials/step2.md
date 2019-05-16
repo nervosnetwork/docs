@@ -71,7 +71,7 @@ Now in the command line you can execute the following. First we create a private
 [1] pry(main)> privkey = CKB::Key.random_private_key
 => "<omitted ..>"
 
-[2] pry(main)> my_wallet = Ckb::Wallet(api, privkey)
+[2] pry(main)> my_wallet = CKB::Wallet.from_hex(api, privkey)
 ```
 
 # 2.3 Retrieving the Wallet balance
