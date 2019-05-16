@@ -27,7 +27,6 @@ In order to fulfill this, from a development perspective, we will need to:
 The CKB Instance enables developers to interface with CKB-VM in a statically typed manner. On the command-line you can execute the following commands:
 ```
 [1] pry(main)> api = CKB::API.new
-[2] pry(main)> api.load_default_configuration!
 ```
 CKB-VM is the blockchain implementation using RISC-V instruction set. From the CKB Instance, you are able to instantiate the interface between your code and the blockchain and perform specific functions.
 
@@ -103,7 +102,7 @@ __Retrieving unspent cells__
 ```
 * __Line 1__ - Defines the function to retrieve the unspent cells for a specific owner
 
-* __Line 2__ -  [api.get_tip_block_number.to_i](Type Scripts) returns the block number with the most height on the* canonical chain, we need this to iterate over all blocks to find the cells  with the lock hash
+* __Line 2__ -  [api.get_tip_block_number](/api/rpc#get_tip_block_number) returns the block number with the most height on the* canonical chain, we need this to iterate over all blocks to find the cells  with the lock hash
 
 * __Line 3__ - We will store the unspent cells in this variable
 
@@ -113,7 +112,7 @@ __Retrieving unspent cells__
 
 * __Line 6__ - We set the local max block numbers by increasing blocks by 100 (this is arbitrary and can be changed based on performance evaluation)
 
-* __Lines 7__ - We use the [api.get_cells_by_lock_hash](Type Scripts) method to retrieve cells between the block index range[current_from and current_to] and retrieve cells that a have a lock script hash of defined by verify_script_hash
+* __Lines 7__ - We use the [api.get_cells_by_lock_hash](/api/rpc#get_cells_by_lock_hash) method to retrieve cells between the block index range[current_from and current_to] and retrieve cells that a have a lock script hash of defined by verify_script_hash
 
 * __Lines 8__ - For the cells returned, we add them to the list
 
@@ -180,65 +179,59 @@ We will create 3 helper function to allow our development to be easier moving fo
 Your __wallet.rb__ file should now look like this:
 
 ```
-1 require_relative "../ckb-sdk-ruby/lib/ckb.rb"
-2 require_relative "../ckb-sdk-ruby/lib/api"
-3 require_relative "../ckb-sdk-ruby/lib/always_success_wallet"
-4 require_relative "../ckb-sdk-ruby/lib/utils"
-5 require_relative "../ckb-sdk-ruby/lib/version"
-6 require_relative "../ckb-sdk-ruby/lib/blake2b"
-7  module CKB
-8  LOCK_SCRIPT = File.read(File.expand_path("../../../scripts/sighash_all.rb", __FILE__))
-9
-10  class Wallet
-11    attr_reader :api
-12    # privkey is a bin string
-13    attr_reader :key
-14
-15    # @param api [CKB::API]
-16    # @param key [CKB::Key]
-17    def initialize(api, key)
-18      @api = api
-19     @key = key
-20   end
-21
-22    def self.from_hex(api, privkey)
-23      new(api, Key.new(privkey))
-24    end
-25
-26  def get_unspent_cells
-27    to = api.get_tip_block_number.to_i
-28    results = []
-29    current_from = 1
-30    while current_from <= to
-31      current_to = [current_from + 100, to].min
-32      cells = api.get_cells_by_lock_hash(lock_hash, current_from.to_s, current_to.to_s)
-33      results.concat(cells)
-34      current_from = current_to + 1
+1  
+2  module CKB
+3
+4  class Wallet
+5    attr_reader :api
+6    # privkey is a bin string
+7    attr_reader :key
+8
+9    # @param api [CKB::API]
+10    # @param key [CKB::Key]
+11    def initialize(api, key)
+12      @api = api
+13     @key = key
+14   end
+15
+16    def self.from_hex(api, privkey)
+17      new(api, Key.new(privkey))
+18    end
+19
+20  def get_unspent_cells
+21    to = api.get_tip_block_number.to_i
+22    results = []
+23    current_from = 1
+24    while current_from <= to
+25      current_to = [current_from + 100, to].min
+26      cells = api.get_cells_by_lock_hash(lock_hash, current_from.to_s, current_to.to_s)
+27      results.concat(cells)
+28      current_from = current_to + 1
+29   end
+30  results
+31    end
+32
+33  def get_balance
+34     get_unspent_cells.map { |cell| cell[:capacity].to_i }.reduce(0, &:+)
 35   end
-36  results
-37    end
-38
-39  def get_balance
-40     get_unspent_cells.map { |cell| cell[:capacity].to_i }.reduce(0, &:+)
-41   end
-42
-43    def pubkey
-44      @key.pubkey
-45    end
-46
-47    def lock_hash
-48      @lock_hash ||= lock.to_hash
-49    end
-50
-51    # @return [CKB::Types::Script]
-52    def lock
-53      Types::Script.generate_lock(
-54        @key.address.blake160,
-55        api.system_script_code_hash
-56      )
-57    end
-58  end
-59 end
+36
+37    def pubkey
+38      @key.pubkey
+39    end
+40
+41    def lock_hash
+42      @lock_hash ||= lock.to_hash
+43    end
+44
+45    # @return [CKB::Types::Script]
+46    def lock
+47      Types::Script.generate_lock(
+48        @key.address.blake160,
+49        api.system_script_code_hash
+50      )
+51    end
+52  end
+53 end
 ```
 
 

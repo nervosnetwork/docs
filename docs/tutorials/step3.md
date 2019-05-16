@@ -40,7 +40,23 @@ curl -d '{"id": 1, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' \
   -H 'content-type:application/json' 'http://localhost:8114'
 ```
 
-# 3.2 Run the Miner
+# 3.2 Miner Configuration
+
+Now you can use this command to generate the block assembler config parameters:
+```ruby
+puts wallet.block_assembler_config
+```
+
+<details>
+<summary>(click here to view response)</summary>
+```ruby
+[block_assembler]
+code_hash = "0xfe1cf5a297023a3c5282ecd9b0ca88d6736424d75fbe4dcf47a7c8b303e4d339"
+args = [[56, 50, 52, 57, 53, 49, 51, 98, 51, 57, 56, 98, 99, 50, 51, 98, 98, 49, 50, 48, 99, 102, 102, 55, 99, 55, 97, 99, 51, 51, 54, 57, 102, 100, 50, 49, 52, 52, 54, 98, 55, 49, 57, 48, 97, 56, 98, 101, 52, 54, 98, 48, 97, 53, 53, 98, 57, 53, 52, 97, 52, 97, 97, 56]]
+```
+</details>
+
+# 3.3 Run the Miner
 By running the miner process, CKB-VM obtains a block template to mine and rewards the miner with a block reward. To run the miner process, in a new shell prompt, navigate to the CKB directory and execute the following command:
 
 ```
@@ -49,30 +65,10 @@ ckb miner
 
 To be able to obtain capacity, one must successfully mine blocks and obtain a block reward. Rewards are provided through block rewards and transaction fees.
 
-# 3.3 Mining Progress
+# 3.4 Mining Progress
 
 After having the mining process executing after a  while, you can check how much capacity you have mined by performing the following command on your wallet:
 
 ```[2] pry(main)> my_wallet.get_balance
 => 100000
-```
-
-# 3.4 Sending tokens to the Wallet
-
-Once testnet is live, we can mine capacities from the testnet chain. While we wait, we can use the AlwaysSuccessWallet to mine capacities and distribute to your wallet by executing the following commands:
-
-```
-[1] pry(main)> asw = Ckb::AlwaysSuccessWallet.new(api)
-[2] pry(main)> conf = asw.install_mruby_cell!("/path/to/argv_source_entry")
-=> {:out_point=>{:tx_hash=>"0x20b849ffe67eb5872eca0d68fff1de193f07354ea903948ade6a3c170d89e282", :index=>0},
- :cell_hash=>"0x03dba46071a6702b39c1e626f469b4ed9460ed0ad92cf2e21456c34e1e2b04fd"}
-[3] pry(main)> asw.configuration_installed?(conf)
-=> false
-[3] pry(main)> # Wait a while till this becomes true
-[4] pry(main)> asw.configuration_installed?(conf)
-=> true
-[5] pry(main)> asw.send_capacity(my_wallet.lock, 300000 * 10 ** 8)
-[6] pry(main)> # wait a while
-[7] pry(main)> my_wallet.get_balance
-=> 30000000000000
 ```
