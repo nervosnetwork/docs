@@ -89,9 +89,9 @@ cd ckb && \
 git checkout master
 ```
 
-Install Rust (currently, CKB is mainly tested with version `stable-1.34.1`):
+Install Rust (currently, CKB is mainly tested with version `stable-1.34.2`):
 ```shell
-rustup override set 1.34.1
+rustup install 1.34.2
 ```
 
 Build it:

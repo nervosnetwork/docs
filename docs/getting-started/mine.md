@@ -27,10 +27,10 @@ puts wallet.block_assembler_config
 
 <details>
 <summary>(click here to view response)</summary>
-```ruby
+```toml
 [block_assembler]
-code_hash = "0xfe1cf5a297023a3c5282ecd9b0ca88d6736424d75fbe4dcf47a7c8b303e4d339"
-args = [[56, 50, 52, 57, 53, 49, 51, 98, 51, 57, 56, 98, 99, 50, 51, 98, 98, 49, 50, 48, 99, 102, 102, 55, 99, 55, 97, 99, 51, 51, 54, 57, 102, 100, 50, 49, 52, 52, 54, 98, 55, 49, 57, 48, 97, 56, 98, 101, 52, 54, 98, 48, 97, 53, 53, 98, 57, 53, 52, 97, 52, 97, 97, 56]]
+code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
+args = ["0x03ae708e284f6a53d12da45f7fe5e8c232c353c2"]
 ```
 </details>
 
@@ -39,11 +39,14 @@ To set the miner wallet, in the `ckb` work directory, find `ckb.toml` file and u
 
 <details>
 <summary>(click here to view the existing default parameter)</summary>
-```ruby
+```toml
+# This config is derived using 0x5c2514fb16b83259d3326a0acf05901c15a87dc46239b77b0a501cd58198dca0
+# as private key. If you want to mine CKB, please make sure to create your own
+# private key and change the config here, otherwise your CKB might be stolen by
+# someone else.
 [block_assembler]
-# value is set as always success binary hash
-code_hash = "0x0000000000000000000000000000000000000000000000000000000000000001"
-args = []
+code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
+args = ["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"]
 ```
 </details>
 
