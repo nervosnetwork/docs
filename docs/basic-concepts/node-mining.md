@@ -18,6 +18,6 @@ Miners are the kinds of nodes that construct new blocks with a pack of transacti
 
 In CKB, miners need to compete with each other on a game called Proof-of-Work. After a miner constructed a block, it needs to calculate the hash of the block (with a nonce) to get a hash that is smaller than a specific target number (difficulty). Whoever successfully figured out the correct hash will have the right to broadcast the block to the whole network. Other nodes will receive the block, and verify it, and start to mine a new block on it.
 
-> The hash function for CKB mining has not been decided yet.
+> The hash function for mining CKB mainnet has not been decided yet. For testnet, [Cuckoo](https://github.com/nervosnetwork/ckb/wiki/PoW-Engines) is used as the PoW function.
 
 
