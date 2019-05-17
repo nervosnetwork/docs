@@ -7,17 +7,20 @@ To get started on your journey with CKB, the first thing you can try is to run a
 
 If you are not familiar with the concepts of node and mining yet, [here is a document](../basic-concepts/node-mining) you can learn from.
 
-> CKB testnet will be launched very soon. When it does, your node can join the testnet to be a part of it, or you can just interact with one of the existing testnet nodes without running your own node.
+## Get CKB Client
 
-## Get CKB
+To get the CKB client software, you can choose to download the released binary directly, or build it from the source code.
 
-To get the CKB client software, you can choose to download the released binary directly, or build it from the source code, or [run it in a docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
+### Use Docker
+You can also use Docker to run your CKB node. For the detailed guidance, please refer to [this document on GitHub](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md). 
+
+> For Windows user, we recommend you to use Docker for running CKB node.
 
 ### Download from Release
 
 #### Dependencies
 
-For Linux user, you need to install `libssl` dynamic libraries before using the released binary.
+For Linux user (not necessary for MacOS user), you need to install `libssl` dynamic libraries before using the released binary.
 
 ```shell
 sudo apt-get install -y libssl1.0.0
@@ -25,17 +28,61 @@ sudo apt-get install -y libssl1.0.0
 
 #### Download
 
- You can find the CKB releases on [GitHub Releases](https://github.com/nervosnetwork/ckb/releases). Just choose the file to download according to your operating system. (You can also find nightly build versions from the releases of the [ckb-builds repo](https://github.com/ckb-builds/ckb-builds/releases))
+Download the binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases):
 
-After it is downloaded, you need to move it to a `PATH` directory:
+<!-- Todo: change the release version here -->
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--macOS-->
 ```shell
-ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
+wget https://github.com/nervosnetwork/ckb/releases/download/rylai30/ckb_rylai30_darwin_amd64.zip
+```
+<!--Linux-->
+```shell
+wget https://github.com/nervosnetwork/ckb/releases/download/rylai30/ckb_rylai30_linux_amd64.tar.gz
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+> You can also find nightly build versions from the releases of the [ckb-builds repo](https://github.com/ckb-builds/ckb-builds/releases)
+
+Then uncompress the file:
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--macOS-->
+```shell
+unzip ckb_rylai30_darwin_amd64.zip && \
+cd ckb_rylai30_darwin_amd64
+```
+<!--Linux-->
+```shell
+tar -xzvf ckb_rylai30_linux_amd64.tar.gz && \
+cd ckb_rylai30_linux_amd64
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+After it is downloaded and unzipped, you need to copy the `ckb` binary file to a `PATH` directory. In the unzipped folder:
+```shell
+sudo ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
 ```shell
 ckb --version
 ```
+
+<!-- Todo: change the response here -->
+
+<details>
+<summary>(click here to view response)</summary>
+```shell
+$ ckb --version
+ckb 0.12.0-pre (rylai17 2019-05-07)
+```
+</details>
+
+If you see the response above, you have successfully installed CKB. You can try to [start a CKB node](#run-ckb) now.
 
 ### Compile from Source
 
@@ -62,71 +109,109 @@ brew install autoconf libtool
 
 
 #### Build
-Here we build from the source code on `Master` branch, which is the latest release version. For other versions and branches, please refer [CKB repo](https://github.com/nervosnetwork/ckb) for more information.
+Here we build from the source code on `master` branch, which is the latest release version. For other versions and branches, please check the [CKB repo](https://github.com/nervosnetwork/ckb) for more information.
 
 Get the source code:
 
 ```shell
-git clone https://github.com/nervosnetwork/ckb.git
-cd ckb
+git clone https://github.com/nervosnetwork/ckb.git && \
+cd ckb && \
 git checkout master
-```
-
-Install Rust (currently, CKB is mainly tested with version `stable-1.34.1`):
-```shell
-rustup override set 1.34.1
 ```
 
 Build it:
 ```shell
-Make Build
+make build
 ```
 
-You will find the built executable binary in `target/release/ckb` folder.
+You will find the generated executable binary in `target/release/ckb` folder.
 
 Then you need to move it to a `PATH` directory:
 ```shell
-ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
+sudo ln -snf "$(pwd)/target/release/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
 ```shell
 ckb --version
 ```
-### Use Docker
-You can also use Docker to run your CKB node. For the detailed guidance, please refer to [this document on GitHub](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
+
+<!-- Todo: change the response here -->
+
+<details>
+<summary>(click here to view response)</summary>
+```shell
+$ ckb --version
+ckb 0.12.0-pre (rylai17 2019-05-07)
+```
+</details>
 
 ## Run CKB
-First, you need to have a workshop folder to run CKB:
+Here you will learn about how to start a CKB node.
+
+### Configurations
+You can generate the default configuration files the following command. It will make a workshop folder called `ckb-dev` and generate default configuration files in it.
 ```shell
-mkdir ckb-dev
+ckb init -C ckb-dev && \
 cd ckb-dev
 ```
 
-Then generate default configuration files:
+<details>
+<summary>(click here to view response)</summary>
 ```shell
-ckb init
+$ ckb init -C ckb-dev && \
+cd ckb-dev
+Initialized CKB directory in /Users/username/code/ckb-dev
+export ckb.toml
+export ckb-miner.toml
+```
+</details>
+
+If you want to start a node that can connect to the testnet, you can specify the `testnet` paramter:
+```shell
+ckb init -C ckb-testnet --spec testnet && \
+cd ckb-testnet
 ```
 
-> See here for more details about how to [configure CKB](https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md).
+<details>
+<summary>(click here to view response)</summary>
+```shell
+$ ckb init -C ckb-testnet --spec testnet && \ 
+cd ckb-testnet
+Initialized CKB directory in /Users/username/code/ckb-testnet
+export ckb.toml
+export ckb-miner.toml
+```
+</details>
 
-Then you can start the node:
+In `ckb.toml`, you will find the information of bootnodes. These nodes will serve as the seed nodes to help you discover other CKB nodes in the CKB network.
+
+> On github there is document that talks about [how to configure CKB](https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md) in details.
+
+### Start a Node
+
+Now you can start the CKB client to run a node:
 ```shell
 ckb run
 ```
 
-Now, you should be seeing logs like:
+<details>
+<summary>(click here to view response)</summary>
 ```shell
-2019-05-02 12:13:14.552 +08:00 main INFO sentry  sentry is disabled
-2019-05-02 12:13:14.554 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
-2019-05-02 12:13:14.650 +08:00 main INFO main  chain genesis hash: 0xabe655029aa05408ff0ae846ecc32b40b9edf703440627bcaeda3626cf07f8db
-2019-05-02 12:13:14.650 +08:00 main INFO network  Generate random key
-2019-05-02 12:13:14.651 +08:00 main INFO network  write random secret key to "/Users/username/ckb-dev/data/network/secret_key"
-2019-05-02 12:13:14.657 +08:00 main INFO network  No peer in peer store, start seeding...
-2019-05-02 12:13:14.658 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmfABTZ46Ffdf6n5K9J1bVAktaKbQS5mUa5Cg4ZHGJBiMK
-2019-05-02 12:13:14.659 +08:00 tokio-runtime-worker-4 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
+$ ckb run
+2019-05-13 17:55:16.057 +08:00 main INFO sentry  sentry is disabled
+2019-05-13 17:55:16.068 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
+2019-05-13 17:55:16.204 +08:00 main INFO main  chain genesis hash: 0x6448adcb403733f7976576eeffcdfa6929cd7af07d25fb925e0d9236dcc0c6f5
+2019-05-13 17:55:16.205 +08:00 main INFO network  Generate random key
+2019-05-13 17:55:16.205 +08:00 main INFO network  write random secret key to "/Users/username/Desktop/ckb-dev/data/network/secret_key"
+2019-05-13 17:55:16.219 +08:00 main INFO network  No peer in peer store, start seeding...
+2019-05-13 17:55:16.221 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmRtEZwdSRPpTJHf4gPmwR8YobzpxwZDH4UtVPNJftwynh
+2019-05-13 17:55:16.223 +08:00 tokio-runtime-worker-0 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
 ```
+</details>
 
-If you see the same response above, congratulations! You just started a CKB node!
+Congratulations! You just started a CKB node!
 
-If not, don't worry, check out the [trouble shooting document](../references/troubleshooting).
+If you generated a configuration file with `testnet` parameter, you should see your node synchronizing blocks now.
+
+If you find any error messages, don't worry, check out the [trouble shooting document](../references/troubleshooting).
