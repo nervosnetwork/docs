@@ -18,7 +18,7 @@ Both `lock` script and `type` script are [`script`  data structure](https://gith
 
 The actual script code MUST NOT be put in the `script` structure directly. Instead, it should always be stored in the `data` field of a `cell`.
 
-To use the script code in a [transaction](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#transaction), the `cell` that stores the script code should be used as a `deps` cell in the transaction. Upon the transaction verification, the CKB client will search the `deps` cell of this transaction for a cell whose `data` filed has the same hash with the `code_hash` of an input (or output) cell's `type` (or `lock`) script. Then this `deps` cell's `data` field will be loaded into a CKB-VM instance to be executed as the actual `type` (or `lock`) script.
+To use the script code in a [transaction](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#transaction), the `cell` that stores the script code should be used as a `deps` cell in the transaction. Upon the transaction verification, the CKB client will search the `deps` cell of this transaction for a cell whose `data` field has the same hash with the `code_hash` of an input (or output) cell's `type` (or `lock`) script. Then this `deps` cell's `data` field will be loaded into a CKB-VM instance to be executed as the actual `type` (or `lock`) script.
 
 ### `args`
 
@@ -73,7 +73,7 @@ At the end of the day, a `script` that use Ruby might look like this:
 }
 ```
 
-The `code_hash`  "0x12b46..." here is the hash of the compiled customized CKB `mruby` binary, which is stored in a `deps` cell. 
+The `code_hash`  "0x12b46..." here is the hash of the compiled customized CKB `mruby` binary, which is stored in a `deps` cell.
 
 The first argument in `args` is [the actual Ruby script](https://gist.github.com/Mine77/c6dca07d306304a579e80f9184397065) to be executed. The second on is a hashed pubkey. (This pubkey is hashed for verifying the owner of the cell without disclose the identity of the cell before it is used.)
 
@@ -94,4 +94,3 @@ In addition to the standard Ruby methods, we also provide some [Ruby libraries](
 * [`mruby-ckb`](https://github.com/nervosnetwork/mruby-contracts/tree/master/mruby-ckb): provides access to CKB environment, such as loading transaction, script hash, cell data as well as debugging support.
 * [`mruby-secp256k1`](https://github.com/nervosnetwork/mruby-contracts/tree/master/mruby-secp256k1): provides secp256k1 binding in Ruby environment
 * [`mruby-blake2b`](https://github.com/nervosnetwork/mruby-contracts/tree/master/mruby-blake2b): provides a basic Blake2b binding in Ruby environment(hard-code personalization to "ckb-default-hash")
-

@@ -26,8 +26,7 @@ In order to fulfill this, from a development perspective, we will need to:
 
 The CKB Instance enables developers to interface with CKB-VM in a statically typed manner. On the command-line you can execute the following commands:
 ```
-[1] pry(main)> api = Ckb::Api.new
-[2] pry(main)> api.load_default_configuration!
+[1] pry(main)> api = CKB::API.new
 ```
 CKB-VM is the blockchain implementation using RISC-V instruction set. From the CKB Instance, you are able to instantiate the interface between your code and the blockchain and perform specific functions.
 
@@ -46,17 +45,21 @@ __Private Key__ - This is the private key that is owned by the wallet holder.
 
 ```
 1  class Wallet
-2	      attr_reader :api
-3   	  attr_reader :privkey
-4    # initialize wallet with private key and api object
-5    def initialize(api, privkey)
-6      unless privkey.instance_of?(String) && privkey.size == 32
-7       raise ArgumentError, "invalid privkey!"
-8      end
-9     @api = api
-10     @privkey = privkey
+2    attr_reader :api
+3    # privkey is a bin string
+4    attr_reader :key
+5
+6    # @param api [CKB::API]
+7    # @param key [CKB::Key]
+8    def initialize(api, key)
+9      @api = api
+10     @key = key
 11   end
-12  end
+12
+13    def self.from_hex(api, privkey)
+14      new(api, Key.new(privkey))
+15    end
+16  end
 ```
 
 * __Line 1__ - Defines the Wallet Class
@@ -64,14 +67,16 @@ __Private Key__ - This is the private key that is owned by the wallet holder.
 * __Line 5__ - Defines the constructor for the class
 * __Lines 6-8__ - Checks to see if the private key being sent is a String data type and has a length of 32, otherwise, it throws an error
 * __Lines 9-10__ - assigns the api and private key for storage
+* __Lines 13-15__ - assigns the api and private key for storage
+
 
 Now in the command line you can execute the following. First we create a private key using the SecureRandom method and pass it into the wallet constructor along with the api we instantiated in 2.1
 
 ```
-[1] pry(main)> privkey = SecureRandom.hex(32)
+[1] pry(main)> privkey = CKB::Key.random_private_key
 => "<omitted ..>"
 
-[2] pry(main)> my_wallet = Ckb::Wallet(api, privkey)
+[2] pry(main)> my_wallet = CKB::Wallet.from_hex(api, privkey)
 ```
 
 # 2.3 Retrieving the Wallet balance
@@ -83,12 +88,12 @@ We must go through all the blocks in the chain and save all the cells that are o
 __Retrieving unspent cells__
 ```  
    1  def get_unspent_cells
-   2    to = api.get_tip_number
+   2    to = api.get_tip_block_number.to_i
    3    results = []
    4    current_from = 1
    5    while current_from <= to
    6      current_to = [current_from + 100, to].min
-   7      cells = api.get_cells_by_lock_hash(verify_script_hash, current_from, current_to)
+   7      cells = api.get_cells_by_lock_hash(lock_hash, current_from.to_s, current_to.to_s)
    8      results.concat(cells)
    9      current_from = current_to + 1
    10   end
@@ -97,7 +102,7 @@ __Retrieving unspent cells__
 ```
 * __Line 1__ - Defines the function to retrieve the unspent cells for a specific owner
 
-* __Line 2__ -  [api.get_tip_number](Type Scripts) returns the block number with the most height on the* canonical chain, we need this to iterate over all blocks to find the cells  with the lock hash
+* __Line 2__ -  [api.get_tip_block_number](/api/rpc#get_tip_block_number) returns the block number with the most height on the* canonical chain, we need this to iterate over all blocks to find the cells  with the lock hash
 
 * __Line 3__ - We will store the unspent cells in this variable
 
@@ -107,7 +112,7 @@ __Retrieving unspent cells__
 
 * __Line 6__ - We set the local max block numbers by increasing blocks by 100 (this is arbitrary and can be changed based on performance evaluation)
 
-* __Lines 7__ - We use the [api.get_cells_by_lock_hash](Type Scripts) method to retrieve cells between the block index range[current_from and current_to] and retrieve cells that a have a lock script hash of defined by verify_script_hash
+* __Lines 7__ - We use the [api.get_cells_by_lock_hash](/api/rpc#get_cells_by_lock_hash) method to retrieve cells between the block index range[current_from and current_to] and retrieve cells that a have a lock script hash of defined by verify_script_hash
 
 * __Lines 8__ - For the cells returned, we add them to the list
 
@@ -117,10 +122,10 @@ __Retrieving unspent cells__
 
 Now we create a convenience method to sum all the capacities from the unspent cells:
 
-Retrieving the wallet balance
+## Retrieving the wallet balance
 ```
 1 def get_balance
-2     get_unspent_cells.map { |c| c[:capacity] }.reduce(0, &:+)
+2     get_unspent_cells.map { |cell| cell[:capacity].to_i }.reduce(0, &:+)
 3  end
 ```
 * __Line 1__ - Defines get balance function with no parameters.
@@ -146,89 +151,87 @@ We will create 3 helper function to allow our development to be easier moving fo
 * Retrieve the Script data structure that we will use as input arguments to the Lock Script (don’t worry if this is a bit confusing right now, we will explain this in detail later:
 
 ```
-  1  def pubkey_bin
-  2    Ckb::Utils.extract_pubkey_bin(privkey)
-  3   end
-
-  4  def pubkey_hash_bin
-  5    Ckb::Blake2b.digest(Ckb::Blake2b.digest(pubkey_bin))
-  6  end
-
-  7 def verify_script_json_object
-  8    {
-  9      binary_hash: api.mruby_cell_hash,
-  10      args: [
-  11        Ckb::Utils.bin_to_hex(pubkey_hash_bin)
-  12      ]
-  13    }
-  14  end
+1    def pubkey
+2      @key.pubkey
+3    end
+4
+5    def lock_hash
+6      @lock_hash ||= lock.to_hash
+7    end
+8
+9    # @return [CKB::Types::Script]
+10    def lock
+11      Types::Script.generate_lock(
+12        @key.address.blake160,
+13        api.system_script_code_hash
+14      )
+15    end
+16    end
 ```
 
-* __Line 1-3__  - Given the private key listed in privkey, we extract the public key in binary format.
+* __Line 1-3__  - Given the private key, we extract the public key.
 
-* __Lines 4-6__  - Given the public key in binary format, we create a hash of this twice to represent the hash of public key
+* __Lines 5-7__  - Return the hash of the lock script.
 
-* __Lines 7-14__ - We create and return a Script data structure that includes the hash of the mruby cell and the args to the lock script, in this case the public key hash in hexadecimal format.  
+* __Lines 9-15__ - This returns the Lock Script.
 
 # 2.5 Putting things together
 Your __wallet.rb__ file should now look like this:
 
 ```
-1 require_relative "../ckb-sdk-ruby/lib/ckb.rb"
-2 require_relative "../ckb-sdk-ruby/lib/api"
-3 require_relative "../ckb-sdk-ruby/lib/always_success_wallet"
-4 require_relative "../ckb-sdk-ruby/lib/utils"
-5 require_relative "../ckb-sdk-ruby/lib/version"
-6 require_relative "../ckb-sdk-ruby/lib/blake2b"
-7
-8  LOCK_SCRIPT = File.read(File.expand_path("../../../scripts/sighash_all.rb", __FILE__))
-9
-10  class Wallet
-11	      attr_reader :api
-12   	  attr_reader :privkey
-13    # initialize wallet with private key and api object
-14    def initialize(api, privkey)
-15      unless privkey.instance_of?(String) && privkey.size == 32
-16       raise ArgumentError, "invalid privkey!"
-17      end
-18     @api = api
-19     @privkey = privkey
-20   end
-21
-22  def get_unspent_cells
-23    to = api.get_tip_number
-24    results = []
-25    current_from = 1
-26    while current_from <= to
-27      current_to = [current_from + 100, to].min
-28      cells = api.get_cells_by_lock_hash(verify_script_hash, current_from, current_to)
-29      results.concat(cells)
-30      current_from = current_to + 1
-31   end
-32  results
-33  end
-34
-35  def get_balance
-36     get_unspent_cells.map { |c| c[:capacity] }.reduce(0, &:+)
-37  end
-38
-39  def pubkey_bin
-40    Ckb::Utils.extract_pubkey_bin(privkey)
-41   end
-42
-43  def pubkey_hash_bin
-44    Ckb::Blake2b.digest(Ckb::Blake2b.digest(pubkey_bin))
-45  end
-46
-47 def verify_script_json_object
-48    {
-49      binary_hash: api.mruby_cell_hash,
-50      args: [
-51        Ckb::Utils.bin_to_hex(pubkey_hash_bin)
-52      ]
-53    }
-54  end
-55  end
+1  
+2  module CKB
+3
+4  class Wallet
+5    attr_reader :api
+6    # privkey is a bin string
+7    attr_reader :key
+8
+9    # @param api [CKB::API]
+10    # @param key [CKB::Key]
+11    def initialize(api, key)
+12      @api = api
+13     @key = key
+14   end
+15
+16    def self.from_hex(api, privkey)
+17      new(api, Key.new(privkey))
+18    end
+19
+20  def get_unspent_cells
+21    to = api.get_tip_block_number.to_i
+22    results = []
+23    current_from = 1
+24    while current_from <= to
+25      current_to = [current_from + 100, to].min
+26      cells = api.get_cells_by_lock_hash(lock_hash, current_from.to_s, current_to.to_s)
+27      results.concat(cells)
+28      current_from = current_to + 1
+29   end
+30  results
+31    end
+32
+33  def get_balance
+34     get_unspent_cells.map { |cell| cell[:capacity].to_i }.reduce(0, &:+)
+35   end
+36
+37    def pubkey
+38      @key.pubkey
+39    end
+40
+41    def lock_hash
+42      @lock_hash ||= lock.to_hash
+43    end
+44
+45    # @return [CKB::Types::Script]
+46    def lock
+47      Types::Script.generate_lock(
+48        @key.address.blake160,
+49        api.system_script_code_hash
+50      )
+51    end
+52  end
+53 end
 ```
 
 

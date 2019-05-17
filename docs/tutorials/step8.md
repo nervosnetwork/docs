@@ -72,3 +72,5 @@ __Line 24__ - Assign the first argument as the pubic key
 __Line 25__ - Assign the second argument as the signature
 
 __Line 26-27__ - We validate the signature, public key and data objects to determine if it’s valid.
+
+Now that you know how to create a __Lock Script__ to constrain a cell to a specific user, let's start sending a transaction to a wallet.

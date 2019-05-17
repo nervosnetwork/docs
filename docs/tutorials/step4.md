@@ -16,40 +16,37 @@ A cell contains the following fields: capacity, data, type script and lock scrip
 
 The cell to transfer tokens has no data in its data field, just capacity and the lock script that will be executed when unlocking the cell:
 ```
-1 	cell = {
-2        capacity: 500,
-3        data: “”,
-4        lock: wallet.lock,
-5    }
+1 	cell =   Types::Output.new(
+2          capacity: 500,
+3          lock: Types::Script.generate_lock(
+4            key.address.parse(target_address),
+5            api.system_script_code_hash
+6          )
+7        )
 ```
 
 * __Line 1__ - Defines the cell variable we will store the newly cell in
 
 * __Line 2__ - We have defined this cell to be created with 500 native tokens
 
-* __Lines 3__ - We leave the data field empty, because all we are concerned about is transferring native tokens, which do not require any data to be stored in this field.
-
-* __Lines 4__ - Specifies the lock script of who can unlock the cell and use it as a Cell Input in a subsequent transaction.
+* __Lines 3-5__ - Generates the lock script based on the target address of who can unlock the cell and the system script code hash.
 
 ## Calculating Cell Capacity
 
 One cell can have a maximum capacity of 1000 Kb and a minimum capacity of Y such that 0 < X < 1000, where X is the capacity of a cell being created.
 
-In this example, we will set capacity = 500
-
-1 capacity = 500
+In this example, we will set cell capacity = 500.
 
 ## Cell Capacities as Change
 
 There are instances where cells are created as change to send back to the original owner because input capacities are greater than output capacities
 
 ```
-1 if input_capacities > capacity
-2       outputs << {
-3          capacity: input_capacities - capacity,
-4          data: "",
-5          lock: lock
-6        }
+1  if input_capacities > capacity
+2     outputs << Types::Output.new(
+3       capacity: input_capacities - capacity,
+4       lock: lock
+5     )
 ```
 
 * __Line 1__ - Checks to see if the total input capacities in the transaction are greater than the outputs that are being sent
@@ -58,19 +55,14 @@ There are instances where cells are created as change to send back to the origin
 
 * __Lines 3__ - The capacity we send is the left over capacity not included in the outputs, so we can send it back to ourselves as change
 
-* __Lines 4__ - The data field is left blank as it is not required.
-
-* __Lines 5__ - We put the lock script of the owner of the wallet.
+* __Lines 4__ - We put the lock script of the owner of the wallet.
 
 Note: if we don’t construct a cell to send the left over capacity back to yourself, all left over capacity will be sent to the miner as a transaction fee!
 
 # 4.2 Cell Data
 
-The data field of a cell contains binary data that you wish to store.  In this example, because we are transferring native tokens, we do not have to store any data. Further tutorials will demonstrate examples of storying different types of data in this field.
+The data field of a cell contains binary data that you wish to store.  In this example, because we are transferring native tokens, we do not have to store any data. And it can be omitted from the call. Further tutorials will demonstrate examples of storying different types of data in this field.
 
-```
-1 data = “”
-```
 
 * __Line 1__ - Defines binary data that is included in this cell. For transferring native tokens, this can be left empty.
 
