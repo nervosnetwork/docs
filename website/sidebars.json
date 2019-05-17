@@ -5,16 +5,17 @@
             "introduction/nervos-intro"
         ],
         "Basic Concepts": [
+            "basic-concepts/introduction",
             "basic-concepts/architecture",
             "basic-concepts/states-tokens",
             "basic-concepts/node-mining"
         ],
         "Getting Started": [
+            "getting-started/introduction",
             "getting-started/run-node",
             "getting-started/interact",
             "getting-started/mine",
-            "getting-started/transfer",
-            "getting-started/testnet"
+            "getting-started/transfer"
         ],
         "Development Guide": [
             "dev-guide/scripts"
