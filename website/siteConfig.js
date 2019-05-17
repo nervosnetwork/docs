@@ -37,8 +37,7 @@ const siteConfig = {
 
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
-        {doc:'introduction/welcome', label:'Docs'},
-        {doc:'tutorials/intro-tutorial', label:'Tutorial'},
+        {href: 'https://explorer.nervos.org',label: 'Explorer',external: true},
         {href: 'https://github.com/nervosnetwork',label: 'GitHub',external: true},
         {search:true}
     ],
