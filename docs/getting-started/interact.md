@@ -21,22 +21,26 @@ curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H
 ```shell
 $ curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
 {
-    "jsonrpc":"2.0",
-    "result":{"difficulty":"0x100",
-    "hash":"0xabe655029aa05408ff0ae846ecc32b40b9edf703440627bcaeda3626cf07f8db",
-    "number":"0",
-    "parent_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
-    "proposals_root":"0x0000000000000000000000000000000000000000000000000000000000000000",
-    "seal":
-    {
-        "nonce":"0",
-        "proof":"0x00"
-    },
-    "timestamp":"0","transactions_root":"0x013d8bd8c65e22655cc907c146c8ca8eaa2cfef46bf5b5f08dc145d72bf65a60",
-    "uncles_count":0,"uncles_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
-    "version":0,
-    "witnesses_root":"0x0000000000000000000000000000000000000000000000000000000000000000"},
-    "id":1
+    "id": 2,
+    "jsonrpc": "2.0",
+    "result": {
+        "difficulty": "0x3e8",
+        "epoch": "1",
+        "hash": "0xa8edcc07bda685c7d26fbcb9ea50791927941f908ea0d1a186ce77d36108bbbc",
+        "number": "1024",
+        "parent_hash": "0xcb518eb7389b7ee64215fe7ab6904898c4c72819cb8fc45e243d726076fc3c0a",
+        "proposals_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "seal": {
+            "nonce": "0",
+            "proof": "0x"
+        },
+        "timestamp": "1557311767",
+        "transactions_root": "0x1a98116f150c6f795bc02ebf65fd43ba6b3363c5ea9d2457791bcbc4baaae90b",
+        "uncles_count": "0",
+        "uncles_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "version": "0",
+        "witnesses_root": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    }
 }
 ```
 </details>
