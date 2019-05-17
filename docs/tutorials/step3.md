@@ -51,10 +51,12 @@ puts wallet.block_assembler_config
 <summary>(click here to view response)</summary>
 ```ruby
 [block_assembler]
-code_hash = "0xfe1cf5a297023a3c5282ecd9b0ca88d6736424d75fbe4dcf47a7c8b303e4d339"
-args = [[56, 50, 52, 57, 53, 49, 51, 98, 51, 57, 56, 98, 99, 50, 51, 98, 98, 49, 50, 48, 99, 102, 102, 55, 99, 55, 97, 99, 51, 51, 54, 57, 102, 100, 50, 49, 52, 52, 54, 98, 55, 49, 57, 48, 97, 56, 98, 101, 52, 54, 98, 48, 97, 53, 53, 98, 57, 53, 52, 97, 52, 97, 97, 56]]
+code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
+args = ["0x36c329ed630d6ce750712a477543672adab57f4c"]
 ```
 </details>
+
+And set your own `block_assembler` in `ckb.toml`.
 
 # 3.3 Run the Miner
 By running the miner process, CKB-VM obtains a block template to mine and rewards the miner with a block reward. To run the miner process, in a new shell prompt, navigate to the CKB directory and execute the following command:
@@ -69,6 +71,7 @@ To be able to obtain capacity, one must successfully mine blocks and obtain a bl
 
 After having the mining process executing after a  while, you can check how much capacity you have mined by performing the following command on your wallet:
 
-```[2] pry(main)> my_wallet.get_balance
+```ruby
+[2] pry(main)> my_wallet.get_balance
 => 100000
 ```

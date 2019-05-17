@@ -52,17 +52,17 @@ Secp256k1.verify(hex_to_bin(pubkey), hex_to_bin(signature), hash)
 CKB is a reference to the CKB-VM and allows the interactions with computing and retrieving on-chain events
 
 ```
-tx = CKB.load_tx
+tx = CKB.ckb_load_tx_hash
 ```
 
-# 7.3 Transaction Scope
+# 7.3 Transaction
 
-Each script has a reference to the current transaction scope to which it is creating or unlocking:
+Each script has a reference to the current transaction hash to which it is creating or unlocking:
 
-We retrieve the transaction by:
+We retrieve the transaction hash by:
 
 ```
-tx = CKB.load_tx
+tx = CKB.load_tx_hash
 ```
 
 Now that you know the basic APIs that are available to you in scripts, let's start making one.

@@ -16,7 +16,7 @@ A cell contains the following fields: capacity, data, type script and lock scrip
 
 The cell to transfer tokens has no data in its data field, just capacity and the lock script that will be executed when unlocking the cell:
 ```
-1 	cell =   Types::Output.new(
+1 	cell = Types::Output.new(
 2          capacity: 500,
 3          lock: Types::Script.generate_lock(
 4            key.address.parse(target_address),
