@@ -103,7 +103,7 @@ You will find the built executable binary in `target/release/ckb` folder.
 
 Then you need to move it to a `PATH` directory:
 ```shell
-ln -snf "$(pwd)/target/release/ckb" /usr/local/bin/ckb
+sudo ln -snf "$(pwd)/target/release/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
