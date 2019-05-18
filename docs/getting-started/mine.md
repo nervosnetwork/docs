@@ -50,7 +50,7 @@ args = ["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"]
 ```
 </details>
 
-After you changed the configuration, restart the node again (use `ckb run` command). 
+**Notice:** After you changed the configuration, restart the node again (use `ckb run` command). Otherwise your new configuration will not take effect.
 
 Now you are ready to mine CKB for your own wallet.
 
