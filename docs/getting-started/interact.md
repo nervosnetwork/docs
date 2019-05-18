@@ -58,6 +58,8 @@ There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that 
 #### Install Ruby
 First please refer the [Ruby official guidance](https://www.ruby-lang.org/en/downloads/) for installing the latest version of Ruby.
 
+> Ruby v2.4 or above are required for this SDK.
+
 Then, install bundler in case you have not installed it yet:
 ```shell
 gem install bundler

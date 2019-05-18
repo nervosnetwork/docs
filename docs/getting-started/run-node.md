@@ -150,24 +150,7 @@ ckb 0.12.0 (v0.12.0 2019-05-17)
 Here you will learn about how to start a CKB node.
 
 ### Configurations
-You can generate the default configuration files the following command. It will make a workshop folder called `ckb-dev` and generate default configuration files in it.
-```shell
-ckb init -C ckb-dev && \
-cd ckb-dev
-```
-
-<details>
-<summary>(click here to view response)</summary>
-```shell
-$ ckb init -C ckb-dev && \
-cd ckb-dev
-Initialized CKB directory in /Users/username/code/ckb-dev
-export ckb.toml
-export ckb-miner.toml
-```
-</details>
-
-**For testnet user:** If you want to start a node that can connect to the testnet, you can specify the `testnet` paramter:
+You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
 ```shell
 ckb init -C ckb-testnet --spec testnet && \
 cd ckb-testnet
