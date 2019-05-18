@@ -35,11 +35,11 @@ Download the binary file from the [CKB releases page on GitHub](https://github.c
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```shell
-wget https://github.com/nervosnetwork/ckb/releases/download/rylai30/ckb_rylai30_darwin_amd64.zip
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_darwin_amd64.zip
 ```
 <!--Linux-->
 ```shell
-wget https://github.com/nervosnetwork/ckb/releases/download/rylai30/ckb_rylai30_linux_amd64.tar.gz
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_linux_amd64.tar.gz
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -51,13 +51,13 @@ Then uncompress the file:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```shell
-unzip ckb_rylai30_darwin_amd64.zip && \
-cd ckb_rylai30_darwin_amd64
+unzip ckb_v0.12.0_darwin_amd64.zip && \
+cd ckb_v0.12.0_darwin_amd64
 ```
 <!--Linux-->
 ```shell
-tar -xzvf ckb_rylai30_linux_amd64.tar.gz && \
-cd ckb_rylai30_linux_amd64
+tar -xzvf ckb_v0.12.0_linux_amd64.tar.gz && \
+cd ckb_v0.12.0_linux_amd64
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -78,7 +78,7 @@ ckb --version
 <summary>(click here to view response)</summary>
 ```shell
 $ ckb --version
-ckb 0.12.0-pre (rylai17 2019-05-07)
+ckb 0.12.0 (v0.12.0 2019-05-17)
 ```
 </details>
 
@@ -142,7 +142,7 @@ ckb --version
 <summary>(click here to view response)</summary>
 ```shell
 $ ckb --version
-ckb 0.12.0-pre (rylai17 2019-05-07)
+ckb 0.12.0 (v0.12.0 2019-05-17)
 ```
 </details>
 
@@ -167,7 +167,7 @@ export ckb-miner.toml
 ```
 </details>
 
-If you want to start a node that can connect to the testnet, you can specify the `testnet` paramter:
+**For testnet user:** If you want to start a node that can connect to the testnet, you can specify the `testnet` paramter:
 ```shell
 ckb init -C ckb-testnet --spec testnet && \
 cd ckb-testnet
@@ -199,14 +199,15 @@ ckb run
 <summary>(click here to view response)</summary>
 ```shell
 $ ckb run
-2019-05-13 17:55:16.057 +08:00 main INFO sentry  sentry is disabled
-2019-05-13 17:55:16.068 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
-2019-05-13 17:55:16.204 +08:00 main INFO main  chain genesis hash: 0x6448adcb403733f7976576eeffcdfa6929cd7af07d25fb925e0d9236dcc0c6f5
-2019-05-13 17:55:16.205 +08:00 main INFO network  Generate random key
-2019-05-13 17:55:16.205 +08:00 main INFO network  write random secret key to "/Users/username/Desktop/ckb-dev/data/network/secret_key"
-2019-05-13 17:55:16.219 +08:00 main INFO network  No peer in peer store, start seeding...
-2019-05-13 17:55:16.221 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmRtEZwdSRPpTJHf4gPmwR8YobzpxwZDH4UtVPNJftwynh
-2019-05-13 17:55:16.223 +08:00 tokio-runtime-worker-0 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
+2019-05-18 08:06:37.246 +08:00 main INFO sentry  **Notice**: The ckb process will send stack trace to sentry on Rust panics. This is enabled by default before mainnet, which can be opted out by setting the option `dsn` to empty in the config file. The DSN is now https://48c6a88d92e246478e2d53b5917a887c@sentry.io/1422795
+2019-05-18 08:06:37.257 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
+2019-05-18 08:06:37.385 +08:00 main INFO main  chain genesis hash: 0xaad9b82caa07f5989dfb8caa44927f0bab515a96ccaaceba82c7bea609fec205
+2019-05-18 08:06:37.385 +08:00 main INFO network  Generate random key
+2019-05-18 08:06:37.386 +08:00 main INFO network  write random secret key to "/Users/username/code/ckb-testnet/data/network/secret_key"
+2019-05-18 08:06:37.391 +08:00 main INFO network  No peer in peer store, start seeding...
+2019-05-18 08:06:37.392 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmSbvRYNUujyEBEpRipdREfS8cqLxCSndDAWRDAE1Hms2H
+2019-05-18 08:06:37.394 +08:00 tokio-runtime-worker-0 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
+2019-05-18 08:06:37.441 +08:00 tokio-runtime-worker-6 INFO network  SessionId(1) open, registry /ip4/47.111.169.36/tcp/8111/p2p/QmNQ4jky6uVqLDrPU7snqxARuNGWNLgSrTnssbRuy3ij2W success
 ```
 </details>
 
