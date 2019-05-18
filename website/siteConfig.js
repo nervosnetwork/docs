@@ -37,20 +37,19 @@ const siteConfig = {
 
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
-        {doc:'introduction/welcome', label:'Docs'},
-        {doc:'tutorials/intro-tutorial', label:'Tutorial'},
+        {href: 'https://explorer.nervos.org',label: 'Explorer',external: true},
         {href: 'https://github.com/nervosnetwork',label: 'GitHub',external: true},
         {search:true}
     ],
 
     /* path to images for header/footer */
-    headerIcon: 'img/nervos-logo.png',
-    favicon: 'img/favicon.ico',
+    headerIcon: 'img/nervos-logo.svg',
+    favicon: 'img/favicon.png',
 
     /* Colors for website */
     colors: {
-        primaryColor: '#11356f',
-        secondaryColor: '#4bbc8e',
+        primaryColor: '#000000',
+        secondaryColor: '#3cc68a',
     },
 
     highlight: {

@@ -1,16 +1,16 @@
 ---
 id: scripts
-title: Write Scripts
+title: Scripts
 ---
 
 This document introduces how the script works in CKB system, and how can you program scripts to build applications.
+
+Please notice that scripts functionality is not stable at the moment. There might be major changes been made to this part in the future. Also the toolchain for scripting is not fully developed yet. So here we only gie an introduction to the scripting in CKB.
 
 
 ## Script Model
 
 Both `lock` script and `type` script are [`script`  data structure](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#Script), which has two parts: `code_hash` and `args`.
-
-> the `args` in a `script` is different from the `args` in the `inputs` of a transaction. The `args` in `script` is part of the `lock` (or `type`) script itself, while the `args` in `inputs` is for unlocking the input cells.
 
 ### `code_hash`
 
@@ -18,7 +18,7 @@ Both `lock` script and `type` script are [`script`  data structure](https://gith
 
 The actual script code MUST NOT be put in the `script` structure directly. Instead, it should always be stored in the `data` field of a `cell`.
 
-To use the script code in a [transaction](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#transaction), the `cell` that stores the script code should be used as a `deps` cell in the transaction. Upon the transaction verification, the CKB client will search the `deps` cell of this transaction for a cell whose `data` filed has the same hash with the `code_hash` of an input (or output) cell's `type` (or `lock`) script. Then this `deps` cell's `data` field will be loaded into a CKB-VM instance to be executed as the actual `type` (or `lock`) script.
+To use the script code in a [transaction](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#transaction), the `cell` that stores the script code should be used as a `deps` cell in the transaction. Upon the transaction verification, the CKB client will search the `deps` cell of this transaction for a cell whose `data` field has the same hash with the `code_hash` field. Then this `deps` cell's `data` field will be loaded into a CKB-VM instance to be executed as the actual script.
 
 ### `args`
 
@@ -30,8 +30,9 @@ CKB scripts use the UNIX standard execution environment. Each script should cont
 int main(int argc, char* argv[]);
 ```
 
-When the script data is loaded into a CKB-VM instance, along with the `args` in the `lock` script, the `args` in the `inputs` of the transaction as well as the `witness` will be concatenated (`args` in script + `args` in `inputs` + `witness`) and used as input arguments for the script. This group of input arguments will fill in the `argc`/`argv` part in the `main` function. (`argc` is the number of arguments in `args` and `argv` is a pointer that points to the start point of all the input arguments in the memory)
+For `lock` script, when the script data is loaded into a CKB-VM instance, along with the `args` in the `lock` script, the `args` in the `inputs` of the transaction as well as the `witness` will be concatenated (`args` in script + `args` in `inputs` + `witness`) and used as input arguments for the script. This group of input arguments will fill in the `argc`/`argv` part in the `main` function. (`argc` is the number of arguments in `args` and `argv` is a pointer that points to the start point of all the input arguments in the memory)
 
+For `type` script, only the `args` in its own `script` structure will be used as input arguments for the script execution.
 
 
 ### Script Execution
@@ -41,43 +42,43 @@ The script is executed in a CKB-VM instance, which is a [RISC-V](https://riscv.o
 When the script execution is terminated, the `main` function of the script should return a code. A return code of `0` means that the script execution was succeeded, other values may indicate that the execution was failed.
 
 
-## Writing Scripts in Ruby
+## A Script Example
 
-Here we will show how to write scripts in Ruby.
+Here we will show an example script: [secp256k1_blake160_sighash_all.c](https://github.com/nervosnetwork/ckb-system-scripts/blob/master/c/secp256k1_blake160_sighash_all.c). 
 
-> We only use Ruby here as an example. Please note that it's also possible to write scripts in language that is supported by [RISC-V](https://riscv.org/), such as Javascript or Python as well as C/C++.
+This script here is used in the `lock` script. It takes four parameters:
+* The hashed pubkey. 
+* The original pubkey 
+* The transaction signature
+* The length of the signature
 
-### CKB mruby
-[mruby](https://github.com/mruby/mruby) is the lightweight implementation of the Ruby language. On CKB, we made a customized [CKB mruby](https://github.com/nervosnetwork/mruby-contracts) to enable writing scripts in Ruby.
+The first argument should be stored on-chain inside of the `lock` script as an `args`. It will later be used as a proof. Others should be put in transaction `witness` when you are trying to unlock a `lock` script. 
 
-The way we do it is to run the Ruby script on top of the mruby that is on top of the CKB-VM. When running a ruby script, first the CKB mruby binary will be loaded into a CKB-VM instance, creating a Ruby interpreter environment. Then the ruby script will be entered into the CKB mruby as input arguments, and then the actual arguments to the Ruby scripts will be entered afterward.
+> The first argument is hashed because in this way the original pubkey does not need to be disclosed on-chain, so that it can achieve privacy to some extend.
 
-If the script works normal and is successfully executed, it should return a code `0`; otherwise, if there are any errors, the Ruby script throws an exception and the CKB-VM instance returns a non-zero code.
-
-
-> It is also possible to do the same thing with [micropython](https://micropython.org/) or [duktape](https://duktape.org/) to enable writing scripts in Python and Javascript.
-
-### Example Demo
-We have built a [Ruby demo example](https://github.com/nervosnetwork/ckb-demo-ruby) to show how this is done. Please refer its [README.md](https://github.com/nervosnetwork/ckb-demo-ruby/blob/develop/README.md) for the walkthrough.
+The script's function is to check if the signature of the transaction is indeed signed by the owner of the pubkey. When the script is executed in a CKB-VM instance, it will first verify the pubkey against the hashed pubkey stored on-chain to see if it is valid. Then it will recover the transaction signature and verify it against the pubkey again to check if the transaction is indeed singed by the owner of the pubkey, who is also the owner of the `lock` script. In this way, the owner of this `lock` script will be the owner of the cells that are "locked" by this `lock` script.
 
 
-At the end of the day, a `script` that use Ruby might look like this:
+Here is the procedure for using this script on CKB. Please note that this is not a step-by-step tutorial. It is just for showing you how this process works.
+* Compile the script to get an ELF format binary file
+* Deploy a cell that has this binary file in its `data` field to CKB
+* Calculate the hash of this binary, which will later be used as the `code_hash` in the `lock` script
+* Calculate the hash of your pubkey, which will later be used as the `args` in the `lock` script
 
+At the end of the day, you will get a `lock` script like this:
 ```json
-{
-  "code_hash": "0x12b464bcab8f55822501cdb91ea35ea707d72ec970363972388a0c49b94d377c",
+"lock":{
+  "code_hash": "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08",
   "args": [
-    "# This contract needs 3 required arguments:\n# 0. pubkey hash, double blake2b hash of pubkey, used to shield the real\n# pubkey in lock script.\n# 1. pubkey, real pubkey used to identify token owner\n# 2. signature, signature used to present ownership\nif ARGV.length != 3\n  raise \"Wrong number of arguments!\"\nend\n\ndef hex_to_bin(s)\n  if s.start_with?(\"0x\")\n    s = s[2..-1]\n  end\n  [s].pack(\"H*\")\nend\n\npubkey_hash = hex_to_bin(ARGV[0])\npubkey = hex_to_bin(ARGV[1])\nhash = Blake2b.new.update(Blake2b.new.update(pubkey).final).final\nunless hash == pubkey_hash\n  raise \"Invalid pubkey!\"\nend\n\ntx = CKB.load_tx\nblake2b = Blake2b.new\n\ntx[\"inputs\"].each_with_index do |input, i|\n  blake2b.update(input[\"hash\"])\n  blake2b.update(input[\"index\"].to_s)\nend\ntx[\"outputs\"].each_with_index do |output, i|\n  blake2b.update(output[\"capacity\"].to_s)\n  blake2b.update(CKB.load_script_hash(i, CKB::Source::OUTPUT, CKB::HashType::LOCK))\n  if hash = CKB.load_script_hash(i, CKB::Source::OUTPUT, CKB::HashType::TYPE)\n    blake2b.update(hash)\n  end\nend\nhash = blake2b.final\npubkey = ARGV[0]\nsignature = ARGV[1]\n\nunless Secp256k1.verify(hex_to_bin(pubkey), hex_to_bin(signature), hash)\n  raise \"Signature verification error!\"\nend\n",
-    "0x64886cbe860703f6b4f3fdded7958f38ed3f54ac75d773ba6f323ab063fe5bb2"
+    "0x7f52f0fccdd1d11391c441adfb174f87bca612b0"
   ]
 }
 ```
 
-The `code_hash`  "0x12b46..." here is the hash of the compiled customized CKB `mruby` binary, which is stored in a `deps` cell. 
+You can send this script to your friend and your friend will be able to send you some CK Bytes by sending a transaction to CKB with an output cell that has this `lock` script.
 
-The first argument in `args` is [the actual Ruby script](https://gist.github.com/Mine77/c6dca07d306304a579e80f9184397065) to be executed. The second on is a hashed pubkey. (This pubkey is hashed for verifying the owner of the cell without disclose the identity of the cell before it is used.)
+To use your cell, you need to construct a transaction with a `witness` that has your pubkey and transaction signature. It will be something like this:
 
-To use one of the cells that is locked by this `lock` script, put the following data in the `witness` part of the transaction.
 ```json
 "witnesses":[{
     "data":[
@@ -87,11 +88,16 @@ To use one of the cells that is locked by this `lock` script, put the following 
 }]
 ```
 
-### Ruby Libraries
+## Scripting with Other Languages
 
-In addition to the standard Ruby methods, we also provide some [Ruby libraries](https://github.com/nervosnetwork/mruby-contracts) to support scripts to do verifications easier or read information from CKB:
+The example showed above is programmed with C. It is also possible to write scripts for CKB using other languages.
 
-* [`mruby-ckb`](https://github.com/nervosnetwork/mruby-contracts/tree/master/mruby-ckb): provides access to CKB environment, such as loading transaction, script hash, cell data as well as debugging support.
-* [`mruby-secp256k1`](https://github.com/nervosnetwork/mruby-contracts/tree/master/mruby-secp256k1): provides secp256k1 binding in Ruby environment
-* [`mruby-blake2b`](https://github.com/nervosnetwork/mruby-contracts/tree/master/mruby-blake2b): provides a basic Blake2b binding in Ruby environment(hard-code personalization to "ckb-default-hash")
+Any programming languages supported by [RISC-V](https://riscv.org/) toolchain will be able to be used for scripting. This includes high level languages such as Ruby, Javascript and Python. 
 
+For example, we can enable scripting using Ruby with [mruby](https://github.com/mruby/mruby), which is the lightweight implementation of the Ruby language.
+
+The way we do it is to run the Ruby script on top of the mruby that is on top of the CKB-VM. When running a ruby script, first the CKB mruby binary will be loaded into a CKB-VM instance, creating a Ruby interpreter environment. Then the ruby script will be entered into the CKB mruby as input arguments, and then the actual arguments to the Ruby scripts will be entered afterward.
+
+It is also possible to do the same thing with [micropython](https://micropython.org/) or [duktape](https://duktape.org/) to enable writing scripts in Python and Javascript.
+
+This part of function is still under development.
