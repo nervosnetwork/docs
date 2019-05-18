@@ -76,7 +76,7 @@ make && \
 sudo make install
 ```
 
-To install libsodium, for MacOS user you can use brew (other user please refer to the [libsodium doc](https://download.libsodium.org/doc/)):
+To install libsodium, for macOS user you can use brew (other user please refer to the [libsodium doc](https://download.libsodium.org/doc/)):
 ```shell
 brew install libsodium
 ```

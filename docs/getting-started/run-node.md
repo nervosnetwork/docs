@@ -20,7 +20,7 @@ You can also use Docker to run your CKB node. For the detailed guidance, please 
 
 #### Dependencies
 
-For Linux user (not necessary for MacOS user), you need to install `libssl` dynamic libraries before using the released binary.
+For Linux user (not necessary for macOS user), you need to install `libssl` dynamic libraries before using the released binary.
 
 ```shell
 sudo apt-get install -y libssl1.0.0
