@@ -44,7 +44,7 @@ const siteConfig = {
 
     /* path to images for header/footer */
     headerIcon: 'img/nervos-logo.svg',
-    favicon: 'img/favicon.svg',
+    favicon: 'img/favicon.png',
 
     /* Colors for website */
     colors: {

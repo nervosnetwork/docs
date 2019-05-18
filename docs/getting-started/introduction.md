@@ -6,7 +6,7 @@ title: Introduction
 In this section, you will learn about how to use Nervos CKB in practice. This includes [running a CKB node](run-node), [interacting with it](interact), as well as [mining](mine) and [transferring](transfer) CK Bytes.
 <!-- Todo: change the version here -->
 
-Please note that this document is compatible with the `ckb 0.11.0-pre (rylai12 2019-05-05)`. More information about CKB versions can be found in [the CKB repo on GitHub](https://github.com/nervosnetwork/ckb).
+Please note that this document is compatible with the `ckb 0.12.0 (v0.12.0 2019-05-17)`. More information about CKB versions can be found in [the CKB repo on GitHub](https://github.com/nervosnetwork/ckb).
 
 ## Testnet
 

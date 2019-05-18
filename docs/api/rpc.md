@@ -5,10 +5,9 @@ title: JSON-RPC Commands
 
 <!-- Todo update rpc document -->
 
-> This RPC API document is compatible with `ckb 0.12.0-pre (rylai23 2019-05-12)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. 
+> This RPC API document is compatible with `ckb 0.12.0 (v0.12.0 2019-05-17)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. 
 
 [Here](https://gist.github.com/Mine77/cb26558a993088a298a2bc1862bb9662) is a `paw` file you can use to import into Rest API softwares such as [Postman](https://www.getpostman.com/)
-
 
 ## Chain
 
@@ -252,7 +251,7 @@ http://localhost:8114
                 "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"
             },
             "out_point": {
-                "block_hash": "0xbd63393483cb066d2fb9f779b20b904020bb599b03fab6e4571990828510d829",
+                "block_hash": null,
                 "cell": {
                     "index": "0",
                     "tx_hash": "0x530204fd06dbe0c831bf1043a6ec758bb4b0db7eca6445793194ffb84ad29400"
@@ -266,7 +265,7 @@ http://localhost:8114
                 "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"
             },
             "out_point": {
-                "block_hash": "0x7ff4ff104794ca4146059d78b89acb4e16ad3959fadde361730f7a835004be45",
+                "block_hash": null,
                 "cell": {
                     "index": "0",
                     "tx_hash": "0x5af3009f5e2be240ce95a2faedab1b144821a24703c026ab8f25328ac596f550"
@@ -280,7 +279,7 @@ http://localhost:8114
                 "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"
             },
             "out_point": {
-                "block_hash": "0x79ef2d2666ad3c5a94e0b069b412cbf8049301338e09e8c193f80d9fec084cf8",
+                "block_hash": null,
                 "cell": {
                     "index": "0",
                     "tx_hash": "0x53d13bbfee6b4a64763b7231b00e18c7db5379b58d74f9b0677be1394ea1ef85"
@@ -294,7 +293,7 @@ http://localhost:8114
                 "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"
             },
             "out_point": {
-                "block_hash": "0x05786d4ac8858d5065a2f2ac41c87a85f59516bdb8779e81e1636151bdc89027",
+                "block_hash": null,
                 "cell": {
                     "index": "0",
                     "tx_hash": "0x00e47be2eeac34a22c4d7573bf2a65e531a5b78427ef5808c1b4971cf73418ac"

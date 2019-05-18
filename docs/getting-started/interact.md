@@ -18,29 +18,28 @@ curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H
 
 <details>
 <summary>(click here to view response)</summary>
-```shell
-$ curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
+```json
 {
-    "id": 2,
-    "jsonrpc": "2.0",
-    "result": {
-        "difficulty": "0x3e8",
-        "epoch": "1",
-        "hash": "0xa8edcc07bda685c7d26fbcb9ea50791927941f908ea0d1a186ce77d36108bbbc",
-        "number": "1024",
-        "parent_hash": "0xcb518eb7389b7ee64215fe7ab6904898c4c72819cb8fc45e243d726076fc3c0a",
-        "proposals_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "seal": {
-            "nonce": "0",
-            "proof": "0x"
+    "jsonrpc":"2.0",
+    "result":{
+        "difficulty":"0x1000",
+        "epoch":"0",
+        "hash":"0x7ab75ce1a45f30a6fe0d83856aa56827243c88271f4b8e2f968809b175fa2e7e",
+        "number":"227",
+        "parent_hash":"0xc1b02d64c8a294f1bc935706655213314926d33f031e84fe97fc601559aae9b1",
+        "proposals_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+        "seal":{
+            "nonce":"12843279316432878493",
+            "proof":"0xa1060000d51100007b130000fd16000031200000982b0000fd370000d757000071730000dc740000a3790000a37b0000"
+            },
+        "timestamp":"1558138968104",
+        "transactions_root":"0xc7067232dc4b44d393b50cea57635a642193963ac19ee3f5385940b2c23a5073",
+        "uncles_count":"0",
+        "uncles_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+        "version":"0",
+        "witnesses_root":"0x822916ce5ad8b248f5ce549139c456abfdbba3ea3d2a8642c55da706876d0734"
         },
-        "timestamp": "1557311767",
-        "transactions_root": "0x1a98116f150c6f795bc02ebf65fd43ba6b3363c5ea9d2457791bcbc4baaae90b",
-        "uncles_count": "0",
-        "uncles_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "version": "0",
-        "witnesses_root": "0x0000000000000000000000000000000000000000000000000000000000000000"
-    }
+    "id":2
 }
 ```
 </details>
@@ -86,7 +85,8 @@ brew install libsodium
 #### Install SDK
 Then clone the Ruby SDK repo:
 ```shell
-git clone https://github.com/nervosnetwork/ckb-sdk-ruby && cd ckb-sdk-ruby
+git clone https://github.com/nervosnetwork/ckb-sdk-ruby && \
+cd ckb-sdk-ruby
 ```
 
 Checkout to `master` branch:
@@ -136,17 +136,20 @@ api.get_tip_header
 <summary>(click here to view response)</summary>
 ```ruby
 [2] pry(main)> api.get_tip_header
-=> #<CKB::Types::BlockHeader:0x00007fb531177440
- @difficulty="0x100",
+=> #<CKB::Types::BlockHeader:0x00007fe5db8fcfa0
+ @difficulty="0x1000",
  @epoch="0",
- @hash="0x4c2f8ba5f5a0104eaf84fcbb16af4b0e7ca2f2fdb076e748d54ef876d085d49e",
- @number="0",
- @parent_hash="0x0000000000000000000000000000000000000000000000000000000000000000",
+ @hash="0x09798b1170adcd608b65f2fbdc360b21555acde5b05295212f8b6cde9e72e880",
+ @number="285",
+ @parent_hash="0x12e738f2968bde032007349c543d4fa99cf8d82f354c102ab8a0a4ef6d284288",
  @proposals_hash="0x0000000000000000000000000000000000000000000000000000000000000000",
- @seal=#<CKB::Types::Seal:0x00007fb531185ef0 @nonce="0", @proof="0x00">,
- @timestamp="0",
- @transactions_root="0xf8532f2ed92aad146878dca1d5ad9840e9c803ab85d1361652500eaee09c9038",
- @uncles_count=0,
+ @seal=
+  #<CKB::Types::Seal:0x00007fe5db8fd068
+   @nonce="4164299460367927268",
+   @proof="0x140e0000191500004d1f0000ea2c0000ee2d0000362e0000f22e0000be310000993e000029470000bc5a0000fb6c0000">,
+ @timestamp="1558139378253",
+ @transactions_root="0x671a66d80e28103e1f19bdd631ec91feb4b8107e72341b0abe0e453e5fe961da",
+ @uncles_count="0",
  @uncles_hash="0x0000000000000000000000000000000000000000000000000000000000000000",
  @version="0",
  @witnesses_root="0x0000000000000000000000000000000000000000000000000000000000000000">

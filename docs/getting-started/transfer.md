@@ -43,7 +43,7 @@ api.get_transaction(tx_hash)
 <details>
 <summary>(click here to view response)</summary>
 ```ruby
-[15] pry(main)> api.get_transaction(tx_hash)
+[8] pry(main)> api.get_transaction(tx_hash)
 => #<CKB::Types::TransactionWithStatus:0x00007f9325bc5ec0
  @transaction=
   #<CKB::Types::Transaction:0x00007f9325bc5fb0
@@ -101,9 +101,16 @@ api.get_transaction(tx_hash)
 
 After the transaction is committed, we can check Alice's balance again:
 ```ruby
-[10] pry(main)> alice.get_balance
+alice.get_balance
+```
+
+<details>
+<summary>(click here to view response)</summary>
+```ruby
+[9] pry(main)> alice.get_balance
 => 100000000000
 ```
+</details>
 
 Now you have successfully made your CKB token transfer. Congratulations!
 
