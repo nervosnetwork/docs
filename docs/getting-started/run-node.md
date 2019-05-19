@@ -107,6 +107,7 @@ brew install autoconf libtool
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
+> For CentOS user, here's a [guidance](https://github.com/nervosnetwork/ckb/issues/626) for you.
 
 #### Build
 Here we build from the source code on `master` branch, which is the latest release version. For other versions and branches, please check the [CKB repo](https://github.com/nervosnetwork/ckb) for more information.
