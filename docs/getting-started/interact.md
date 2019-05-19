@@ -58,9 +58,13 @@ There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that 
 #### Install Ruby
 First please refer the [Ruby official guidance](https://www.ruby-lang.org/en/downloads/) for installing the latest version of Ruby.
 
-> Ruby v2.4 or above are required for this SDK.
+Ruby v2.4 or above are required for this SDK. Please check your Ruby version with:
+```shell
+ruby -v
+```
 
-Then, install bundler in case you have not installed it yet:
+#### Install Bundler
+Then install bundler in case you have not installed it yet:
 ```shell
 gem install bundler
 ```
@@ -68,24 +72,24 @@ gem install bundler
 #### Dependencies
 [bitcoin-secp256k1](https://github.com/bitcoin-core/secp256k1) and [libsodium](https://download.libsodium.org/doc/) are needed as dependencies for this SDK.
 
-To install bitcoin-secp256k1 (you will need to enter your sudo password for the last step):
+To install bitcoin-secp256k1, clone the code to anywhere you like and install it with the scripts in it (you will need to enter your sudo password for the last step):
 ```shell
 git clone https://github.com/bitcoin-core/secp256k1.git && \
 cd secp256k1 && \
 ./autogen.sh && \
 ./configure && \
 make && \
-sudo make install
+sudo make install 
 ```
 
-To install libsodium, for macOS user you can use brew (other user please refer to the [libsodium doc](https://download.libsodium.org/doc/)):
+To install libsodium, for macOS user you can use brew (for other systems please refer to the [libsodium wiki](https://github.com/crypto-rb/rbnacl/wiki/Installing-libsodium)):
 ```shell
 brew install libsodium
 ```
 
 
 #### Install SDK
-Then clone the Ruby SDK repo:
+Then clone the Ruby SDK repo to anywhere you like:
 ```shell
 git clone https://github.com/nervosnetwork/ckb-sdk-ruby && \
 cd ckb-sdk-ruby
@@ -96,7 +100,7 @@ Checkout to `master` branch:
 git checkout master
 ```
 
-Run bundler:
+Run bundler to install dependencies:
 ```shell
 bundle
 ```
