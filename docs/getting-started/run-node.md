@@ -86,9 +86,10 @@ If you see the response above, you have successfully installed CKB. You can try 
 
 ### Compile from Source
 
-#### Dependencies
+#### Install Rust
 CKB is developed with Rust. To get Rust and its tools, please refer to the [rustup website](https://www.rustup.rs/) for how to install rustup.
 
+#### Dependencies
 Then install dependencies with the following command:
 
 <!--DOCUSAURUS_CODE_TABS-->
