@@ -35,7 +35,7 @@ args = ["0x03ae708e284f6a53d12da45f7fe5e8c232c353c2"]
 </details>
 
 
-To set the miner wallet, in the `ckb` work directory, find `ckb.toml` file and use the returned parameters above to replace the existing one.
+To set the miner wallet, in the `ckb-testnet` directory, find `ckb.toml` file and use the returned parameters above to replace the existing one.
 
 <details>
 <summary>(click here to view the existing default parameter)</summary>
