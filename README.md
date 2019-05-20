@@ -7,7 +7,15 @@ This is the Nervos CKB documentation website.
 
 It is built with [docusaurus](https://docusaurus.io/).
 
-## Dependencies
+
+## Clone the Repo
+```shell
+git clone https://github.com/nervosnetwork/docs.git && \
+cd docs && \
+cd website
+```
+
+## Install Dependencies
 Install [yarn](https://yarnpkg.com/en/).
 
 In `website` folder:
@@ -15,14 +23,14 @@ In `website` folder:
 yarn install
 ```
 
-## Preview
+## Preview the Site
 In `website` folder:
 ```shell
 yarn start
 ```
 
 
-## Build
+## Build the Site
 In `website` folder:
 ```shell
 yarn build
