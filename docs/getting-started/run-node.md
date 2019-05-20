@@ -15,9 +15,7 @@ To get the CKB client software, you can choose to download the released binary d
 
 In this guidance we use the pre-built binary directly.
 
-### Download from Release
-
-#### Dependencies
+### Dependencies
 
 For Linux user (not necessary for macOS user), you need to install `libssl` dynamic libraries before using the released binary.
 
@@ -25,7 +23,7 @@ For Linux user (not necessary for macOS user), you need to install `libssl` dyna
 sudo apt-get install -y libssl1.0.0
 ```
 
-#### Download
+### Download
 
 Download the binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases):
 
