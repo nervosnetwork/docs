@@ -29,6 +29,7 @@ In `website` folder:
 yarn start
 ```
 
+Then you should be able to preview the website at `http://localhost:3000/` in your browser.
 
 ## Build the Site
 In `website` folder:
