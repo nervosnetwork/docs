@@ -53,7 +53,7 @@ You can find all the RPC commands in the [RPC API document](../api/rpc).
 
 There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that can provide an interactive console to help you work with your node.
 
-### Installation 
+### Installation
 
 #### Install Ruby
 First please refer the [Ruby official guidance](https://www.ruby-lang.org/en/downloads/) for installing the latest version of Ruby.
@@ -65,11 +65,40 @@ ruby -v
 
 #### Install Bundler
 Then install bundler in case you have not installed it yet:
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--macOS-->
 ```shell
 gem install bundler
 ```
 
-#### Dependencies
+<!--Linux-->
+```shell
+sudo gem install bundler
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+#### Install Tools
+You will need the following tools for the rest of the steps:
+* git
+* autoconf
+* automake
+* libtool
+
+If you have not installed them, you can install them with the following commands:
+<!--DOCUSAURUS_CODE_TABS-->
+<!--macOS-->
+```shell
+brew install autoconf automake libtool git
+```
+<!--Linux-->
+```shell
+sudo apt-get install -y autoconf automake libtool git
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+
+#### Install Dependencies
 [bitcoin-secp256k1](https://github.com/bitcoin-core/secp256k1) and [libsodium](https://download.libsodium.org/doc/) are needed as dependencies for this SDK.
 
 To install bitcoin-secp256k1, clone the code to anywhere you like and install it with the scripts in it (you will need to enter your sudo password for the last step):
