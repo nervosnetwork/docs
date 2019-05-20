@@ -11,8 +11,8 @@ Here you can learn about how to do this with RPC commands for some basic operati
 ## Use RPC Command
 You can interact with your CKB node client via RPC port. Here's an example showing how to get the header information of the tip block (the latest block).
 
-Open a new shell, and use this command to get the tip block header (note that you should have the `ckb run` running):
-```shell
+Open a new terminal, and use this command to get the tip block header (note that you should have the `ckb run` running):
+```bash
 curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
 ```
 
@@ -59,7 +59,7 @@ There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that 
 First please refer the [Ruby official guidance](https://www.ruby-lang.org/en/downloads/) for installing the latest version of Ruby.
 
 Ruby v2.4 or above are required for this SDK. Please check your Ruby version with:
-```shell
+```bash
 ruby -v
 ```
 
@@ -68,12 +68,12 @@ Then install bundler in case you have not installed it yet:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
-```shell
+```bash
 gem install bundler
 ```
 
 <!--Linux-->
-```shell
+```bash
 sudo gem install bundler
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -88,11 +88,11 @@ You will need the following tools for the rest of the steps:
 If you have not installed them, you can install them with the following commands:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
-```shell
+```bash
 brew install autoconf automake libtool git
 ```
 <!--Linux-->
-```shell
+```bash
 sudo apt-get install -y autoconf automake libtool git
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -102,7 +102,7 @@ sudo apt-get install -y autoconf automake libtool git
 [bitcoin-secp256k1](https://github.com/bitcoin-core/secp256k1) and [libsodium](https://download.libsodium.org/doc/) are needed as dependencies for this SDK.
 
 To install bitcoin-secp256k1, clone the code to anywhere you like and install it with the scripts in it (you will need to enter your sudo password for the last step):
-```shell
+```bash
 git clone https://github.com/bitcoin-core/secp256k1.git && \
 cd secp256k1 && \
 ./autogen.sh && \
@@ -112,38 +112,38 @@ sudo make install
 ```
 
 To install libsodium, for macOS user you can use brew (for other systems please refer to the [libsodium wiki](https://github.com/crypto-rb/rbnacl/wiki/Installing-libsodium)):
-```shell
+```bash
 brew install libsodium
 ```
 
 
 #### Install SDK
 Then clone the Ruby SDK repo to anywhere you like:
-```shell
+```bash
 git clone https://github.com/nervosnetwork/ckb-sdk-ruby && \
 cd ckb-sdk-ruby
 ```
 
 Checkout to `master` branch:
-```shell
+```bash
 git checkout master
 ```
 
 Run bundler to install dependencies:
-```shell
+```bash
 bundle
 ```
 
 ### Use API
 
 Use this command to enter an interactive console:
-```shell
+```bash
 bin/console
 ```
 
 <details>
 <summary>(click here to view response)</summary>
-```shell
+```bash
 $ bin/console 
 [1] pry(main)> 
 ```

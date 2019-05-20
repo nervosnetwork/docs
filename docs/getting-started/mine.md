@@ -56,17 +56,17 @@ Now you are ready to mine CKB for your own wallet.
 
 ## Run Miner
 
-The miner process of CKB is not integrated with the main CKB process. So to run the CKB miner, you need to open another shell instance while keeping the `ckb run` process still alive. 
+The miner process of CKB is not integrated with the main CKB process. So to run the CKB miner, you need to open another terminal instance while keeping the `ckb run` process still alive. 
 
-Open another shell in your node configuration folder `ckb-testnet`:
-```shell
+Open another terminal in your node configuration folder `ckb-testnet`:
+```bash
 ckb miner
 ```
 
 Then both the main process and the miner should be working now.
 
 Wait for around a minute and when you see message like this, it means you have mined a new block:
-```shell
+```bash
 2019-05-02 12:19:23.463 +08:00 main INFO miner \
 found seal: Seal { \
     nonce: 16607377657024071670, \

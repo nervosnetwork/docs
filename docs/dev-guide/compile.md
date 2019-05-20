@@ -13,17 +13,17 @@ Install dependencies with the following command:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
-```shell
+```bash
 brew install autoconf libtool
 ```
 
 <!--Ubuntu and Debian-->
-```shell
+```bash
 sudo apt-get install -y git gcc libc6-dev pkg-config libssl-dev libclang-dev clang
 ```
 
 <!--Arch Linux-->
-```shell
+```bash
 sudo pacman -Sy git gcc pkgconf clang
 ```
 
@@ -36,26 +36,26 @@ Here we build from the source code on `master` branch, which is the latest relea
 
 Get the source code:
 
-```shell
+```bash
 git clone https://github.com/nervosnetwork/ckb.git && \
 cd ckb && \
 git checkout master
 ```
 
 Build it:
-```shell
+```bash
 make build
 ```
 
 You will find the generated executable binary in `target/release/ckb` folder.
 
 Then you need to move it to a `PATH` directory:
-```shell
+```bash
 sudo ln -snf "$(pwd)/target/release/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
-```shell
+```bash
 ckb --version
 ```
 
@@ -63,7 +63,7 @@ ckb --version
 
 <details>
 <summary>(click here to view response)</summary>
-```shell
+```bash
 $ ckb --version
 ckb 0.12.0 (v0.12.0 2019-05-17)
 ```

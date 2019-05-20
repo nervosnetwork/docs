@@ -9,7 +9,7 @@ It is built with [docusaurus](https://docusaurus.io/).
 
 
 ## Clone the Repo
-```shell
+```bash
 git clone https://github.com/nervosnetwork/docs.git && \
 cd docs && \
 cd website
@@ -19,13 +19,13 @@ cd website
 Install [yarn](https://yarnpkg.com/en/).
 
 In `website` folder:
-```shell
+```bash
 yarn install
 ```
 
 ## Preview the Site
 In `website` folder:
-```shell
+```bash
 yarn start
 ```
 
@@ -33,7 +33,7 @@ Then you should be able to preview the website at `http://localhost:3000/` in yo
 
 ## Build the Site
 In `website` folder:
-```shell
+```bash
 yarn build
 ```
 

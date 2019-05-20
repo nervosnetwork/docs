@@ -19,7 +19,7 @@ In this guidance we use the pre-built binary directly.
 
 For Linux user (not necessary for macOS user), you need to install `libssl` dynamic libraries before using the released binary.
 
-```shell
+```bash
 sudo apt-get install -y libssl1.0.0
 ```
 
@@ -31,11 +31,11 @@ Download the binary file from the [CKB releases page on GitHub](https://github.c
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
-```shell
+```bash
 wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_darwin_amd64.zip
 ```
 <!--Linux-->
-```shell
+```bash
 wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_linux_amd64.tar.gz
 ```
 
@@ -47,12 +47,12 @@ Then uncompress the file:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
-```shell
+```bash
 unzip ckb_v0.12.0_darwin_amd64.zip && \
 cd ckb_v0.12.0_darwin_amd64
 ```
 <!--Linux-->
-```shell
+```bash
 tar -xzvf ckb_v0.12.0_linux_amd64.tar.gz && \
 cd ckb_v0.12.0_linux_amd64
 ```
@@ -60,12 +60,12 @@ cd ckb_v0.12.0_linux_amd64
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 After it is downloaded and unzipped, you need to copy the `ckb` binary file to a `PATH` directory. In the unzipped folder:
-```shell
+```bash
 sudo ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
 ```
 
 Then check if it works with:
-```shell
+```bash
 ckb --version
 ```
 
@@ -73,7 +73,7 @@ ckb --version
 
 <details>
 <summary>(click here to view response)</summary>
-```shell
+```bash
 $ ckb --version
 ckb 0.12.0 (v0.12.0 2019-05-17)
 ```
@@ -87,14 +87,14 @@ Here you will learn about how to start a CKB node.
 
 ### Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
-```shell
+```bash
 ckb init -C ckb-testnet --spec testnet && \
 cd ckb-testnet
 ```
 
 <details>
 <summary>(click here to view response)</summary>
-```shell
+```bash
 $ ckb init -C ckb-testnet --spec testnet && \ 
 cd ckb-testnet
 Initialized CKB directory in /Users/username/code/ckb-testnet
@@ -110,13 +110,13 @@ In `ckb.toml`, you will find the information of bootnodes. These nodes will serv
 ### Start a Node
 
 Now you can start the CKB client to run a node:
-```shell
+```bash
 ckb run
 ```
 
 <details>
 <summary>(click here to view response)</summary>
-```shell
+```bash
 $ ckb run
 2019-05-18 08:06:37.246 +08:00 main INFO sentry  **Notice**: The ckb process will send stack trace to sentry on Rust panics. This is enabled by default before mainnet, which can be opted out by setting the option `dsn` to empty in the config file. The DSN is now https://48c6a88d92e246478e2d53b5917a887c@sentry.io/1422795
 2019-05-18 08:06:37.257 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
