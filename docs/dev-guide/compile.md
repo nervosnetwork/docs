@@ -12,19 +12,21 @@ CKB is developed with Rust. To get Rust and its tools, please refer to the [rust
 Install dependencies with the following command:
 
 <!--DOCUSAURUS_CODE_TABS-->
+<!--macOS-->
+```shell
+brew install autoconf libtool
+```
+
 <!--Ubuntu and Debian-->
 ```shell
 sudo apt-get install -y git gcc libc6-dev pkg-config libssl-dev libclang-dev clang
 ```
+
 <!--Arch Linux-->
 ```shell
 sudo pacman -Sy git gcc pkgconf clang
 ```
 
-<!--macOS-->
-```shell
-brew install autoconf libtool
-```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 > For CentOS user, here's a [guidance](https://github.com/nervosnetwork/ckb/issues/626) for you.
