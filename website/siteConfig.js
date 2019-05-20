@@ -39,6 +39,7 @@ const siteConfig = {
     headerLinks: [
         {href: 'https://explorer.nervos.org',label: 'Explorer',external: true},
         {href: 'https://github.com/nervosnetwork',label: 'GitHub',external: true},
+        { languages: true },
         {search:true}
     ],
 
