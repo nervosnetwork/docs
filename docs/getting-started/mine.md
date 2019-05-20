@@ -58,7 +58,7 @@ Now you are ready to mine CKB for your own wallet.
 
 The miner process of CKB is not integrated with the main CKB process. So to run the CKB miner, you need to open another shell instance while keeping the `ckb run` process still alive. 
 
-Open another shell in your node configuration folder `ckb-dev` or `ckb-testnet`:
+Open another shell in your node configuration folder `ckb-testnet`:
 ```shell
 ckb miner
 ```
@@ -79,11 +79,6 @@ Now you can check your CKB balance with Ruby SDK:
 wallet.get_balance
 ```
 
-It shoud be:
-```ruby
-=> 5000000000000
-```
-
-If you see many zeros here, congratulations! You just mined some CKB!
+If you see your balance is not zero anymore, congratulations! You just mined some CKB!
 
 If not, don't worry, check out the [trouble shooting document](../references/troubleshooting).
