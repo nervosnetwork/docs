@@ -8,6 +8,11 @@ In this section, you will learn about how to use Nervos CKB in practice. This in
 
 Please note that this document is compatible with the `ckb 0.12.0 (v0.12.0 2019-05-17)`. More information about CKB versions can be found in [the CKB repo on GitHub](https://github.com/nervosnetwork/ckb).
 
+## System Requirements
+Any modern computer should be able to run CKB node and mining programs.
+
+As for operating system, only **macOS** and **Linux** are supported at the moment. Other operating systems can [use docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md) for now. The native supports will be developed in the future.
+
 ## Testnet
 
 
