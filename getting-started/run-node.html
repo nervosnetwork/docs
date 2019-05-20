@@ -71,31 +71,31 @@
 <p>In this guidance we use the pre-built binary directly.</p>
 <h3><a class="anchor" aria-hidden="true" id="dependencies"></a><a href="#dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dependencies</h3>
 <p>For Linux user (not necessary for macOS user), you need to install <code>libssl</code> dynamic libraries before using the released binary.</p>
-<pre><code class="hljs css language-shell">sudo apt-get install -y libssl1.0.0
+<pre><code class="hljs css language-bash">sudo apt-get install -y libssl1.0.0
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="download"></a><a href="#download" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Download</h3>
 <p>Download the binary file from the <a href="https://github.com/nervosnetwork/ckb/releases">CKB releases page on GitHub</a>:</p>
 <!-- Todo: change the release version here -->
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-5-tab-6" class="nav-link active" data-group="group_5" data-tab="tab-group-5-content-6">macOS</div><div id="tab-group-5-tab-7" class="nav-link" data-group="group_5" data-tab="tab-group-5-content-7">Linux</div></div><div class="tab-content"><div id="tab-group-5-content-6" class="tab-pane active" data-group="group_5" tabindex="-1"><div><span><pre><code class="hljs css language-shell">wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_darwin_amd64.zip<br /></code></pre>
-</span></div></div><div id="tab-group-5-content-7" class="tab-pane" data-group="group_5" tabindex="-1"><div><span><pre><code class="hljs css language-shell">wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_linux_amd64.tar.gz<br /></code></pre>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-11-tab-12" class="nav-link active" data-group="group_11" data-tab="tab-group-11-content-12">macOS</div><div id="tab-group-11-tab-13" class="nav-link" data-group="group_11" data-tab="tab-group-11-content-13">Linux</div></div><div class="tab-content"><div id="tab-group-11-content-12" class="tab-pane active" data-group="group_11" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_darwin_amd64.zip<br /></code></pre>
+</span></div></div><div id="tab-group-11-content-13" class="tab-pane" data-group="group_11" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_linux_amd64.tar.gz<br /></code></pre>
 </span></div></div></div></div>
 <blockquote>
 <p>You can also find nightly build versions from the releases of the <a href="https://github.com/ckb-builds/ckb-builds/releases">ckb-builds repo</a></p>
 </blockquote>
 <p>Then uncompress the file:</p>
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-8-tab-9" class="nav-link active" data-group="group_8" data-tab="tab-group-8-content-9">macOS</div><div id="tab-group-8-tab-10" class="nav-link" data-group="group_8" data-tab="tab-group-8-content-10">Linux</div></div><div class="tab-content"><div id="tab-group-8-content-9" class="tab-pane active" data-group="group_8" tabindex="-1"><div><span><pre><code class="hljs css language-shell">unzip ckb_v0.12.0_darwin_amd64.zip &amp;&amp; \<br />cd ckb_v0.12.0_darwin_amd64<br /></code></pre>
-</span></div></div><div id="tab-group-8-content-10" class="tab-pane" data-group="group_8" tabindex="-1"><div><span><pre><code class="hljs css language-shell">tar -xzvf ckb_v0.12.0_linux_amd64.tar.gz &amp;&amp; \<br />cd ckb_v0.12.0_linux_amd64<br /></code></pre>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-14-tab-15" class="nav-link active" data-group="group_14" data-tab="tab-group-14-content-15">macOS</div><div id="tab-group-14-tab-16" class="nav-link" data-group="group_14" data-tab="tab-group-14-content-16">Linux</div></div><div class="tab-content"><div id="tab-group-14-content-15" class="tab-pane active" data-group="group_14" tabindex="-1"><div><span><pre><code class="hljs css language-bash">unzip ckb_v0.12.0_darwin_amd64.zip &amp;&amp; \<br /><span class="hljs-built_in">cd</span> ckb_v0.12.0_darwin_amd64<br /></code></pre>
+</span></div></div><div id="tab-group-14-content-16" class="tab-pane" data-group="group_14" tabindex="-1"><div><span><pre><code class="hljs css language-bash">tar -xzvf ckb_v0.12.0_linux_amd64.tar.gz &amp;&amp; \<br /><span class="hljs-built_in">cd</span> ckb_v0.12.0_linux_amd64<br /></code></pre>
 </span></div></div></div></div>
 <p>After it is downloaded and unzipped, you need to copy the <code>ckb</code> binary file to a <code>PATH</code> directory. In the unzipped folder:</p>
-<pre><code class="hljs css language-shell">sudo ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
+<pre><code class="hljs css language-bash">sudo ln -snf <span class="hljs-string">"<span class="hljs-variable">$(pwd)</span>/ckb"</span> /usr/<span class="hljs-built_in">local</span>/bin/ckb
 </code></pre>
 <p>Then check if it works with:</p>
-<pre><code class="hljs css language-shell">ckb --version
+<pre><code class="hljs css language-bash">ckb --version
 </code></pre>
 <!-- Todo: change the response here -->
 <p><details>
 <summary>(click here to view response)</summary></p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ckb --version</span>
+<pre><code class="hljs css language-bash">$ ckb --version
 ckb 0.12.0 (v0.12.0 2019-05-17)
 </code></pre>
 <p></details></p>
@@ -104,16 +104,16 @@ ckb 0.12.0 (v0.12.0 2019-05-17)
 <p>Here you will learn about how to start a CKB node.</p>
 <h3><a class="anchor" aria-hidden="true" id="configurations"></a><a href="#configurations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurations</h3>
 <p>You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called <code>ckb-testnet</code> and the generated files will be in this folder:</p>
-<pre><code class="hljs css language-shell">ckb init -C ckb-testnet --spec testnet &amp;&amp; \
-cd ckb-testnet
+<pre><code class="hljs css language-bash">ckb init -C ckb-testnet --spec testnet &amp;&amp; \
+<span class="hljs-built_in">cd</span> ckb-testnet
 </code></pre>
 <p><details>
 <summary>(click here to view response)</summary></p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ckb init -C ckb-testnet --spec testnet &amp;&amp; \ </span>
-cd ckb-testnet
-Initialized CKB directory in /Users/username/code/ckb-testnet
-export ckb.toml
-export ckb-miner.toml
+<pre><code class="hljs css language-bash">$ ckb init -C ckb-testnet --spec testnet &amp;&amp; \ 
+<span class="hljs-built_in">cd</span> ckb-testnet
+Initialized CKB directory <span class="hljs-keyword">in</span> /Users/username/code/ckb-testnet
+<span class="hljs-built_in">export</span> ckb.toml
+<span class="hljs-built_in">export</span> ckb-miner.toml
 </code></pre>
 <p></details></p>
 <p>In <code>ckb.toml</code>, you will find the information of bootnodes. These nodes will serve as the seed nodes to help you discover other CKB nodes in the CKB network.</p>
@@ -122,19 +122,19 @@ export ckb-miner.toml
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="start-a-node"></a><a href="#start-a-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a Node</h3>
 <p>Now you can start the CKB client to run a node:</p>
-<pre><code class="hljs css language-shell">ckb run
+<pre><code class="hljs css language-bash">ckb run
 </code></pre>
 <p><details>
 <summary>(click here to view response)</summary></p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ckb run</span>
-2019-05-18 08:06:37.246 +08:00 main INFO sentry  **Notice**: The ckb process will send stack trace to sentry on Rust panics. This is enabled by default before mainnet, which can be opted out by setting the option `dsn` to empty in the config file. The DSN is now https://48c6a88d92e246478e2d53b5917a887c@sentry.io/1422795
+<pre><code class="hljs css language-bash">$ ckb run
+2019-05-18 08:06:37.246 +08:00 main INFO sentry  **Notice**: The ckb process will send stack trace to sentry on Rust panics. This is enabled by default before mainnet, <span class="hljs-built_in">which</span> can be opted out by setting the option `dsn` to empty <span class="hljs-keyword">in</span> the config file. The DSN is now https://48c6a88d92e246478e2d53b5917a887c@sentry.io/1422795
 2019-05-18 08:06:37.257 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
-2019-05-18 08:06:37.385 +08:00 main INFO main  chain genesis hash: 0xaad9b82caa07f5989dfb8caa44927f0bab515a96ccaaceba82c7bea609fec205
+2019-05-18 08:06:37.385 +08:00 main INFO main  chain genesis <span class="hljs-built_in">hash</span>: 0xaad9b82caa07f5989dfb8caa44927f0bab515a96ccaaceba82c7bea609fec205
 2019-05-18 08:06:37.385 +08:00 main INFO network  Generate random key
-2019-05-18 08:06:37.386 +08:00 main INFO network  write random secret key to "/Users/username/code/ckb-testnet/data/network/secret_key"
-2019-05-18 08:06:37.391 +08:00 main INFO network  No peer in peer store, start seeding...
+2019-05-18 08:06:37.386 +08:00 main INFO network  write random secret key to <span class="hljs-string">"/Users/username/code/ckb-testnet/data/network/secret_key"</span>
+2019-05-18 08:06:37.391 +08:00 main INFO network  No peer <span class="hljs-keyword">in</span> peer store, start seeding...
 2019-05-18 08:06:37.392 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmSbvRYNUujyEBEpRipdREfS8cqLxCSndDAWRDAE1Hms2H
-2019-05-18 08:06:37.394 +08:00 tokio-runtime-worker-0 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
+2019-05-18 08:06:37.394 +08:00 tokio-runtime-worker-0 INFO network  p2p service event: ListenStarted { address: <span class="hljs-string">"/ip4/0.0.0.0/tcp/8115"</span> }
 2019-05-18 08:06:37.441 +08:00 tokio-runtime-worker-6 INFO network  SessionId(1) open, registry /ip4/47.111.169.36/tcp/8111/p2p/QmNQ4jky6uVqLDrPU7snqxARuNGWNLgSrTnssbRuy3ij2W success
 </code></pre>
 <p></details></p>
