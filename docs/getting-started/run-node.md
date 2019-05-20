@@ -9,12 +9,11 @@ If you are not familiar with the concepts of node and mining yet, [here is a doc
 
 ## Get CKB Client
 
-To get the CKB client software, you can choose to download the released binary directly, or build it from the source code.
-
-### Use Docker
-You can also use Docker to run your CKB node. For the detailed guidance, please refer to [this document on GitHub](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md). 
+To get the CKB client software, you can choose to download the released binary directly, or [build it from the source code](../dev-guide/compile), or [use docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
 
 > For Windows user, we recommend you to use Docker for running CKB node.
+
+In this guidance we use the pre-built binary directly.
 
 ### Download from Release
 
@@ -84,69 +83,6 @@ ckb 0.12.0 (v0.12.0 2019-05-17)
 
 If you see the response above, you have successfully installed CKB. You can try to [start a CKB node](#run-ckb) now.
 
-### Compile from Source
-
-#### Install Rust
-CKB is developed with Rust. To get Rust and its tools, please refer to the [rustup website](https://www.rustup.rs/) for how to install rustup.
-
-#### Dependencies
-Then install dependencies with the following command:
-
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Ubuntu and Debian-->
-```shell
-sudo apt-get install -y git gcc libc6-dev pkg-config libssl-dev libclang-dev clang
-```
-<!--Arch Linux-->
-```shell
-sudo pacman -Sy git gcc pkgconf clang
-```
-
-<!--macOS-->
-```shell
-brew install autoconf libtool
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
-
-> For CentOS user, here's a [guidance](https://github.com/nervosnetwork/ckb/issues/626) for you.
-
-#### Build
-Here we build from the source code on `master` branch, which is the latest release version. For other versions and branches, please check the [CKB repo](https://github.com/nervosnetwork/ckb) for more information.
-
-Get the source code:
-
-```shell
-git clone https://github.com/nervosnetwork/ckb.git && \
-cd ckb && \
-git checkout master
-```
-
-Build it:
-```shell
-make build
-```
-
-You will find the generated executable binary in `target/release/ckb` folder.
-
-Then you need to move it to a `PATH` directory:
-```shell
-sudo ln -snf "$(pwd)/target/release/ckb" /usr/local/bin/ckb
-```
-
-Then check if it works with:
-```shell
-ckb --version
-```
-
-<!-- Todo: change the response here -->
-
-<details>
-<summary>(click here to view response)</summary>
-```shell
-$ ckb --version
-ckb 0.12.0 (v0.12.0 2019-05-17)
-```
-</details>
 
 ## Run CKB
 Here you will learn about how to start a CKB node.
@@ -197,7 +133,5 @@ $ ckb run
 </details>
 
 Congratulations! You just started a CKB node!
-
-If you generated a configuration file with `testnet` parameter, you should see your node synchronizing blocks now.
 
 If you find any error messages, don't worry, check out the [trouble shooting document](../references/troubleshooting).

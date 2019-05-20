@@ -18,6 +18,7 @@
             "getting-started/transfer"
         ],
         "Development Guide": [
+            "dev-guide/compile",
             "dev-guide/scripts"
         ],
         "API": [
