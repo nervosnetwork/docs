@@ -5,6 +5,7 @@ title: Mine CKB
 
 Now you have tried [running a node](run-node) and [interact with it](interact) using SDK as well as creating a wallet. The next step is to run the miner program and earn some CKB.
 
+> Please note that you should wait until the `ckb run` have synchronized to the [latest height](https://explorer.nervos.org/), before you start to mine.
 
 ## Configurations
 We first need to generate the miner wallet configuration parameters. Our Ruby SDK can help us to do it.
