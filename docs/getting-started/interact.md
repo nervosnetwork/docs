@@ -66,17 +66,9 @@ ruby -v
 #### Install Bundler
 Then install bundler in case you have not installed it yet:
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--macOS-->
-```bash
-gem install bundler
-```
-
-<!--Linux-->
 ```bash
 sudo gem install bundler
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 #### Install Tools
 You will need the following tools for the rest of the steps:
