@@ -56,7 +56,18 @@ There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that 
 ### Installation
 
 #### Install Ruby
-First please refer the [Ruby official guidance](https://www.ruby-lang.org/en/downloads/) for installing the latest version of Ruby.
+Use the following command to install the latest version of [Ruby](https://www.ruby-lang.org/en/downloads/).
+<!--DOCUSAURUS_CODE_TABS-->
+<!--macOS-->
+```bash
+brew install ruby
+```
+<!--Linux-->
+```bash
+sudo apt-get install ruby ruby-dev
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 
 Ruby v2.4 or above are required for this SDK. Please check your Ruby version with:
 ```bash
