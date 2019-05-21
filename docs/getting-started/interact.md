@@ -80,12 +80,13 @@ sudo gem install bundler
 
 #### Install Tools
 You will need the following tools for the rest of the steps:
+* Homebrew
 * git
 * autoconf
 * automake
 * libtool
 
-If you have not installed them, you can install them with the following commands:
+If you have not installed them, you can install them with the following commands (macOS user needs to install [Homebrew](https://docs.brew.sh/Installation) first):
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
