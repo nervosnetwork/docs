@@ -25,7 +25,7 @@ sudo apt-get install -y libssl1.0.0
 
 ### Download
 
-Download the binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases):
+Download the binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases/tag/v0.12.0):
 
 <!-- Todo: change the release version here -->
 
