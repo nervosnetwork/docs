@@ -56,7 +56,7 @@ There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that 
 ### Installation
 
 #### Dependencies
-For Linux user, Ubuntu v18.04 or above is required.
+For Linux user, Ubuntu v18.04 or above is required. For macOS user, please install [Homebrew](https://brew.sh/) first.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
@@ -77,7 +77,7 @@ sudo gem install bundler
 sudo apt update && \
 sudo apt install git-core curl build-essential libssl-dev libreadline-dev libyaml-dev libcurl4-openssl-dev libffi-dev autoconf autogen libtool pkg-config libsodium-dev libsecp256k1-dev && \
 sudo apt install ruby-full && \
-gem install bundler
+sudo gem install bundler
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
