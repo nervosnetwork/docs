@@ -66,10 +66,45 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/api/rpc.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">JSON-RPC Commands</h1></header><article><div><span><!-- Todo update rpc document -->
-<blockquote>
 <p>This RPC API document is compatible with <code>ckb 0.12.0 (v0.12.0 2019-05-17)</code>. For more versions of this document, please refer to the <a href="https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md">GitHub repo</a> directly.</p>
-</blockquote>
 <p><a href="https://gist.github.com/Mine77/cb26558a993088a298a2bc1862bb9662">Here</a> is a <code>paw</code> file you can use to import into Rest API softwares such as <a href="https://www.getpostman.com/">Postman</a></p>
+<blockquote>
+<p>The RPC port of your CKB node can be set in your <a href="https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md">node configuration</a> file. By default, it uses port 8114.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="an-example"></a><a href="#an-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>An Example</h2>
+<p>You can interact with your CKB node client via RPC port. Here's an example showing how to get the header information of the tip block (the latest block).</p>
+<p>Open a new terminal, and use this command to get the tip block header (note that you should have the <code>ckb run</code> running):</p>
+<pre><code class="hljs css language-bash">curl -d <span class="hljs-string">'{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}'</span> -H <span class="hljs-string">'content-type:application/json'</span> <span class="hljs-string">'http://localhost:8114'</span>
+</code></pre>
+<blockquote>
+<p>Note that you need to have <a href="https://www.google.com/search?q=how+to+install+curl+on+linux">curl</a> installed.</p>
+</blockquote>
+<p><details>
+<summary>(click here to view response)</summary></p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"difficulty"</span>:<span class="hljs-string">"0x1000"</span>,
+        <span class="hljs-attr">"epoch"</span>:<span class="hljs-string">"0"</span>,
+        <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"0x7ab75ce1a45f30a6fe0d83856aa56827243c88271f4b8e2f968809b175fa2e7e"</span>,
+        <span class="hljs-attr">"number"</span>:<span class="hljs-string">"227"</span>,
+        <span class="hljs-attr">"parent_hash"</span>:<span class="hljs-string">"0xc1b02d64c8a294f1bc935706655213314926d33f031e84fe97fc601559aae9b1"</span>,
+        <span class="hljs-attr">"proposals_hash"</span>:<span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
+        <span class="hljs-attr">"seal"</span>:{
+            <span class="hljs-attr">"nonce"</span>:<span class="hljs-string">"12843279316432878493"</span>,
+            <span class="hljs-attr">"proof"</span>:<span class="hljs-string">"0xa1060000d51100007b130000fd16000031200000982b0000fd370000d757000071730000dc740000a3790000a37b0000"</span>
+            },
+        <span class="hljs-attr">"timestamp"</span>:<span class="hljs-string">"1558138968104"</span>,
+        <span class="hljs-attr">"transactions_root"</span>:<span class="hljs-string">"0xc7067232dc4b44d393b50cea57635a642193963ac19ee3f5385940b2c23a5073"</span>,
+        <span class="hljs-attr">"uncles_count"</span>:<span class="hljs-string">"0"</span>,
+        <span class="hljs-attr">"uncles_hash"</span>:<span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
+        <span class="hljs-attr">"version"</span>:<span class="hljs-string">"0"</span>,
+        <span class="hljs-attr">"witnesses_root"</span>:<span class="hljs-string">"0x822916ce5ad8b248f5ce549139c456abfdbba3ea3d2a8642c55da706876d0734"</span>
+        },
+    <span class="hljs-attr">"id"</span>:<span class="hljs-number">2</span>
+}
+</code></pre>
+<p></details></p>
 <h2><a class="anchor" aria-hidden="true" id="chain"></a><a href="#chain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chain</h2>
 <h3><a class="anchor" aria-hidden="true" id="get_block"></a><a href="#get_block" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_block</code></h3>
 <p>Returns the information about a block by hash.</p>
@@ -954,7 +989,7 @@ http://localhost:8114
     ]
 }
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/18/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/dev-guide/scripts"><span class="arrow-prev">← </span><span>Scripts</span></a><a class="docs-next button" href="/references/troubleshooting"><span>Troubleshooting</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#chain">Chain</a><ul class="toc-headings"><li><a href="#get_block"><code>get_block</code></a></li><li><a href="#get_block_by_number"><code>get_block_by_number</code></a></li><li><a href="#get_block_hash"><code>get_block_hash</code></a></li><li><a href="#get_cells_by_lock_hash"><code>get_cells_by_lock_hash</code></a></li><li><a href="#get_current_epoch"><code>get_current_epoch</code></a></li><li><a href="#get_epoch_by_number"><code>get_epoch_by_number</code></a></li><li><a href="#get_live_cell"><code>get_live_cell</code></a></li><li><a href="#get_tip_block_number"><code>get_tip_block_number</code></a></li><li><a href="#get_tip_header"><code>get_tip_header</code></a></li><li><a href="#get_transaction"><code>get_transaction</code></a></li></ul></li><li><a href="#experiment">Experiment</a><ul class="toc-headings"><li><a href="#_compute_code_hash"><code>_compute_code_hash</code></a></li><li><a href="#_compute_script_hash"><code>_compute_script_hash</code></a></li><li><a href="#_compute_transaction_hash"><code>_compute_transaction_hash</code></a></li><li><a href="#dry_run_transaction"><code>dry_run_transaction</code></a></li></ul></li><li><a href="#net">Net</a><ul class="toc-headings"><li><a href="#get_peers"><code>get_peers</code></a></li><li><a href="#local_node_info"><code>local_node_info</code></a></li></ul></li><li><a href="#pool">Pool</a><ul class="toc-headings"><li><a href="#send_transaction"><code>send_transaction</code></a></li><li><a href="#tx_pool_info"><code>tx_pool_info</code></a></li></ul></li><li><a href="#stats">Stats</a><ul class="toc-headings"><li><a href="#get_blockchain_info"><code>get_blockchain_info</code></a></li><li><a href="#get_peers_state"><code>get_peers_state</code></a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/22/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/dev-guide/scripts"><span class="arrow-prev">← </span><span>Scripts</span></a><a class="docs-next button" href="/references/troubleshooting"><span>Troubleshooting</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#an-example">An Example</a></li><li><a href="#chain">Chain</a><ul class="toc-headings"><li><a href="#get_block"><code>get_block</code></a></li><li><a href="#get_block_by_number"><code>get_block_by_number</code></a></li><li><a href="#get_block_hash"><code>get_block_hash</code></a></li><li><a href="#get_cells_by_lock_hash"><code>get_cells_by_lock_hash</code></a></li><li><a href="#get_current_epoch"><code>get_current_epoch</code></a></li><li><a href="#get_epoch_by_number"><code>get_epoch_by_number</code></a></li><li><a href="#get_live_cell"><code>get_live_cell</code></a></li><li><a href="#get_tip_block_number"><code>get_tip_block_number</code></a></li><li><a href="#get_tip_header"><code>get_tip_header</code></a></li><li><a href="#get_transaction"><code>get_transaction</code></a></li></ul></li><li><a href="#experiment">Experiment</a><ul class="toc-headings"><li><a href="#_compute_code_hash"><code>_compute_code_hash</code></a></li><li><a href="#_compute_script_hash"><code>_compute_script_hash</code></a></li><li><a href="#_compute_transaction_hash"><code>_compute_transaction_hash</code></a></li><li><a href="#dry_run_transaction"><code>dry_run_transaction</code></a></li></ul></li><li><a href="#net">Net</a><ul class="toc-headings"><li><a href="#get_peers"><code>get_peers</code></a></li><li><a href="#local_node_info"><code>local_node_info</code></a></li></ul></li><li><a href="#pool">Pool</a><ul class="toc-headings"><li><a href="#send_transaction"><code>send_transaction</code></a></li><li><a href="#tx_pool_info"><code>tx_pool_info</code></a></li></ul></li><li><a href="#stats">Stats</a><ul class="toc-headings"><li><a href="#get_blockchain_info"><code>get_blockchain_info</code></a></li><li><a href="#get_peers_state"><code>get_peers_state</code></a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
