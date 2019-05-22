@@ -57,7 +57,7 @@ Now you are ready to mine CKB for your own wallet.
 
 ## Run Miner
 
-The miner process of CKB is not integrated with the main CKB process. So to run the CKB miner, you need to open another terminal instance while keeping the `ckb run` process still alive. 
+The miner process of CKB is not integrated with the main CKB process. So to run the CKB miner, you need to open another terminal instance while **keeping the `ckb run` process still alive**. 
 
 Open another terminal in your node configuration folder `ckb-testnet`:
 ```bash
