@@ -62,13 +62,8 @@ For Linux user, Ubuntu v18.04 or above is required. For macOS user, please insta
 <!--macOS-->
 ```bash
 brew install ruby autoconf automake libtool git libsodium && \
-git clone https://github.com/bitcoin-core/secp256k1.git && \
-cd secp256k1 && \
-./autogen.sh && \
-./configure && \
-make && \
-cd .. && \
-sudo make install && \
+brew tap nervosnetwork/tap && \
+brew install libsecp256k1 && \
 sudo gem install bundler
 ```
 
