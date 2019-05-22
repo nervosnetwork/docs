@@ -51,74 +51,36 @@ You can find all the RPC commands in the [RPC API document](../api/rpc).
 
 ## Use Ruby SDK
 
-There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that can provide an interactive console to help you work with your node.
+There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that provide an interactive console to help you work with your node.
 
 ### Installation
 
-#### Install Ruby
-Use the following command to install the latest version of [Ruby](https://www.ruby-lang.org/en/downloads/).
+#### Dependencies
+For Linux user, Ubuntu v18.04 or above is required.
+
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-brew install ruby
-```
-<!--Linux-->
-```bash
-sudo apt-get install ruby ruby-dev
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
-
-
-Ruby v2.4 or above are required for this SDK. Please check your Ruby version with:
-```bash
-ruby -v
-```
-
-#### Install Bundler
-Then install bundler in case you have not installed it yet:
-
-```bash
-sudo gem install bundler
-```
-
-#### Install Tools
-You will need the following tools for the rest of the steps:
-* Homebrew
-* git
-* autoconf
-* automake
-* libtool
-
-If you have not installed them, you can install them with the following commands (macOS user needs to install [Homebrew](https://docs.brew.sh/Installation) first):
-<!--DOCUSAURUS_CODE_TABS-->
-<!--macOS-->
-```bash
-brew install autoconf automake libtool git
-```
-<!--Linux-->
-```bash
-sudo apt-get install -y autoconf automake libtool git
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
-
-
-#### Install Dependencies
-[bitcoin-secp256k1](https://github.com/bitcoin-core/secp256k1) and [libsodium](https://download.libsodium.org/doc/) are needed as dependencies for this SDK.
-
-To install bitcoin-secp256k1, clone the code to anywhere you like and install it with the scripts in it (you will need to enter your sudo password for the last step):
-```bash
+brew install ruby autoconf automake libtool git libsodium && \
 git clone https://github.com/bitcoin-core/secp256k1.git && \
 cd secp256k1 && \
 ./autogen.sh && \
 ./configure && \
 make && \
-sudo make install 
+cd .. && \
+sudo make install && \
+sudo gem install bundler
 ```
 
-To install libsodium, for macOS user you can use brew (for other systems please refer to the [libsodium wiki](https://github.com/crypto-rb/rbnacl/wiki/Installing-libsodium)):
+<!--Linux-->
 ```bash
-brew install libsodium
+sudo apt update && \
+sudo apt install git-core curl build-essential libssl-dev libreadline-dev libyaml-dev libcurl4-openssl-dev libffi-dev autoconf autogen libtool pkg-config libsodium-dev libsecp256k1-dev && \
+sudo apt install ruby-full && \
+gem install bundler
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 
 #### Install SDK
