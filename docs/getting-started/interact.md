@@ -5,57 +5,13 @@ title: Interacting with CKB
 
 Once you have successfully started [running your own CKB node](run-node) and the miner program with it, you can try to interact with your node now.
 
-Here you can learn about how to do this with RPC commands for some basic operations. Also, we have provided a simple SDK made with Ruby, which has wallet functionalities for you to interact with your node easily. 
+We have provided [a simple SDK made with Ruby](https://github.com/nervosnetwork/ckb-sdk-ruby) that has has an interactive console to let you work with your CKB node. 
 
+> You can also use RPC command to interact with your node. You can find a list of [RPC API commands](../api/rpc) in the API section.
 
-## Use RPC Command
-You can interact with your CKB node client via RPC port. Here's an example showing how to get the header information of the tip block (the latest block).
+## Installation
 
-Open a new terminal, and use this command to get the tip block header (note that you should have the `ckb run` running):
-```bash
-curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
-```
-
-<details>
-<summary>(click here to view response)</summary>
-```json
-{
-    "jsonrpc":"2.0",
-    "result":{
-        "difficulty":"0x1000",
-        "epoch":"0",
-        "hash":"0x7ab75ce1a45f30a6fe0d83856aa56827243c88271f4b8e2f968809b175fa2e7e",
-        "number":"227",
-        "parent_hash":"0xc1b02d64c8a294f1bc935706655213314926d33f031e84fe97fc601559aae9b1",
-        "proposals_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
-        "seal":{
-            "nonce":"12843279316432878493",
-            "proof":"0xa1060000d51100007b130000fd16000031200000982b0000fd370000d757000071730000dc740000a3790000a37b0000"
-            },
-        "timestamp":"1558138968104",
-        "transactions_root":"0xc7067232dc4b44d393b50cea57635a642193963ac19ee3f5385940b2c23a5073",
-        "uncles_count":"0",
-        "uncles_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
-        "version":"0",
-        "witnesses_root":"0x822916ce5ad8b248f5ce549139c456abfdbba3ea3d2a8642c55da706876d0734"
-        },
-    "id":2
-}
-```
-</details>
-
-> The RPC port can be set in your [node configuration](https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md) file. By default, it uses port 8114.
-
-You can find all the RPC commands in the [RPC API document](../api/rpc).
-
-
-## Use Ruby SDK
-
-There's a simple [Ruby SDK](https://github.com/nervosnetwork/ckb-sdk-ruby) that provide an interactive console to help you work with your node.
-
-### Installation
-
-#### Dependencies
+### Dependencies
 For Linux user, Ubuntu v18.04 or above is required. For macOS user, please install [Homebrew](https://brew.sh/) first.
 
 <!--DOCUSAURUS_CODE_TABS-->
@@ -78,7 +34,7 @@ sudo gem install bundler
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 
-#### Install SDK
+### Install SDK
 Then clone the Ruby SDK repo to anywhere you like:
 ```bash
 git clone https://github.com/nervosnetwork/ckb-sdk-ruby && \
@@ -95,7 +51,7 @@ Run bundler to install dependencies:
 bundle
 ```
 
-### Use API
+## Use API
 
 Use this command to enter an interactive console:
 ```bash
@@ -154,7 +110,7 @@ api.get_tip_header
 
 > In the [GitHub repo](https://github.com/nervosnetwork/ckb-sdk-ruby/blob/master/lib/ckb/api.rb), you can find all the available RPC API in this Ruby SDK.
 
-### Create Wallet
+## Create Wallet
 To create a wallet, we first need to generate a private key:
 ``` ruby
 privkey = CKB::Key.random_private_key

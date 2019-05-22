@@ -5,9 +5,51 @@ title: JSON-RPC Commands
 
 <!-- Todo update rpc document -->
 
-> This RPC API document is compatible with `ckb 0.12.0 (v0.12.0 2019-05-17)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. 
+This RPC API document is compatible with `ckb 0.12.0 (v0.12.0 2019-05-17)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. 
 
 [Here](https://gist.github.com/Mine77/cb26558a993088a298a2bc1862bb9662) is a `paw` file you can use to import into Rest API softwares such as [Postman](https://www.getpostman.com/)
+
+> The RPC port of your CKB node can be set in your [node configuration](https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md) file. By default, it uses port 8114.
+
+## An Example
+You can interact with your CKB node client via RPC port. Here's an example showing how to get the header information of the tip block (the latest block).
+
+Open a new terminal, and use this command to get the tip block header (note that you should have the `ckb run` running):
+```bash
+curl -d '{"id": 2, "jsonrpc": "2.0", "method":"get_tip_header","params": []}' -H 'content-type:application/json' 'http://localhost:8114'
+```
+
+> Note that you need to have [curl](https://www.google.com/search?q=how+to+install+curl+on+linux) installed.
+
+<details>
+<summary>(click here to view response)</summary>
+```json
+{
+    "jsonrpc":"2.0",
+    "result":{
+        "difficulty":"0x1000",
+        "epoch":"0",
+        "hash":"0x7ab75ce1a45f30a6fe0d83856aa56827243c88271f4b8e2f968809b175fa2e7e",
+        "number":"227",
+        "parent_hash":"0xc1b02d64c8a294f1bc935706655213314926d33f031e84fe97fc601559aae9b1",
+        "proposals_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+        "seal":{
+            "nonce":"12843279316432878493",
+            "proof":"0xa1060000d51100007b130000fd16000031200000982b0000fd370000d757000071730000dc740000a3790000a37b0000"
+            },
+        "timestamp":"1558138968104",
+        "transactions_root":"0xc7067232dc4b44d393b50cea57635a642193963ac19ee3f5385940b2c23a5073",
+        "uncles_count":"0",
+        "uncles_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+        "version":"0",
+        "witnesses_root":"0x822916ce5ad8b248f5ce549139c456abfdbba3ea3d2a8642c55da706876d0734"
+        },
+    "id":2
+}
+```
+</details>
+
+
 
 ## Chain
 
