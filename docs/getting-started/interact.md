@@ -3,9 +3,9 @@ id: interact
 title: Interacting with CKB
 ---
 
-Once you have successfully started [running your own CKB node](run-node) and the miner program with it, you can try to interact with your node now.
+Once you have successfully started [running your own CKB node](run-node), you can try to interact with your node now.
 
-We have provided [a simple SDK made with Ruby](https://github.com/nervosnetwork/ckb-sdk-ruby) that has has an interactive console to let you work with your CKB node. 
+We have provided [a simple SDK made with Ruby](https://github.com/nervosnetwork/ckb-sdk-ruby) tha has an interactive console to let you work with your CKB node. 
 
 > You can also use RPC command to interact with your node. You can find a list of [RPC API commands](../api/rpc) in the API section.
 
