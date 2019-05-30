@@ -3,7 +3,7 @@ id: run-node
 title: Run a CKB Node
 ---
 
-To get started on your journey with CKB, the first thing you can try is to run a CKB node yourself. 
+Once you have successfully [created your own wallet](wallet), you can try to run a node now.
 
 If you are not familiar with the concepts of node and mining yet, [here is a document](../basic-concepts/node-mining) you can learn from.
 

@@ -12,8 +12,8 @@
         ],
         "Getting Started": [
             "getting-started/introduction",
-            "getting-started/run-node",
             "getting-started/wallet",
+            "getting-started/run-node",
             "getting-started/mine"
         ],
         "Development Guide": [
