@@ -25,18 +25,18 @@ sudo apt-get install -y libssl1.0.0
 
 ### Download
 
-Download the binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases/tag/v0.12.0):
+Download the binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases/tag/v0.13.0):
 
 <!-- Todo: change the release version here -->
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_darwin_amd64.zip
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.13.0_darwin_amd64.zip
 ```
 <!--Linux-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_linux_amd64.tar.gz
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.13.0_linux_amd64.tar.gz
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -75,7 +75,7 @@ ckb --version
 <summary>(click here to view response)</summary>
 ```bash
 $ ckb --version
-ckb 0.12.0 (v0.12.0 2019-05-17)
+ckb 0.13.0 (v0.13.0 2019-05-29)
 ```
 </details>
 
