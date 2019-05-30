@@ -36,6 +36,7 @@ sudo gem install bundler
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
+> Ruby version is needed to be above `v2.4`. 
 
 ### Install SDK
 Then clone the Ruby SDK repo to anywhere you like:
