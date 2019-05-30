@@ -1,6 +1,6 @@
 ---
-id: interact
-title: Interacting with CKB
+id: wallet
+title: Create a Wallet
 ---
 
 Once you have successfully started [running your own CKB node](run-node), you can try to interact with your node now.

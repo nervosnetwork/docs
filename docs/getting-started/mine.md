@@ -1,6 +1,6 @@
 ---
 id: mine
-title: Mine CKB
+title: Mine Some CKB Tokens
 ---
 
 Now you have tried [running a node](run-node) and [interact with it](interact) using SDK as well as creating a wallet. The next step is to run the miner program and earn some CKB.
