@@ -79,13 +79,9 @@ ckb 0.12.0 (v0.12.0 2019-05-17)
 ```
 </details>
 
-If you see the response above, you have successfully installed CKB. You can try to [start a CKB node](#run-ckb) now.
+If you see the response above, you have successfully installed CKB. 
 
-
-## Run CKB
-Here you will learn about how to start a CKB node.
-
-### Configurations
+## Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
 ```bash
 ckb init -C ckb-testnet --spec testnet && \
@@ -103,11 +99,30 @@ export ckb-miner.toml
 ```
 </details>
 
-In `ckb.toml`, you will find the information of bootnodes. These nodes will serve as the seed nodes to help you discover other CKB nodes in the CKB network.
+Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node.
 
-> On github there is document that talks about [how to configure CKB](https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md) in details.
+To set your miner wallet, you need to add the `[block_assembler]` you got from your [wallet creation](wallet#create-wallet) to the end of the `ckb.toml` file (Please replace the `<YOUR-CODE_HASH>` and `<YOUR-ARGS>` parts in the following command)
+```bash
+cat <<EOT >> ckb.toml           
+[block_assembler]
+code_hash = "<YOUR-CODE_HASH>"
+args = ["<YOUR-ARGS>"]
+EOT
+```
 
-### Start a Node
+
+<details>
+<summary>(click here to view an example)</summary>
+```bash
+$ cat <<EOT >> ckb.toml           
+[block_assembler]
+code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
+args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
+EOT
+```
+</details>
+
+## Start a Node
 
 Now you can start the CKB client to run a node:
 ```bash
