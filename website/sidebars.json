@@ -12,13 +12,13 @@
         ],
         "Getting Started": [
             "getting-started/introduction",
+            "getting-started/wallet",
             "getting-started/run-node",
-            "getting-started/interact",
-            "getting-started/mine",
-            "getting-started/transfer"
+            "getting-started/mine"
         ],
         "Development Guide": [
             "dev-guide/compile",
+            "dev-guide/ruby-sdk",
             "dev-guide/scripts"
         ],
         "API": [

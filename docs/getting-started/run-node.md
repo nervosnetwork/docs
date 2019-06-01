@@ -3,7 +3,7 @@ id: run-node
 title: Run a CKB Node
 ---
 
-To get started on your journey with CKB, the first thing you can try is to run a CKB node yourself. 
+Once you have successfully [created your own wallet](wallet), you can try to run a node now.
 
 If you are not familiar with the concepts of node and mining yet, [here is a document](../basic-concepts/node-mining) you can learn from.
 
@@ -25,36 +25,39 @@ sudo apt-get install -y libssl1.0.0
 
 ### Download
 
-Download the binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases/tag/v0.12.0):
+Download the binary file from the CKB releases page on GitHub:
 
 <!-- Todo: change the release version here -->
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_darwin_amd64.zip
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
 ```
 <!--Linux-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_linux_amd64.tar.gz
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz
 ```
-
+<!--CentOS-->
+```bash
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
+```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-> You can also find nightly build versions from the releases of the [ckb-builds repo](https://github.com/ckb-builds/ckb-builds/releases)
+> If you can not download from command line, you can go to [GitHub releases page](https://github.com/nervosnetwork/ckb/releases/tag/v0.13.0) to download from your browser directly.
 
-Then uncompress the file:
+Then unzip the file:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-unzip ckb_v0.12.0_darwin_amd64.zip && \
-cd ckb_v0.12.0_darwin_amd64
+unzip ckb_v0.13.0_x86_64-apple-darwin.zip && \
+cd ckb_v0.13.0_x86_64-apple-darwin
 ```
 <!--Linux-->
 ```bash
-tar -xzvf ckb_v0.12.0_linux_amd64.tar.gz && \
-cd ckb_v0.12.0_linux_amd64
+tar -xzvf ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz && \
+cd ckb_v0.13.0_x86_64-unknown-linux-gnu
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -75,17 +78,13 @@ ckb --version
 <summary>(click here to view response)</summary>
 ```bash
 $ ckb --version
-ckb 0.12.0 (v0.12.0 2019-05-17)
+ckb 0.13.0 (rylai-v2 v0.13.0 2019-06-01)
 ```
 </details>
 
-If you see the response above, you have successfully installed CKB. You can try to [start a CKB node](#run-ckb) now.
+If you see the response above, you have successfully installed CKB. 
 
-
-## Run CKB
-Here you will learn about how to start a CKB node.
-
-### Configurations
+## Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
 ```bash
 ckb init -C ckb-testnet --spec testnet && \
@@ -103,11 +102,30 @@ export ckb-miner.toml
 ```
 </details>
 
-In `ckb.toml`, you will find the information of bootnodes. These nodes will serve as the seed nodes to help you discover other CKB nodes in the CKB network.
+Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node.
 
-> On github there is document that talks about [how to configure CKB](https://github.com/nervosnetwork/ckb/blob/develop/docs/configure.md) in details.
+To set your miner wallet, you need to add the `[block_assembler]` you got from your [wallet creation](wallet#create-wallet) to the end of the `ckb.toml` file (Please replace the `<YOUR-CODE_HASH>` and `<YOUR-ARGS>` parts in the following command)
+```bash
+cat <<EOT >> ckb.toml           
+[block_assembler]
+code_hash = "<YOUR-CODE_HASH>"
+args = ["<YOUR-ARGS>"]
+EOT
+```
 
-### Start a Node
+
+<details>
+<summary>(click here to view an example)</summary>
+```bash
+$ cat <<EOT >> ckb.toml           
+[block_assembler]
+code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
+args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
+EOT
+```
+</details>
+
+## Start a Node
 
 Now you can start the CKB client to run a node:
 ```bash
