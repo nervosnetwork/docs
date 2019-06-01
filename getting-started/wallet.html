@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Create a Wallet · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;To get started on your journey with CKB, the first thing you need is to create a wallet for yourself.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Create a Wallet · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="&lt;p&gt;To get started on your journey with CKB, the first thing you need is to create a wallet for yourself.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-139882771-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.svg" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://explorer.nervos.org" target="_blank">Explorer</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/introduction/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/introduction/nervos-intro">What is Nervos?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Basic Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/basic-concepts/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/architecture">CKB Architecture</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/states-tokens">States and Tokens</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/node-mining">Node and Mining</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/getting-started/introduction">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/getting-started/wallet">Create a Wallet</a></li><li class="navListItem"><a class="navItem" href="/getting-started/run-node">Run a CKB Node</a></li><li class="navListItem"><a class="navItem" href="/getting-started/mine">Mine Some CK Bytes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/dev-guide/compile">Compile CKB from Source</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/ruby-sdk">Use Ruby SDK</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/scripts">Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/api/rpc">JSON-RPC Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/references/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/references/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/references/nervos-design">Nervos System Design</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/getting-started/wallet.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Create a Wallet</h1></header><article><div><span><p>To get started on your journey with CKB, the first thing you need is to create a wallet for yourself.</p>
+<p>We have provided <a href="https://github.com/TheWaWaR/ckb-cli">a CKB compatible command line tool CKB-CLI</a> for you to do this.</p>
+<h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p>Download the latest version of CKB-CLI from <a href="https://github.com/TheWaWaR/ckb-cli/releases">GitHub releases</a>:</p>
+<!-- Todo: change the ckb-cli version here -->
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-15-tab-16" class="nav-link active" data-group="group_15" data-tab="tab-group-15-content-16">macOS</div><div id="tab-group-15-tab-17" class="nav-link" data-group="group_15" data-tab="tab-group-15-content-17">macOS(中国镜像)</div><div id="tab-group-15-tab-18" class="nav-link" data-group="group_15" data-tab="tab-group-15-content-18">Linux</div><div id="tab-group-15-tab-19" class="nav-link" data-group="group_15" data-tab="tab-group-15-content-19">Linux(中国镜像)</div></div><div class="tab-content"><div id="tab-group-15-content-16" class="tab-pane active" data-group="group_15" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.2/ckb-cli-v0.1.2-apple-drawin.tar.gz<br /></code></pre>
+</span></div></div><div id="tab-group-15-content-17" class="tab-pane" data-group="group_15" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.2-apple-drawin.tar.gz<br /></code></pre>
+</span></div></div><div id="tab-group-15-content-18" class="tab-pane" data-group="group_15" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.2/ckb-cli-v0.1.2-linux-musl.tar.gz<br /></code></pre>
+</span></div></div><div id="tab-group-15-content-19" class="tab-pane" data-group="group_15" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.2-linux-musl.tar.gz<br /></code></pre>
+</span></div></div></div></div>
+<blockquote>
+<p>For users who find it is slow to download the file, you can choose to download <a href="https://github.com/TheWaWaR/ckb-cli/releases">from the website</a> directly using your browser.</p>
+</blockquote>
+<p>Then unzip the file and add it to your system PATH:</p>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-20-tab-21" class="nav-link active" data-group="group_20" data-tab="tab-group-20-content-21">macOS</div><div id="tab-group-20-tab-22" class="nav-link" data-group="group_20" data-tab="tab-group-20-content-22">Linux</div></div><div class="tab-content"><div id="tab-group-20-content-21" class="tab-pane active" data-group="group_20" tabindex="-1"><div><span><pre><code class="hljs css language-bash">tar -xzvf ckb-cli-v0.1.2-apple-drawin.tar.gz &amp;&amp; \<br />sudo ln -snf <span class="hljs-string">"<span class="hljs-variable">$(pwd)</span>/ckb-cli"</span> /usr/<span class="hljs-built_in">local</span>/bin/ckb-cli<br /></code></pre>
+</span></div></div><div id="tab-group-20-content-22" class="tab-pane" data-group="group_20" tabindex="-1"><div><span><pre><code class="hljs css language-bash">tar -xzvf ckb-cli-v0.1.2-linux-musl.tar.gz &amp;&amp; \<br />sudo ln -snf <span class="hljs-string">"<span class="hljs-variable">$(pwd)</span>/ckb-cli"</span> /usr/<span class="hljs-built_in">local</span>/bin/ckb-cli<br /></code></pre>
+</span></div></div></div></div>
+<p>Now you have successfully installed the CKB-CLI. You can check if it works with:</p>
+<pre><code class="hljs css language-bash">ckb-cli --version
+</code></pre>
+<!-- Todo: change the response here -->
+<p><details>
+<summary>(click here to view response)</summary></p>
+<pre><code class="hljs css language-bash">$ ckb-cli --version
+ckb-cli 0.1.2 ( 2019-05-29)
+</code></pre>
+<p></details></p>
+<p>If you see the response above, you have successfully installed CKB-CLI.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-wallet"></a><a href="#create-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Wallet</h2>
+<p>You can generate a private key with the following command:</p>
+<pre><code class="hljs css language-bash">ckb-cli wallet generate-key --privkey-path privkey
+</code></pre>
+<p><details>
+<summary>(click here to view response)</summary></p>
+<pre><code class="hljs css language-bash">$ ckb-cli wallet generate-key --privkey-path privkey
+Put this config <span class="hljs-keyword">in</span> &lt; ckb.toml &gt;:
+
+[block_assembler]
+code_hash = <span class="hljs-string">"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"</span>
+args = [<span class="hljs-string">"0x7e6bccda0abe748eb5dc74be0e797662ae938036"</span>]
+
+{
+  <span class="hljs-string">"address"</span>: <span class="hljs-string">"ckt1q9gry5zg0e4ueks2he6gadwuwjlqu7tkv2hf8qpkf47x2u"</span>,
+  <span class="hljs-string">"lock_hash"</span>: <span class="hljs-string">"0x66313b870633a267297b8e25ac56ec04b0c6153ca319f3a597816b6ba1c735a6"</span>,
+  <span class="hljs-string">"pubkey"</span>: <span class="hljs-string">"02988df184fcc74a98e03d9952e878db068d31b5667c233985802ee4e7f3751323"</span>
+}
+</code></pre>
+<p></details></p>
+<p>In the output message, you can find the following information:</p>
+<ul>
+<li><code>[block_assembler]</code>  is needed for configuring your miner software, so <strong>please keep a record of it</strong>.</li>
+<li><code>address</code> is the address of the generated <a href="../basic-concepts/states-tokens#wallet">wallet</a>.</li>
+<li><code>lock_hash</code> is needed for <a href="../basic-concepts/architecture#lock-script">unlocking Cells</a>.</li>
+<li><code>pubkey</code> is the public key of this wallet.</li>
+</ul>
+<p>This command will also create a file named <code>privkey</code> in your current folder. In this file you can find your private key (the first line of the file) and its address (the second line).</p>
+<p><details>
+<summary>(click here to view an example <code>privkey</code>)</summary></p>
+<pre><code class="hljs css language-bash">9404a426fa4a7b2e431f75e70d0b458233cbe04b8617935582cb39925892a429
+ckt1q9gry5zg0e4ueks2he6gadwuwjlqu7tkv2hf8qpkf47x2u
+</code></pre>
+<p></details></p>
+<blockquote>
+<p>Note that your private key is the only key to your tokens and assets. Losing private key or give it to others is as same as losing your tokens or give them away.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="import-wallet"></a><a href="#import-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Import Wallet</h2>
+<p>If you already have a private key, you can import it into CKB-CLI to see its address or <code>block_assembler</code> information.</p>
+<p>You need to create a file named <code>privkey</code> that has your private key in it:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'&lt;your-private-key&gt;'</span> &gt; privkey
+</code></pre>
+<p>Then you can see your wallet information with:</p>
+<pre><code class="hljs css language-bash">ckb-cli wallet key-info --privkey-path privkey
+</code></pre>
+<p><details>
+<summary>(click here to view an example)</summary></p>
+<pre><code class="hljs css language-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">'9404a426fa4a7b2e431f75e70d0b458233cbe04b8617935582cb39925892a429'</span> &gt; privkey
+$ ckb-cli wallet key-info --privkey-path privkey                          
+Put this config <span class="hljs-keyword">in</span> &lt; ckb.toml &gt;:
+
+[block_assembler]
+code_hash = <span class="hljs-string">"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"</span>
+args = [<span class="hljs-string">"0x7e6bccda0abe748eb5dc74be0e797662ae938036"</span>]
+
+{
+  <span class="hljs-string">"address"</span>: <span class="hljs-string">"ckt1q9gry5zg0e4ueks2he6gadwuwjlqu7tkv2hf8qpkf47x2u"</span>,
+  <span class="hljs-string">"lock_hash"</span>: <span class="hljs-string">"0x66313b870633a267297b8e25ac56ec04b0c6153ca319f3a597816b6ba1c735a6"</span>,
+  <span class="hljs-string">"pubkey"</span>: <span class="hljs-string">"02988df184fcc74a98e03d9952e878db068d31b5667c233985802ee4e7f3751323"</span>
+}
+</code></pre>
+<p></details></p>
+<p>Now you have successfully created your own wallet. Congratulations! You can try to start your own node now.</p>
+<p>If you find any problems, please refer to the <a href="../references/troubleshooting">trouble shooting document</a>.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/30/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/introduction"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/getting-started/run-node"><span>Run a CKB Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installation">Installation</a></li><li><a href="#create-wallet">Create Wallet</a></li><li><a href="#import-wallet">Import Wallet</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'ef49666369943baa0a93aedc37511318',
+                indexName: 'nervos-ckb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
