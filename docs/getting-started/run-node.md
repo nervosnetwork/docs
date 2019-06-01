@@ -34,13 +34,25 @@ Download the binary file from the CKB releases page on GitHub:
 ```bash
 wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
 ```
+<!--macOS 中国镜像-->
+```bash
+wget https://nervos.oss-cn-beijing.aliyuncs.com/ckb_v0.13.0_x86_64-apple-darwin.zip
+```
 <!--Linux-->
 ```bash
 wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz
 ```
+<!--Linux 中国镜像-->
+```bash
+wget https://nervos.oss-cn-beijing.aliyuncs.com/ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz
+```
 <!--CentOS-->
 ```bash
 wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
+```
+<!--CentOS 中国镜像-->
+```bash
+wget https://nervos.oss-cn-beijing.aliyuncs.com/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
