@@ -94,7 +94,7 @@ cd ckb-testnet
 <details>
 <summary>(click here to view response)</summary>
 ```bash
-$ ckb init -C ckb-testnet --spec testnet && \ 
+$ ckb init -C ckb-testnet --chain testnet && \ 
 cd ckb-testnet
 Initialized CKB directory in /Users/username/code/ckb-testnet
 export ckb.toml
