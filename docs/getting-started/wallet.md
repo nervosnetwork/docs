@@ -5,7 +5,7 @@ title: Create a Wallet
 
 To get started on your journey with CKB, the first thing you need is to create a wallet for yourself.
 
-We have provided [a CKB compatible command line tool CKB-CLI](https://github.com/TheWaWaR/ckb-cli) for you to do this. 
+We have provided [a CKB compatible command line tool CKB-CLI](https://github.com/TheWaWaR/ckb-cli) for you to do this.
 
 ## Installation
 
@@ -17,11 +17,11 @@ Download the latest version of CKB-CLI from [GitHub releases](https://github.com
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-wget https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.2/ckb-cli-v0.1.2-apple-drawin.tar.gz
+curl -O https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.2/ckb-cli-v0.1.2-apple-drawin.tar.gz
 ```
 <!--macOS(中国镜像)-->
 ```bash
-wget http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.2-apple-drawin.tar.gz
+curl -O http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.2-apple-drawin.tar.gz
 ```
 <!--Linux-->
 ```bash
@@ -93,7 +93,7 @@ args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
 
 In the output message, you can find the following information:
 * `[block_assembler]`  is needed for configuring your miner software, so **please keep a record of it**.
-* `address` is the address of the generated [wallet](../basic-concepts/states-tokens#wallet). 
+* `address` is the address of the generated [wallet](../basic-concepts/states-tokens#wallet).
 * `lock_hash` is needed for [unlocking Cells](../basic-concepts/architecture#lock-script).
 * `pubkey` is the public key of this wallet.
 
@@ -126,7 +126,7 @@ ckb-cli wallet key-info --privkey-path privkey
 <summary>(click here to view an example)</summary>
 ```bash
 $ echo '9404a426fa4a7b2e431f75e70d0b458233cbe04b8617935582cb39925892a429' > privkey
-$ ckb-cli wallet key-info --privkey-path privkey                          
+$ ckb-cli wallet key-info --privkey-path privkey
 Put this config in < ckb.toml >:
 
 [block_assembler]

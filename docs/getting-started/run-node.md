@@ -32,7 +32,7 @@ Download the binary file from the CKB releases page on GitHub:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
+curl -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
 ```
 <!--Linux-->
 ```bash
@@ -82,7 +82,7 @@ ckb 0.13.0 (rylai-v2 v0.13.0 2019-06-01)
 ```
 </details>
 
-If you see the response above, you have successfully installed CKB. 
+If you see the response above, you have successfully installed CKB.
 
 ## Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
@@ -94,7 +94,7 @@ cd ckb-testnet
 <details>
 <summary>(click here to view response)</summary>
 ```bash
-$ ckb init -C ckb-testnet --chain testnet && \ 
+$ ckb init -C ckb-testnet --chain testnet && \
 cd ckb-testnet
 Initialized CKB directory in /Users/username/code/ckb-testnet
 export ckb.toml
@@ -106,7 +106,7 @@ Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which
 
 To set your miner wallet, you need to add the `[block_assembler]` you got from your [wallet creation](wallet#create-wallet) to the end of the `ckb.toml` file (Please replace the `<YOUR-CODE_HASH>` and `<YOUR-ARGS>` parts in the following command)
 ```bash
-cat <<EOT >> ckb.toml           
+cat <<EOT >> ckb.toml
 [block_assembler]
 code_hash = "<YOUR-CODE_HASH>"
 args = ["<YOUR-ARGS>"]
@@ -117,7 +117,7 @@ EOT
 <details>
 <summary>(click here to view an example)</summary>
 ```bash
-$ cat <<EOT >> ckb.toml           
+$ cat <<EOT >> ckb.toml
 [block_assembler]
 code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
 args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
