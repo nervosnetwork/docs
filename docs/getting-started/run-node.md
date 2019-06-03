@@ -17,10 +17,10 @@ In this guidance we use the pre-built binary directly.
 
 ### Dependencies
 
-For Linux user (not necessary for macOS user), you need to install `libssl` dynamic libraries before using the released binary.
+CentOS users please use the `x86_64-unknown-centos-gnu` package, which also requires OpenSSL 1.0 to run:
 
-```bash
-sudo apt-get install -y libssl1.0.0
+```shell
+sudo yum install openssl-libs
 ```
 
 ### Download
