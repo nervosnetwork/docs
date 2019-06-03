@@ -40,7 +40,7 @@ wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_
 ```
 <!--CentOS-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
+curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
