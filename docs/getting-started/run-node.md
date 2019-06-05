@@ -36,7 +36,7 @@ curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0
 ```
 <!--macOS 中国镜像-->
 ```bash
-wget https://nervos.oss-cn-beijing.aliyuncs.com/ckb_v0.13.0_x86_64-apple-darwin.zip
+curl -O -L https://nervos.oss-cn-beijing.aliyuncs.com/ckb_v0.13.0_x86_64-apple-darwin.zip
 ```
 <!--Linux-->
 ```bash
@@ -52,7 +52,7 @@ curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0
 ```
 <!--CentOS 中国镜像-->
 ```bash
-wget https://nervos.oss-cn-beijing.aliyuncs.com/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
+curl -L -O https://nervos.oss-cn-beijing.aliyuncs.com/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
