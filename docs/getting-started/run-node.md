@@ -32,7 +32,7 @@ Download the binary file from the CKB releases page on GitHub:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-curl -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
+curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
 ```
 <!--Linux-->
 ```bash
