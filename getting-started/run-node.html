@@ -82,7 +82,7 @@
 <h3><a class="anchor" aria-hidden="true" id="download"></a><a href="#download" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Download</h3>
 <p>Download the binary file from the CKB releases page on GitHub:</p>
 <!-- Todo: change the release version here -->
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-8-tab-9" class="nav-link active" data-group="group_8" data-tab="tab-group-8-content-9">macOS</div><div id="tab-group-8-tab-10" class="nav-link" data-group="group_8" data-tab="tab-group-8-content-10">Linux</div><div id="tab-group-8-tab-11" class="nav-link" data-group="group_8" data-tab="tab-group-8-content-11">CentOS</div></div><div class="tab-content"><div id="tab-group-8-content-9" class="tab-pane active" data-group="group_8" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip<br /></code></pre>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-8-tab-9" class="nav-link active" data-group="group_8" data-tab="tab-group-8-content-9">macOS</div><div id="tab-group-8-tab-10" class="nav-link" data-group="group_8" data-tab="tab-group-8-content-10">Linux</div><div id="tab-group-8-tab-11" class="nav-link" data-group="group_8" data-tab="tab-group-8-content-11">CentOS</div></div><div class="tab-content"><div id="tab-group-8-content-9" class="tab-pane active" data-group="group_8" tabindex="-1"><div><span><pre><code class="hljs css language-bash">curl -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip<br /></code></pre>
 </span></div></div><div id="tab-group-8-content-10" class="tab-pane" data-group="group_8" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz<br /></code></pre>
 </span></div></div><div id="tab-group-8-content-11" class="tab-pane" data-group="group_8" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz<br /></code></pre>
 </span></div></div></div></div>
@@ -114,7 +114,7 @@ ckb 0.13.0 (rylai-v2 v0.13.0 2019-06-01)
 </code></pre>
 <p><details>
 <summary>(click here to view response)</summary></p>
-<pre><code class="hljs css language-bash">$ ckb init -C ckb-testnet --chain testnet &amp;&amp; \ 
+<pre><code class="hljs css language-bash">$ ckb init -C ckb-testnet --chain testnet &amp;&amp; \
 <span class="hljs-built_in">cd</span> ckb-testnet
 Initialized CKB directory <span class="hljs-keyword">in</span> /Users/username/code/ckb-testnet
 <span class="hljs-built_in">export</span> ckb.toml
@@ -123,7 +123,7 @@ Initialized CKB directory <span class="hljs-keyword">in</span> /Users/username/c
 <p></details></p>
 <p>Then you can find a <code>ckb.toml</code> file in the generated <code>ckb-testnet</code> folder, which contains the configurations of your CKB node.</p>
 <p>To set your miner wallet, you need to add the <code>[block_assembler]</code> you got from your <a href="wallet#create-wallet">wallet creation</a> to the end of the <code>ckb.toml</code> file (Please replace the <code>&lt;YOUR-CODE_HASH&gt;</code> and <code>&lt;YOUR-ARGS&gt;</code> parts in the following command)</p>
-<pre><code class="hljs css language-bash">cat &lt;&lt;EOT &gt;&gt; ckb.toml           
+<pre><code class="hljs css language-bash">cat &lt;&lt;EOT &gt;&gt; ckb.toml
 [block_assembler]
 code_hash = <span class="hljs-string">"&lt;YOUR-CODE_HASH&gt;"</span>
 args = [<span class="hljs-string">"&lt;YOUR-ARGS&gt;"</span>]
@@ -131,7 +131,7 @@ EOT
 </code></pre>
 <p><details>
 <summary>(click here to view an example)</summary></p>
-<pre><code class="hljs css language-bash">$ cat &lt;&lt;EOT &gt;&gt; ckb.toml           
+<pre><code class="hljs css language-bash">$ cat &lt;&lt;EOT &gt;&gt; ckb.toml
 [block_assembler]
 code_hash = <span class="hljs-string">"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"</span>
 args = [<span class="hljs-string">"0x7e6bccda0abe748eb5dc74be0e797662ae938036"</span>]
