@@ -17,10 +17,10 @@ In this guidance we use the pre-built binary directly.
 
 ### Dependencies
 
-For Linux user (not necessary for macOS user), you need to install `libssl` dynamic libraries before using the released binary.
+CentOS users please use the `x86_64-unknown-centos-gnu` package, which also requires OpenSSL 1.0 to run:
 
-```bash
-sudo apt-get install -y libssl1.0.0
+```shell
+sudo yum install openssl-libs
 ```
 
 ### Download
@@ -32,7 +32,7 @@ Download the binary file from the CKB releases page on GitHub:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
+curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
 ```
 <!--macOS 中国镜像-->
 ```bash
@@ -48,7 +48,7 @@ wget https://nervos.oss-cn-beijing.aliyuncs.com/ckb_v0.13.0_x86_64-unknown-linux
 ```
 <!--CentOS-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
+curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
 ```
 <!--CentOS 中国镜像-->
 ```bash
@@ -94,7 +94,7 @@ ckb 0.13.0 (rylai-v2 v0.13.0 2019-06-01)
 ```
 </details>
 
-If you see the response above, you have successfully installed CKB. 
+If you see the response above, you have successfully installed CKB.
 
 ## Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
@@ -106,7 +106,7 @@ cd ckb-testnet
 <details>
 <summary>(click here to view response)</summary>
 ```bash
-$ ckb init -C ckb-testnet --spec testnet && \ 
+$ ckb init -C ckb-testnet --chain testnet && \
 cd ckb-testnet
 Initialized CKB directory in /Users/username/code/ckb-testnet
 export ckb.toml
@@ -118,7 +118,7 @@ Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which
 
 To set your miner wallet, you need to add the `[block_assembler]` you got from your [wallet creation](wallet#create-wallet) to the end of the `ckb.toml` file (Please replace the `<YOUR-CODE_HASH>` and `<YOUR-ARGS>` parts in the following command)
 ```bash
-cat <<EOT >> ckb.toml           
+cat <<EOT >> ckb.toml
 [block_assembler]
 code_hash = "<YOUR-CODE_HASH>"
 args = ["<YOUR-ARGS>"]
@@ -129,7 +129,7 @@ EOT
 <details>
 <summary>(click here to view an example)</summary>
 ```bash
-$ cat <<EOT >> ckb.toml           
+$ cat <<EOT >> ckb.toml
 [block_assembler]
 code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
 args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
