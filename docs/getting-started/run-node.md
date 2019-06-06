@@ -27,24 +27,30 @@ sudo yum install openssl-libs
 
 Download the binary file from the CKB releases page on GitHub:
 
+
 <!-- Todo: change the release version here -->
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
 curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
+curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip.asc
 ```
 <!--Linux-->
 ```bash
 wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz.asc
 ```
 <!--CentOS-->
 ```bash
 curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
+curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz.asc
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 > If you can not download from command line, you can go to [GitHub releases page](https://github.com/nervosnetwork/ckb/releases/tag/v0.13.0) to download from your browser directly.
+>
+> The `.asc` files are signatures. It is wise and more secure to check out for the files [integrity](https://github.com/nervosnetwork/ckb/blob/develop/docs/integrity-check.md).
 
 Then unzip the file:
 
