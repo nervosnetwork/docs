@@ -97,8 +97,8 @@ cd ckb-testnet
 $ ckb init -C ckb-testnet --chain testnet && \
 cd ckb-testnet
 Initialized CKB directory in /Users/username/code/ckb-testnet
-export ckb.toml
-export ckb-miner.toml
+create ckb.toml
+create ckb-miner.toml
 ```
 </details>
 
