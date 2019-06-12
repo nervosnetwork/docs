@@ -87,7 +87,7 @@ If you see the response above, you have successfully installed CKB.
 ## Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
 ```bash
-ckb init -C ckb-testnet --spec testnet && \
+ckb init -C ckb-testnet --chain testnet && \
 cd ckb-testnet
 ```
 
@@ -97,8 +97,8 @@ cd ckb-testnet
 $ ckb init -C ckb-testnet --chain testnet && \
 cd ckb-testnet
 Initialized CKB directory in /Users/username/code/ckb-testnet
-export ckb.toml
-export ckb-miner.toml
+create ckb.toml
+create ckb-miner.toml
 ```
 </details>
 
