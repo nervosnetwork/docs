@@ -17,7 +17,7 @@ Download the latest version of CKB-CLI from [GitHub releases](https://github.com
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-curl -O https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.2/ckb-cli-v0.1.2-apple-drawin.tar.gz
+curl -OL https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.2/ckb-cli-v0.1.2-apple-drawin.tar.gz
 ```
 <!--macOS(中国镜像)-->
 ```bash
