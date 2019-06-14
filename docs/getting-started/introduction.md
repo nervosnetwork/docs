@@ -11,7 +11,21 @@ Please note that this document is compatible with the `ckb 0.13.0 (rylai-v2 v0.1
 ## System Requirements
 Any modern computer should be able to run CKB node and mining programs.
 
-As for operating system, only **macOS** and **Linux** are supported at the moment. Other operating systems can [use docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md) for now. The native supports will be developed in the future.
+Recommended Operating System:  
+* Ubuntu 18.04 LTS x86-64
+* macOS
+
+Experimentally Supported System：  
+* Windows x86-64
+ 
+Theoratically Sypported System:
+* Ubuntu 16.04 LTS x86-64
+* Arch Linux x86-64
+* Centos 7 x86-64
+* Debian x86-64, Stretch or later
+
+
+You can also [use docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md) if your operating system is not properly supported by CKB for now.
 
 ## Testnet
 
