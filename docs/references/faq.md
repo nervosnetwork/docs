@@ -15,7 +15,7 @@ If you think you have mined a block with your ckb client, you should check:
 * if your `ckb.toml` is properly configured with the right `[block_assembler]` parameters
 * if your `ckb run` programm has synchronized to the latest block. If not, the block you mined will not be included in the longest chain.
 
-### Can I ming with CPU/GPU/ASIC?
+### Can I mine with CPU/GPU/ASIC?
 Currently, the mining software only supports mining with CPU. GPU supports will be added very soon.  
 As for ASIC, Nervos foundation will not work on producing ASIC miner for Nervos CKB. Also the hash function used in Nervos CKB PoW will be a completely new one, which means no ASIC should occur in the near future.
 
