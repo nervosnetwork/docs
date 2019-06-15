@@ -5,7 +5,7 @@ title: JSON-RPC Commands
 
 
 
-This RPC API document is compatible with `ckb 0.14.0 (v0.14.0 2019-05-17)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. 
+This RPC API document is compatible with `ckb 0.14.0 (v0.14.0 2019-06-15)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. 
 
 <!-- Todo update rpc document -->
 

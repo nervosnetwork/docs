@@ -17,19 +17,19 @@ Download the latest version of CKB-CLI from [GitHub releases](https://github.com
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-curl -OL https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.2/ckb-cli-v0.1.2-apple-drawin.tar.gz
+curl -OL https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.4/ckb-cli-v0.1.4-apple-drawin.tar.gz
 ```
 <!--macOS(中国镜像)-->
 ```bash
-curl -O http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.2-apple-drawin.tar.gz
+curl -O http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.4-apple-drawin.tar.gz
 ```
 <!--Linux-->
 ```bash
-wget https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.2/ckb-cli-v0.1.2-linux-musl.tar.gz
+wget https://github.com/TheWaWaR/ckb-cli/releases/download/v0.1.4/ckb-cli-v0.1.4-linux-musl.tar.gz
 ```
 <!--Linux(中国镜像)-->
 ```bash
-wget http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.2-linux-musl.tar.gz
+wget http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.4-linux-musl.tar.gz
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -40,12 +40,12 @@ Then unzip the file and add it to your system PATH:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-tar -xzvf ckb-cli-v0.1.2-apple-drawin.tar.gz && \
+tar -xzvf ckb-cli-v0.1.4-apple-drawin.tar.gz && \
 sudo ln -snf "$(pwd)/ckb-cli" /usr/local/bin/ckb-cli
 ```
 <!--Linux-->
 ```bash
-tar -xzvf ckb-cli-v0.1.2-linux-musl.tar.gz && \
+tar -xzvf ckb-cli-v0.1.4-linux-musl.tar.gz && \
 sudo ln -snf "$(pwd)/ckb-cli" /usr/local/bin/ckb-cli
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -61,7 +61,7 @@ ckb-cli --version
 <summary>(click here to view response)</summary>
 ```bash
 $ ckb-cli --version
-ckb-cli 0.1.2 ( 2019-05-29)
+ckb-cli 0.1.4 (v0.1.3-18-gea09873 2019-06-06)
 ```
 </details>
 
