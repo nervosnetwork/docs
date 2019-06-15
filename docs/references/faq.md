@@ -19,4 +19,5 @@ If you think you have mined a block with your ckb client, you should check:
 Currently, the mining software only supports mining with CPU. GPU supports will be added very soon.  
 As for ASIC, Nervos foundation will not work on producing ASIC miner for Nervos CKB. Also the hash function used in Nervos CKB PoW will be a completely new one, which means no ASIC should occur in the near future.
 
-
+### CKB-CLI prompts `ERROR: output path ( privkey ) already exists`?
+You already have a privkey file under this directory. You need to remove that one first.
