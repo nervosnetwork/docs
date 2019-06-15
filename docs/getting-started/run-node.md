@@ -33,22 +33,22 @@ Download the binary file from the CKB releases page on GitHub:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
-curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip.asc
+curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-apple-darwin.zip
+curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-apple-darwin.zip.asc
 ```
 <!--Linux-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz.asc
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-unknown-linux-gnu.tar.gz
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-unknown-linux-gnu.tar.gz.asc
 ```
 <!--CentOS-->
 ```bash
-curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz
-curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-unknown-centos-gnu.tar.gz.asc
+curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-unknown-centos-gnu.tar.gz
+curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-unknown-centos-gnu.tar.gz.asc
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-> If you can not download from command line, you can go to [GitHub releases page](https://github.com/nervosnetwork/ckb/releases/tag/v0.13.0) to download from your browser directly.
+> If you can not download from command line, you can go to [GitHub releases page](https://github.com/nervosnetwork/ckb/releases/tag/v0.14.0) to download from your browser directly.
 >
 > The `.asc` files are signatures. It is wise and more secure to check out for the files [integrity](https://github.com/nervosnetwork/ckb/blob/develop/docs/integrity-check.md).
 
@@ -57,13 +57,13 @@ Then unzip the file:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-unzip ckb_v0.13.0_x86_64-apple-darwin.zip && \
-cd ckb_v0.13.0_x86_64-apple-darwin
+unzip ckb_v0.14.0_x86_64-apple-darwin.zip && \
+cd ckb_v0.14.0_x86_64-apple-darwin
 ```
 <!--Linux-->
 ```bash
-tar -xzvf ckb_v0.13.0_x86_64-unknown-linux-gnu.tar.gz && \
-cd ckb_v0.13.0_x86_64-unknown-linux-gnu
+tar -xzvf ckb_v0.14.0_x86_64-unknown-linux-gnu.tar.gz && \
+cd ckb_v0.14.0_x86_64-unknown-linux-gnu
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -84,7 +84,7 @@ ckb --version
 <summary>(click here to view response)</summary>
 ```bash
 $ ckb --version
-ckb 0.13.0 (rylai-v2 v0.13.0 2019-06-01)
+ckb 0.14.0 (rylai-v2 v0.14.0 2019-06-01)
 ```
 </details>
 
