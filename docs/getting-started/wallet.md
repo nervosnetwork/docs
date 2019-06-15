@@ -63,7 +63,7 @@ ckb-cli --version
 <summary>(click here to view response)</summary>
 ```bash
 $ ckb-cli --version
-ckb-cli 0.1.4 (v0.1.3-18-gea09873 2019-06-06)
+ckb-cli 0.2.0 (v0.2.0-1-gfdec5d1 2019-06-15)
 ```
 </details>
 
