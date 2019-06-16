@@ -43,12 +43,12 @@ Then unzip the file and add it to your system PATH:
 <!--macOS-->
 ```bash
 tar -xzvf ckb-cli-v0.2.0-x86_64-apple-drawin.tar.gz && \
-sudo ln -snf "$(pwd)/ckb-cli" /usr/local/bin/ckb-cli
+sudo ln -snf "$(pwd)/ckb-cli" /usr/local/bin
 ```
 <!--Linux-->
 ```bash
 tar -xzvf ckb-cli-v0.2.0-x86_64-linux-musl.tar.gz && \
-sudo ln -snf "$(pwd)/ckb-cli" /usr/local/bin/ckb-cli
+sudo ln -snf "$(pwd)/ckb-cli" /usr/local/bin
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
