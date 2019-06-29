@@ -14,7 +14,7 @@ ckb-cli account new
 <details>
 <summary>(click here to view response)</summary>
 ```bash
-$ ckb-cli wallet generate-key --privkey-path privkey
+$ ckb-cli account new
 Password: 
 Repeat password: 
 address:
