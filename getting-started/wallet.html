@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Create a Wallet · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;/p&gt;
-"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Create a Wallet · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="&lt;p&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;/p&gt;
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Create a Wallet · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Once you have done with the installation, you can create a wallet for yourself now.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Create a Wallet · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="&lt;p&gt;Once you have done with the installation, you can create a wallet for yourself now.&lt;/p&gt;
 "/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
@@ -67,55 +67,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/getting-started/wallet.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Create a Wallet</h1></header><article><div><span><p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-Once you have done with the installation, you can create a wallet for yourself now.
-=======
-To get started on your journey with CKB, the first thing you need is to create a wallet for yourself.</p>
-<p>We have provided <a href="https://github.com/TheWaWaR/ckb-cli">a CKB compatible command line tool CKB-CLI</a> for you to do this.</p>
-<blockquote>
-<p><strong>Breaking Changes</strong>: To work with CKB v0.14.0, users MUST generate new wallet addresses with CKB-CLI v0.2.0 or above.</p>
-</blockquote>
-<h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
-<p>Download the latest version of CKB-CLI from <a href="https://github.com/TheWaWaR/ckb-cli/releases">GitHub releases</a>:</p>
-<!-- Todo: change the ckb-cli version here -->
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-15-tab-16" class="nav-link active" data-group="group_15" data-tab="tab-group-15-content-16">macOS</div><div id="tab-group-15-tab-17" class="nav-link" data-group="group_15" data-tab="tab-group-15-content-17">macOS(中国镜像)</div><div id="tab-group-15-tab-18" class="nav-link" data-group="group_15" data-tab="tab-group-15-content-18">Linux</div><div id="tab-group-15-tab-19" class="nav-link" data-group="group_15" data-tab="tab-group-15-content-19">Linux(中国镜像)</div></div><div class="tab-content"><div id="tab-group-15-content-16" class="tab-pane active" data-group="group_15" tabindex="-1"><div><span><pre><code class="hljs css language-bash">curl -OL https://github.com/TheWaWaR/ckb-cli/releases/download/v0.2.0/ckb-cli-v0.2.0-x86_64-apple-drawin.tar.gz<br /></code></pre>
-</span></div></div><div id="tab-group-15-content-17" class="tab-pane" data-group="group_15" tabindex="-1"><div><span><pre><code class="hljs css language-bash">curl -O http://ckbbin.engpro.cryptape.com/ckb-cli-v0.2.0-x86_64-apple-drawin.tar.gz<br /></code></pre>
-</span></div></div><div id="tab-group-15-content-18" class="tab-pane" data-group="group_15" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget https://github.com/TheWaWaR/ckb-cli/releases/download/v0.2.0/ckb-cli-v0.2.0-x86_64-linux-musl.tar.gz<br /></code></pre>
-</span></div></div><div id="tab-group-15-content-19" class="tab-pane" data-group="group_15" tabindex="-1"><div><span><pre><code class="hljs css language-bash">wget http://ckbbin.engpro.cryptape.com/ckb-cli-v0.2.0-x86_64-linux-musl.tar.gz<br /></code></pre>
-</span></div></div></div></div>
-<blockquote>
-<p>For users who find it is slow to download the file, you can choose to download <a href="https://github.com/TheWaWaR/ckb-cli/releases">from the website</a> directly using your browser.</p>
-</blockquote>
-<p>Then unzip the file and add it to your system PATH:</p>
-<div class="tabs"><div class="nav-tabs"><div id="tab-group-20-tab-21" class="nav-link active" data-group="group_20" data-tab="tab-group-20-content-21">macOS</div><div id="tab-group-20-tab-22" class="nav-link" data-group="group_20" data-tab="tab-group-20-content-22">Linux</div></div><div class="tab-content"><div id="tab-group-20-content-21" class="tab-pane active" data-group="group_20" tabindex="-1"><div><span><pre><code class="hljs css language-bash">tar -xzvf ckb-cli-v0.2.0-x86_64-apple-drawin.tar.gz &amp;&amp; \<br />sudo ln -snf <span class="hljs-string">"<span class="hljs-variable">$(pwd)</span>/ckb-cli"</span> /usr/<span class="hljs-built_in">local</span>/bin/ckb-cli<br /></code></pre>
-</span></div></div><div id="tab-group-20-content-22" class="tab-pane" data-group="group_20" tabindex="-1"><div><span><pre><code class="hljs css language-bash">tar -xzvf ckb-cli-v0.2.0-x86_64-linux-musl.tar.gz &amp;&amp; \<br />sudo ln -snf <span class="hljs-string">"<span class="hljs-variable">$(pwd)</span>/ckb-cli"</span> /usr/<span class="hljs-built_in">local</span>/bin/ckb-cli<br /></code></pre>
-</span></div></div></div></div>
-<p>Now you have successfully installed the CKB-CLI. You can check if it works with:</p>
-<pre><code class="hljs css language-bash">ckb-cli --version
-</code></pre>
-<!-- Todo: change the response here -->
-<p><details>
-<summary>(click here to view response)</summary></p>
-<pre><code class="hljs css language-bash">$ ckb-cli --version
-ckb-cli 0.2.0 (v0.2.0-1-gfdec5d1 2019-06-15)
-</code></pre>
-<p></details></p>
-<p>If you see the response above, you have successfully installed CKB-CLI.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d7ee54dde72e5190d5cdcb01d89485468a76a8e2</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/getting-started/wallet.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Create a Wallet</h1></header><article><div><span><p>Once you have done with the installation, you can create a wallet for yourself now.</p>
 <h2><a class="anchor" aria-hidden="true" id="create-wallet"></a><a href="#create-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Wallet</h2>
 <p>You can generate a new <a href="https://bitcoin.org/en/glossary/hd-protocol">HD wallet</a> address with the following command. Note that you need to set a password for this wallet:</p>
 <pre><code class="hljs css language-bash">ckb-cli account new
@@ -152,7 +104,7 @@ lock_arg: 5b5517c03acfce0cc734b8d6d42efe5243e5113b
 <p></details></p>
 <p>Now you have successfully created your own wallet. Congratulations! You can try to start your own node now.</p>
 <p>If you find any problems, please refer to the <a href="../references/troubleshooting">trouble shooting document</a>.</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/29/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/installation"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/getting-started/run-node"><span>Run a CKB Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installation">Installation</a></li><li><a href="#create-wallet">Create Wallet</a></li><li><a href="#export-wallet-private-key">Export Wallet Private Key</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/29/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/installation"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/getting-started/run-node"><span>Run a CKB Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#create-wallet">Create Wallet</a></li><li><a href="#export-wallet-private-key">Export Wallet Private Key</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
