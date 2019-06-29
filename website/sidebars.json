@@ -12,6 +12,7 @@
         ],
         "Getting Started": [
             "getting-started/introduction",
+            "getting-started/installation",
             "getting-started/wallet",
             "getting-started/run-node",
             "getting-started/mine"

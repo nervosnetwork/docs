@@ -7,88 +7,6 @@ Once you have successfully [created your own wallet](wallet), you can try to run
 
 If you are not familiar with the concepts of node and mining yet, [here is a document](../basic-concepts/node-mining) you can learn from.
 
-## Get CKB Client
-
-To get the CKB client software, you can choose to download the released binary directly, or [build it from the source code](../dev-guide/compile), or [use docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
-
-> For Windows user, we recommend you to use Docker for running CKB node.
-
-In this guidance we use the pre-built binary directly.
-
-### Dependencies
-
-CentOS users please use the `x86_64-unknown-centos-gnu` package, which also requires OpenSSL 1.0 to run:
-
-```shell
-sudo yum install openssl-libs
-```
-
-### Download
-
-Download the binary file from the CKB releases page on GitHub:
-
-
-<!-- Todo: change the release version here -->
-
-<!--DOCUSAURUS_CODE_TABS-->
-<!--macOS-->
-```bash
-curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-apple-darwin.zip
-curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-apple-darwin.zip.asc
-```
-<!--Linux-->
-```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-unknown-linux-gnu.tar.gz
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-unknown-linux-gnu.tar.gz.asc
-```
-<!--CentOS-->
-```bash
-curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-unknown-centos-gnu.tar.gz
-curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.14.0/ckb_v0.14.0_x86_64-unknown-centos-gnu.tar.gz.asc
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
-
-> If you can not download from command line, you can go to [GitHub releases page](https://github.com/nervosnetwork/ckb/releases/tag/v0.14.0) to download from your browser directly.
->
-> The `.asc` files are signatures. It is wise and more secure to check out for the files [integrity](https://github.com/nervosnetwork/ckb/blob/develop/docs/integrity-check.md).
-
-Then unzip the file:
-
-<!--DOCUSAURUS_CODE_TABS-->
-<!--macOS-->
-```bash
-unzip ckb_v0.14.0_x86_64-apple-darwin.zip && \
-cd ckb_v0.14.0_x86_64-apple-darwin
-```
-<!--Linux-->
-```bash
-tar -xzvf ckb_v0.14.0_x86_64-unknown-linux-gnu.tar.gz && \
-cd ckb_v0.14.0_x86_64-unknown-linux-gnu
-```
-
-<!--END_DOCUSAURUS_CODE_TABS-->
-
-After it is downloaded and unzipped, you need to copy the `ckb` binary file to a `PATH` directory. In the unzipped folder:
-```bash
-sudo ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
-```
-
-Then check if it works with:
-```bash
-ckb --version
-```
-
-<!-- Todo: change the response here -->
-
-<details>
-<summary>(click here to view response)</summary>
-```bash
-$ ckb --version
-ckb 0.14.0 (rylai-v2 v0.14.0 2019-06-15)
-```
-</details>
-
-If you see the response above, you have successfully installed CKB.
 
 ## Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
@@ -108,26 +26,22 @@ create ckb-miner.toml
 ```
 </details>
 
-Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node.
+Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node. To set your miner wallet, you need to add the `[block_assembler]` parameter to the end of the `ckb.toml` file. 
 
-To set your miner wallet, you need to add the `[block_assembler]` you got from your [wallet creation](wallet#create-wallet) to the end of the `ckb.toml` file (Please replace the `<YOUR-CODE_HASH>` and `<YOUR-ARGS>` parts in the following command)
-```bash
-cat <<EOT >> ckb.toml
+Open the `ckb.toml` file with a text editor, and then add these parameters to the end of the file (replace `<LOCK_ARG>` with the `lock_arg` you got from [wallet creation](./wallet#create-wallet)):
+```toml
 [block_assembler]
-code_hash = "<YOUR-CODE_HASH>"
-args = ["<YOUR-ARGS>"]
-EOT
+code_hash = "0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"
+args = [ "0x<LOCK_ARG>" ]
 ```
 
 
 <details>
 <summary>(click here to view an example)</summary>
-```bash
-$ cat <<EOT >> ckb.toml
+```toml
 [block_assembler]
 code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
 args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
-EOT
 ```
 </details>
 

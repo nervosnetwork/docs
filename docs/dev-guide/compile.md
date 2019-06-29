@@ -65,6 +65,6 @@ ckb --version
 <summary>(click here to view response)</summary>
 ```bash
 ckb --version
-ckb 0.14.0 (rylai-v2 v0.14.0 2019-06-15)
+ckb 0.15.0 (rylai-v4 7cb6cff 2019-06-29)
 ```
 </details>
