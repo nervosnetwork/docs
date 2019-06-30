@@ -28,7 +28,7 @@ create ckb-miner.toml
 
 Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node. To set your miner wallet, you need to add the `[block_assembler]` parameter to the end of the `ckb.toml` file. 
 
-Open the `ckb.toml` file with a text editor, and then add these parameters to the end of the file (replace `<LOCK_ARG>` with the `lock_arg` you got from [wallet creation](./wallet#create-wallet)):
+Open the `ckb.toml` file with a text editor, and then add these parameters to the end of the file (replace `<LOCK_ARG>` with the `lock_arg` you got from [wallet creation](./wallet#create-wallet); the `code_hash` here should NOT be changed):
 ```toml
 [block_assembler]
 code_hash = "0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"
