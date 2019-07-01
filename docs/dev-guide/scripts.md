@@ -5,7 +5,7 @@ title: Scripts
 
 This document introduces how the script works in CKB system, and how can you program scripts to build applications.
 
-Please notice that scripts functionality is not stable at the moment. There might be major changes been made to this part in the future. Also the toolchain for scripting is not fully developed yet. So here we only gie an introduction to the scripting in CKB.
+Please notice that scripts functionality is not stable at the moment. There might be major changes been made to this part in the future. Also the toolchain for scripting is not fully developed yet. So here we only give an introduction to the scripting in CKB.
 
 
 ## Script Model
