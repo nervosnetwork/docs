@@ -47,7 +47,7 @@ args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
 
 ## Start a Node
 
-Now you can start the CKB client to run a node:
+Now you can start the CKB client to run a node. Navigate the commandline to `ckb-testnet` folder and run this command:
 ```bash
 ckb run
 ```
