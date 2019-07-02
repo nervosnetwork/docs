@@ -16,7 +16,7 @@ There are primarily four major data structures in CKB: cell, transaction, script
 
 cell is the most basic element in CKB system. cell can be used to store states or scripts. 
 
-A state cell may contain the state data of an application or a UDT (User Different Token), for example, a user's balance of a kind of UDT. A script cell may contain the logic of an application or the rules of a UDT, such as a rule says that the balance of a UDT cannot be negative. 
+A state cell may contain the state data of an application or a UDT (User Different Token), for example, a user's balance of a kind of UDT. A script may contain the logic of an application or the rules of a UDT, such as a rule says that the balance of a UDT cannot be negative. 
 
 > It is feasible to let a cell store both the state and the logic of an application, but if this application wants to leverage the power of [layer2 solutions](https://github.com/Awesome-Layer-2/Awesome-Layer-2), this is not recommended. This may result in the same problem of ["Looking at ownership in the EVM"](https://medium.com/@kelvinfichter/looking-at-ownership-in-the-evm-6e6914d341d).
 
