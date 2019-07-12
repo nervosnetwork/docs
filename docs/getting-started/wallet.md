@@ -34,8 +34,10 @@ In the output message, you can find the following information:
 
 You can use this command to export the private key (note that you need to enter your wallet password):
 ```bash
-ckb-cli account export --lock-arg 5b5517c03acfce0cc734b8d6d42efe5243e5113b --extended-privkey-path privkey
+ckb-cli account export --lock-arg <LOCK_ARG> --extended-privkey-path privkey
 ```
+
+> Please replace the `<LOCK_ARG>` part with your own `lock_arg`.
 
 This command will create a file named `privkey` in your current folder. In this file you can find your private key (the first line of the file) and the chain code of the generated HD wallet (the second line).
 
