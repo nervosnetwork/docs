@@ -6,7 +6,7 @@ title: Introduction
 In this section, you will learn about how to use Nervos CKB in practice. This includes [running a CKB node](run-node), [interacting with it](interact), as well as [mining](mine) and [transferring](transfer) CK Bytes.
 <!-- Todo: change the version here -->
 
-Please note that this document is compatible with the `ckb 0.15.0 (rylai-v4 7cb6cff 2019-06-29)`. More information about CKB versions can be found in [the CKB repo on GitHub](https://github.com/nervosnetwork/ckb).
+Please note that this document is compatible with the `ckb 0.16.0 (rylai-v5 2178d78 2019-07-13)`. More information about CKB versions can be found in [the CKB repo on GitHub](https://github.com/nervosnetwork/ckb).
 
 ## System Requirements
 Any modern computer should be able to run CKB node and mining programs.
