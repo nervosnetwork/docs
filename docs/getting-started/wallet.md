@@ -18,9 +18,10 @@ $ ckb-cli account new
 Password: 
 Repeat password: 
 address:
-  mainnet: ckb1q9gry5zgtd230sp6el8qe3e5hrtdgth72fp72yfmtf2vte
-  testnet: ckt1q9gry5zgtd230sp6el8qe3e5hrtdgth72fp72yfmp4jk6t
-lock_arg: 5b5517c03acfce0cc734b8d6d42efe5243e5113b
+  mainnet: ckb1qyqwhadvtqva9egg0p7yql2jjrxmq807y9esehyxnj
+  testnet: ckt1qyqwhadvtqva9egg0p7yql2jjrxmq807y9esyj6elw
+lock_arg: ebf5ac5819d2e508787c407d5290cdb01dfe2173
+lock_hash: ~
 ```
 </details>
 
