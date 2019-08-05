@@ -31,7 +31,7 @@ Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which
 Open the `ckb.toml` file with a text editor, and then add these parameters to the end of the file (replace `<LOCK_ARG>` with the `lock_arg` you got from [wallet creation](./wallet#create-wallet); the `code_hash` here should NOT be changed):
 ```toml
 [block_assembler]
-code_hash = "0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"
+code_hash = "0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c"
 args = [ "0x<LOCK_ARG>" ]
 ```
 
@@ -40,7 +40,7 @@ args = [ "0x<LOCK_ARG>" ]
 <summary>(click here to view an example)</summary>
 ```toml
 [block_assembler]
-code_hash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"
+code_hash = "0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c"
 args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
 ```
 </details>
