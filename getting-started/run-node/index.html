@@ -84,13 +84,13 @@ create ckb-miner.toml
 <p>Then you can find a <code>ckb.toml</code> file in the generated <code>ckb-testnet</code> folder, which contains the configurations of your CKB node. To set your miner wallet, you need to add the <code>[block_assembler]</code> parameter to the end of the <code>ckb.toml</code> file.</p>
 <p>Open the <code>ckb.toml</code> file with a text editor, and then add these parameters to the end of the file (replace <code>&lt;LOCK_ARG&gt;</code> with the <code>lock_arg</code> you got from <a href="./wallet#create-wallet">wallet creation</a>; the <code>code_hash</code> here should NOT be changed):</p>
 <pre><code class="hljs css language-toml"><span class="hljs-section">[block_assembler]</span>
-<span class="hljs-attr">code_hash</span> = <span class="hljs-string">"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"</span>
+<span class="hljs-attr">code_hash</span> = <span class="hljs-string">"0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c"</span>
 <span class="hljs-attr">args</span> = [ <span class="hljs-string">"0x&lt;LOCK_ARG&gt;"</span> ]
 </code></pre>
 <p><details>
 <summary>(click here to view an example)</summary></p>
 <pre><code class="hljs css language-toml"><span class="hljs-section">[block_assembler]</span>
-<span class="hljs-attr">code_hash</span> = <span class="hljs-string">"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"</span>
+<span class="hljs-attr">code_hash</span> = <span class="hljs-string">"0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c"</span>
 <span class="hljs-attr">args</span> = [<span class="hljs-string">"0x7e6bccda0abe748eb5dc74be0e797662ae938036"</span>]
 </code></pre>
 <p></details></p>
@@ -114,7 +114,7 @@ create ckb-miner.toml
 <p></details></p>
 <p>Congratulations! You just started a CKB node!</p>
 <p>If you find any error messages, don't worry, check out the <a href="../references/troubleshooting">trouble shooting document</a>.</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/2/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/wallet"><span class="arrow-prev">← </span><span>Create a Wallet</span></a><a class="docs-next button" href="/getting-started/mine"><span>Mine Some CK Bytes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configurations">Configurations</a></li><li><a href="#start-a-node">Start a Node</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 8/5/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/wallet"><span class="arrow-prev">← </span><span>Create a Wallet</span></a><a class="docs-next button" href="/getting-started/mine"><span>Mine Some CK Bytes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configurations">Configurations</a></li><li><a href="#start-a-node">Start a Node</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
