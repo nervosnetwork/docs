@@ -30,3 +30,7 @@ found seal: Seal { \
 You can check your CKB balance with your address on [CKB explorer](https://explorer.nervos.org/).
 
 If there are any problems, check out the [trouble shooting document](../references/troubleshooting).
+
+
+## GPU Miner
+From CKB testnet `v0.18.0` there is a GPU miner available to use. The detailed information can be found in its [GitHub repo](https://github.com/nervosnetwork/ckb-cuckoo-miner).
