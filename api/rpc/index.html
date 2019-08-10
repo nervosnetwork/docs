@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>JSON-RPC Commands · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This RPC API document is compatible with `ckb 0.17.0 (rylai-v6 ecd88dc 2019-07-27)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="JSON-RPC Commands · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="This RPC API document is compatible with `ckb 0.17.0 (rylai-v6 ecd88dc 2019-07-27)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. "/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>JSON-RPC Commands · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This RPC API document is compatible with `ckb 0.18.0 (rylai-v7 ecd88dc 2019-08-10)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="JSON-RPC Commands · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="This RPC API document is compatible with `ckb 0.18.0 (rylai-v7 ecd88dc 2019-08-10)`. For more versions of this document, please refer to the [GitHub repo](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md) directly. "/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -65,7 +65,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/api/rpc.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">JSON-RPC Commands</h1></header><article><div><span><p>This RPC API document is compatible with <code>ckb 0.17.0 (rylai-v6 ecd88dc 2019-07-27)</code>. For more versions of this document, please refer to the <a href="https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md">GitHub repo</a> directly.</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/api/rpc.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">JSON-RPC Commands</h1></header><article><div><span><p>This RPC API document is compatible with <code>ckb 0.18.0 (rylai-v7 ecd88dc 2019-08-10)</code>. For more versions of this document, please refer to the <a href="https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md">GitHub repo</a> directly.</p>
 <!-- Todo update rpc document -->
 <p><a href="https://gist.github.com/Mine77/cb26558a993088a298a2bc1862bb9662">Here</a> is a <code>paw</code> file you can use to import into Rest API softwares such as <a href="https://www.getpostman.com/">Postman</a></p>
 <blockquote>
@@ -117,7 +117,7 @@
     "jsonrpc": "2.0",
     "method": "get_block",
     "params": [
-        "0xadb9674a4ba5a03ade0ce8351a9b5d93abcab96f463aca4777f4e9ae5be35086"
+        "0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"
     ]
 }'</span> \
 | tr -d <span class="hljs-string">'\n'</span> \
@@ -129,42 +129,42 @@ http://localhost:8114
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
         <span class="hljs-attr">"header"</span>: {
-            <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x01000000000000000000c16ff286230000203d88792d0000000961f400000000"</span>,
-            <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x3e8"</span>,
-            <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"0"</span>,
-            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xadb9674a4ba5a03ade0ce8351a9b5d93abcab96f463aca4777f4e9ae5be35086"</span>,
-            <span class="hljs-attr">"number"</span>: <span class="hljs-string">"2"</span>,
-            <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0xef7ac67bbfbbc5df47a5af9d2d4695441d44c3258ae156eda98dc1ed01eae8f5"</span>,
+            <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x0100000000000000005827f2ba13b000d77fa3d595aa00000061eb7ada030000"</span>,
+            <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x7a1200"</span>,
+            <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"</span>,
+            <span class="hljs-attr">"number"</span>: <span class="hljs-string">"1024"</span>,
+            <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0x4a3492111a90c31564290d070ca216ba416712eff48ab122e050e253e6069281"</span>,
             <span class="hljs-attr">"proposals_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
             <span class="hljs-attr">"seal"</span>: {
                 <span class="hljs-attr">"nonce"</span>: <span class="hljs-string">"0"</span>,
                 <span class="hljs-attr">"proof"</span>: <span class="hljs-string">"0x"</span>
             },
-            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"1557310745"</span>,
-            <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x81766f545198f7cb095d20bdf1ceb1fa7a3d9caf9dae0409370f334233e9c816"</span>,
+            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"1557311767"</span>,
+            <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x07f8c6e6874b20ad721397af259036af40c8ab22a1bec2fdbeda2c5f489b3d43"</span>,
             <span class="hljs-attr">"uncles_count"</span>: <span class="hljs-string">"0"</span>,
             <span class="hljs-attr">"uncles_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
             <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0"</span>,
-            <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0x888af6c798c27a8910495651ed75cda9445213a9b5527f4d3f4cafc5dcf93568"</span>
+            <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0x0fb9a555e2ae1192ba76b4149a7a01d11df2251229a80de35c49e37d0b0a4407"</span>
         },
         <span class="hljs-attr">"proposals"</span>: [],
         <span class="hljs-attr">"transactions"</span>: [
             {
                 <span class="hljs-attr">"deps"</span>: [],
-                <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x81766f545198f7cb095d20bdf1ceb1fa7a3d9caf9dae0409370f334233e9c816"</span>,
+                <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x07f8c6e6874b20ad721397af259036af40c8ab22a1bec2fdbeda2c5f489b3d43"</span>,
                 <span class="hljs-attr">"inputs"</span>: [
                     {
                         <span class="hljs-attr">"previous_output"</span>: {
                             <span class="hljs-attr">"block_hash"</span>: <span class="hljs-literal">null</span>,
                             <span class="hljs-attr">"cell"</span>: <span class="hljs-literal">null</span>
                         },
-                        <span class="hljs-attr">"since"</span>: <span class="hljs-string">"2"</span>
+                        <span class="hljs-attr">"since"</span>: <span class="hljs-string">"1024"</span>
                     }
                 ],
                 <span class="hljs-attr">"outputs"</span>: [
                     {
-                        <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
-                        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+                        <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"70193197506"</span>,
+                        <span class="hljs-attr">"data_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
                         <span class="hljs-attr">"lock"</span>: {
                             <span class="hljs-attr">"args"</span>: [],
                             <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
@@ -173,11 +173,14 @@ http://localhost:8114
                         <span class="hljs-attr">"type"</span>: <span class="hljs-literal">null</span>
                     }
                 ],
+                <span class="hljs-attr">"outputs_data"</span>: [
+                    <span class="hljs-string">"0x"</span>
+                ],
                 <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0"</span>,
                 <span class="hljs-attr">"witnesses"</span>: [
                     {
                         <span class="hljs-attr">"data"</span>: [
-                            <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>
+                            <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a500"</span>
                         ]
                     }
                 ]
@@ -210,29 +213,29 @@ http://localhost:8114
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
         <span class="hljs-attr">"header"</span>: {
-            <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x01000000000000000000c16ff286230000203d88792d0000000961f400000000"</span>,
-            <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x3e8"</span>,
-            <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"0"</span>,
-            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"</span>,
+            <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x0100000000000000005827f2ba13b000d77fa3d595aa00000061eb7ada030000"</span>,
+            <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x7a1200"</span>,
+            <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"</span>,
             <span class="hljs-attr">"number"</span>: <span class="hljs-string">"1024"</span>,
-            <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0xba36a49ae9dabc516489701388b38e5202e077a7c967390365672163e59cf75d"</span>,
+            <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0x4a3492111a90c31564290d070ca216ba416712eff48ab122e050e253e6069281"</span>,
             <span class="hljs-attr">"proposals_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
             <span class="hljs-attr">"seal"</span>: {
                 <span class="hljs-attr">"nonce"</span>: <span class="hljs-string">"0"</span>,
                 <span class="hljs-attr">"proof"</span>: <span class="hljs-string">"0x"</span>
             },
             <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"1557311767"</span>,
-            <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"</span>,
+            <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x07f8c6e6874b20ad721397af259036af40c8ab22a1bec2fdbeda2c5f489b3d43"</span>,
             <span class="hljs-attr">"uncles_count"</span>: <span class="hljs-string">"0"</span>,
             <span class="hljs-attr">"uncles_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
             <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0"</span>,
-            <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0xf0a67fa5947215b48b1eac38530084808ff0ddbaeb1f133c0c3c4c209d417ad5"</span>
+            <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0x0fb9a555e2ae1192ba76b4149a7a01d11df2251229a80de35c49e37d0b0a4407"</span>
         },
         <span class="hljs-attr">"proposals"</span>: [],
         <span class="hljs-attr">"transactions"</span>: [
             {
                 <span class="hljs-attr">"deps"</span>: [],
-                <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"</span>,
+                <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x07f8c6e6874b20ad721397af259036af40c8ab22a1bec2fdbeda2c5f489b3d43"</span>,
                 <span class="hljs-attr">"inputs"</span>: [
                     {
                         <span class="hljs-attr">"previous_output"</span>: {
@@ -244,8 +247,8 @@ http://localhost:8114
                 ],
                 <span class="hljs-attr">"outputs"</span>: [
                     {
-                        <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
-                        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+                        <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"70193197506"</span>,
+                        <span class="hljs-attr">"data_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
                         <span class="hljs-attr">"lock"</span>: {
                             <span class="hljs-attr">"args"</span>: [],
                             <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
@@ -254,11 +257,14 @@ http://localhost:8114
                         <span class="hljs-attr">"type"</span>: <span class="hljs-literal">null</span>
                     }
                 ],
+                <span class="hljs-attr">"outputs_data"</span>: [
+                    <span class="hljs-string">"0x"</span>
+                ],
                 <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0"</span>,
                 <span class="hljs-attr">"witnesses"</span>: [
                     {
                         <span class="hljs-attr">"data"</span>: [
-                            <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>
+                            <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a500"</span>
                         ]
                     }
                 ]
@@ -279,7 +285,7 @@ http://localhost:8114
     "jsonrpc": "2.0",
     "method": "get_block_hash",
     "params": [
-        "2"
+        "1024"
     ]
 }'</span> \
 | tr -d <span class="hljs-string">'\n'</span> \
@@ -289,7 +295,7 @@ http://localhost:8114
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xadb9674a4ba5a03ade0ce8351a9b5d93abcab96f463aca4777f4e9ae5be35086"</span>
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"</span>
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="get_cellbase_output_capacity_details"></a><a href="#get_cellbase_output_capacity_details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_cellbase_output_capacity_details</code></h3>
@@ -303,7 +309,7 @@ http://localhost:8114
     "jsonrpc": "2.0",
     "method": "get_cellbase_output_capacity_details",
     "params": [
-        "0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"
+        "0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"
     ]
 }'</span> \
 | tr -d <span class="hljs-string">'\n'</span> \
@@ -314,10 +320,10 @@ http://localhost:8114
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
-        <span class="hljs-attr">"primary"</span>: <span class="hljs-string">"100000000000"</span>,
+        <span class="hljs-attr">"primary"</span>: <span class="hljs-string">"69444444445"</span>,
         <span class="hljs-attr">"proposal_reward"</span>: <span class="hljs-string">"0"</span>,
-        <span class="hljs-attr">"secondary"</span>: <span class="hljs-string">"3936000"</span>,
-        <span class="hljs-attr">"total"</span>: <span class="hljs-string">"100003936000"</span>,
+        <span class="hljs-attr">"secondary"</span>: <span class="hljs-string">"748753061"</span>,
+        <span class="hljs-attr">"total"</span>: <span class="hljs-string">"70193197506"</span>,
         <span class="hljs-attr">"tx_fee"</span>: <span class="hljs-string">"0"</span>
     }
 }
@@ -336,8 +342,8 @@ to - End block number
     "method": "get_cells_by_lock_hash",
     "params": [
         "0xa6ed2edad0d48a3d58d0bec407ddf2e40ddd5f533d7059a160149f4021c2a589",
-        "2",
-        "5"
+        "0",
+        "2"
     ]
 }'</span> \
 | tr -d <span class="hljs-string">'\n'</span> \
@@ -349,62 +355,32 @@ http://localhost:8114
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: [
         {
-            <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
+            <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"125000000000"</span>,
             <span class="hljs-attr">"lock"</span>: {
                 <span class="hljs-attr">"args"</span>: [],
                 <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
                 <span class="hljs-attr">"hash_type"</span>: <span class="hljs-string">"Data"</span>
             },
             <span class="hljs-attr">"out_point"</span>: {
-                <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0xadb9674a4ba5a03ade0ce8351a9b5d93abcab96f463aca4777f4e9ae5be35086"</span>,
+                <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0x1092b58382e225498b5c7263633e0ef4a6d1c34fe9c014cd3cd4afc059bd1dff"</span>,
                 <span class="hljs-attr">"cell"</span>: {
                     <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
-                    <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0x81766f545198f7cb095d20bdf1ceb1fa7a3d9caf9dae0409370f334233e9c816"</span>
+                    <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0xbf9377613dd3861366f7c14005eebff4abcfdf7e5cc643daec0af5ba249e8c49"</span>
                 }
             }
         },
         {
-            <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
+            <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"125000000000"</span>,
             <span class="hljs-attr">"lock"</span>: {
                 <span class="hljs-attr">"args"</span>: [],
                 <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
                 <span class="hljs-attr">"hash_type"</span>: <span class="hljs-string">"Data"</span>
             },
             <span class="hljs-attr">"out_point"</span>: {
-                <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0xb691cce096dde15f57d9b992e0f6bf3ee573f580ed1b692237846a6d541923ec"</span>,
+                <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0x6014787e7aa9a238678ec08157cd4a8f1415775a376f27b0599e9c87df88078e"</span>,
                 <span class="hljs-attr">"cell"</span>: {
                     <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
-                    <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0xe84a3383d724d5a82db3335870e424d3a706ac64d8ceeb4716387ec37c346659"</span>
-                }
-            }
-        },
-        {
-            <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
-            <span class="hljs-attr">"lock"</span>: {
-                <span class="hljs-attr">"args"</span>: [],
-                <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
-                <span class="hljs-attr">"hash_type"</span>: <span class="hljs-string">"Data"</span>
-            },
-            <span class="hljs-attr">"out_point"</span>: {
-                <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0xe3f126e4d25f227e6c1d137a29fcf70a302f12cb94d508a1f8674c89b9ce364d"</span>,
-                <span class="hljs-attr">"cell"</span>: {
-                    <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
-                    <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0x1c5f992b8a7c5e13b5ab6aedadb4839cf135627f100cdf44a2ec333a60b44e8c"</span>
-                }
-            }
-        },
-        {
-            <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
-            <span class="hljs-attr">"lock"</span>: {
-                <span class="hljs-attr">"args"</span>: [],
-                <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
-                <span class="hljs-attr">"hash_type"</span>: <span class="hljs-string">"Data"</span>
-            },
-            <span class="hljs-attr">"out_point"</span>: {
-                <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0x019077b2db0f5c8036a08bac04709c443f61fc3a3f305914c83af0395a3aa26f"</span>,
-                <span class="hljs-attr">"cell"</span>: {
-                    <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
-                    <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0x01f306cfbd5985f7275d3a91230b84773e698bff195ade13787c2316bd4c8b19"</span>
+                    <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0x41b03d8cd94134943148224ef8076eaa7417768e9f745f9b14ae4a68fbfd91b5"</span>
                 }
             }
         }
@@ -428,11 +404,10 @@ http://localhost:8114
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
-        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x3e8"</span>,
-        <span class="hljs-attr">"epoch_reward"</span>: <span class="hljs-string">"125000000000000"</span>,
-        <span class="hljs-attr">"length"</span>: <span class="hljs-string">"1250"</span>,
-        <span class="hljs-attr">"number"</span>: <span class="hljs-string">"0"</span>,
-        <span class="hljs-attr">"start_number"</span>: <span class="hljs-string">"0"</span>
+        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x7a1200"</span>,
+        <span class="hljs-attr">"length"</span>: <span class="hljs-string">"1800"</span>,
+        <span class="hljs-attr">"number"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"start_number"</span>: <span class="hljs-string">"1000"</span>
     }
 }
 </code></pre>
@@ -459,8 +434,7 @@ http://localhost:8114
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
         <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x3e8"</span>,
-        <span class="hljs-attr">"epoch_reward"</span>: <span class="hljs-string">"125000000000000"</span>,
-        <span class="hljs-attr">"length"</span>: <span class="hljs-string">"1250"</span>,
+        <span class="hljs-attr">"length"</span>: <span class="hljs-string">"1000"</span>,
         <span class="hljs-attr">"number"</span>: <span class="hljs-string">"0"</span>,
         <span class="hljs-attr">"start_number"</span>: <span class="hljs-string">"0"</span>
     }
@@ -474,7 +448,7 @@ http://localhost:8114
     "jsonrpc": "2.0",
     "method": "get_header",
     "params": [
-        "0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"
+        "0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"
     ]
 }'</span> \
 | tr -d <span class="hljs-string">'\n'</span> \
@@ -485,23 +459,23 @@ http://localhost:8114
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
-        <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x01000000000000000000c16ff286230000203d88792d0000000961f400000000"</span>,
-        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x3e8"</span>,
-        <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"0"</span>,
-        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"</span>,
+        <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x0100000000000000005827f2ba13b000d77fa3d595aa00000061eb7ada030000"</span>,
+        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x7a1200"</span>,
+        <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"</span>,
         <span class="hljs-attr">"number"</span>: <span class="hljs-string">"1024"</span>,
-        <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0xba36a49ae9dabc516489701388b38e5202e077a7c967390365672163e59cf75d"</span>,
+        <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0x4a3492111a90c31564290d070ca216ba416712eff48ab122e050e253e6069281"</span>,
         <span class="hljs-attr">"proposals_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
         <span class="hljs-attr">"seal"</span>: {
             <span class="hljs-attr">"nonce"</span>: <span class="hljs-string">"0"</span>,
             <span class="hljs-attr">"proof"</span>: <span class="hljs-string">"0x"</span>
         },
         <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"1557311767"</span>,
-        <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"</span>,
+        <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x07f8c6e6874b20ad721397af259036af40c8ab22a1bec2fdbeda2c5f489b3d43"</span>,
         <span class="hljs-attr">"uncles_count"</span>: <span class="hljs-string">"0"</span>,
         <span class="hljs-attr">"uncles_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
         <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0"</span>,
-        <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0xf0a67fa5947215b48b1eac38530084808ff0ddbaeb1f133c0c3c4c209d417ad5"</span>
+        <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0x0fb9a555e2ae1192ba76b4149a7a01d11df2251229a80de35c49e37d0b0a4407"</span>
     }
 }
 </code></pre>
@@ -524,23 +498,23 @@ http://localhost:8114
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
-        <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x01000000000000000000c16ff286230000203d88792d0000000961f400000000"</span>,
-        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x3e8"</span>,
-        <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"0"</span>,
-        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"</span>,
+        <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x0100000000000000005827f2ba13b000d77fa3d595aa00000061eb7ada030000"</span>,
+        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x7a1200"</span>,
+        <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"</span>,
         <span class="hljs-attr">"number"</span>: <span class="hljs-string">"1024"</span>,
-        <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0xba36a49ae9dabc516489701388b38e5202e077a7c967390365672163e59cf75d"</span>,
+        <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0x4a3492111a90c31564290d070ca216ba416712eff48ab122e050e253e6069281"</span>,
         <span class="hljs-attr">"proposals_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
         <span class="hljs-attr">"seal"</span>: {
             <span class="hljs-attr">"nonce"</span>: <span class="hljs-string">"0"</span>,
             <span class="hljs-attr">"proof"</span>: <span class="hljs-string">"0x"</span>
         },
         <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"1557311767"</span>,
-        <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"</span>,
+        <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x07f8c6e6874b20ad721397af259036af40c8ab22a1bec2fdbeda2c5f489b3d43"</span>,
         <span class="hljs-attr">"uncles_count"</span>: <span class="hljs-string">"0"</span>,
         <span class="hljs-attr">"uncles_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
         <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0"</span>,
-        <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0xf0a67fa5947215b48b1eac38530084808ff0ddbaeb1f133c0c3c4c209d417ad5"</span>
+        <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0x0fb9a555e2ae1192ba76b4149a7a01d11df2251229a80de35c49e37d0b0a4407"</span>
     }
 }
 </code></pre>
@@ -559,7 +533,7 @@ http://localhost:8114
             "block_hash": null,
             "cell": {
                 "index": "0",
-                "tx_hash": "0x01f306cfbd5985f7275d3a91230b84773e698bff195ade13787c2316bd4c8b19"
+                "tx_hash": "0xf9cab0387e48d97b6905b54a8f647a5803ced1c4f187360fba0ddad292e618e7"
             }
         }
     ]
@@ -573,11 +547,11 @@ http://localhost:8114
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
         <span class="hljs-attr">"cell"</span>: {
-            <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
-            <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+            <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"34400000000"</span>,
+            <span class="hljs-attr">"data_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
             <span class="hljs-attr">"lock"</span>: {
                 <span class="hljs-attr">"args"</span>: [],
-                <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
+                <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
                 <span class="hljs-attr">"hash_type"</span>: <span class="hljs-string">"Data"</span>
             },
             <span class="hljs-attr">"type"</span>: <span class="hljs-literal">null</span>
@@ -622,23 +596,23 @@ http://localhost:8114
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
-        <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x01000000000000000000c16ff286230000203d88792d0000000961f400000000"</span>,
-        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x3e8"</span>,
-        <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"0"</span>,
-        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"</span>,
+        <span class="hljs-attr">"dao"</span>: <span class="hljs-string">"0x0100000000000000005827f2ba13b000d77fa3d595aa00000061eb7ada030000"</span>,
+        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x7a1200"</span>,
+        <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"</span>,
         <span class="hljs-attr">"number"</span>: <span class="hljs-string">"1024"</span>,
-        <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0xba36a49ae9dabc516489701388b38e5202e077a7c967390365672163e59cf75d"</span>,
+        <span class="hljs-attr">"parent_hash"</span>: <span class="hljs-string">"0x4a3492111a90c31564290d070ca216ba416712eff48ab122e050e253e6069281"</span>,
         <span class="hljs-attr">"proposals_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
         <span class="hljs-attr">"seal"</span>: {
             <span class="hljs-attr">"nonce"</span>: <span class="hljs-string">"0"</span>,
             <span class="hljs-attr">"proof"</span>: <span class="hljs-string">"0x"</span>
         },
         <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"1557311767"</span>,
-        <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"</span>,
+        <span class="hljs-attr">"transactions_root"</span>: <span class="hljs-string">"0x07f8c6e6874b20ad721397af259036af40c8ab22a1bec2fdbeda2c5f489b3d43"</span>,
         <span class="hljs-attr">"uncles_count"</span>: <span class="hljs-string">"0"</span>,
         <span class="hljs-attr">"uncles_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
         <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0"</span>,
-        <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0xf0a67fa5947215b48b1eac38530084808ff0ddbaeb1f133c0c3c4c209d417ad5"</span>
+        <span class="hljs-attr">"witnesses_root"</span>: <span class="hljs-string">"0x0fb9a555e2ae1192ba76b4149a7a01d11df2251229a80de35c49e37d0b0a4407"</span>
     }
 }
 </code></pre>
@@ -653,7 +627,7 @@ http://localhost:8114
     "jsonrpc": "2.0",
     "method": "get_transaction",
     "params": [
-        "0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"
+        "0xd295c063a5f99c5c9a05c9a10567956f3fdde834d7a326a13e9c0cac15000649"
     ]
 }'</span> \
 | tr -d <span class="hljs-string">'\n'</span> \
@@ -665,21 +639,32 @@ http://localhost:8114
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
         <span class="hljs-attr">"transaction"</span>: {
-            <span class="hljs-attr">"deps"</span>: [],
-            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"</span>,
+            <span class="hljs-attr">"deps"</span>: [
+                {
+                    <span class="hljs-attr">"block_hash"</span>: <span class="hljs-literal">null</span>,
+                    <span class="hljs-attr">"cell"</span>: {
+                        <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
+                        <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0xf9cab0387e48d97b6905b54a8f647a5803ced1c4f187360fba0ddad292e618e7"</span>
+                    }
+                }
+            ],
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xd295c063a5f99c5c9a05c9a10567956f3fdde834d7a326a13e9c0cac15000649"</span>,
             <span class="hljs-attr">"inputs"</span>: [
                 {
                     <span class="hljs-attr">"previous_output"</span>: {
                         <span class="hljs-attr">"block_hash"</span>: <span class="hljs-literal">null</span>,
-                        <span class="hljs-attr">"cell"</span>: <span class="hljs-literal">null</span>
+                        <span class="hljs-attr">"cell"</span>: {
+                            <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
+                            <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0xbf9377613dd3861366f7c14005eebff4abcfdf7e5cc643daec0af5ba249e8c49"</span>
+                        }
                     },
-                    <span class="hljs-attr">"since"</span>: <span class="hljs-string">"1024"</span>
+                    <span class="hljs-attr">"since"</span>: <span class="hljs-string">"0"</span>
                 }
             ],
             <span class="hljs-attr">"outputs"</span>: [
                 {
-                    <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
-                    <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+                    <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"100000000000"</span>,
+                    <span class="hljs-attr">"data_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
                     <span class="hljs-attr">"lock"</span>: {
                         <span class="hljs-attr">"args"</span>: [],
                         <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
@@ -688,67 +673,37 @@ http://localhost:8114
                     <span class="hljs-attr">"type"</span>: <span class="hljs-literal">null</span>
                 }
             ],
+            <span class="hljs-attr">"outputs_data"</span>: [
+                <span class="hljs-string">"0x"</span>
+            ],
             <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0"</span>,
-            <span class="hljs-attr">"witnesses"</span>: [
-                {
-                    <span class="hljs-attr">"data"</span>: [
-                        <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>
-                    ]
-                }
-            ]
+            <span class="hljs-attr">"witnesses"</span>: []
         },
         <span class="hljs-attr">"tx_status"</span>: {
-            <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"</span>,
-            <span class="hljs-attr">"status"</span>: <span class="hljs-string">"committed"</span>
+            <span class="hljs-attr">"block_hash"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"status"</span>: <span class="hljs-string">"pending"</span>
         }
     }
 }
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="experiment"></a><a href="#experiment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Experiment</h2>
-<h3><a class="anchor" aria-hidden="true" id="_compute_code_hash"></a><a href="#_compute_code_hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>_compute_code_hash</code></h3>
-<p>Returns code hash of given hex encoded data</p>
-<p><strong>Deprecated</strong>: will be removed in a later version</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-8"></a><a href="#parameters-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
-<pre><code class="hljs">data - Hex encoded data
-</code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-13"></a><a href="#examples-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
-<pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
-    "id": 2,
-    "jsonrpc": "2.0",
-    "method": "_compute_code_hash",
-    "params": [
-        "0x123456"
-    ]
-}'</span> \
-| tr -d <span class="hljs-string">'\n'</span> \
-| curl -H <span class="hljs-string">'content-type: application/json'</span> -d @- \
-http://localhost:8114
-</code></pre>
-<pre><code class="hljs css language-json">{
-    <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
-    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x7dacea2e6ae8131b7f187570135ebb1b217a69458b3eae350104942c06939783"</span>
-}
-</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="_compute_script_hash"></a><a href="#_compute_script_hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>_compute_script_hash</code></h3>
 <p>Returns script hash of given transaction script</p>
 <p><strong>Deprecated</strong>: will be removed in a later version</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-9"></a><a href="#parameters-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<h4><a class="anchor" aria-hidden="true" id="parameters-8"></a><a href="#parameters-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
 <pre><code class="hljs">args - Hex encoded arguments passed to reference cell
 code_hash - Code hash of referenced cell
+hash_type - Data: code_hash matches against dep cell data hash; Type: code_hash matches against dep cell type hash.
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-14"></a><a href="#examples-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-13"></a><a href="#examples-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
     "method": "_compute_script_hash",
     "params": [
         {
-            "args": [
-                "0x123450",
-                "0x678900"
-            ],
-            "code_hash": "0xb35557e7e9854206f7bc13e3c3a7fa4cf8892c84a09237fb0aab40aab3771eee",
+            "args": [],
+            "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5",
             "hash_type": "Data"
         }
     ]
@@ -760,13 +715,13 @@ http://localhost:8114
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xa5b2c97e57901ca70bfa30a18f8bb4dac4f666ccbcdccd536b33a8066d01dd8e"</span>
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xa6ed2edad0d48a3d58d0bec407ddf2e40ddd5f533d7059a160149f4021c2a589"</span>
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="_compute_transaction_hash"></a><a href="#_compute_transaction_hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>_compute_transaction_hash</code></h3>
 <p>Return the transaction hash</p>
 <p><strong>Deprecated</strong>: will be removed in a later version</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-10"></a><a href="#parameters-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<h4><a class="anchor" aria-hidden="true" id="parameters-9"></a><a href="#parameters-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
 <pre><code class="hljs">transaction - The transaction object
 version - Transaction version
 deps - Dependent cells
@@ -774,22 +729,29 @@ inputs - Transaction inputs
 outputs - Transaction outputs
 witnesses - Witnesses
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-15"></a><a href="#examples-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-14"></a><a href="#examples-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
     "method": "_compute_transaction_hash",
     "params": [
         {
-            "deps": [],
+            "deps": [
+                {
+                    "block_hash": null,
+                    "cell": {
+                        "index": "0",
+                        "tx_hash": "0xf9cab0387e48d97b6905b54a8f647a5803ced1c4f187360fba0ddad292e618e7"
+                    }
+                }
+            ],
             "inputs": [
                 {
-                    "args": [],
                     "previous_output": {
-                        "block_hash": "0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672",
+                        "block_hash": null,
                         "cell": {
                             "index": "0",
-                            "tx_hash": "0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"
+                            "tx_hash": "0xbf9377613dd3861366f7c14005eebff4abcfdf7e5cc643daec0af5ba249e8c49"
                         }
                     },
                     "since": "0"
@@ -798,7 +760,7 @@ witnesses - Witnesses
             "outputs": [
                 {
                     "capacity": "100000000000",
-                    "data": "0x",
+                    "data_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
                     "lock": {
                         "args": [],
                         "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5",
@@ -807,14 +769,11 @@ witnesses - Witnesses
                     "type": null
                 }
             ],
+            "outputs_data": [
+                "0x"
+            ],
             "version": "0",
-            "witnesses": [
-                {
-                    "data": [
-                        "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"
-                    ]
-                }
-            ]
+            "witnesses": []
         }
     ]
 }'</span> \
@@ -825,7 +784,7 @@ http://localhost:8114
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x1e0770955e0abd60f781522054f0ac184cfca3b567a48775c47a60dc56020106"</span>
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xd295c063a5f99c5c9a05c9a10567956f3fdde834d7a326a13e9c0cac15000649"</span>
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="dry_run_transaction"></a><a href="#dry_run_transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dry_run_transaction</code></h3>
@@ -833,7 +792,7 @@ http://localhost:8114
 <p>This method will not check the transaction validity, but only run the lock script
 and type script and then return the execution cycles.
 Used to debug transaction scripts and query how many cycles the scripts consume</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-16"></a><a href="#examples-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-15"></a><a href="#examples-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -842,20 +801,20 @@ Used to debug transaction scripts and query how many cycles the scripts consume<
         {
             "deps": [
                 {
+                    "block_hash": null,
                     "cell": {
                         "index": "0",
-                        "tx_hash": "0x03c957dcb46e71542d47a8d5d86dc1e27a48e885ee07bb399fca5d2d8d37f626"
+                        "tx_hash": "0xf9cab0387e48d97b6905b54a8f647a5803ced1c4f187360fba0ddad292e618e7"
                     }
                 }
             ],
             "inputs": [
                 {
-                    "args": [],
                     "previous_output": {
-                        "block_hash": "0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672",
+                        "block_hash": null,
                         "cell": {
                             "index": "0",
-                            "tx_hash": "0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"
+                            "tx_hash": "0xbf9377613dd3861366f7c14005eebff4abcfdf7e5cc643daec0af5ba249e8c49"
                         }
                     },
                     "since": "0"
@@ -864,7 +823,7 @@ Used to debug transaction scripts and query how many cycles the scripts consume<
             "outputs": [
                 {
                     "capacity": "100000000000",
-                    "data": "0x",
+                    "data_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
                     "lock": {
                         "args": [],
                         "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5",
@@ -873,14 +832,11 @@ Used to debug transaction scripts and query how many cycles the scripts consume<
                     "type": null
                 }
             ],
+            "outputs_data": [
+                "0x"
+            ],
             "version": "0",
-            "witnesses": [
-                {
-                    "data": [
-                        "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"
-                    ]
-                }
-            ]
+            "witnesses": []
         }
     ]
 }'</span> \
@@ -899,10 +855,10 @@ http://localhost:8114
 <h2><a class="anchor" aria-hidden="true" id="indexer"></a><a href="#indexer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Indexer</h2>
 <h3><a class="anchor" aria-hidden="true" id="deindex_lock_hash"></a><a href="#deindex_lock_hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>deindex_lock_hash</code></h3>
 <p>Remove index for live cells and transactions by the hash of lock script.</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-11"></a><a href="#parameters-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<h4><a class="anchor" aria-hidden="true" id="parameters-10"></a><a href="#parameters-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
 <pre><code class="hljs">lock_hash - Cell lock script hash
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-17"></a><a href="#examples-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-16"></a><a href="#examples-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -923,13 +879,13 @@ http://localhost:8114
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="get_live_cells_by_lock_hash"></a><a href="#get_live_cells_by_lock_hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_live_cells_by_lock_hash</code></h3>
 <p>Returns the live cells collection by the hash of lock script.</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-12"></a><a href="#parameters-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<h4><a class="anchor" aria-hidden="true" id="parameters-11"></a><a href="#parameters-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
 <pre><code class="hljs">lock_hash - Cell lock script hash
 page - Page number
 per - Page size, max value is 50
 reverse_order - Returns the live cells collection in reverse order, an optional parameter, default is false
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-18"></a><a href="#examples-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-17"></a><a href="#examples-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -950,8 +906,8 @@ http://localhost:8114
     <span class="hljs-attr">"result"</span>: [
         {
             <span class="hljs-attr">"cell_output"</span>: {
-                <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
-                <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+                <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"125000000000"</span>,
+                <span class="hljs-attr">"data_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
                 <span class="hljs-attr">"lock"</span>: {
                     <span class="hljs-attr">"args"</span>: [],
                     <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
@@ -962,13 +918,13 @@ http://localhost:8114
             <span class="hljs-attr">"created_by"</span>: {
                 <span class="hljs-attr">"block_number"</span>: <span class="hljs-string">"1"</span>,
                 <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
-                <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0xa3506ca3babb482061f60ae06a069d2d9bd4a42ea905db42456310ea74006e40"</span>
+                <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0xbf9377613dd3861366f7c14005eebff4abcfdf7e5cc643daec0af5ba249e8c49"</span>
             }
         },
         {
             <span class="hljs-attr">"cell_output"</span>: {
-                <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"50000000000000"</span>,
-                <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+                <span class="hljs-attr">"capacity"</span>: <span class="hljs-string">"125000000000"</span>,
+                <span class="hljs-attr">"data_hash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
                 <span class="hljs-attr">"lock"</span>: {
                     <span class="hljs-attr">"args"</span>: [],
                     <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"</span>,
@@ -979,7 +935,7 @@ http://localhost:8114
             <span class="hljs-attr">"created_by"</span>: {
                 <span class="hljs-attr">"block_number"</span>: <span class="hljs-string">"2"</span>,
                 <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
-                <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0x81766f545198f7cb095d20bdf1ceb1fa7a3d9caf9dae0409370f334233e9c816"</span>
+                <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0x41b03d8cd94134943148224ef8076eaa7417768e9f745f9b14ae4a68fbfd91b5"</span>
             }
         }
     ]
@@ -987,7 +943,7 @@ http://localhost:8114
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="get_lock_hash_index_states"></a><a href="#get_lock_hash_index_states" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_lock_hash_index_states</code></h3>
 <p>Get lock hash index states</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-19"></a><a href="#examples-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-18"></a><a href="#examples-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1003,7 +959,7 @@ http://localhost:8114
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: [
         {
-            <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"</span>,
+            <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"</span>,
             <span class="hljs-attr">"block_number"</span>: <span class="hljs-string">"1024"</span>,
             <span class="hljs-attr">"lock_hash"</span>: <span class="hljs-string">"0xa6ed2edad0d48a3d58d0bec407ddf2e40ddd5f533d7059a160149f4021c2a589"</span>
         }
@@ -1012,13 +968,13 @@ http://localhost:8114
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="get_transactions_by_lock_hash"></a><a href="#get_transactions_by_lock_hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_transactions_by_lock_hash</code></h3>
 <p>Returns the transactions collection by the hash of lock script. Returns empty array when the <code>lock_hash</code> has not been indexed yet.</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-13"></a><a href="#parameters-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<h4><a class="anchor" aria-hidden="true" id="parameters-12"></a><a href="#parameters-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
 <pre><code class="hljs">lock_hash - Cell lock script hash
 page - Page number
 per - Page size, max value is 50
 reverse_order - Return the transactions collection in reverse order, an optional parameter, default is false
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-20"></a><a href="#examples-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-19"></a><a href="#examples-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1042,7 +998,7 @@ http://localhost:8114
             <span class="hljs-attr">"created_by"</span>: {
                 <span class="hljs-attr">"block_number"</span>: <span class="hljs-string">"1"</span>,
                 <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
-                <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0xa3506ca3babb482061f60ae06a069d2d9bd4a42ea905db42456310ea74006e40"</span>
+                <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0xbf9377613dd3861366f7c14005eebff4abcfdf7e5cc643daec0af5ba249e8c49"</span>
             }
         },
         {
@@ -1050,7 +1006,7 @@ http://localhost:8114
             <span class="hljs-attr">"created_by"</span>: {
                 <span class="hljs-attr">"block_number"</span>: <span class="hljs-string">"2"</span>,
                 <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0"</span>,
-                <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0x81766f545198f7cb095d20bdf1ceb1fa7a3d9caf9dae0409370f334233e9c816"</span>
+                <span class="hljs-attr">"tx_hash"</span>: <span class="hljs-string">"0x41b03d8cd94134943148224ef8076eaa7417768e9f745f9b14ae4a68fbfd91b5"</span>
             }
         }
     ]
@@ -1058,11 +1014,11 @@ http://localhost:8114
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="index_lock_hash"></a><a href="#index_lock_hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>index_lock_hash</code></h3>
 <p>Create index for live cells and transactions by the hash of lock script.</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-14"></a><a href="#parameters-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<h4><a class="anchor" aria-hidden="true" id="parameters-13"></a><a href="#parameters-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
 <pre><code class="hljs">lock_hash - Cell lock script hash
 index_from - Create an index from starting block number (exclusive), an optional parameter, null means starting from tip and 0 means starting from genesis
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-21"></a><a href="#examples-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-20"></a><a href="#examples-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1080,7 +1036,7 @@ http://localhost:8114
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"result"</span>: {
-        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672"</span>,
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"0x285619ad541bb0be5990c52c9d9d3affc2edaf98100eb3d10117c107761244c6"</span>,
         <span class="hljs-attr">"block_number"</span>: <span class="hljs-string">"1024"</span>,
         <span class="hljs-attr">"lock_hash"</span>: <span class="hljs-string">"0xa6ed2edad0d48a3d58d0bec407ddf2e40ddd5f533d7059a160149f4021c2a589"</span>
     }
@@ -1089,7 +1045,7 @@ http://localhost:8114
 <h2><a class="anchor" aria-hidden="true" id="net"></a><a href="#net" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Net</h2>
 <h3><a class="anchor" aria-hidden="true" id="get_banned_addresses"></a><a href="#get_banned_addresses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_banned_addresses</code></h3>
 <p>Returns all banned IPs/Subnets.</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-22"></a><a href="#examples-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-21"></a><a href="#examples-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1115,7 +1071,7 @@ http://localhost:8114
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="get_peers"></a><a href="#get_peers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_peers</code></h3>
 <p>Returns the connected peers information.</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-23"></a><a href="#examples-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-22"></a><a href="#examples-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1162,7 +1118,7 @@ http://localhost:8114
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="local_node_info"></a><a href="#local_node_info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>local_node_info</code></h3>
 <p>Returns the local node information.</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-24"></a><a href="#examples-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-23"></a><a href="#examples-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1189,20 +1145,20 @@ http://localhost:8114
         ],
         <span class="hljs-attr">"is_outbound"</span>: <span class="hljs-literal">null</span>,
         <span class="hljs-attr">"node_id"</span>: <span class="hljs-string">"QmTRHCdrRtgUzYLNCin69zEvPvLYdxUZLLfLYyHVY3DZAS"</span>,
-        <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0.9.0"</span>
+        <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0.0.0"</span>
     }
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="set_ban"></a><a href="#set_ban" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>set_ban</code></h3>
 <p>Insert or delete an IP/Subnet from the banned list</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-15"></a><a href="#parameters-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<h4><a class="anchor" aria-hidden="true" id="parameters-14"></a><a href="#parameters-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
 <pre><code class="hljs">address - The IP/Subnet with an optional netmask (default is /32 = single IP)
 command - `insert` to insert an IP/Subnet to the list, `delete` to delete an IP/Subnet from the list
 ban_time - Time in milliseconds how long (or until when if [absolute] is set) the IP is banned, optional parameter, null means using the default time of 24h
 absolute - If set, the `ban_time` must be an absolute timestamp in milliseconds since epoch, optional parameter
 reason - Ban reason, optional parameter
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-25"></a><a href="#examples-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-24"></a><a href="#examples-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1212,7 +1168,7 @@ reason - Ban reason, optional parameter
         "insert",
         "1840546800000",
         true,
-        "test set_ban rpc"
+        "set_ban example"
     ]
 }'</span> \
 | tr -d <span class="hljs-string">'\n'</span> \
@@ -1229,7 +1185,7 @@ http://localhost:8114
 <h3><a class="anchor" aria-hidden="true" id="send_transaction"></a><a href="#send_transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>send_transaction</code></h3>
 <p>Send new transaction into transaction pool</p>
 <p>If &lt;block_hash&gt; of &lt;previsous_output&gt; is not specified, loads the corresponding input cell. If &lt;block_hash&gt; is specified, load the corresponding input cell only if the corresponding block exist and contain this cell as output.</p>
-<h4><a class="anchor" aria-hidden="true" id="parameters-16"></a><a href="#parameters-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<h4><a class="anchor" aria-hidden="true" id="parameters-15"></a><a href="#parameters-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
 <pre><code class="hljs">transaction - The transaction object
 version - Transaction version
 deps - Dependent cells
@@ -1237,7 +1193,7 @@ inputs - Transaction inputs
 outputs - Transaction outputs
 witnesses - Witnesses
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="examples-26"></a><a href="#examples-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-25"></a><a href="#examples-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1246,20 +1202,20 @@ witnesses - Witnesses
         {
             "deps": [
                 {
+                    "block_hash": null,
                     "cell": {
                         "index": "0",
-                        "tx_hash": "0x03c957dcb46e71542d47a8d5d86dc1e27a48e885ee07bb399fca5d2d8d37f626"
+                        "tx_hash": "0xf9cab0387e48d97b6905b54a8f647a5803ced1c4f187360fba0ddad292e618e7"
                     }
                 }
             ],
             "inputs": [
                 {
-                    "args": [],
                     "previous_output": {
-                        "block_hash": "0x10cb7b3ffd10306430d914529fc501a429ae0967144773c7c5bdcfd2f1117672",
+                        "block_hash": null,
                         "cell": {
                             "index": "0",
-                            "tx_hash": "0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513"
+                            "tx_hash": "0xbf9377613dd3861366f7c14005eebff4abcfdf7e5cc643daec0af5ba249e8c49"
                         }
                     },
                     "since": "0"
@@ -1268,7 +1224,7 @@ witnesses - Witnesses
             "outputs": [
                 {
                     "capacity": "100000000000",
-                    "data": "0x",
+                    "data_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
                     "lock": {
                         "args": [],
                         "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5",
@@ -1277,14 +1233,11 @@ witnesses - Witnesses
                     "type": null
                 }
             ],
+            "outputs_data": [
+                "0x"
+            ],
             "version": "0",
-            "witnesses": [
-                {
-                    "data": [
-                        "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"
-                    ]
-                }
-            ]
+            "witnesses": []
         }
     ]
 }'</span> \
@@ -1295,12 +1248,12 @@ http://localhost:8114
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xec272db158689c3e2f0ad04ac995f57289a40baba7ab616dc695e96b2d8c6cc3"</span>
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xd295c063a5f99c5c9a05c9a10567956f3fdde834d7a326a13e9c0cac15000649"</span>
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="tx_pool_info"></a><a href="#tx_pool_info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>tx_pool_info</code></h3>
 <p>Return the transaction pool information</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-27"></a><a href="#examples-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-26"></a><a href="#examples-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1320,14 +1273,14 @@ http://localhost:8114
         <span class="hljs-attr">"pending"</span>: <span class="hljs-string">"1"</span>,
         <span class="hljs-attr">"proposed"</span>: <span class="hljs-string">"0"</span>,
         <span class="hljs-attr">"total_tx_cycles"</span>: <span class="hljs-string">"12"</span>,
-        <span class="hljs-attr">"total_tx_size"</span>: <span class="hljs-string">"213"</span>
+        <span class="hljs-attr">"total_tx_size"</span>: <span class="hljs-string">"181"</span>
     }
 }
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="stats"></a><a href="#stats" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stats</h2>
 <h3><a class="anchor" aria-hidden="true" id="get_blockchain_info"></a><a href="#get_blockchain_info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_blockchain_info</code></h3>
 <p>Return state info of blockchain</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-28"></a><a href="#examples-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-27"></a><a href="#examples-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1351,8 +1304,8 @@ http://localhost:8114
             }
         ],
         <span class="hljs-attr">"chain"</span>: <span class="hljs-string">"main"</span>,
-        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x3e8"</span>,
-        <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"0"</span>,
+        <span class="hljs-attr">"difficulty"</span>: <span class="hljs-string">"0x7a1200"</span>,
+        <span class="hljs-attr">"epoch"</span>: <span class="hljs-string">"1"</span>,
         <span class="hljs-attr">"is_initial_block_download"</span>: <span class="hljs-literal">true</span>,
         <span class="hljs-attr">"median_time"</span>: <span class="hljs-string">"1557311762"</span>
     }
@@ -1360,7 +1313,7 @@ http://localhost:8114
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="get_peers_state"></a><a href="#get_peers_state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>get_peers_state</code></h3>
 <p>Deprecating in 0.12.0: Return state info of peers</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-29"></a><a href="#examples-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="examples-28"></a><a href="#examples-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
     "id": 2,
     "jsonrpc": "2.0",
@@ -1383,7 +1336,7 @@ http://localhost:8114
     ]
 }
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/27/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/dev-guide/scripts"><span class="arrow-prev">← </span><span>Scripts</span></a><a class="docs-next button" href="/references/troubleshooting"><span>Troubleshooting</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#an-example">An Example</a></li><li><a href="#chain">Chain</a><ul class="toc-headings"><li><a href="#get_block"><code>get_block</code></a></li><li><a href="#get_block_by_number"><code>get_block_by_number</code></a></li><li><a href="#get_block_hash"><code>get_block_hash</code></a></li><li><a href="#get_cellbase_output_capacity_details"><code>get_cellbase_output_capacity_details</code></a></li><li><a href="#get_cells_by_lock_hash"><code>get_cells_by_lock_hash</code></a></li><li><a href="#get_current_epoch"><code>get_current_epoch</code></a></li><li><a href="#get_epoch_by_number"><code>get_epoch_by_number</code></a></li><li><a href="#get_header"><code>get_header</code></a></li><li><a href="#get_header_by_number"><code>get_header_by_number</code></a></li><li><a href="#get_live_cell"><code>get_live_cell</code></a></li><li><a href="#get_tip_block_number"><code>get_tip_block_number</code></a></li><li><a href="#get_tip_header"><code>get_tip_header</code></a></li><li><a href="#get_transaction"><code>get_transaction</code></a></li></ul></li><li><a href="#experiment">Experiment</a><ul class="toc-headings"><li><a href="#_compute_code_hash"><code>_compute_code_hash</code></a></li><li><a href="#_compute_script_hash"><code>_compute_script_hash</code></a></li><li><a href="#_compute_transaction_hash"><code>_compute_transaction_hash</code></a></li><li><a href="#dry_run_transaction"><code>dry_run_transaction</code></a></li></ul></li><li><a href="#indexer">Indexer</a><ul class="toc-headings"><li><a href="#deindex_lock_hash"><code>deindex_lock_hash</code></a></li><li><a href="#get_live_cells_by_lock_hash"><code>get_live_cells_by_lock_hash</code></a></li><li><a href="#get_lock_hash_index_states"><code>get_lock_hash_index_states</code></a></li><li><a href="#get_transactions_by_lock_hash"><code>get_transactions_by_lock_hash</code></a></li><li><a href="#index_lock_hash"><code>index_lock_hash</code></a></li></ul></li><li><a href="#net">Net</a><ul class="toc-headings"><li><a href="#get_banned_addresses"><code>get_banned_addresses</code></a></li><li><a href="#get_peers"><code>get_peers</code></a></li><li><a href="#local_node_info"><code>local_node_info</code></a></li><li><a href="#set_ban"><code>set_ban</code></a></li></ul></li><li><a href="#pool">Pool</a><ul class="toc-headings"><li><a href="#send_transaction"><code>send_transaction</code></a></li><li><a href="#tx_pool_info"><code>tx_pool_info</code></a></li></ul></li><li><a href="#stats">Stats</a><ul class="toc-headings"><li><a href="#get_blockchain_info"><code>get_blockchain_info</code></a></li><li><a href="#get_peers_state"><code>get_peers_state</code></a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 8/10/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/dev-guide/scripts"><span class="arrow-prev">← </span><span>Scripts</span></a><a class="docs-next button" href="/references/troubleshooting"><span>Troubleshooting</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#an-example">An Example</a></li><li><a href="#chain">Chain</a><ul class="toc-headings"><li><a href="#get_block"><code>get_block</code></a></li><li><a href="#get_block_by_number"><code>get_block_by_number</code></a></li><li><a href="#get_block_hash"><code>get_block_hash</code></a></li><li><a href="#get_cellbase_output_capacity_details"><code>get_cellbase_output_capacity_details</code></a></li><li><a href="#get_cells_by_lock_hash"><code>get_cells_by_lock_hash</code></a></li><li><a href="#get_current_epoch"><code>get_current_epoch</code></a></li><li><a href="#get_epoch_by_number"><code>get_epoch_by_number</code></a></li><li><a href="#get_header"><code>get_header</code></a></li><li><a href="#get_header_by_number"><code>get_header_by_number</code></a></li><li><a href="#get_live_cell"><code>get_live_cell</code></a></li><li><a href="#get_tip_block_number"><code>get_tip_block_number</code></a></li><li><a href="#get_tip_header"><code>get_tip_header</code></a></li><li><a href="#get_transaction"><code>get_transaction</code></a></li></ul></li><li><a href="#experiment">Experiment</a><ul class="toc-headings"><li><a href="#_compute_script_hash"><code>_compute_script_hash</code></a></li><li><a href="#_compute_transaction_hash"><code>_compute_transaction_hash</code></a></li><li><a href="#dry_run_transaction"><code>dry_run_transaction</code></a></li></ul></li><li><a href="#indexer">Indexer</a><ul class="toc-headings"><li><a href="#deindex_lock_hash"><code>deindex_lock_hash</code></a></li><li><a href="#get_live_cells_by_lock_hash"><code>get_live_cells_by_lock_hash</code></a></li><li><a href="#get_lock_hash_index_states"><code>get_lock_hash_index_states</code></a></li><li><a href="#get_transactions_by_lock_hash"><code>get_transactions_by_lock_hash</code></a></li><li><a href="#index_lock_hash"><code>index_lock_hash</code></a></li></ul></li><li><a href="#net">Net</a><ul class="toc-headings"><li><a href="#get_banned_addresses"><code>get_banned_addresses</code></a></li><li><a href="#get_peers"><code>get_peers</code></a></li><li><a href="#local_node_info"><code>local_node_info</code></a></li><li><a href="#set_ban"><code>set_ban</code></a></li></ul></li><li><a href="#pool">Pool</a><ul class="toc-headings"><li><a href="#send_transaction"><code>send_transaction</code></a></li><li><a href="#tx_pool_info"><code>tx_pool_info</code></a></li></ul></li><li><a href="#stats">Stats</a><ul class="toc-headings"><li><a href="#get_blockchain_info"><code>get_blockchain_info</code></a></li><li><a href="#get_peers_state"><code>get_peers_state</code></a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
