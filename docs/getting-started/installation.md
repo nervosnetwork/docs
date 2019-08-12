@@ -81,8 +81,8 @@ ckb-cli --version
 ```bash
 $ ckb --version
 ckb-cli --version
-ckb 0.18.0 (rylai-v7 ecd88dc 2019-08-10)
-ckb-cli 0.18.0 (6cf87a7 2019-07-26)
+ckb 0.18.0 (rylai-v7 ccc3006 2019-08-10)
+ckb-cli 0.18.0 (04f7381 2019-08-09)
 ```
 </details>
 
