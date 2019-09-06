@@ -33,6 +33,7 @@ Open the `ckb.toml` file with a text editor, and then add these parameters to th
 [block_assembler]
 code_hash = "0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c"
 args = [ "0x<LOCK_ARG>" ]
+hash_type = "type"
 ```
 
 
@@ -42,6 +43,7 @@ args = [ "0x<LOCK_ARG>" ]
 [block_assembler]
 code_hash = "0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c"
 args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
+hash_type = "type"
 ```
 </details>
 
