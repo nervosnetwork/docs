@@ -20,7 +20,7 @@ Repeat password:
 address:
   mainnet: ckb1qyq8fxuxz49nvatawuqye0fydpm4gulcs6usgyfkrr
   testnet: ckt1qyq8fxuxz49nvatawuqye0fydpm4gulcs6us4phf0l
-lock_arg: 749b86154b36757d77004cbd2468775473f886b9
+lock_arg: b1bc3c78fa72deb65bbd202903f36dc222cbc78e
 lock_hash: ~
 ```
 </details>
