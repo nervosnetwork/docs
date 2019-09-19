@@ -10,15 +10,18 @@ If you are not familiar with the concepts of node and mining yet, [here is a doc
 
 ## Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
+
+> The `<LOCK_ARG>` here configs the wallet that receives the miner rewards, so please make sure it is correct. You should get this parameter upon the [wallet creation](./wallet#create-wallet) step. 
+
 ```bash
-ckb init -C ckb-testnet --chain testnet && \
+ckb init -C ckb-testnet --chain testnet --force --ba-arg <LOCK_ARG> && \
 cd ckb-testnet
 ```
 
 <details>
 <summary>(click here to view response)</summary>
 ```bash
-$ ckb init -C ckb-testnet --chain testnet && \
+$ ckb init -C ckb-testnet --chain testnet --force --ba-arg 0x7e6bccda0abe748eb5dc74be0e797662ae938036 && \
 cd ckb-testnet
 Initialized CKB directory in /Users/username/code/ckb-testnet
 create ckb.toml
@@ -26,18 +29,10 @@ create ckb-miner.toml
 ```
 </details>
 
-Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node. To set your miner wallet, you need to add the `[block_assembler]` parameter to the end of the `ckb.toml` file. 
-
-Open the `ckb.toml` file with a text editor, and then add these parameters to the end of the file (replace `<LOCK_ARG>` with the `lock_arg` you got from [wallet creation](./wallet#create-wallet); the `code_hash` here should NOT be changed):
-```toml
-[block_assembler]
-code_hash = "0x1892ea40d82b53c678ff88312450bbb17e164d7a3e0a90941aa58839f56f8df2"
-args = [ "0x<LOCK_ARG>" ]
-hash_type = "type"
-```
+Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node, as well as your miner wallet, which you can find at the bottom of the file.
 
 <details>
-<summary>(click here to view an example)</summary>
+<summary>(click here to view an example of miner wallet configuration)</summary>
 ```toml
 [block_assembler]
 code_hash = "0x1892ea40d82b53c678ff88312450bbb17e164d7a3e0a90941aa58839f56f8df2"
@@ -48,7 +43,7 @@ hash_type = "type"
 
 ## Start a Node
 
-Now you can start the CKB client to run a node. Navigate the commandline to `ckb-testnet` folder and run this command:
+Now you can start the CKB client to run a node. Navigate the command line to `ckb-testnet` folder and run this command:
 ```bash
 ckb run
 ```
