@@ -27,18 +27,18 @@ Download the binary file from the CKB releases page on GitHub:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.20.0/ckb_v0.20.0_x86_64-apple-darwin.zip
-curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.20.0/ckb_v0.20.0_x86_64-apple-darwin.zip.asc
+curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-apple-darwin.zip
+curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-apple-darwin.zip.asc
 ```
 <!--Linux-->
 ```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.20.0/ckb_v0.20.0_x86_64-unknown-linux-gnu.tar.gz
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.20.0/ckb_v0.20.0_x86_64-unknown-linux-gnu.tar.gz.asc
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-unknown-linux-gnu.tar.gz
+wget https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-unknown-linux-gnu.tar.gz.asc
 ```
 <!--CentOS-->
 ```bash
-curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.20.0/ckb_v0.20.0_x86_64-unknown-centos-gnu.tar.gz
-curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.20.0/ckb_v0.20.0_x86_64-unknown-centos-gnu.tar.gz.asc
+curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-unknown-centos-gnu.tar.gz
+curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-unknown-centos-gnu.tar.gz.asc
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -51,13 +51,13 @@ Then unzip the file:
 <!--DOCUSAURUS_CODE_TABS-->
 <!--macOS-->
 ```bash
-unzip ckb_v0.20.0_x86_64-apple-darwin.zip && \
-cd ckb_v0.20.0_x86_64-apple-darwin
+unzip ckb_v0.21.2_x86_64-apple-darwin.zip && \
+cd ckb_v0.21.2_x86_64-apple-darwin
 ```
 <!--Linux-->
 ```bash
-tar -xzvf ckb_v0.20.0_x86_64-unknown-linux-gnu.tar.gz && \
-cd ckb_v0.20.0_x86_64-unknown-linux-gnu
+tar -xzvf ckb_v0.21.2_x86_64-unknown-linux-gnu.tar.gz && \
+cd ckb_v0.21.2_x86_64-unknown-linux-gnu
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -81,8 +81,8 @@ ckb-cli --version
 ```bash
 $ ckb --version
 ckb-cli --version
-ckb 0.20.0 (rylai-v9 024408e 2019-09-07)
-ckb-cli 0.20.0 (9a1af87 2019-09-07)
+ckb 0.21.2 (rylai-v10 bdb6870 2019-09-26)
+ckb-cli 0.21.0 (b2a9e4f 2019-09-21)
 ```
 </details>
 
