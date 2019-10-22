@@ -10,7 +10,7 @@ To manage your assets on CKB, you will need a neuron key manager app. This tutor
 1. Go to [download](https://github.com/nervosnetwork/neuron-key-manager/releases) webpage
 2. Choose correct package of your platform
    
-![img](assets/neuron-key-manager/download.png)
+![img](../assets/neuron-key-manager/download.png)
 
 3. Install package in your device
 
@@ -18,11 +18,11 @@ To manage your assets on CKB, you will need a neuron key manager app. This tutor
 
 - For U.S. Residents
 
-![img](assets/neuron-key-manager/us.png)
+![img](../assets/neuron-key-manager/us.png)
 
 - For Non-U.S. Residents
 
-![img](assets/neuron-key-manager/non-us.png)
+![img](../assets/neuron-key-manager/non-us.png)
 
 ## Get Started
 
@@ -35,7 +35,7 @@ There are 3 ways to generate a wallet:
 
 #### Step 1: Create a wallet
 
-![img](assets/neuron-key-manager/from-scratch.md.png)
+![img](../assets/neuron-key-manager/from-scratch.md.png)
 
 #### Step 2: Save wallet seed
 
@@ -43,13 +43,13 @@ There are 3 ways to generate a wallet:
 
 - you should save it in a safe place.
 
-![img](assets/neuron-key-manager/save-seed.png)
+![img](../assets/neuron-key-manager/save-seed.png)
 
 #### Step 3: Input wallet seed
 
 Input wallet seed of step 2.
 
-![img](assets/neuron-key-manager/input-seed.png)
+![img](../assets/neuron-key-manager/input-seed.png)
 
 #### Step 4: Name your wallet and set password
 
@@ -57,7 +57,7 @@ The password is used to do security-related action, eg:
 - backup wallet
 - delete wallet 
 
-![img](assets/neuron-key-manager/name-password.png)
+![img](../assets/neuron-key-manager/name-password.png)
 
 #### Step 5: Address generated 
 
@@ -65,17 +65,17 @@ The password is used to do security-related action, eg:
 
 > **Please keep the mnemonic safe, and manage the token received in future.**
 
-![img](assets/neuron-key-manager/address.png)
+![img](../assets/neuron-key-manager/address.png)
 
 ### 2. Recover wallet 
 
 #### Step 1: Tap "Import Wallet Seed" tab
 
-![img](assets/neuron-key-manager/home.png)
+![img](../assets/neuron-key-manager/home.png)
 
 #### Step 2: Input wallet seed
 
-![img](assets/neuron-key-manager/input-seed.png)
+![img](../assets/neuron-key-manager/input-seed.png)
 
 And follow the next instructions.
 
@@ -83,13 +83,13 @@ And follow the next instructions.
 
 #### Step 1: Tap "Import From Keystore" tab
 
-![img](assets/neuron-key-manager/home.png)
+![img](../assets/neuron-key-manager/home.png)
 
 #### Step 2: Input keystore file
 
 Password is the password you set when backup wallet.
 
-![img](assets/neuron-key-manager/from-keystore.png)
+![img](../assets/neuron-key-manager/from-keystore.png)
 
 And follow the next instructions.
 
@@ -99,16 +99,17 @@ You can backup your wallet into a keystore file, and recover wallet from keystor
 
 #### Step 1: Tap "Backup Current Wallet"
 
-![img](assets/neuron-key-manager/to-keystore.png)
+![img](../assets/neuron-key-manager/to-keystore.png)
 
 #### Step 2: Input password
 
 Set a password to protect keystore file. And when you recover wallet from keystore, you will input the password.
 
-![img](assets/neuron-key-manager/keystore-password.png)
+ <img src="../assets/neuron-key-manager/keystore-password.png" width = "300"/>
+
 
 #### Step 3: Choose where to store keystore file
 
-![img](assets/neuron-key-manager/keystore-path.png)
+ <img src="../assets/neuron-key-manager/keystore-path.png" width = "400"/>
 
 > **Notice: if you lose your wallet, nobody can recover that. So remember to backup!**
