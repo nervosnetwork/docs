@@ -15,7 +15,7 @@ jobs:
           command: |
             git config --global user.email "CipherWang@users.noreply.github.com"
             git config --global user.name "CipherWang"
-            cd website && yarn install && GIT_USER=CipherWang yarn run publish-gh-pages
+            cd website && yarn install && yarn run publish-gh-pages
 
 workflows:
   version: 2
