@@ -61,9 +61,9 @@ The password is used to do security-related action, eg:
 
 #### Step 5: Address generated 
 
-- **```This address can be used as receiver address of Nervos Coinlist.```**
+> **This address can be used as receiver address of Nervos Coinlist.**
 
-- **```Please keep the mnemonic safe, and manage the token received in future.```**
+> **Please keep the mnemonic safe, and manage the token received in future.**
 
 ![img](assets/neuron-key-manager/address.png)
 
@@ -75,7 +75,7 @@ The password is used to do security-related action, eg:
 
 #### Step 2: Input wallet seed
 
-![img](input-seed.png)
+![img](assets/neuron-key-manager/input-seed.png)
 
 And follow the next instructions.
 
@@ -111,4 +111,4 @@ Set a password to protect keystore file. And when you recover wallet from keysto
 
 ![img](assets/neuron-key-manager/keystore-path.png)
 
-- **```Notice: if you lose your wallet, nobody can recover that. So remember to backup!```**
+> **Notice: if you lose your wallet, nobody can recover that. So remember to backup!**
