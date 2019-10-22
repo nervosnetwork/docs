@@ -7,12 +7,14 @@ jobs:
       
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+              - "db:86:9b:dc:4c:18:b1:b9:b9:be:77:2f:d7:39:88:19"
       - run:
           name: Deploying to GitHub Pages
           command: |
             git config --global user.email "CipherWang@users.noreply.github.com"
             git config --global user.name "CipherWang"
-            echo "machine github.com login CipherWang password $GITHUB_TOKEN" > ~/.netrc
             cd website && yarn install && GIT_USER=CipherWang yarn run publish-gh-pages
 
 workflows:
