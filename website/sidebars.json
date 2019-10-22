@@ -28,7 +28,8 @@
         "References": [
             "references/troubleshooting",
             "references/faq",
-            "references/nervos-design"
+            "references/nervos-design",
+            "references/neuron-key-manager"
         ]
     }
 }
