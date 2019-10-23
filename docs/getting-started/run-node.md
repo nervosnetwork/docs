@@ -11,10 +11,10 @@ If you are not familiar with the concepts of node and mining yet, [here is a doc
 ## Configurations
 You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
 
-> The `<LOCK_ARG>` here configs the wallet that receives the miner rewards, so please make sure it is correct. You should get this parameter upon the [wallet creation](./wallet#create-wallet) step. 
+> The `<LOCK_ARG>` here configs the wallet that receives the miner rewards, so please make sure it is correct. You should get this parameter upon the [wallet creation](./wallet#create-wallet) step. Please add `0x` before the generated `<LOCK_ARG>` 
 
 ```bash
-ckb init -C ckb-testnet --chain testnet --force --ba-arg <LOCK_ARG> && \
+ckb init -C ckb-testnet --chain testnet --force --ba-arg 0x<LOCK_ARG> && \
 cd ckb-testnet
 ```
 
