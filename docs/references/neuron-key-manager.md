@@ -20,25 +20,25 @@ To manage your assets on CKB, you will need a neuron key manager app. This tutor
 
 When you open the app first time, you may get this: ( tap `More info` )
 
- <img src="../assets/neuron-key-manager/intercept-win.png" height = "300" width = "400"/>
+ <img src="../assets/neuron-key-manager/intercept-win.png" width = "400"/>
 
 Then tap `Run anyway`:
 
-<img src="../assets/neuron-key-manager/open-win.png" height = "300" width = "400"/>
+<img src="../assets/neuron-key-manager/open-win.png" width = "400"/>
 
 - ### MacOS
 
 When you open the app first time, you may get this:
 
-<img src="../assets/neuron-key-manager/intercept.png" height = "300" width = "500"/>
+<img src="../assets/neuron-key-manager/intercept.png" height = "250"/>
 
 The solution is to open the `System Preferences`, and tap `Security & Privacy`, you will see this: ( tap `Open Anyway` )
 
-<img src="../assets/neuron-key-manager/setting.png" height = "400" width = "500"/>
+<img src="../assets/neuron-key-manager/setting.png" height = "400"/>
 
 Then re-open neuron key manager app: ( tap `Open` )
 
-<img src="../assets/neuron-key-manager/open.png" height = "300" width = "500"/>
+<img src="../assets/neuron-key-manager/open.png" width = "500"/>
 
 ## Agreement
 
