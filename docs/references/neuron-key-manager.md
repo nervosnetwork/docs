@@ -10,9 +10,35 @@ To manage your assets on CKB, you will need a neuron key manager app. This tutor
 1. Go to [download](https://github.com/nervosnetwork/neuron-key-manager/releases) webpage
 2. Choose correct package of your platform
    
-![img](../assets/neuron-key-manager/download.png)
+<img src="../assets/neuron-key-manager/download.png" width = "600"/>
 
 3. Install package in your device
+
+## Open
+
+- ### Windows
+
+When you open the app first time, you may get this: ( tap `More info` )
+
+ <img src="../assets/neuron-key-manager/intercept-win.png" height = "300" width = "400"/>
+
+Then tap `Run anyway`:
+
+<img src="../assets/neuron-key-manager/open-win.png" height = "300" width = "400"/>
+
+- ### MacOS
+
+When you open the app first time, you may get this:
+
+<img src="../assets/neuron-key-manager/intercept.png" height = "300" width = "500"/>
+
+The solution is to open the `System Preferences`, and tap `Security & Privacy`, you will see this: ( tap `Open Anyway` )
+
+<img src="../assets/neuron-key-manager/setting.png" height = "500" width = "500"/>
+
+Then re-open neuron key manager app: ( tap `Open` )
+
+<img src="../assets/neuron-key-manager/open.png" height = "300" width = "500"/>
 
 ## Agreement
 
@@ -43,7 +69,7 @@ There are 3 ways to generate a wallet:
 
 - you should save it in a safe place.
 
-![img](../assets/neuron-key-manager/save-seed.png)
+ <img src="../assets/neuron-key-manager/save-seed.png" width = "800"/>
 
 #### Step 3: Input wallet seed
 
@@ -99,7 +125,7 @@ You can backup your wallet into a keystore file, and recover wallet from keystor
 
 #### Step 1: Tap "Backup Current Wallet"
 
-![img](../assets/neuron-key-manager/to-keystore.png)
+<img src="../assets/neuron-key-manager/to-keystore.png" width = "600"/>
 
 #### Step 2: Input password
 
