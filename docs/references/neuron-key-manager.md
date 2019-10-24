@@ -40,6 +40,14 @@ Then re-open neuron key manager app: ( tap `Open` )
 
 <img src="../assets/neuron-key-manager/open.png" width = "500"/>
 
+- ### Linux
+
+You should make the downloaded AppImage file executable before using it. Open a terminal and run the following shell code.
+
+```
+chmod a+x Neuron-Key-Manager-linux-x86_64.AppImage
+```
+
 ## Agreement
 
 - For U.S. Residents
