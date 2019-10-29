@@ -34,11 +34,11 @@ When you open the app first time, you may get this:
 
 The solution is to open the `System Preferences`, and tap `Security & Privacy`, you will see this: ( tap `Open Anyway` )
 
-<img src="../assets/neuron-key-manager/setting.png" height = "400"/>
+<img src="../assets/neuron-key-manager/setting.png" width = "500"/>
 
 Then re-open neuron key manager app: ( tap `Open` )
 
-<img src="../assets/neuron-key-manager/open.png" width = "500"/>
+<img src="../assets/neuron-key-manager/open.png" width = "400"/>
 
 - ### Linux
 
@@ -73,9 +73,9 @@ There are 3 ways to generate a wallet:
 
 #### Step 2: Save wallet seed
 
-- wallet seed is the mnemonic word of private key, you can use it to recover your wallet ( address ).
+- wallet seed is the mnemonic words of private key, you can use it to recover your wallet ( address ).
 
-- you should save it in a safe place.
+- you must record and save them in a safe place.
 
  <img src="../assets/neuron-key-manager/save-seed.png" width = "800"/>
 
@@ -95,11 +95,13 @@ The password is used to do security-related action, eg:
 
 #### Step 5: Address generated 
 
-> **This address can be used as receiver address of Nervos Coinlist.**
-
-> **Please keep the mnemonic safe, and manage the token received in future.**
-
 <img src="../assets/neuron-key-manager/address.png" width = "800"/>
+
+> **This address can be used as *Beneficiary's Address* of Nervos token sale on [Coinlist](https://coinlist.co/nervos).**
+
+> **Please keep the mnemonic words and keystore file safe. Do not disclose them to anyone else or you may lose all your assets.**
+
+> **You can use the mnemonic words or keystore file to manage your tokens after Nervos CKB mainnet launch.**
 
 ### 2. Recover wallet 
 
