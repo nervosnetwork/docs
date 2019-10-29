@@ -19,48 +19,11 @@ sudo yum install openssl-libs
 
 ### Download
 
-Download the binary file from the CKB releases page on GitHub:
+Download the binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases):
 
+you can download from command line & download from your browser directly.
 
-<!-- Todo: change the release version here -->
-
-<!--DOCUSAURUS_CODE_TABS-->
-<!--macOS-->
-```bash
-curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-apple-darwin.zip
-curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-apple-darwin.zip.asc
-```
-<!--Linux-->
-```bash
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-unknown-linux-gnu.tar.gz
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-unknown-linux-gnu.tar.gz.asc
-```
-<!--CentOS-->
-```bash
-curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-unknown-centos-gnu.tar.gz
-curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.21.2/ckb_v0.21.2_x86_64-unknown-centos-gnu.tar.gz.asc
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
-
-> If you can not download from command line, you can go to [GitHub releases page](https://github.com/nervosnetwork/ckb/releases/tag/v0.14.0) to download from your browser directly.
->
-> The `.asc` files are signatures. It is wise and more secure to check out for the files [integrity](https://github.com/nervosnetwork/ckb/blob/develop/docs/integrity-check.md).
-
-Then unzip the file:
-
-<!--DOCUSAURUS_CODE_TABS-->
-<!--macOS-->
-```bash
-unzip ckb_v0.21.2_x86_64-apple-darwin.zip && \
-cd ckb_v0.21.2_x86_64-apple-darwin
-```
-<!--Linux-->
-```bash
-tar -xzvf ckb_v0.21.2_x86_64-unknown-linux-gnu.tar.gz && \
-cd ckb_v0.21.2_x86_64-unknown-linux-gnu
-```
-
-<!--END_DOCUSAURUS_CODE_TABS-->
+ The `.asc` files are signatures. It is wise and more secure to check out for the files [integrity](https://github.com/nervosnetwork/ckb/blob/develop/docs/integrity-check.md).
 
 After it is downloaded and unzipped, you need to copy the `ckb` and `ckb-cli` binary file to a `PATH` directory. In the unzipped folder:
 ```bash
@@ -81,8 +44,8 @@ ckb-cli --version
 ```bash
 $ ckb --version
 ckb-cli --version
-ckb 0.21.2 (rylai-v10 bdb6870 2019-09-26)
-ckb-cli 0.21.0 (b2a9e4f 2019-09-21)
+ckb 0.23.0 (rylai-v11 52aa02ff 2019-10-19)
+ckb-cli 0.23.0 (809fa15 2019-10-19)
 ```
 </details>
 
