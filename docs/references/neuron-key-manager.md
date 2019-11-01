@@ -3,52 +3,52 @@ id: neuron-key-manager
 title: Neuron Key Manager
 ---
 
-To manage your assets on CKB, you will need a neuron key manager app. This tutorial covers how to install and use the basic features of neuron key manager.
+To manage your assets on Nervos CKB, you will need a Neuron Key Manager application. This tutorial covers how to install and use the basic features of Neuron Key Manager.
 
 ## Install
 
-1. Go to [download](https://github.com/nervosnetwork/neuron-key-manager/releases) webpage
-2. Choose correct package of your platform
+1. Go to [Neuron Key Manager](https://github.com/nervosnetwork/neuron-key-manager/releases) download page
+2. Choose the correct file based on your device operating system
    
 <img src="../assets/neuron-key-manager/download.png" width = "600"/>
 
-3. Install package in your device
+3. Install the file on your device
 
 ## Open
 
 - ### Windows
 
-When you open the app first time, you may get this: ( tap `More info` )
+When you open the application for the first time, you may get this message (see below). Click `More info`
 
  <img src="../assets/neuron-key-manager/intercept-win.png" width = "400"/>
 
-Then tap `Run anyway`:
+Then click `Run anyway`:
 
 <img src="../assets/neuron-key-manager/open-win.png" width = "400"/>
 
 - ### MacOS
 
-When you open the app first time, you may get this:
+When you open the application for the first time, you may get this message (see below).
 
 <img src="../assets/neuron-key-manager/intercept.png" height = "250"/>
 
-The solution is to open the `System Preferences`, and tap `Security & Privacy`, you will see this: ( tap `Open Anyway` )
+The solution is to open `System Preferences`, and click `Security & Privacy`, you will see this message (see below), click `Open Anyway`.
 
 <img src="../assets/neuron-key-manager/setting.png" width = "500"/>
 
-Then re-open neuron key manager app: ( tap `Open` )
+Then re-open the Neuron Key Manager application: ( click `Open` )
 
 <img src="../assets/neuron-key-manager/open.png" width = "400"/>
 
 - ### Linux
 
-You should make the downloaded AppImage file executable before using it. Open a terminal and run the following shell code.
+Make the downloaded AppImage file executable before using it. Open a terminal and run the following shell code.
 
 ```
 chmod a+x Neuron-Key-Manager-linux-x86_64.AppImage
 ```
 
-## Agreement
+## Disclaimer
 
 - For U.S. Residents
 
@@ -61,33 +61,33 @@ chmod a+x Neuron-Key-Manager-linux-x86_64.AppImage
 ## Get Started
 
 There are 3 ways to generate a wallet:
-- started from scratch
-- recover wallet 
-- import from keystore
+- Start from scratch
+- Recover wallet 
+- Import from keystore file
 
-### 1. Started from scratch
+### 1. Start from scratch
 
 #### Step 1: Create a wallet
 
 <img src="../assets/neuron-key-manager/from-scratch.png" width = "800"/>
 
-#### Step 2: Save wallet seed
+#### Step 2: Save wallet seed (mnemonic) phrase
 
-- wallet seed is the mnemonic words of private key, you can use it to recover your wallet ( address ).
+- The wallet seed is the mnemonic phrase of the private key. You can use these words to recover your wallet (address).
 
-- you must record and save them in a safe place.
+- Record and save them these words in a safe place.
 
  <img src="../assets/neuron-key-manager/save-seed.png" width = "800"/>
 
-#### Step 3: Input wallet seed
+#### Step 3: Input wallet seed (mnemonic) phrase
 
-Input wallet seed of step 2.
+Input wallet seed (mnemonic) phrase from step 2.
 
 <img src="../assets/neuron-key-manager/input-seed.png" width = "800"/>
 
 #### Step 4: Name your wallet and set password
 
-The password is used to do security-related action, eg:
+The password is used for security-related actions, eg:
 - backup wallet
 - delete wallet 
 
@@ -97,48 +97,48 @@ The password is used to do security-related action, eg:
 
 <img src="../assets/neuron-key-manager/address.png" width = "800"/>
 
-> **This address can be used as *Beneficiary's Address* of Nervos token sale on [Coinlist](https://coinlist.co/nervos).**
+> **This address can be used as the *Receiving Address* for the Nervos token sale on [Coinlist](https://coinlist.co/nervos).**
 
-> **Please keep the mnemonic words and keystore file safe. Do not disclose them to anyone else or you may lose all your assets.**
+> **Please keep the seed (mnemonic) phrase and keystore file safe. Do not disclose the details to anyone or you may risk losing all of your tokens.**
 
-> **You can use the mnemonic words or keystore file to manage your tokens after Nervos CKB mainnet launch.**
+> **You can use the seed (mnemonic) phrase or keystore file to manage your tokens after Nervos CKB mainnet launch.**
 
 ### 2. Recover wallet 
 
-#### Step 1: Tap "Import Wallet Seed" tab
+#### Step 1: Click "Import Wallet Seed" tab
 
 <img src="../assets/neuron-key-manager/home.png" width = "800"/>
 
-#### Step 2: Input wallet seed
+#### Step 2: Input wallet seed (mnemonic) phrase
 
 <img src="../assets/neuron-key-manager/input-seed.png" width = "800"/>
 
-And follow the next instructions.
+Follow the next instructions to complete the process.
 
-### 3. Import from keystore
+### 3. Import from keystore file
 
-#### Step 1: Tap "Import From Keystore" tab
+#### Step 1: Click "Import From Keystore" tab
 
 <img src="../assets/neuron-key-manager/home.png" width = "800"/>
 
 #### Step 2: Input keystore file
 
-Password is the password you set when backup wallet.
+The password is the password set previously when the wallet was backed up.
 
 <img src="../assets/neuron-key-manager/from-keystore.png" width = "800"/>
 And follow the next instructions.
 
 ## Backup wallet
 
-You can backup your wallet into a keystore file, and recover wallet from keystore when you need it.
+Backup your wallet into a keystore file, and recover the wallet from keystore file when you need it.
 
-#### Step 1: Tap "Backup Current Wallet"
+#### Step 1: Click "Backup Current Wallet"
 
 <img src="../assets/neuron-key-manager/to-keystore.png" width = "600"/>
 
 #### Step 2: Input password
 
-Set a password to protect keystore file. And when you recover wallet from keystore, you will input the password.
+Set a password to protect the keystore file. When you recover the wallet from the keystore file, you will need to input the password.
 
  <img src="../assets/neuron-key-manager/keystore-password.png" width = "300"/>
 
@@ -147,4 +147,4 @@ Set a password to protect keystore file. And when you recover wallet from keysto
 
  <img src="../assets/neuron-key-manager/keystore-path.png" width = "400"/>
 
-> **Notice: if you lose your wallet, nobody can recover that. So remember to backup!**
+> **Notice: if you lose your wallet, nobody can recover it. So remember to backup all the information!**
