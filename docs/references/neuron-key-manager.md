@@ -3,7 +3,7 @@ id: neuron-key-manager
 title: Neuron Key Manager
 ---
 
-To manage your assets on CKB, you will need a neuron key manager app. This tutorial covers how to install and use the basic features of neuron key manager.
+To manage your assets on Nervos CKB, you will need a Neuron Key Manager application. This tutorial covers how to install and use the basic features of Neuron Key Manager.
 
 ## Install
 
