@@ -67,7 +67,7 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/getting-started/wallet.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Create a Wallet</h1></header><article><div><span><p>Once you have done with the installation, you can create a wallet for yourself now.</p>
 <h2><a class="anchor" aria-hidden="true" id="create-wallet"></a><a href="#create-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Wallet</h2>
-<p>You can generate a new <a href="https://bitcoin.org/en/glossary/hd-protocol">HD wallet</a> address with the following command. Note that you need to set a password for this wallet:</p>
+<p>You can generate a new account with the following command. Note that you need to set a password for this wallet:</p>
 <pre><code class="hljs css language-bash">ckb-cli account new
 </code></pre>
 <p><details>
@@ -97,7 +97,7 @@ lock_hash: ~
 <blockquote>
 <p>Please replace the <code>&lt;LOCK_ARG&gt;</code> part with your own <code>lock_arg</code>.</p>
 </blockquote>
-<p>This command will create a file named <code>privkey</code> in your current folder. In this file you can find your private key (the first line of the file) and the chain code of the generated HD wallet (the second line).</p>
+<p>This command will create a file named <code>privkey</code> in your current folder. In this file you can find your private key (the first line of the file) and the chain code of the generated account (the second line).</p>
 <p><details>
 <summary>(click here to view an example <code>privkey</code>)</summary></p>
 <pre><code class="hljs css language-bash">aa61885f255aadaa5ed1eedd4e0331c37e25b5e115678eab043e169e4150e8d2
@@ -106,7 +106,7 @@ lock_hash: ~
 <p></details></p>
 <p>Now you have successfully created your own wallet. Congratulations! You can try to start your own node now.</p>
 <p>If you find any problems, please refer to the <a href="../references/troubleshooting">trouble shooting document</a>.</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/10/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/installation"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/getting-started/run-node"><span>Run a CKB Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#create-wallet">Create Wallet</a></li><li><a href="#export-wallet-private-key">Export Wallet Private Key</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 11/5/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/installation"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/getting-started/run-node"><span>Run a CKB Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#create-wallet">Create Wallet</a></li><li><a href="#export-wallet-private-key">Export Wallet Private Key</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
