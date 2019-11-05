@@ -68,11 +68,15 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/references/neuron-key-manager.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Neuron Key Manager</h1></header><article><div><span><p>To manage your assets on Nervos CKB, you will need a Neuron Key Manager application. This tutorial covers how to install and use the basic features of Neuron Key Manager.</p>
 <h2><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
 <ol>
-<li>Go to <a href="https://github.com/nervosnetwork/neuron-key-manager/releases">Neuron Key Manager</a> download page</li>
-<li>Choose the correct file based on your device operating system</li>
+<li><p>Go to <a href="https://github.com/nervosnetwork/neuron-key-manager/releases">Neuron Key Manager</a> download page</p></li>
+<li><p>Choose the correct file based on your device operating system</p></li>
 </ol>
 <p><img src="../assets/neuron-key-manager/download.png" width = "600"/></p>
 <ol start="3">
+<li>[Optional] Check the downloaded file's integrity according to the SHA256 checksum published on the download page.</li>
+</ol>
+<p><img src="../assets/neuron-key-manager/sha256.png" width = "600"/></p>
+<ol start="4">
 <li>Install the file on your device</li>
 </ol>
 <h2><a class="anchor" aria-hidden="true" id="open"></a><a href="#open" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Open</h2>
@@ -147,6 +151,14 @@
 <blockquote>
 <p><strong>You can use the seed (mnemonic) phrase or keystore file to manage your tokens after Nervos CKB mainnet launch.</strong></p>
 </blockquote>
+<h4><a class="anchor" aria-hidden="true" id="step-6-genereate-more-addresses"></a><a href="#step-6-genereate-more-addresses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 6: Genereate more addresses</h4>
+<p>The Key Manager application only supports one address at present. To generate more addresses, you shoule delete current wallet and re-create new wallet.</p>
+<blockquote>
+<p>Click &quot;wallet&quot; menu and &quot;delete wallet&quot; submenu to delete existing wallet.</p>
+</blockquote>
+<blockquote>
+<p><strong>Double confirm that you have backup your seed (mnemonic) phrase and keystore files before delete the wallet from Key Manager.</strong></p>
+</blockquote>
 <h3><a class="anchor" aria-hidden="true" id="2-recover-wallet"></a><a href="#2-recover-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Recover wallet</h3>
 <h4><a class="anchor" aria-hidden="true" id="step-1-click-import-wallet-seed-tab"></a><a href="#step-1-click-import-wallet-seed-tab" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 1: Click &quot;Import Wallet Seed&quot; tab</h4>
 <p><img src="../assets/neuron-key-manager/home.png" width = "800"/></p>
@@ -172,7 +184,7 @@ And follow the next instructions.</p>
 <blockquote>
 <p><strong>Notice: if you lose your wallet, nobody can recover it. So remember to backup all the information!</strong></p>
 </blockquote>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 11/1/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/references/nervos-design"><span class="arrow-prev">← </span><span>Nervos System Design</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install">Install</a></li><li><a href="#open">Open</a><ul class="toc-headings"><li><a href="#windows">Windows</a></li><li><a href="#macos">MacOS</a></li><li><a href="#linux">Linux</a></li></ul></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#get-started">Get Started</a><ul class="toc-headings"><li><a href="#1-start-from-scratch">1. Start from scratch</a></li><li><a href="#2-recover-wallet">2. Recover wallet</a></li><li><a href="#3-import-from-keystore-file">3. Import from keystore file</a></li></ul></li><li><a href="#backup-wallet">Backup wallet</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 11/5/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/references/nervos-design"><span class="arrow-prev">← </span><span>Nervos System Design</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install">Install</a></li><li><a href="#open">Open</a><ul class="toc-headings"><li><a href="#windows">Windows</a></li><li><a href="#macos">MacOS</a></li><li><a href="#linux">Linux</a></li></ul></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#get-started">Get Started</a><ul class="toc-headings"><li><a href="#1-start-from-scratch">1. Start from scratch</a></li><li><a href="#2-recover-wallet">2. Recover wallet</a></li><li><a href="#3-import-from-keystore-file">3. Import from keystore file</a></li></ul></li><li><a href="#backup-wallet">Backup wallet</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
