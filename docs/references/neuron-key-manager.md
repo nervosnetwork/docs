@@ -8,11 +8,17 @@ To manage your assets on Nervos CKB, you will need a Neuron Key Manager applicat
 ## Install
 
 1. Go to [Neuron Key Manager](https://github.com/nervosnetwork/neuron-key-manager/releases) download page
+
 2. Choose the correct file based on your device operating system
    
 <img src="../assets/neuron-key-manager/download.png" width = "600"/>
 
-3. Install the file on your device
+3. [Optional] Check the downloaded file's integrity according to the SHA256 checksum published on the download page.
+
+<img src="../assets/neuron-key-manager/sha256.png" width = "600"/>
+
+
+4. Install the file on your device
 
 ## Open
 
@@ -102,6 +108,14 @@ The password is used for security-related actions, eg:
 > **Please keep the seed (mnemonic) phrase and keystore file safe. Do not disclose the details to anyone or you may risk losing all of your tokens.**
 
 > **You can use the seed (mnemonic) phrase or keystore file to manage your tokens after Nervos CKB mainnet launch.**
+
+#### Step 6: Genereate more addresses
+
+The Key Manager application only supports one address at present. To generate more addresses, you shoule delete current wallet and re-create new wallet.
+
+> Click "wallet" menu and "delete wallet" submenu to delete existing wallet.
+
+> **Double confirm that you have backup your seed (mnemonic) phrase and keystore files before delete the wallet from Key Manager.**
 
 ### 2. Recover wallet 
 
