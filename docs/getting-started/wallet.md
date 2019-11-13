@@ -7,7 +7,7 @@ Once you have done with the installation, you can create a wallet for yourself n
 
 ## Create Wallet
 
-You can generate a new [HD wallet](https://bitcoin.org/en/glossary/hd-protocol) address with the following command. Note that you need to set a password for this wallet:
+You can generate a new account with the following command. Note that you need to set a password for this wallet:
 ```bash
 ckb-cli account new
 ```
@@ -40,7 +40,7 @@ ckb-cli account export --lock-arg <LOCK_ARG> --extended-privkey-path privkey
 
 > Please replace the `<LOCK_ARG>` part with your own `lock_arg`.
 
-This command will create a file named `privkey` in your current folder. In this file you can find your private key (the first line of the file) and the chain code of the generated HD wallet (the second line).
+This command will create a file named `privkey` in your current folder. In this file you can find your private key (the first line of the file) and the chain code of the generated account (the second line).
 
 <details>
 <summary>(click here to view an example `privkey`)</summary>

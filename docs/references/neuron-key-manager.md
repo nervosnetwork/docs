@@ -111,7 +111,7 @@ The password is used for security-related actions, eg:
 
 #### Step 6: Genereate more addresses
 
-The Key Manager application only supports one address at present. To generate more addresses, you shoule delete current wallet and re-create new wallet.
+The Key Manager application only supports one address at present. To generate more addresses, you should delete current wallet and re-create new wallet.
 
 > Click "wallet" menu and "delete wallet" submenu to delete existing wallet.
 
