@@ -35,7 +35,7 @@ We will explain how these four fields work in the next section.
 
 ## Transaction
 
-> More information about the transactions in Nervos CKB can be found in the [Nervos CKB RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md#44-transaction).
+> More information about the transactions in Nervos CKB can be found in the [Nervos CKB RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md#44-transaction), as well as [this article describing transaction structure](https://medium.com/nervosnetwork/exploring-an-essential-data-structure-in-ckb-the-transaction-a1ca8fcbfbda). 
 
 ### Structure
 Transaction is for updating the cells on-chain (i.e. the state on-chain). By sending a transaction to a CKB node, the transaction will be verified and confirmed by all nodes and the new cells containing new state will become valid on-chain.
