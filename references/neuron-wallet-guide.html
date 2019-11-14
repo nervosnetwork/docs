@@ -111,14 +111,14 @@
 </ol>
 <p>please note: the directory and folder name must match the commands below</p>
 <p><strong>Mac</strong></p>
-<pre><code class="hljs">`$ cd ckb_v0``.``<span class="hljs-number">25.1</span>``_x86_64``-``apple``-``darwin`
-`$``./``ckb ``--``version`
-`$``./``ckb``-``cli ``--``version`
+<pre><code class="hljs">$ <span class="hljs-keyword">cd</span> ckb_v0.25.1_x86_64-apple-darwin
+$<span class="hljs-string">./ckb</span> <span class="hljs-params">--version</span>
+$<span class="hljs-string">./ckb-cli</span> <span class="hljs-params">--version</span>
 </code></pre>
 <p><strong>Windows</strong></p>
-<pre><code class="hljs">$ cd ckb_v<span class="hljs-number">0</span>.<span class="hljs-number">25.1_</span>x86_64-pc-windows-msvc
-$./ckb --version
-$ <span class="hljs-string">`./`</span><span class="hljs-string">`ckb`</span><span class="hljs-string">`-`</span><span class="hljs-string">`cli `</span><span class="hljs-string">`--`</span><span class="hljs-string">`version `</span>
+<pre><code class="hljs">$ <span class="hljs-keyword">cd</span> ckb_v0.25.1_x86_64-pc-windows-msvc
+$<span class="hljs-string">./ckb</span> <span class="hljs-params">--version</span>
+$ <span class="hljs-string">./ckb-cli</span> <span class="hljs-params">--version</span> 
 </code></pre>
 <p>You should receive the following output confirming the CKB version:</p>
 <p><img src="../assets/neuron-wallet-guide/image3.png" width= "600"/></p>
@@ -127,8 +127,8 @@ $ <span class="hljs-string">`./`</span><span class="hljs-string">`ckb`</span><sp
 <li>To run the CKB node, copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:</li>
 </ul>
 <p><strong>Mac &amp; Windows</strong></p>
-<pre><code class="hljs">`$``./``ckb init ``--``chain mainnet`
-$`./``ckb run`
+<pre><code class="hljs">$<span class="hljs-string">./ckb</span> init <span class="hljs-params">--chain</span> mainnet
+$<span class="hljs-string">./ckb</span> run
 </code></pre>
 <p><img src="../assets/neuron-wallet-guide/image5.png" width = "600"/></p>
 <p><img src="../assets/neuron-wallet-guide/image6.png" width = "600"/></p>
@@ -175,13 +175,15 @@ $`./``ckb run`
 <p><code>Deposit Records</code> will display deposit records’ list，you can click <code>withdraw</code>.</p>
 <p><img src="../assets/neuron-wallet-guide/image18.png" width = "600"/></p>
 <p><img src="../assets/neuron-wallet-guide/image19.png" width = "600"/></p>
+<p>After 4 epochs, will display details.</p>
+<p><img src="../assets/neuron-wallet-guide/image20.png"/></p>
 <h2><a class="anchor" aria-hidden="true" id="how-to-transfer-ckbytes-from-the-neuron-wallet-to-other-wallets-and-exchanges"></a><a href="#how-to-transfer-ckbytes-from-the-neuron-wallet-to-other-wallets-and-exchanges" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges</h2>
 <p><strong>Please read the disclaimer below before transacting on mainnet</strong></p>
 <p>You should have the third party wallet/exchange destination address. <strong>Please make sure your balance is greater than 62 CKB.</strong></p>
 <ul>
 <li>Under the “Send” tab, fill in the address details in the &quot;Send to&quot; field. Turn on the &quot;Advanced fee settings&quot; and fill in the &quot;Transaction fee&quot; — click  the &quot;Send&quot; button to complete your transfer.</li>
 </ul>
-<p><img src="../assets/neuron-wallet-guide/image20.png" width = "600"/></p>
+<p><img src="../assets/neuron-wallet-guide/image21.png" width = "600"/></p>
 <h1><a class="anchor" aria-hidden="true" id="disclaimer"></a><a href="#disclaimer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>*Disclaimer</h1>
 <p>The bootstrapping of a proof-of-work (PoW) chain is difficult. A new PoW chain is in many ways like a newborn baby — weak in the beginning, but with unlimited potential when mature.</p>
 <p>For a new PoW chain, risks may come from:</p>
