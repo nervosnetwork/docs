@@ -29,7 +29,8 @@
             "references/troubleshooting",
             "references/faq",
             "references/nervos-design",
-            "references/neuron-key-manager"
+            "references/neuron-key-manager",
+            "references/neuron-wallet-guide"
         ]
     }
 }
