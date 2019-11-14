@@ -57,9 +57,9 @@ please note: the directory and folder name must match the commands below
 **Mac**
 
 ```
-`$ cd ckb_v0``.``25.1``_x86_64``-``apple``-``darwin`
-`$``./``ckb ``--``version`
-`$``./``ckb``-``cli ``--``version`
+$ cd ckb_v0.25.1_x86_64-apple-darwin
+$./ckb --version
+$./ckb-cli --version
 ```
 
 **Windows**
@@ -67,7 +67,7 @@ please note: the directory and folder name must match the commands below
 ```
 $ cd ckb_v0.25.1_x86_64-pc-windows-msvc
 $./ckb --version
-$ `./``ckb``-``cli ``--``version `
+$ ./ckb-cli --version 
 ```
 
 You should receive the following output confirming the CKB version:
@@ -81,8 +81,8 @@ You should receive the following output confirming the CKB version:
 **Mac & Windows**
 
 ```
-`$``./``ckb init ``--``chain mainnet`
-$`./``ckb run`
+$./ckb init --chain mainnet
+$./ckb run
 ```
 
 <img src="../assets/neuron-wallet-guide/image5.png" width = "600"/>
@@ -157,6 +157,10 @@ The [economic model](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015
 
 <img src="../assets/neuron-wallet-guide/image19.png" width = "600"/>
 
+After 4 epochs, will display details.
+
+<img src="../assets/neuron-wallet-guide/image20.png"/>
+
 
 ## How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges
 
@@ -166,7 +170,7 @@ You should have the third party wallet/exchange destination address. **Please ma
 
 * Under the “Send” tab, fill in the address details in the "Send to" field. Turn on the "Advanced fee settings" and fill in the "Transaction fee" — click  the "Send" button to complete your transfer.
 
-<img src="../assets/neuron-wallet-guide/image20.png" width = "600"/>
+<img src="../assets/neuron-wallet-guide/image21.png" width = "600"/>
 
 # *Disclaimer
 
