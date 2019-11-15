@@ -100,7 +100,7 @@ To learn more about how to write `script` in practice, please refer [write scrip
 
 A block structure contains a group of transactions and a block header including metadata. It is the miner's job to pack transactions into a block and do the Proof-of-Work calculation to find a "seal" to seal the block, then broadcast it to the network. Other miners will receive this block, verify it, collect some transactions from their own transaction pool and start to mine a new block based on this received block. 
 
-In CKB, a block also contains the information of uncle blocks in the block structure. It has the complete uncle block header as well as part of the transaction information. Please refer to [RFC#0019-Data Structures](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#uncleblock) for more details.
+In CKB, a block also contains the information of uncle blocks in the block structure. It has the complete uncle block header as well as their proposals. Please refer to [RFC#0019-Data Structures](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#uncleblock) for more details.
 
 
 ### Computing 'Cycles' and Transaction Size
