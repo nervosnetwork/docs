@@ -7,7 +7,7 @@
         "Basic Concepts": [
             "basic-concepts/introduction",
             "basic-concepts/architecture",
-            "basic-concepts/states-tokens",
+            "basic-concepts/state-tokens",
             "basic-concepts/node-mining"
         ],
         "Getting Started": [
@@ -29,7 +29,8 @@
             "references/troubleshooting",
             "references/faq",
             "references/nervos-design",
-            "references/neuron-key-manager"
+            "references/neuron-key-manager",
+            "references/neuron-wallet-guide"
         ]
     }
 }

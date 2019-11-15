@@ -6,18 +6,22 @@ title: Node and Mining
 Here introduce the concepts of node and mining in CKB.
 
 ### Node
-CKB is structured as a peer-to-peer network on top of our existing internet. Here the term "peer-to-peer" means that all the computers that participate in the network are peers to each other. In this context, we refer each of these computers as a node.
 
-Every computer in this world that has sufficient capability (basically means all the modern computers) would be able to run a CKB node and join the CKB network freely. 
+CKB is structured as a peer-to-peer network to run on top of the public Internet. The term "peer-to-peer" refers to all the computers that participate in the network, equal peers in the network topology. In this context, we refer each of these computers as a node.
 
-Being a node in the network means you will synchronize the existing blocks, transaction, and states as well as receive the new ones from other peer nodes. You will also be able to verify transactions and broadcast your own transactions to other nodes.
+All modern computers should have sufficient capability to run a CKB node and freely join the Nervos network. 
+
+Nodes in the network will synchronize existing blocks, transactions, and global state as well as receive new blocks and transactions from other nodes. Nodes will verify transactions, as well as broadcast new transactions to other nodes.
 
 ### Mining
 
-Miners are the kinds of nodes that construct new blocks with a pack of transactions in it. 
+Miners are nodes that construct new blocks with a group of transactions. 
 
-In CKB, miners need to compete with each other on a game called Proof-of-Work. After a miner constructed a block, it needs to calculate the hash of the block (with a nonce) to get a hash that is smaller than a specific target number (difficulty). Whoever successfully figured out the correct hash will have the right to broadcast the block to the whole network. Other nodes will receive the block, and verify it, and start to mine a new block on it.
+In CKB, miners compete with each other to add blocks to the blockchain through Proof-of-Work. After a miner constructs a block, it will need to calculate the hash of the block (with a nonce) to produce a hash that is smaller than a specific target number (difficulty). 
 
-> The hash function for mining CKB mainnet has not been decided yet. For testnet, [Cuckoo](https://github.com/nervosnetwork/ckb/wiki/PoW-Engines) is used as the PoW function.
+The miners who find a suitable hash will have the right to extend the blockchain by broadcasting their new blocks. Other nodes will receive newly mined blocks and verify them. Then miners will begin mining a new block on top of one of the new blocks they received.
 
-
+> The hash function for mining CKB mainnet is Eaglesong, you can learn more about it in
+>
+> [RFC 0010 - Eaglesong]: https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0010-eaglesong/0010-eaglesong.md
+>
