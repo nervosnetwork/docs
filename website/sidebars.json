@@ -7,7 +7,7 @@
         "Basic Concepts": [
             "basic-concepts/introduction",
             "basic-concepts/architecture",
-            "basic-concepts/states-tokens",
+            "basic-concepts/state-tokens",
             "basic-concepts/node-mining"
         ],
         "Getting Started": [
