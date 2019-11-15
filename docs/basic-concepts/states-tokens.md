@@ -32,7 +32,6 @@ For more information about the token economic design of the CKByte token, please
 ## User Defined Token (UDT)
 One of the typical use cases of CKB is to issue User Defined Tokens (UDT). Anyone is able to design and create tokens for representing different kinds of assets.
 
-Just like the native token CKB, UDTs are stored in cells. UDTs can be transferred in the same way CKBytes are transferred.
 
 ## Token Programming
 
