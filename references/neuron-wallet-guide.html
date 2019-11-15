@@ -108,16 +108,17 @@
 </ul></li>
 <li><p>Copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:</p></li>
 </ol>
-<p><strong>please note:</strong> the directory and folder name must match the commands below, if not, please modify the command script correspondingly.</p>
+<p><strong>please note:</strong> the directory and folder name must match the commands below, if not, please modify the command script correspondingly.
+the $ is not part of the command line, it's a placeholder for the file stored location on your computer</p>
 <p><strong>Mac</strong></p>
-<pre><code class="hljs">$ <span class="hljs-keyword">cd</span> ckb_v0.25.1_x86_64-apple-darwin
+<pre><code class="hljs"><span class="hljs-keyword">cd</span> <span class="hljs-string">/Users/</span><span class="hljs-params">(NAME)</span><span class="hljs-string">/Documents/ckb_v0.25.1_x86_64-apple-darwin</span> 
 $<span class="hljs-string">./ckb</span> <span class="hljs-params">--version</span>
 $<span class="hljs-string">./ckb-cli</span> <span class="hljs-params">--version</span>
 </code></pre>
 <p><strong>Windows</strong></p>
-<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> ckb_v0.25.1_x86_64-pc-windows-msvc</span>
-<span class="hljs-meta">$</span><span class="bash"> ckb --version</span>
-<span class="hljs-meta">$</span><span class="bash"> ckb-cli --versions</span>
+<pre><code class="hljs"><span class="hljs-keyword">cd</span> C:<span class="hljs-string">/ckb_v0.25.1_x86_64-pc-windows-msvc</span> 
+$ ckb <span class="hljs-params">--version</span>
+$ ckb-cli <span class="hljs-params">--versions</span>
 </code></pre>
 <p>You should receive the following output confirming the CKB version:</p>
 <p><img src="../assets/neuron-wallet-guide/image3.png" width= "600"/></p>
