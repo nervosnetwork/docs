@@ -172,14 +172,14 @@ You should have the third party wallet/exchange destination address. **Please ma
 
 <img src="../assets/neuron-wallet-guide/image21.png" width = "600"/>
 
-# *Disclaimer
+# *Important
 
 The bootstrapping of a proof-of-work (PoW) chain is difficult. A new PoW chain is in many ways like a newborn baby — weak in the beginning, but with unlimited potential when mature.
 
 For a new PoW chain, risks may come from:
 
 1. **Unstable Hashrate：** as the mining rewards will change drastically upon mainnet launch, an increase of hashrate is anticipated. It will create forks and uncle blocks in the first few weeks and the block time may be longer than expected due to NC-MAX's self adjustment. **For security, using a sufficiently large confirmation number is recommended before transferring CKBytes.**
-2. **Immature Toolchain：** there will be very few usable integration and development tools in the first few months. Early adopters of CKB technology should have a good understanding of NC-MAX, Cell model and CKB-VM to begin, otherwise mistakes or bugs may be created unintentionally. **The SDKs provided by Nervos Foundation are convenient tools for RPC and transaction building/signing/sending, but they are still under development and should NOT be considered production ready.**
+2. **Immature Toolchain：** Early adopters of CKB technology should have a good understanding of NC-MAX, Cell model and CKB-VM to begin, otherwise mistakes or bugs may be created unintentionally. **The SDKs provided by Nervos Foundation are convenient tools to simplify RPC invocation and transaction building/signing/sending, but have not been tested in production environment yet, please use them cautiously.**
 
-We strongly recommend CKB users avoid unnecessary transaction during the first 2 to 4 weeks of mainnet. **If you need to send transaction in the early weeks, keep the transaction amount as low as possible and choose a sufficiently large confirmation number before transferring CKBytes.**
+We recommend CKB users exercise strong caution in making any transactions during the first 2 to 4 weeks of mainnet. **If you need to send transaction in the early weeks, choose a sufficiently large confirmation number before transferring CKBytes.**
 
