@@ -84,7 +84,7 @@ For example, Alice owns a cell, with a `data` field that stores her balance of a
 
 ### Script Verification
 
-After receiving a transaction, the CKB node will verify the `lock` script with the `args` of this input cell, as well as the `witness`, to make sure that Alice indeed owns the cell. It will then verify the `type` script of the output cell, ( the same `type` script of the input cell) to make sure that the UDT transaction is valid according to the rules defined by the `type` script.
+After receiving a transaction, the CKB node will verify the `lock` script with the `args` of this input cell, as well as the `witness`, to make sure that Alice indeed owns the cell. It will then verify the `type` script of input cells and output cells in groups (inputs and outputs will the same `type` script) to make sure that the UDT transaction is valid according to the rules defined by the `type` script.
 
 
 > In practice, script code is NOT included in the `type` or `lock` script directly. The actual code would be stored in another cell, referenced by the `type` and `lock` scripts through their hash. This is done by referring to these cells in the dependency cells field (`deps`) in the transaction using their `outpoint`, and placing the hash of their `data` fields in the `code_hash` field of `type` or `lock`.
