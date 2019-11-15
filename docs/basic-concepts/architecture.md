@@ -72,7 +72,7 @@ In a transaction, each of the `inputs` has two values: an input cell and an arra
 
 In the transaction, there is also a field named `witnesses`, which is an array of arbitrary arguments to fulfill lock and type scripts' requirements to make the transaction a valid one. Witnesses are user inputs of the state transition represented by the transaction.
 
-A typical `lock` script may contain the information of the public key of the cell owner. To unlock a cell, the user must include a signature in the `witnesses` field. During the verification process, the `lock` script will recover the signature and check if it matches the stored public key, ensuring the transaction is indeed signed by the owner of the input cells.
+A typical `lock` script may contain the information of the public key of the cell owner. To unlock a cell, a user usually needs to include a signature in the `witnesses` field. During the verification process, the `lock` script will recover the signature and check if it matches the stored public key, ensuring the transaction is indeed signed by the owner of the input cells.
 
 > The signature function and the hash function used by `lock` script (or `type` script) is not defined by CKB protocol. Developers are free to design and implement their own signature functions in the `lock` script.
 
