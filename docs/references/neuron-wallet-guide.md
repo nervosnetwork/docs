@@ -54,21 +54,22 @@ Click the most recent release (this must be **version 0.25.1 or later**）and th
 4. Copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:
 
 **please note:** the directory and folder name must match the commands below, if not, please modify the command script correspondingly.
+the $ is not part of the command line, it's a placeholder for the file stored location on your computer
 
 **Mac**
 
 ```
-$ cd ckb_v0.25.1_x86_64-apple-darwin
-$./ckb --version
-$./ckb-cli --version
+cd /Users/(NAME)/Documents/ckb_v0.25.1_x86_64-apple-darwin 
+./ckb --version
+./ckb-cli --version
 ```
 
 **Windows**
 
 ```
-$ cd ckb_v0.25.1_x86_64-pc-windows-msvc
-$ ckb --version
-$ ckb-cli --versions
+cd C:/ckb_v0.25.1_x86_64-pc-windows-msvc 
+ ckb --version
+ ckb-cli --version
 ```
 
 You should receive the following output confirming the CKB version:
