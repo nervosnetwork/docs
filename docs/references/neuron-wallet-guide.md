@@ -60,16 +60,16 @@ the $ is not part of the command line, it's a placeholder for the file stored lo
 
 ```
 cd /Users/(NAME)/Documents/ckb_v0.25.1_x86_64-apple-darwin 
-$./ckb --version
-$./ckb-cli --version
+./ckb --version
+./ckb-cli --version
 ```
 
 **Windows**
 
 ```
 cd C:/ckb_v0.25.1_x86_64-pc-windows-msvc 
-$ ckb --version
-$ ckb-cli --versions
+ ckb --version
+ ckb-cli --version
 ```
 
 You should receive the following output confirming the CKB version:
