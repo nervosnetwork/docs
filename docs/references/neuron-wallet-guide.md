@@ -68,7 +68,7 @@ $./ckb-cli --version
 ```
 $ cd ckb_v0.25.1_x86_64-pc-windows-msvc
 $ ckb --version
-$ ckb-cli --version 
+$ ckb-cli --versions
 ```
 
 You should receive the following output confirming the CKB version:
@@ -92,6 +92,8 @@ $./ckb init --chain mainnet
 $./ckb run
 ```
 <img src="../assets/neuron-wallet-guide/image6.png" width = "600"/>
+
+> Remember that you need to make the ckb node keep running in the background.
 
 * * *
 
