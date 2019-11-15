@@ -55,12 +55,20 @@ Click the most recent release (this must be **version 0.25.1 or later**）and th
 
 **please note:** the directory and folder name must match the commands below, if not, please modify the command script correspondingly.
 
-**Mac or Windows**
+**Mac**
 
 ```
 $ cd ckb_v0.25.1_x86_64-apple-darwin
 $./ckb --version
 $./ckb-cli --version
+```
+
+**Windows**
+
+```
+$ cd ckb_v0.25.1_x86_64-pc-windows-msvc
+$ ckb --version
+$ ckb-cli --version 
 ```
 
 You should receive the following output confirming the CKB version:
