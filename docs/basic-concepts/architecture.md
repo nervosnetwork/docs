@@ -78,7 +78,7 @@ A typical `lock` script may contain the information of the public key of the cel
 
 ### `type` script
 
-A `type` script defines the conditions under which the  `data` of a cell can be modified. In a transaction, when a group of input cells and a group of output cells have the same `type` field value, the modification of the `data` fields from the input cells to the output cells must comply with rules defined by the `type` script. 
+A `type` script defines the conditions under which a cell can be transformed, or in other words, constraints on state transition. In a transaction, when a group of input cells and a group of output cells have the same `type` field value, the transformation from the input cells to the output cells must comply with rules defined by the `type` script. 
 
 For example, Alice owns a cell, with a `data` field that stores her balance of a particular UDT, its `type` script defines the rules and logic of this UDT. If Alice wants to send some of her tokens to Bob, then she would use this cell as input, and create an output cell with same `type` field value, but use Bob's `lock` script for this output cell. Alice can then assemble the transaction and send it to a CKB node. (Alice also needs to create another output cell for herself if she is not sending the entire token balance in this cell to Bob)
 
