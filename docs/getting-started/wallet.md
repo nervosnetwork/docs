@@ -27,7 +27,7 @@ lock_hash: ~
 
 In the output message, you can find the following information:
 * `lock_arg`  is needed for configuring your miner software as well as exporting your private key, so **please backup it**.
-* `address` is the address of the generated [wallet](../basic-concepts/states-tokens#wallet).
+* `address` is the address of the generated [wallet](../basic-concepts/state-tokens#wallet).
 
 ## Export Wallet Private Key
 

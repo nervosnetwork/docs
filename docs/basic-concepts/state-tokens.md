@@ -6,7 +6,7 @@ title: State and Tokens
 Here you can learn the concepts of "state" and "tokens" as well as "wallet" in the context of Nervos CKB.
 
 ## State
-From a computer science point of view, the public blockchain system is a distributed replicated state machine, where global state is stored by all the computers in the blockchain network. The transitions of these states are triggered by events. For example, Alice has 10 CK Bytes now and Bob has no CK Bytes. This is the current state. Alice then send 5 CK Bytes to Bob. This is an event. The new state would be that each Alice and Bob has 5 CK Bytes.
+From a computer science point of view, the public blockchain system is a distributed replicated state machine, where global state is stored by all the computers in the blockchain network. The transitions of these states are triggered by events. For example, Alice has 10 CKBytes now and Bob has no CKBytes. This is the current state. Alice then send 5 CKBytes to Bob. This is an event. The new state would be that each Alice and Bob has 5 CKBytes.
 
 In the context of Blockchain, take Bitcoin for an example, the current state of Bitcoin is the collection of all the [Unspent Transaction Outputs (UTXOs)](blockchain#utxo-model). This state is changed when a transaction is sent to one of the nodes in the network to spend UTXO(s) and create new UTXO(s). 
 

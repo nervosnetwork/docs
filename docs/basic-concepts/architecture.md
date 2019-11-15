@@ -78,30 +78,25 @@ A typical `lock` script may contain the information of the public key of the cel
 
 ### `type` script
 
-A `type` script defines the conditions under which a cell can be transformed, or in other words, constraints on state transition. In a transaction, when a group of input cells and a group of output cells have the same `type` field value, the transformation from the input cells to the output cells must comply with rules defined by the `type` script. 
+A `type` script defines the conditions under which a cell can be transformed, or in other words, constraints on state transition. In a transaction, when a group of input cells and a group of output cells have the same `type` field value, the transformation from the input cells to the output cells must comply with rules defined by the `type` script.
 
 For example, Alice owns a cell, with a `data` field that stores her balance of a particular UDT, its `type` script defines the rules and logic of this UDT. If Alice wants to send some of her tokens to Bob, then she would use this cell as input, and create an output cell with same `type` field value, but use Bob's `lock` script for this output cell. Alice can then assemble the transaction and send it to a CKB node. (Alice also needs to create another output cell for herself if she is not sending the entire token balance in this cell to Bob)
 
 ### Script Verification
 
-After receiving a transaction, the CKB node will verify the `lock` script with the `args` of this input cell, as well as the `witness`, to make sure that Alice indeed owns the cell. It will then verify the `type` script of input cells and output cells in groups (inputs and outputs with the same `type` script) to make sure that the UDT transaction is valid according to the rules defined by the `type` script.
-
+After receiving a transaction, the CKB node will verify the `lock` script with the `args` of this input cell, as well as the `witness`, to make sure that Alice indeed owns the cell. It will then verify the `type` script of input cells and output cells in groups (inputs and outputs will the same `type` script) to make sure that the UDT transaction is valid according to the rules defined by the `type` script.
 
 > In practice, script code is NOT included in the `type` or `lock` script directly. The actual code would be stored in another cell, referenced by the `type` and `lock` scripts through their hash. This is done by referring to these cells in the dependency cells field (`deps`) in the transaction using their `outpoint`, and placing the hash of their `data` fields in the `code_hash` field of `type` or `lock`.
 
-
 During the verification process, the specified scripts are loaded and executed in a CKB-VM instance. If the instance returns a code 0 upon the end of execution, the scripts execution is succeeded. Check the [CKB-VM RFC](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm) to learn more about how it works in the CKB-VM.
 
-
 To learn more about how to write `script` in practice, please refer [write script section](../dev-guide/scripts).
-
 
 ## Block
 
 A block structure contains a group of transactions and a block header including metadata. It is the miner's job to pack transactions into a block and do the Proof-of-Work calculation to find a "seal" to seal the block, then broadcast it to the network. Other miners will receive this block, verify it, collect some transactions from their own transaction pool and start to mine a new block based on this received block. 
 
 In CKB, a block also contains the information of uncle blocks in the block structure. It has the complete uncle block header as well as their proposals. Please refer to [RFC#0019-Data Structures](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0019-data-structures/0019-data-structures.md#uncleblock) for more details.
-
 
 ### Computing 'Cycles' and Transaction Size
 
@@ -111,4 +106,4 @@ In CKB, the computational resources consumed by transaction verification, (speci
 
 The size of a transaction is measured in bytes. The sum size of all the transactions in a block should be lower than `MAX_BLOCK_BYTES` as defined by the CKB protocol.
 
-> The value of `MAX_BLOCK_CYCLES` and `MAX_BLOCK_BYTES` are not yet decided. They still may be changed in the testnet phase.
+> On mainnet Lina, the value of `MAX_BLOCK_BYTES` is `597_000` and `MAX_BLOCK_CYCLES` is `3_500_000_000`.
