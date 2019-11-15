@@ -17,7 +17,7 @@ A cell is a container of state, state data is stored inside of cells. For exampl
 ## Native Token CK Bytes
 CKB is designed to be a platform for securely storing assets. In this context, assets are represented by programmable tokens.
 
-The Common Knowledge Byte (CKByte) is the native token of the Nervos Common Knowledge Base. It has two functions: as the Medium-of-Exchange and Unit-of-Account for users and developers to consume the blockchain's state storage; and as incentives for miners to secure the platform.
+The Common Knowledge Byte (CKByte) is the native token of the Nervos Common Knowledge Base. It is the storage used by users and developers to store common knowledge, incentives for miners to secure the platform, and a store of value for holders.
 
 CKByte is the measurement unit for the storage capacity of a cell. When users and developers want to store their state on-chain, they will need to create cells that have a sufficient amount of CKBytes to store their state. For example, if Alice owns 1000 CKBytes she can create a cell that has 1000 bytes of capacity or multiple cells that add up to 1000 bytes of storage. 
 
