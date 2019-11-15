@@ -70,7 +70,7 @@ In a transaction, each of the `inputs` has two values: an input cell and an arra
 
 > Input cell is technically a pointer to a previous transaction's output cell. This is why the input cells are sometimes named `previous_output`.
 
-In the transaction, there is also a field named `witnesses`, which is an array of witnesses corresponding to each of the `inputs`. This field is used to implement the [SegWit protocol](https://en.bitcoin.it/wiki/Segregated_Witness) that can help to solve the [malleability problem](https://en.bitcoin.it/wiki/Transaction_malleability).
+In the transaction, there is also a field named `witnesses`, which is an array of arbitrary arguments to fulfill lock and type scripts' requirements to make the transaction a valid one. Witnesses are user inputs of the state transition represented by the transaction.
 
 A typical `lock` script may contain the information of the public key of the cell owner. To unlock a cell, the user must include a signature in the `witnesses` field. During the verification process, the `lock` script will recover the signature and check if it matches the stored public key, ensuring the transaction is indeed signed by the owner of the input cells.
 
