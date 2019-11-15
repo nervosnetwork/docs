@@ -25,6 +25,8 @@ CKBytes are also used as mining rewards for miners and transaction fees. For pay
 
 > It is also possible to pay transaction fee with other kinds of tokens (UDTs) as long as a miner accepts them.
 
+Given the fixed issuance curve of CKBytes and [Nervos DAO](https://github.com/nervosnetwork/rfcs/blob/2aa14e142397570778f300468de2bb427e485507/rfcs/0000-dao-deposit-withdraw/0000-dao-deposit-withdraw.md), the token dynamics of CKBytes is similar to Bitcoin, which makes CKBytes a store of value.
+
 For more information about the token economic design of the CKByte token, please refer [RFC 0015-Cryptoeconomics](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md).
 
 ## User Defined Token (UDT)
