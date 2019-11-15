@@ -38,7 +38,7 @@ Running a node requires using the command line. If you have never used a command
 
 Click the most recent release (this must be **version 0.25.1 or later**）and then download the correct “asset” for your operating system. 
 
-**Please note:** The version you download must be v0.25.1 or later.  Because ckb v0.25.1 isn’t released now , the screenshots are for illustrative purposes only.
+**Please note:** The version you download must be v0.25.1 or later, which is expected to be released within a few hours after the genesis block being mined).  Because ckb v0.25.1 isn’t released now , the screenshots are for illustrative purposes only.
 
 2. Unzip / extract the downloaded file to an easily accessible folder. For Windows we recommend C:\ckb On Mac we recommend /Documents
 
@@ -139,7 +139,7 @@ Congratulations, once the Neuron wallet is synced, you will have full access to 
 
 The [economic model](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md) of Nervos CKB is designed to allow token holders to lock tokens in the Nervos DAO to mitigate the inflationary effect of the Secondary Issuance. In this case, the inflationary effect of secondary issuance is expected to be nominal, equivalent to holding tokens with a hard cap. The Nervos DAO will be available at the launch of mainnet. (please refer to our RFC for details.) **Please make sure your balance is greater than 102 CKB.**
 
-* Open the Neuron Wallet **while running the CKB Mainnet Node (v0.25.1 or later)**select “Nervos DAO” and “deposit”. 
+* Open the Neuron Wallet **while running the CKB Mainnet Node (v0.25.1 or later) **select “Nervos DAO” and “deposit”. 
 
 <img src="../assets/neuron-wallet-guide/image15.png" width = "600"/>
 
@@ -179,7 +179,9 @@ The bootstrapping of a proof-of-work (PoW) chain is difficult. A new PoW chain i
 For a new PoW chain, risks may come from:
 
 1. **Unstable Hashrate：** as the mining rewards will change drastically upon mainnet launch, an increase of hashrate is anticipated. It will create forks and uncle blocks in the first few weeks and the block time may be longer than expected due to NC-MAX's self adjustment. **For security, using a sufficiently large confirmation number is recommended before transferring CKBytes.**
-2. **Immature Toolchain：** Early adopters of CKB technology should have a good understanding of NC-MAX, Cell model and CKB-VM to begin, otherwise mistakes or bugs may be created unintentionally. **The SDKs provided by Nervos Foundation are convenient tools to simplify RPC invocation and transaction building/signing/sending, but have not been tested in production environment yet, please use them cautiously.**
+2. **Immature Toolchain：** Early adopters of CKB technology should have a good understanding of NC-MAX, Cell model and CKB-VM to begin, otherwise mistakes or bugs may be created unintentionally. **The SDKs provided by Nervos Foundation are convenient tools to simplify RPC invocation and transaction building/signing/sending, but have not been tested in a production environment yet, please use them cautiously.**
 
-We recommend CKB users exercise strong caution in making any transactions during the first 2 to 4 weeks of mainnet. **If you need to send transaction in the early weeks, choose a sufficiently large confirmation number before transferring CKBytes.**
+We recommend CKB users exercise strong diligence in making any transactions during the first 2 to 4 weeks of mainnet as the chance of a re-org is possible and may reverse transactions that had previous been sent. **If you need to send transaction in the early weeks, choose a sufficiently large confirmation number before transferring CKBytes.**
 
+# *Disclaimer
+AS A DECENTRALIZED BLOCKCHAIN, NERVOS FOUNDATION DOES NOT CONTROL THE NERVOS CKB OR THE CKBYTES, AND DOES NOT HAVE THE ABILITY TO STOP, BLOCK OR REVERSE ANY TRANSACTIONS. NERVOS FOUNDATION DOES NOT MAKE ANY WARRANTIES WHATSOEVER WITH RESPECT TO THE NERVOS CKB OR THE CKBYTES, INCLUDING ANY (i) WARRANTY OF MERCHANTABILITY; (ii) WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE; (iii) WARRANTY OF TITLE; OR (iv) WARRANTY AGAINST INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS OF A THIRD PARTY; WHETHER ARISING BY LAW, COURSE OF DEALING, COURSE OF PERFORMANCE, USAGE OF TRADE, OR OTHERWISE. YOU ACKNOWLEDGE THAT YOU HAVE NOT RELIED UPON ANY REPRESENTATION OR WARRANTY MADE BY THE FOUNDATION OR ANY OTHER PERSON ON ITS BEHALF. YOU ASSUME ALL RISKS AND LIABILITIES FOR THE RESULTS OBTAINED BY THE USE OF ANY CKBYTES AND REGARDLESS OF ANY ORAL OR WRITTEN STATEMENTS MADE BY THE FOUNDATION, BY WAY OF TECHNICAL ADVICE OR OTHERWISE.
