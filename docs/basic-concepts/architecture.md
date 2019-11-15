@@ -61,7 +61,7 @@ After a CKB node receives a transaction, it will first verify that the transacti
 
 ## Scripts
 
-Apart from the rules defined by the CKB protocol, a transaction will also need to be verified according to the `lock` scripts of the transaction input cells and the `type` scripts of transaction output cells.  Understanding the operation of`lock` and  `type` scripts is essential to understanding state transitions and UDT or application logic on Nervos CKB.
+Apart from the rules defined by the CKB protocol, a transaction will also need to be verified according to the `lock` scripts of the transaction input cells and the `type` scripts of transaction input and output cells.  Understanding the operation of`lock` and  `type` scripts is essential to understanding state transitions and UDT or application logic on Nervos CKB.
 
 ### `lock` script
 As mentioned above, the `lock` script defines the ownership of a cell. 
