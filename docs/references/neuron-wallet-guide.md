@@ -3,11 +3,11 @@ id: neuron-wallet-guide
 title: Neuron Wallet Guide
 ---
 
-## How to get your Nervos CKByte Mainnet Tokens after Mainnet launch 
+## How to get your Nervos CKByte Mainnet Tokens after Mainnet launch
 
 **Please note that this tutorial is only for people who hold a keystore file or a mnemonic seed phrase generated from the Neuron Key Manager. You will need to wait for mainnet launch to be able to start this tutorial.**
 
-Following mainnet launch, if you hold a keystore file or a seed phrase generated from the Neuron Key Manager, you can use the Neuron wallet to receive your tokens. In order to use the Neuron wallet, a local CKB node is required to sync with the Nervos CKB blockchain. 
+Following mainnet launch, if you hold a keystore file or a seed phrase generated from the Neuron Key Manager, you can use the Neuron wallet to receive your tokens. In order to use the Neuron wallet, a **local CKB node** is required to sync with the Nervos CKB blockchain.
 
 Please follow these instructions which are explained in detail below：
 
@@ -15,13 +15,13 @@ Please follow these instructions which are explained in detail below：
 2. Download and install Neuron Wallet
 3. Import your keystore file or seed phrase to the Neuron wallet **with the CKB node running** and wait for the synchronization to end
 
-Bonus guides: 
+Bonus guides:
 
 1. Deposit into Nervos DAO
 2. Withdraw from Nervos DAO
 3. How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges
 
-If you run into issues when following this guide, please join the [official Nervos Telegram](https://t.me/NervosNetwork) channel for support. 
+If you run into issues when following this guide, please join the [official Nervos Telegram](https://t.me/NervosNetwork) channel for support.
 
 **IMPORTANT: The Nervos Team will NEVER ask for your private key, keystore file, mnemonic seed phase or wallet password. You should NEVER share this information with anyone, doing so may result in loss of all your tokens.**
 * * *
@@ -36,23 +36,24 @@ Running a node requires using the command line. If you have never used a command
 
 1. Download the released ckb binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases). 
 
-Click the most recent release (this must be **version 0.25.1 or later**）and then download the correct “asset” for your operating system. 
+Click the most recent release (this must be **version 0.25.1 or later**）and then download the correct “asset” for your operating system.
 
-**Please note: The version you download must be v0.25.1 or later, which is expected to be released within a few hours after the genesis block being mined.*  Because ckb v0.25.1 isn’t released now , the screenshots are for illustrative purposes only.
+**Please note: The version you download must be v0.25.1 or later, which is expected to be released within a few hours after the genesis block being mined.*  Because ckb v0.25.1 isn’t released now, the screenshots are for illustrative purposes only.
 
-2. Unzip / extract the downloaded file to an easily accessible folder. For Windows we recommend C:\ckb On Mac we recommend /Documents
+2. Unzip / extract the downloaded file to an easily accessible folder. For Windows we recommend `C:\ckb` On Mac we recommend `~/Documents`
 
 3. Open up terminal or command line.
 
     * On Mac:
-        * Either open your Applications folder, then open Utilities and double-click on Terminal, or press `Command - spacebar` to launch Spotlight and type "Terminal," then double-click the search result and the following steps are performed on Terminal.
+        * Either open your Applications folder, then open Utilities and double-click on Terminal, or press `Command - Spacebar` or `Control -Spacebar` to launch Spotlight and type "Terminal," then double-click the search result and the following steps are performed on Terminal.
 
     * On Windows:
-        * Download Git for windows from [Git-Downloads](https://git-scm.com/downloads), double-click to install it and open **Git Bash** and the following steps are performed on Git Bash.
+        * Note: if you are familiar with command line operation on Windows, you can skip this step and open the `cmd` or `Power Shell` terminal instead.
+        * Download Git for windows from [Git-Downloads](https://git-scm.com/downloads), double-click to install it and open **Git Bash** in start menu and the following steps are performed on Git Bash.
 
 4. Copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:
 
-**please note:** the directory and folder name must match the commands below
+**please note:** the directory and folder name must match the commands below, if not, please modify the command script correspondingly.
 
 **Mac**
 
@@ -66,8 +67,8 @@ $./ckb-cli --version
 
 ```
 $ cd ckb_v0.25.1_x86_64-pc-windows-msvc
-$./ckb --version
-$ ./ckb-cli --version 
+$ ckb --version
+$ ckb-cli --versions
 ```
 
 You should receive the following output confirming the CKB version:
@@ -80,14 +81,19 @@ You should receive the following output confirming the CKB version:
 
 **Mac & Windows**
 
+- Initialize the node, run it only once.
 ```
 $./ckb init --chain mainnet
-$./ckb run
 ```
-
 <img src="../assets/neuron-wallet-guide/image5.png" width = "600"/>
 
+- Start the node.
+```
+$./ckb run
+```
 <img src="../assets/neuron-wallet-guide/image6.png" width = "600"/>
+
+> Remember that you need to make the ckb node keep running in the background.
 
 * * *
 
@@ -99,7 +105,7 @@ Download the latest release version of the Neuron Wallet from the [Neuron Wallet
 
 ### **3. Import your keystore file or seed phrase to the Neuron Wallet**
 
-Your private keys were generated by the Neuron Key Manager. You then created an address using the Neuron Key Manager which was added to the Genesis block to receive your token allocation. 
+Your private keys were generated by the Neuron Key Manager. You then created an address using the Neuron Key Manager which was added to the Genesis block to receive your token allocation.
 
 To access your tokens, you will need to import your private keys into the **Neuron Wallet**. This can be done using the mnemonic seed phase that was given to you when creating your address via Neuron Key Manager (image 3.1) **or** by exporting the private key (keystore file) via the “Backup Current Wallet” option in Neuron Key Manager (image 3.2).
 
@@ -139,7 +145,7 @@ Congratulations, once the Neuron wallet is synced, you will have full access to 
 
 The [economic model](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md) of Nervos CKB is designed to allow token holders to lock tokens in the Nervos DAO to mitigate the inflationary effect of the secondary issuance. In this case, the inflationary effect of secondary issuance is expected to be nominal, equivalent to holding tokens with a hard cap. The Nervos DAO will be available at the launch of mainnet (please refer to our RFC for details). **Please make sure your balance is greater than 102 CKB.**
 
-* Open the Neuron Wallet while running the CKB Mainnet Node (v0.25.1 or later), select “Nervos DAO” and “deposit”. 
+* Open the Neuron Wallet while running the CKB Mainnet Node (v0.25.1 or later), select “Nervos DAO” and “deposit”.
 
 <img src="../assets/neuron-wallet-guide/image15.png" width = "600"/>
 
