@@ -179,6 +179,17 @@ You should have the third party wallet/exchange destination address. **Please ma
 
 <img src="../assets/neuron-wallet-guide/image21.png" width = "600"/>
 
+# Troubleshooting
+
+## Neuron displays 0 balance
+
+- Make sure that ckb node v0.25.1 or later is running
+- Visit https://explorer.nervos.org to check your balance, if it displays non-zero, then you should clear Neuron cache.
+  - 1, go to neuron data folder, on Mac it's ~/Library/Application\ Support/Neuron/cells, On Windows it's C:\Users\xxx\AppData\Roaming\Neuron\cells
+  - 2, delete files inside that folder
+  - 3, restart Neuron
+
+
 # Important
 
 The bootstrapping of a proof-of-work (PoW) chain is difficult. A new PoW chain is in many ways like a newborn baby — weak in the beginning, but with unlimited potential when mature.
