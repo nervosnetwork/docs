@@ -14,7 +14,7 @@ CKB adopts a state model called the cell model, which is a generalized UTXO mode
 
 A cell is a container of state, state data is stored inside of cells. For example, the state "Alice owns 10 token A" on CKB could be expressed with a cell that has a number 10 stored in it, and a reference to a `type`  script that defines the logic governing token A.
 
-## Native Token CK Bytes
+## Native Token CKBytes
 CKB is designed to be a platform for securely storing assets. In this context, assets are represented by programmable tokens.
 
 The Common Knowledge Byte (CKByte) is the native token of the Nervos Common Knowledge Base. It is the storage used by users and developers to store common knowledge, incentives for miners to secure the platform, and a store of value for holders.
