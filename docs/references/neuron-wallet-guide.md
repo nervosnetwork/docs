@@ -189,6 +189,9 @@ You should have the third party wallet/exchange destination address. **Please ma
   - 2, delete files inside that folder
   - 3, restart Neuron
 
+## "Capacity is not enough" when transfer CKBytes
+
+- Wait until your last transaction has been confirmed by chain, then try again.
 
 # Important
 
