@@ -3,30 +3,30 @@ id: neuron-wallet-guide
 title: Neuron Wallet Guide
 ---
 
-## How to get your Nervos CKByte Mainnet Tokens after Mainnet launch
+# How to get your Nervos CKByte Mainnet Tokens after Mainnet launch
 
-**Please note that this tutorial is only for people who hold a keystore file or a mnemonic seed phrase generated from the Neuron Key Manager. You will need to wait for mainnet launch to be able to start this tutorial.**
+> Please note that this tutorial is only for people who hold a keystore file or a mnemonic seed phrase generated from the Neuron Key Manager. You will need to wait for mainnet launch to be able to start this tutorial.
 
 Following mainnet launch, if you hold a keystore file or a seed phrase generated from the Neuron Key Manager, you can use the Neuron wallet to receive your tokens. In order to use the Neuron wallet, a **local CKB node** is required to sync with the Nervos CKB blockchain.
 
 Please follow these instructions which are explained in detail below：
 
-1. Download and run a CKB mainnet node
-2. Download and install Neuron Wallet
-3. Import your keystore file or seed phrase to the Neuron wallet **with the CKB node running** and wait for the synchronization to end
+- Download and run a CKB mainnet node
+- Download and install Neuron Wallet
+- Import your keystore file or seed phrase to the Neuron wallet **with the CKB node running** and wait for the synchronization to end
 
 Bonus guides:
 
-1. Deposit into Nervos DAO
-2. Withdraw from Nervos DAO
-3. How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges
+- Deposit into Nervos DAO
+- Withdraw from Nervos DAO
+- How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges
 
 If you run into issues when following this guide, please join the [official Nervos Telegram](https://t.me/NervosNetwork) channel for support.
 
 **IMPORTANT: The Nervos Team will NEVER ask for your private key, keystore file, mnemonic seed phase or wallet password. You should NEVER share this information with anyone, doing so may result in loss of all your tokens.**
 * * *
 
-### 1. Run A CKB mainnet node
+## 1. Run A CKB mainnet node
 
 The Neuron Wallet needs to “talk” to the CKB blockchain in order to get information about address balances and to broadcast transactions to the network. Therefore to use the Neuron wallet, you first need to run and sync a CKB node. Anyone can run a CKB node and connect to other nodes across the globe to form the decentralized network of the Common Knowledge Base (CKB).
 
@@ -34,24 +34,24 @@ The Neuron Wallet needs to “talk” to the CKB blockchain in order to get info
 
 Running a node requires using the command line. If you have never used a command line before, you may want to search online for a introductory tutorial. Although it may seem complicated at first, it is quite simple and you should be able to easily run a CKB node following the specific instructions below.
 
-1. Download the released ckb binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases). 
+> Step 1.1: Download the released ckb binary file from the [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases).
 
 Click the most recent release (this must be **version 0.25.1 or later**）and then download the correct “asset” for your operating system.
 
 **Please note: The version you download must be v0.25.1 or later, which is expected to be released within a few hours after the genesis block being mined.*  Because ckb v0.25.1 isn’t released now, the screenshots are for illustrative purposes only.
 
-2. Unzip / extract the downloaded file to an easily accessible folder. For Windows we recommend `C:\ckb` On Mac we recommend `~/Documents`
+> Step 1.2: Unzip / extract the downloaded file to an easily accessible folder. For Windows we recommend `C:\ckb` On Mac we recommend `~/Documents`
 
-3. Open up terminal or command line.
+> Step 1.3: Open up terminal or command line.
 
-    * On Mac:
-        * Either open your Applications folder, then open Utilities and double-click on Terminal, or press `Command - Spacebar` or `Control -Spacebar` to launch Spotlight and type "Terminal," then double-click the search result and the following steps are performed on Terminal.
+- On Mac:
+  - Either open your Applications folder, then open Utilities and double-click on Terminal, or press `Command - Spacebar` or `Control -Spacebar` to launch Spotlight and type "Terminal," then double-click the search result and the following steps are performed on Terminal.
 
-    * On Windows:
-        * Note: if you are familiar with command line operation on Windows, you can skip this step and open the `cmd` or `Power Shell` terminal instead.
-        * Download Git for windows from [Git-Downloads](https://git-scm.com/downloads), double-click to install it and open **Git Bash** in start menu and the following steps are performed on Git Bash.
+- On Windows:
+  - Note: if you are familiar with command line operation on Windows, you can skip this step and open the `cmd` or `Power Shell` terminal instead.
+  - Download Git for windows from [Git-Downloads](https://git-scm.com/downloads), double-click to install it and open **Git Bash** in start menu and the following steps are performed on Git Bash.
 
-4. Copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:
+> Step 1.4: Copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:
 
 **please note:** the directory and folder name must match the commands below, if not, please modify the command script correspondingly.
 the $ is not part of the command line, it's a placeholder for the file stored location on your computer
@@ -78,7 +78,7 @@ You should receive the following output confirming the CKB version:
 
 <img src="../assets/neuron-wallet-guide/image4.png" width = "600"/>
 
-5. To run the CKB node, copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:
+> Step 1.5: To run the CKB node, copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:
 
 **Mac & Windows**
 
@@ -98,13 +98,13 @@ $./ckb run
 
 * * *
 
-### **2. Download and install the Neuron Wallet**
+## 2. Download and install the Neuron Wallet
 
 Download the latest release version of the Neuron Wallet from the [Neuron Wallet releases page on Github](https://github.com/nervosnetwork/neuron/releases) and install it. **Please make sure that the CKB Mainnet Node (v0.25.1 or later) is running.** Import your keystore file or seed phrase that was previously generated by the Neuron Key Manager (full guide below), wait for the synchronization to end, and then you should see that the wallet’s balance has changed.
 
 * * *
 
-### **3. Import your keystore file or seed phrase to the Neuron Wallet**
+## 3. Import your keystore file or seed phrase to the Neuron Wallet
 
 Your private keys were generated by the Neuron Key Manager. You then created an address using the Neuron Key Manager which was added to the Genesis block to receive your token allocation.
 
@@ -118,13 +118,9 @@ To access your tokens, you will need to import your private keys into the **Neur
 
 *3.2 screenshot of exporting private key from Neuron Key Manager tool*
 
-
-1. Backup / export your keystore file (a .json file matching the name you chose for your wallet)  from the Neuron Key Manager, **or** use the mnemonic seed (a regular phrase of 12 words) generated when you create a wallet with the Neuron Key Manager.
-
-
-2.  Import the keystore file **or** mnemonic seed phrase when setting up the Neuron Wallet.
-
-    * To import the keystore file, choose “Import from Keystore” and input your password - Wait for synchronization to end. **The password must match the original password from the Neuron Key Manager.**
+- Backup / export your keystore file (a .json file matching the name you chose for your wallet)  from the Neuron Key Manager, **or** use the mnemonic seed (a regular phrase of 12 words) generated when you create a wallet with the Neuron Key Manager.
+- Import the keystore file **or** mnemonic seed phrase when setting up the Neuron Wallet.
+  - To import the keystore file, choose “Import from Keystore” and input your password - Wait for synchronization to end. **The password must match the original password from the Neuron Key Manager.**
 
 <img src="../assets/neuron-wallet-guide/image9.png" width = "600"/>
 
@@ -132,7 +128,7 @@ To access your tokens, you will need to import your private keys into the **Neur
 
 <img src="../assets/neuron-wallet-guide/image11.png" width = "600"/>
 
-* To import the mnemonic seed phrase, choose “Import Wallet Seed”, fill in your password and wait for synchronization to end. **The password does not need to match the original password from the Neuron Key Manager.**
+- To import the mnemonic seed phrase, choose “Import Wallet Seed”, fill in your password and wait for synchronization to end. **The password does not need to match the original password from the Neuron Key Manager.**
 
 <img src="../assets/neuron-wallet-guide/image12.png" width = "600"/>
 
@@ -146,7 +142,7 @@ Congratulations, once the Neuron wallet is synced, you will have full access to 
 
 The [economic model](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md) of Nervos CKB is designed to allow token holders to lock tokens in the Nervos DAO to mitigate the inflationary effect of the secondary issuance. In this case, the inflationary effect of secondary issuance is expected to be nominal, equivalent to holding tokens with a hard cap. The Nervos DAO will be available at the launch of mainnet (please refer to our RFC for details). **Please make sure your balance is greater than 102 CKB.**
 
-* Open the Neuron Wallet while running the CKB Mainnet Node (v0.25.1 or later), select “Nervos DAO” and “deposit”.
+- Open the Neuron Wallet while running the CKB Mainnet Node (v0.25.1 or later), select “Nervos DAO” and “deposit”.
 
 <img src="../assets/neuron-wallet-guide/image15.png" width = "600"/>
 
@@ -154,9 +150,9 @@ The [economic model](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015
 
 <img src="../assets/neuron-wallet-guide/image17.png" width = "600"/>
 
-## How to withdraw your Nervos CKByte tokens from the Nervos DAO 
+## How to withdraw your Nervos CKByte tokens from the Nervos DAO
 
-#### Please read the disclaimer below before transacting on mainnet 
+> Please read the disclaimer below before transacting on mainnet
 
 `Deposit Records` will display your deposit records’ list，you can click `withdraw`.
 
@@ -168,32 +164,31 @@ After 4 epochs, the details will be displayed.
 
 <img src="../assets/neuron-wallet-guide/image20.png"/>
 
-
 ## How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges
 
-**Please read the disclaimer below before transacting on mainnet**
+> **Please read the disclaimer below before transacting on mainnet**
 
 You should have the third party wallet/exchange destination address. **Please make sure your balance is greater than 62 CKB.**
 
-* Under the “Send” tab, fill in the address details in the "Send to" field. Turn on the "Advanced fee settings" and fill in the "Transaction fee" — click  the "Send" button to complete your transfer.
+- Under the “Send” tab, fill in the address details in the "Send to" field. Turn on the "Advanced fee settings" and fill in the "Transaction fee" — click  the "Send" button to complete your transfer.
 
 <img src="../assets/neuron-wallet-guide/image21.png" width = "600"/>
 
-# Troubleshooting
+## Troubleshooting
 
-## Neuron displays 0 balance
+### Neuron displays 0 balance
 
 - Make sure that ckb node v0.25.1 or later is running
-- Visit https://explorer.nervos.org to check your balance, if it displays non-zero, then you should clear Neuron cache.
-  - 1, go to neuron data folder, on Mac it's ~/Library/Application\ Support/Neuron/cells, On Windows it's C:\Users\xxx\AppData\Roaming\Neuron\cells
-  - 2, delete files inside that folder
-  - 3, restart Neuron
+- Visit [https://explorer.nervos.org](https://explorer.nervos.org) to check your balance, if it displays non-zero, then you should clear Neuron cache.
+  - go to Neuron data folder, on Mac it's ~/Library/Application\ Support/Neuron/cells, On Windows it's C:\Users\xxx\AppData\Roaming\Neuron\cells
+  - delete files inside that folder
+  - restart Neuron
 
-## "Capacity is not enough" when transfer CKBytes
+### "Capacity is not enough" when transfer CKBytes
 
 - Wait until your last transaction has been confirmed by chain, then try again.
 
-# Important
+## Important
 
 The bootstrapping of a proof-of-work (PoW) chain is difficult. A new PoW chain is in many ways like a newborn baby — weak in the beginning, but with unlimited potential when mature.
 
@@ -204,5 +199,6 @@ For a new PoW chain, risks may come from:
 
 We recommend CKB users exercise strong diligence in making any transactions during the first 2 to 4 weeks of mainnet as the chance of a re-org (reorganization of the current valid chain) is possible and may reverse transactions that had previous been sent. **If you need to send transaction in the early weeks, choose a sufficiently large confirmation number before transferring CKBytes.**
 
-# Disclaimer
+## Disclaimer
+
 AS A DECENTRALIZED BLOCKCHAIN, NERVOS FOUNDATION DOES NOT CONTROL NERVOS CKB OR CKBYTES AND DOES NOT HAVE THE ABILITY TO STOP, BLOCK OR REVERSE ANY TRANSACTIONS. NERVOS FOUNDATION DOES NOT MAKE ANY WARRANTIES WHATSOEVER WITH RESPECT TO THE NERVOS CKB OR CKBYTES, INCLUDING ANY (i) WARRANTY OF MERCHANTABILITY; (ii) WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE; (iii) WARRANTY OF TITLE; OR (iv) WARRANTY AGAINST INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS OF A THIRD PARTY; WHETHER ARISING BY LAW, COURSE OF DEALING, COURSE OF PERFORMANCE, USAGE OF TRADE, OR OTHERWISE. YOU ACKNOWLEDGE THAT YOU HAVE NOT RELIED UPON ANY REPRESENTATION OR WARRANTY MADE BY THE FOUNDATION OR ANY OTHER PERSON ON ITS BEHALF. YOU ASSUME ALL RISKS AND LIABILITIES FOR THE RESULTS OBTAINED BY THE USE OF ANY CKBYTES AND REGARDLESS OF ANY ORAL OR WRITTEN STATEMENTS MADE BY THE FOUNDATION, BY WAY OF TECHNICAL ADVICE OR OTHERWISE.
