@@ -18,7 +18,7 @@ Recommended Operating System:
 Experimentally Supported System：  
 * Windows x86-64
  
-Theoratically Sypported System:
+Theoretically Supported System:
 * Ubuntu 16.04 LTS x86-64
 * Arch Linux x86-64
 * Centos 7 x86-64
