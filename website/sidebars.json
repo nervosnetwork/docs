@@ -17,6 +17,12 @@
             "getting-started/run-node",
             "getting-started/mine"
         ],
+        "Getting Started(dev)": [
+            "getting-started(dev)/installation",
+            "getting-started(dev)/wallet",
+            "getting-started(dev)/run-node",
+            "getting-started(dev)/mine"
+        ],
         "Development Guide": [
             "dev-guide/compile",
             "dev-guide/ruby-sdk",

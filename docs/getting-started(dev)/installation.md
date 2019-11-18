@@ -18,6 +18,8 @@ Open up terminal or command line.
   * Note: if you are familiar with command line operation on Windows, you can skip this step and open the cmd or Power Shell terminal instead.Download Git for windows from Git-Downloads, double-click to install it and open Git Bash in start menu and the following steps are performed on Git Bash.
 * Copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:
 
+* Copy and paste the commands below into the terminal / command line depending on whether you are using Mac or Windows:
+
 **please note:** the directory and folder name must match the commands below, if not, please modify the command script correspondingly.
 the $ is not part of the command line, it's a placeholder for the file stored location on your computer
 
@@ -46,47 +48,6 @@ ckb-cli 0.25.2 (6ca7bbb 2019-11-17)
 </details>
 
 If you see the response above, you have successfully installed CKB and CKB-CLI.
-
-### Run a CKB node
-
-#### Initialize the node, run it only once.
-```
-$ ./ckb init --chain mainnet
-```
-<details>
-<summary>Click here to view response</summary>
-```bash
-./ckb init --chain mainnet
-
-WARN: mining feature is disabled because of lacking the block assembler config options
-Initialized CKB directory in /Users/Documents/projects/ckb_v0.25.2_x86_64-apple-darwin
-create ckb.toml
-create ckb-miner.toml
-```
-</details>
-
-#### Start the node.
-
-```
-$ ./ckb run
-```
-<details>
-<summary>Click here to view response</summary>
-```bash
-./ckb run
-
-2019-11-18 20:56:35.272 +08:00 main INFO sentry  sentry is disabled
-2019-11-18 20:56:35.350 +08:00 main INFO main  Miner is disabled, edit ckb.toml to enable it
-2019-11-18 20:56:35.359 +08:00 main INFO ckb-db  Initialize a new database
-2019-11-18 20:56:35.610 +08:00 main INFO ckb-chain  Start: loading live cells ...
-2019-11-18 20:56:35.611 +08:00 main INFO ckb-chain  Done: total 2 transactions.
-2019-11-18 20:56:35.625 +08:00 main INFO main  chain genesis hash: 0x92b197aa1fba0f63633922c61c92375c9c074a93e85963554f5499fe1450d0e5
-2019-11-18 20:56:35.627 +08:00 main INFO ckb-network  Generate random key
-2019-11-18 20:56:35.627 +08:00 main INFO ckb-network  write random secret key to "/Users/zengbing/Documents/projects/ckb_v0.25.2_x86_64-apple-darwin/data/network/secret_key"
-2019-11-18 20:56:35.640 +08:00 main INFO ckb-network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmWJVJFXWWapytq8SkgqwbkfsnbSK1u4az4kj4arL4QguB
-...
-```
-</details>
 
 
 

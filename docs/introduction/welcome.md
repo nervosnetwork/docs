@@ -8,4 +8,7 @@ This is the documentation site for Nervos. Here you can learn the knowledge of N
 
 ![nervos-log](assets/nervos-logo-title.svg)
 
-If you are here to try our **testnet**, you can find a guidance in the [getting started documents](../getting-started/introduction).
+If you are here to try our **Aggron Testnet**, you can find a guidance in the [getting started documents(for developers)](../getting-started(developers)/introduction).
+
+If you are here to try our **Lina Mainnet**, you can find a guidance in the [getting started documents](../getting-started/introduction).
+
