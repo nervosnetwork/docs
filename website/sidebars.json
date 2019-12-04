@@ -10,21 +10,26 @@
             "basic-concepts/state-tokens",
             "basic-concepts/node-mining"
         ],
+        "Tooling": [
+            "tooling/introduction",
+            "tooling/from-community"
+        ],
         "Getting Started": [
             "getting-started/introduction",
-            "getting-started/installation",
-            "getting-started/wallet",
             "getting-started/run-node",
-            "getting-started/mine"
+            "getting-started/deposit-nervosdao",
+            "getting-started/withdraw-nervosdao",
+            "getting-started/transfer-ckbtyes",
+            "getting-started/lookup-transaction" 
         ],
         "Development Guide": [
-            "dev-guide/compile",
-            "dev-guide/ruby-sdk",
-            "dev-guide/scripts"
+            "dev-guide/introduction",
+            "dev-guide/ckb-cli",
+            "dev-guide/ckb-sdk",
+            "dev-guide/faucet",
+            "dev-guide/api"
         ],
-        "API": [
-            "api/rpc"
-        ],
+        
         "References": [
             "references/troubleshooting",
             "references/faq",

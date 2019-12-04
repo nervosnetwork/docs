@@ -1,69 +1,101 @@
 ---
 id: run-node
-title: Run a CKB Node
+title: Run a CKB Mainnet Node
 ---
 
-Once you have successfully [created your own wallet](wallet), you can try to run a node now.
+*Fun Fact: Running a CKB Mainnet node not only helps contribute to the robustness and decentralized nature of the Network, it also means you do not need to rely on any 3rd party to provide data from the blockchain, which increases your security.*
 
-If you are not familiar with the concepts of node and mining yet, [here is a document](../basic-concepts/node-mining) you can learn from.
+Running a node requires using the command line. If you have never used a command line before, you may refer to [how to use the command line tool](https://www.google.com/search?q=learn+command+line) on your computer. Although it may seem complicated at first, it is quite simple and you should be able to easily run a CKB node following the specific instructions below.
 
+Step 1: Download the latest release CKB binary file from [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases)  Please make sure the version you download is **v0.25.2 or later.**
 
-## Configurations
-You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
+Step 2:  Unzip / extract the downloaded file to an easily accessible folder. 
+For Windows we recommend `C:\ckb` 
+On Mac we recommend `~/Documents`
 
-> The `<LOCK_ARG>` here configs the wallet that receives the miner rewards, so please make sure it is correct. You should get this parameter upon the [wallet creation](./wallet#create-wallet) step. Please add `0x` before the generated `<LOCK_ARG>` 
+Step 3: Open up Terminal (Mac) or command line (Windows).
 
-```bash
-ckb init -C ckb-testnet --chain testnet --force --ba-arg 0x<LOCK_ARG> && \
-cd ckb-testnet
+* On Mac:
+
+    * Either 1) open your Applications folder, then open Utilities and double-click on Terminal, or 2) press `Command - Spacebar` or `Control -Spacebar` to launch Spotlight and type "Terminal," then double-click the search result and the following steps are performed on Terminal.
+
+* On Windows:
+
+    * Please note: if you are familiar with command line operation on Windows, you can skip this step and open the `cmd` or `Power Shell` terminal instead.
+    * Download Git for windows from [Git-Downloads](https://git-scm.com/downloads), double-click to install it and open Git Bash in start menu. The following steps will be performed in Git Bash.
+
+Step 4：Copy and paste the commands below into the Terminal (Mac) / Command Line (Windows):
+
+* Please note: the directory and folder name on your computer must match the commands below, if not, please modify the command script correspondingly. 
+
+* Mac
+
+```
+cd /Users/(NAME)/Documents/ckb_v0.25.2_x86_64-apple-darwin
+./ckb --version
+./ckb-cli --version
+```
+
+* Windows
+
+```
+cd C:/ckb_v0.25.2_x86_64-pc-windows-msvc 
+ckb --version 
+ckb-cli --version
 ```
 
 <details>
 <summary>(click here to view response)</summary>
 ```bash
-$ ckb init -C ckb-testnet --chain testnet --force --ba-arg 0x7e6bccda0abe748eb5dc74be0e797662ae938036 && \
-cd ckb-testnet
-Initialized CKB directory in /Users/username/code/ckb-testnet
+$ ./ckb --version
+$ ./ckb-cli --version
+
+ckb 0.25.2 (dda4ed9 2019-11-17)
+ckb-cli 0.25.2 (6ca7bbb 2019-11-17)
+```
+</details>
+
+Step 5: To run the CKB node, copy and paste the commands below into the Terminal (Mac) / Command Line (Windows):
+
+* Initialize the node (run only once)
+
+```
+./ckb init --chain mainnet
+```
+
+<details>
+<summary>(click here to view response)</summary>
+```bash
+$ ./ckb init --chain mainnet
+
+WARN: mining feature is disabled because of lacking the block assembler config options
+Initialized CKB directory in /`PATH`/ckb_v0.25.2_x86_64-apple-darwin
 create ckb.toml
 create ckb-miner.toml
 ```
 </details>
 
-Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node, as well as your miner wallet, which you can find at the bottom of the file.
+* Start the node.
 
-<details>
-<summary>(click here to view an example of miner wallet configuration)</summary>
-```toml
-[block_assembler]
-code_hash = "0x1892ea40d82b53c678ff88312450bbb17e164d7a3e0a90941aa58839f56f8df2"
-args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
-hash_type = "type"
 ```
-</details>
-
-## Start a Node
-
-Now you can start the CKB client to run a node. Navigate the command line to `ckb-testnet` folder and run this command:
-```bash
-ckb run
+./ckb run
 ```
 
 <details>
 <summary>(click here to view response)</summary>
 ```bash
-$ ckb run
-2019-05-18 08:06:37.246 +08:00 main INFO sentry  **Notice**: The ckb process will send stack trace to sentry on Rust panics. This is enabled by default before mainnet, which can be opted out by setting the option `dsn` to empty in the config file. The DSN is now https://48c6a88d92e246478e2d53b5917a887c@sentry.io/1422795
-2019-05-18 08:06:37.257 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
-2019-05-18 08:06:37.385 +08:00 main INFO main  chain genesis hash: 0xaad9b82caa07f5989dfb8caa44927f0bab515a96ccaaceba82c7bea609fec205
-2019-05-18 08:06:37.385 +08:00 main INFO network  Generate random key
-2019-05-18 08:06:37.386 +08:00 main INFO network  write random secret key to "/Users/username/code/ckb-testnet/data/network/secret_key"
-2019-05-18 08:06:37.391 +08:00 main INFO network  No peer in peer store, start seeding...
-2019-05-18 08:06:37.392 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmSbvRYNUujyEBEpRipdREfS8cqLxCSndDAWRDAE1Hms2H
-2019-05-18 08:06:37.394 +08:00 tokio-runtime-worker-0 INFO network  p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
-2019-05-18 08:06:37.441 +08:00 tokio-runtime-worker-6 INFO network  SessionId(1) open, registry /ip4/47.111.169.36/tcp/8111/p2p/QmNQ4jky6uVqLDrPU7snqxARuNGWNLgSrTnssbRuy3ij2W success
+$ ./ckb run
+
+**2019-11-28 14:22:25.464 +08:00** **main** INFO sentry sentry is disabled
+**2019-11-28 14:22:25.565 +08:00** **main** INFO main Miner is disabled, edit ckb.toml to enable it
+**2019-11-28 14:22:25.635 +08:00** **main** INFO ckb-chain Start: loading live cells ...
+**2019-11-28 14:22:25.636 +08:00** **main** INFO ckb-chain Done: total 2 transactions.
+**2019-11-28 14:22:25.654 +08:00** **main** INFO main chain genesis hash: 0x92b197aa1fba0f63633922c61c92375c9c074a93e85963554f5499fe1450d0e5
+**2019-11-28 14:22:25.670 +08:00** **main** INFO ckb-network Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmbjjSgGQpvn3Fo28kvVWy9yZfgvtk9cNwRHEv646xxWYB
+**2019-11-28 14:22:25.674 +08:00** **NetworkRuntime-0** INFO ckb-network p2p service event: ListenStarted { address: "/ip4/0.0.0.0/tcp/8115" }
+**2019-11-28 14:22:25.845 +08:00** **NetworkRuntime-3** INFO ckb-sync SyncProtocol.connected peer=SessionId(1)
+**2019-11-28 14:22:25.846 +08:00** **NetworkRuntime-6** INFO ckb-relay RelayProtocol(1).connected peer=SessionId(1)
+**2019-11-28 14:22:26.063 +08:00** **NetworkRuntime-4** INFO ckb-sync Ignoring getheaders from peer=SessionId(1) because node is in initial block download
+**2019-11-28 14:22:26.197 +08:00** **ChainService** INFO ckb-chain block: 1, hash: 0x2567f226c73b04a6cb3ef04b3bb10ab99f37850794cd9569be7de00bac4db875, epoch: 0(1/1743), total_diff: 0x3b1bb3d4c1376a, txs: 1
 ```
 </details>
-
-Congratulations! You just started a CKB node!
-
-If you find any error messages, don't worry, check out the [trouble shooting document](../references/troubleshooting).
