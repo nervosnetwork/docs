@@ -5,10 +5,12 @@ title: Introduction
 
 Nervos CKB developers are working on a growing number of tools to help developers build, test, and deploy their applications. We have launched the **[Aggron Testnet](https://github.com/nervosnetwork/ckb/wiki/Chains)** and welcome developers to provide passion, innovation and diversity of ideas to upgrade the development experience. In this section we will introduce our development tools.
 
-1. ckb-cli
-2. ckb-sdk
-3. Testnet Faucet
-4. CKB JSON-RPC Protocols
+1. Testnet Aggron
+2. Dev chain 
+3. ckb-cli
+4. ckb-sdk
+5. Testnet Faucet
+6. CKB JSON-RPC Protocols
 
 Before you start to play around with the testnet, here are some things you should notice:
 

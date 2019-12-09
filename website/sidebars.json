@@ -24,6 +24,8 @@
         ],
         "Development Guide": [
             "dev-guide/introduction",
+            "dev-guide/testnet",
+            "dev-guide/devchain",
             "dev-guide/ckb-cli",
             "dev-guide/ckb-sdk",
             "dev-guide/faucet",
