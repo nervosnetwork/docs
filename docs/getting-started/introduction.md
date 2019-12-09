@@ -5,14 +5,12 @@ title: Introduction
 Following mainnet launch, many people want to use the Nervos CKB Mainnet. In this section, you will learn about how to run a CKB node and use the Nervos CKB Mainnet. This includes:
 
 1. How to run a CKB Mainnet node
-2. How to deposit CKByte tokens into the Nervos DAO
-3. How to withdraw CKByte tokens from the Nervos DAO
-4. How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges
-5. How to look up transaction info on CKB-Explorer
+2. How to look up transaction info on CKB-Explorer
+3. How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges
+4. How to deposit CKBytes into the Nervos DAO
+5. How to withdraw CKBytes from the Nervos DAO
 
-**#‘s 2, 3, and 4** will be completed through the Neuron Wallet. In order to use the Neuron wallet, **# 1** is required, syncing with the Nervos CKB blockchain.
-
-**#‘s 2, 3, and 4** will generate transaction info after completing the operations and with **# 5** is required, looking up the transaction info on CKB-Explorer.
+**#‘s 3, 4, and 5** will be completed through the Neuron Wallet. **#‘s 3, 4, and 5** will also generate transaction info after completing the operations and with **# 2** is required, looking up the transaction info on CKB-Explorer.
 
 If you run into issues when following this guide, please join the [official Nervos Telegram](https://t.me/NervosNetwork) channel for support.
 

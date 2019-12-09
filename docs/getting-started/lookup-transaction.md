@@ -6,7 +6,7 @@ title: Look up transaction info on CKB-Explorer
 
 CKB-Explorer facilitates blockchain transparency by indexing and making all Nervos CKB transactions searchable in the most accessible way possible.
 
-**CKB-Explorer is not a wallet service provider, we do not store your private keys and we have no control over the transactions that take place over the CKB Network.**
+**Please note that CKB-Explorer is not a wallet service provider, we do not store your private keys and we have no control over the transactions that take place over the CKB Network.**
 
 To view a transaction on CKB-Explorer, please follow these instructions:
 

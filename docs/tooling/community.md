@@ -1,6 +1,6 @@
 ---
-id: from-community
-title: From Community
+id: community
+title: Community Contribution
 ---
 As we know, sustainable development needs community development! We welcome developers to provide passion, innovation and diversity of ideas to improve Nervos. Beyond the [introduction](/tooling/introduction), here's our list of community development projects:
 

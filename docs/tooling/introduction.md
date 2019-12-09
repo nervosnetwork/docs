@@ -12,18 +12,24 @@ At this time, Nervos CKB tooling includes (will be not limited to) the following
 
 ### For users: 
 
+**Lina Mainnet**  [Github](https://github.com/nervosnetwork/ckb) | [Chain info](https://github.com/nervosnetwork/ckb/wiki/Chains)
+* The release of the Lina Mainnet occurred at 9:11 PM UTC on Nov 15. Please join us as we launch the decentralized infrastructure for the new economy [Run a CKB Mainnet node](/getting-started/run-node).
+
 **Neuron Wallet**  [Github](https://github.com/nervosnetwork/neuron) | [Download](https://github.com/nervosnetwork/neuron/releases)
 * Neuron Wallet is an official Nervos CKB wallet. It holds users’ keys, can create 
 and broadcast transactions to the peer to peer network, and also provides the ability to easily **Deposit and Withdraw into the Nervos DAO**.
  Neuron Wallet is a cross platform desktop app for Windows, macOS and Linux, you can [download here](https://github.com/nervosnetwork/neuron/releases) and install it.
 
 **CKB-Explorer**  [Github](https://github.com/nervosnetwork/ckb-explorer) | [Link](https://explorer.nervos.org/)
-* CKB-Explorer allows you to explore the data of the Nervos CKB blockchain for transactions, addresses, tokens, blocks, hashrate, **Nervos DAO info** and all other activities taking place on Nervos CKB. Please note that **CKB-Explorer is not a wallet service provider. We do not store your private keys and we have no control over the transactions that take place over the CKB Network.**
+* CKB-Explorer allows you to explore the data of the Nervos CKB Mainnet for transactions, addresses, tokens, blocks, hashrate, **Nervos DAO info** and all other activities taking place on Nervos CKB. Please note that **CKB-Explorer is not a wallet service provider. We do not store your private keys and we have no control over the transactions that take place over the CKB Network.**
 
 ### For developers：
 
 **Aggron Testnet**  [Github](https://github.com/nervosnetwork/ckb) | [Chain info](https://github.com/nervosnetwork/ckb/wiki/Chains)
 * Aggron Testnet has launched, allowing developers to test their integrations and smart contracts in a simulated live environment. **Please note that the CKBytes in Aggron Testnet have no real value.**
+
+**Testnet Explorer** [Link](https://explorer.nervos.org/aggron/)
+* Testnet Explorer allows you to explore the data of the Nervos CKB Testnet for transactions, addresses, tokens, blocks, hashrate, **Nervos DAO info** and all other activities taking place on Testnet. Please note that **Testnet Explorer is not a wallet service provider. We do not store your private keys and we have no control over the transactions that take place over the CKB Network.**
 
 **ckb-sdk**
 * There are a couple different aspects to developing blockchain applications with CKB:

@@ -12,15 +12,15 @@
         ],
         "Tooling": [
             "tooling/introduction",
-            "tooling/from-community"
+            "tooling/community"
         ],
         "Getting Started": [
             "getting-started/introduction",
             "getting-started/run-node",
+            "getting-started/transfer-ckbytes",
+            "getting-started/lookup-transaction", 
             "getting-started/deposit-nervosdao",
-            "getting-started/withdraw-nervosdao",
-            "getting-started/transfer-ckbtyes",
-            "getting-started/lookup-transaction" 
+            "getting-started/withdraw-nervosdao"
         ],
         "Development Guide": [
             "dev-guide/introduction",
