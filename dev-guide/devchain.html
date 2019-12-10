@@ -90,24 +90,24 @@ create ckb-miner.toml
 <p></details></p>
 <p><strong>Step 3: Customizing the development chain.</strong></p>
 <ul>
-<li>Change the epoch length by <code>genesis_epoch_length</code> in <code>specs/dev.toml</code>, unit of measurement is <strong>block</strong>.</li>
+<li>Change the epoch length by <code>genesis_epoch_length</code> in <code>specs/dev.toml</code>, unit of measurement is <strong>block</strong>.It is useful when you need to debug NervosDAO related functions.</li>
 </ul>
-<pre><code class="hljs">[params]
-initial_primary_epoch_reward = 1_917_808_21917808
-secondary_epoch_reward = 613_698_63013698
-max_block_cycles = 10_000_000_000
-cellbase_maturity = 0
-primary_epoch_reward_halving_interval = 8760
-epoch_duration_target = 14400
-**genesis_epoch_length = 1000**
+<pre><code class="hljs"><span class="hljs-section">[params]</span>
+<span class="hljs-attr">initial_primary_epoch_reward</span> = <span class="hljs-number">1_917_808_21917808</span>
+<span class="hljs-attr">secondary_epoch_reward</span> = <span class="hljs-number">613_698_63013698</span>
+<span class="hljs-attr">max_block_cycles</span> = <span class="hljs-number">10_000_000_000</span>
+<span class="hljs-attr">cellbase_maturity</span> = <span class="hljs-number">0</span>
+<span class="hljs-attr">primary_epoch_reward_halving_interval</span> = <span class="hljs-number">8760</span>
+<span class="hljs-attr">epoch_duration_target</span> = <span class="hljs-number">14400</span>
+<span class="hljs-attr">genesis_epoch_length</span> = <span class="hljs-number">1000</span>
 </code></pre>
 <ul>
 <li>Change the mining idle interval by <code>value</code> in <code>ckb-miner.toml</code>, unit of measurement is <strong>ms</strong>.</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-string">[[miner.workers]]</span>
-worker_type = <span class="hljs-string">"Dummy"</span>
-delay_type = <span class="hljs-string">"Constant"</span>
-**value = <span class="hljs-number">5000</span>**
+<pre><code class="hljs"><span class="hljs-section">[[miner.workers]]</span>
+<span class="hljs-attr">worker_type</span> = <span class="hljs-string">"Dummy"</span>
+<span class="hljs-attr">delay_type</span> = <span class="hljs-string">"Constant"</span>
+<span class="hljs-attr">value</span> = <span class="hljs-number">5000</span>
 </code></pre>
 <p><strong>Step 4: Configure <code>block-assembler</code> in <code>ckb.toml</code>for mining.</strong></p>
 <ul>
@@ -130,7 +130,7 @@ lock_hash: ~
 <ul>
 <li>open ckb.toml and configure [block_assembler] part.
 <ul>
-<li>lock_arg need to attach 0x to the prefix, then fill in  args</li>
+<li><code>lock_arg</code> need to attach 0x to the prefix, then fill in <code>args</code></li>
 <li>fill in message with 0x</li>
 </ul></li>
 </ul>
@@ -155,7 +155,7 @@ lock_hash: ~
 <pre><code class="hljs">ckb <span class="hljs-keyword">run</span><span class="bash">
 ckb miner</span>
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/9/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/dev-guide/testnet"><span class="arrow-prev">← </span><span>Testnet Aggron</span></a><a class="docs-next button" href="/dev-guide/ckb-cli"><span>ckb-cli</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/10/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/dev-guide/testnet"><span class="arrow-prev">← </span><span>Testnet Aggron</span></a><a class="docs-next button" href="/dev-guide/ckb-cli"><span>ckb-cli</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
