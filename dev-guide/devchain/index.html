@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Dev Chain · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Nervos CKB supports a `dev` mode that is particularly useful for development and testing. You can change the configuring parameters then run a customized development chain."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Dev Chain · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="Nervos CKB supports a `dev` mode that is particularly useful for development and testing. You can change the configuring parameters then run a customized development chain."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-139882771-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.svg" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://explorer.nervos.org" target="_blank">Explorer</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Development Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/introduction/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/introduction/nervos-intro">What is Nervos?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Basic Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/basic-concepts/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/architecture">CKB Architecture</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/state-tokens">State and Tokens</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/node-mining">Node and Mining</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tooling<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/tooling/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/tooling/community">Community Contribution</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/getting-started/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/getting-started/run-node">Run a CKB Mainnet Node</a></li><li class="navListItem"><a class="navItem" href="/getting-started/transfer-ckbytes">Transfer CKBytes from Neuron Wallet to the third party</a></li><li class="navListItem"><a class="navItem" href="/getting-started/lookup-transaction">Look up transaction info on CKB-Explorer</a></li><li class="navListItem"><a class="navItem" href="/getting-started/deposit-nervosdao">Deposit CKBytes into Nervos DAO</a></li><li class="navListItem"><a class="navItem" href="/getting-started/withdraw-nervosdao">Withdraw CKBytes from Nervos DAO</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/dev-guide/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/testnet">Testnet Aggron</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/dev-guide/devchain">Dev Chain</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/ckb-cli">ckb-cli</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/ckb-sdk">ckb-sdk</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/faucet">Testnet Faucet</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/api">CKB JSON-RPC Protocols</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/references/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/references/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/references/nervos-design">Nervos System Design</a></li><li class="navListItem"><a class="navItem" href="/references/neuron-key-manager">Neuron Key Manager</a></li><li class="navListItem"><a class="navItem" href="/references/neuron-wallet-guide">Neuron Wallet Guide</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/dev-guide/devchain.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Dev Chain</h1></header><article><div><span><p>Nervos CKB supports a <code>dev</code> mode that is particularly useful for development and testing. You can change the configuring parameters then run a customized development chain.</p>
+<p><strong>Step 1: Download the latest ckb binary file from the CKB releases page on <a href="https://github.com/nervosnetwork/ckb/releases">GitHub</a>, then check if it works with:</strong></p>
+<pre><code class="hljs">ckb --<span class="hljs-keyword">version</span> 
+ckb-<span class="hljs-keyword">cli</span> --<span class="hljs-keyword">version</span>
+</code></pre>
+<p><details>
+<summary>(click here to view response)</summary></p>
+<pre><code class="hljs css language-bash">ckb 0.25.2 (dda4ed9 2019-11-17)
+ckb-cli 0.25.2 (6ca7bbb 2019-11-17)
+</code></pre>
+<p></details></p>
+<p><strong>Step 2: Initialization the development chain</strong></p>
+<pre><code class="hljs">ckb <span class="hljs-keyword">init</span> —chain dev
+</code></pre>
+<p><details>
+<summary>(click here to view response)</summary></p>
+<pre><code class="hljs css language-bash">WARN: mining feature is disabled because of lacking the block assembler config options
+Initialized CKB directory <span class="hljs-keyword">in</span> /Users/zengbing/Documents/work/ckb_v0.25.2_x86_64-apple-darwin
+create specs/dev.toml
+create ckb.toml
+create ckb-miner.toml
+</code></pre>
+<p></details></p>
+<p><strong>Step 3: Customizing the development chain.</strong></p>
+<ul>
+<li>Change the epoch length by <code>genesis_epoch_length</code> in <code>specs/dev.toml</code>, unit of measurement is <strong>block</strong>.</li>
+</ul>
+<pre><code class="hljs">[params]
+initial_primary_epoch_reward = 1_917_808_21917808
+secondary_epoch_reward = 613_698_63013698
+max_block_cycles = 10_000_000_000
+cellbase_maturity = 0
+primary_epoch_reward_halving_interval = 8760
+epoch_duration_target = 14400
+**genesis_epoch_length = 1000**
+</code></pre>
+<ul>
+<li>Change the mining idle interval by <code>value</code> in <code>ckb-miner.toml</code>, unit of measurement is <strong>ms</strong>.</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-string">[[miner.workers]]</span>
+worker_type = <span class="hljs-string">"Dummy"</span>
+delay_type = <span class="hljs-string">"Constant"</span>
+**value = <span class="hljs-number">5000</span>**
+</code></pre>
+<p><strong>Step 4: Configure <code>block-assembler</code> in <code>ckb.toml</code>for mining.</strong></p>
+<ul>
+<li>use <code>ckb-cli</code> to generate <code>lock_arg</code>. <code>lock_arg</code> is needed for configuring the mining feature so please backup it.</li>
+</ul>
+<pre><code class="hljs">ckb-cli account <span class="hljs-keyword">new</span><span class="hljs-type"></span>
+</code></pre>
+<p><details>
+<summary>(click here to view response)</summary></p>
+<pre><code class="hljs css language-bash">Your new account is locked with a password. Please give a password. Do not forget this password.
+Password: 
+Repeat password: 
+address:
+  mainnet: ckb1qyqwge8mnj02una3f94akmqlyfvps5qnk4msls5c5d
+  testnet: ckt1qyqwge8mnj02una3f94akmqlyfvps5qnk4msz428c3
+lock_arg: e464fb9c9eae4fb1496bdb6c1f2258185013b577
+lock_hash: ~
+</code></pre>
+<p></details></p>
+<ul>
+<li>open ckb.toml and configure [block_assembler] part.
+<ul>
+<li>lock_arg need to attach 0x to the prefix, then fill in  args</li>
+<li>fill in message with 0x</li>
+</ul></li>
+</ul>
+<p><details>
+<summary>(click here to view response)</summary></p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment">#</span>
+<span class="hljs-comment">#     ckb cli secp256k1-lock &lt;pubkey&gt; --format cmd</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># The two commands can be combined together:</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#     ckb init $(ckb cli secp256k1-lock &lt;pubkey&gt; --format cmd)</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># secp256k1_blake160_sighash_all example:</span>
+ [block_assembler]
+ code_hash = <span class="hljs-string">"0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8"</span>
+ args = <span class="hljs-string">"0xe464fb9c9eae4fb1496bdb6c1f2258185013b577"</span>
+ hash_type = <span class="hljs-string">"type"</span>
+ message = <span class="hljs-string">"0x"</span>
+</code></pre>
+<p></details></p>
+<p><strong>step 5：Run the customized development chain.</strong></p>
+<pre><code class="hljs">ckb <span class="hljs-keyword">run</span><span class="bash">
+ckb miner</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/9/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/dev-guide/testnet"><span class="arrow-prev">← </span><span>Testnet Aggron</span></a><a class="docs-next button" href="/dev-guide/ckb-cli"><span>ckb-cli</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'ef49666369943baa0a93aedc37511318',
+                indexName: 'nervos-ckb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

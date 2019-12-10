@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Run a CKB Node · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Once you have successfully [created your own wallet](wallet), you can try to run a node now."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Run a CKB Node · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="Once you have successfully [created your own wallet](wallet), you can try to run a node now."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Run a CKB Mainnet Node · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="*Fun Fact: Running a CKB Mainnet node not only helps contribute to the robustness and decentralized nature of the Network, it also means you do not need to rely on any 3rd party to provide data from the blockchain, which increases your security.*"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Run a CKB Mainnet Node · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="*Fun Fact: Running a CKB Mainnet node not only helps contribute to the robustness and decentralized nature of the Network, it also means you do not need to rely on any 3rd party to provide data from the blockchain, which increases your security.*"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -9,7 +9,7 @@
             {"zIndex":100}
           )
         });
-        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.svg" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://explorer.nervos.org" target="_blank">Explorer</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/introduction/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/introduction/nervos-intro">What is Nervos?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Basic Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/basic-concepts/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/architecture">CKB Architecture</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/state-tokens">State and Tokens</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/node-mining">Node and Mining</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/getting-started/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/getting-started/wallet">Create a Wallet</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/getting-started/run-node">Run a CKB Node</a></li><li class="navListItem"><a class="navItem" href="/getting-started/mine">Mine Some CK Bytes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/dev-guide/compile">Compile CKB from Source</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/ruby-sdk">Use Ruby SDK</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/scripts">Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/api/rpc">JSON-RPC Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/references/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/references/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/references/nervos-design">Nervos System Design</a></li><li class="navListItem"><a class="navItem" href="/references/neuron-key-manager">Neuron Key Manager</a></li><li class="navListItem"><a class="navItem" href="/references/neuron-wallet-guide">Neuron Wallet Guide</a></li></ul></div></div></section></div><script>
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.svg" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://explorer.nervos.org" target="_blank">Explorer</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/introduction/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/introduction/nervos-intro">What is Nervos?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Basic Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/basic-concepts/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/architecture">CKB Architecture</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/state-tokens">State and Tokens</a></li><li class="navListItem"><a class="navItem" href="/basic-concepts/node-mining">Node and Mining</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tooling<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/tooling/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/tooling/community">Community Contribution</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/getting-started/introduction">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/getting-started/run-node">Run a CKB Mainnet Node</a></li><li class="navListItem"><a class="navItem" href="/getting-started/transfer-ckbytes">Transfer CKBytes from Neuron Wallet to the third party</a></li><li class="navListItem"><a class="navItem" href="/getting-started/lookup-transaction">Look up transaction info on CKB-Explorer</a></li><li class="navListItem"><a class="navItem" href="/getting-started/deposit-nervosdao">Deposit CKBytes into Nervos DAO</a></li><li class="navListItem"><a class="navItem" href="/getting-started/withdraw-nervosdao">Withdraw CKBytes from Nervos DAO</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/dev-guide/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/testnet">Testnet Aggron</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/devchain">Dev Chain</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/ckb-cli">ckb-cli</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/ckb-sdk">ckb-sdk</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/faucet">Testnet Faucet</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/api">CKB JSON-RPC Protocols</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/references/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/references/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/references/nervos-design">Nervos System Design</a></li><li class="navListItem"><a class="navItem" href="/references/neuron-key-manager">Neuron Key Manager</a></li><li class="navListItem"><a class="navItem" href="/references/neuron-wallet-guide">Neuron Wallet Guide</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -65,55 +65,88 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/getting-started/run-node.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Run a CKB Node</h1></header><article><div><span><p>Once you have successfully <a href="wallet">created your own wallet</a>, you can try to run a node now.</p>
-<p>If you are not familiar with the concepts of node and mining yet, <a href="../basic-concepts/node-mining">here is a document</a> you can learn from.</p>
-<h2><a class="anchor" aria-hidden="true" id="configurations"></a><a href="#configurations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurations</h2>
-<p>You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called <code>ckb-testnet</code> and the generated files will be in this folder:</p>
-<blockquote>
-<p>The <code>&lt;LOCK_ARG&gt;</code> here configs the wallet that receives the miner rewards, so please make sure it is correct. You should get this parameter upon the <a href="./wallet#create-wallet">wallet creation</a> step. Please add <code>0x</code> before the generated <code>&lt;LOCK_ARG&gt;</code></p>
-</blockquote>
-<pre><code class="hljs css language-bash">ckb init -C ckb-testnet --chain testnet --force --ba-arg 0x&lt;LOCK_ARG&gt; &amp;&amp; \
-<span class="hljs-built_in">cd</span> ckb-testnet
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/getting-started/run-node.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Run a CKB Mainnet Node</h1></header><article><div><span><p><em>Fun Fact: Running a CKB Mainnet node not only helps contribute to the robustness and decentralized nature of the Network, it also means you do not need to rely on any 3rd party to provide data from the blockchain, which increases your security.</em></p>
+<p>Running a node requires using the command line. If you have never used a command line before, you may refer to <a href="https://www.google.com/search?q=learn+command+line">how to use the command line tool</a> on your computer. Although it may seem complicated at first, it is quite simple and you should be able to easily run a CKB node following the specific instructions below.</p>
+<p>Step 1: Download the latest release CKB binary file from <a href="https://github.com/nervosnetwork/ckb/releases">CKB releases page on GitHub</a>  Please make sure the version you download is <strong>v0.25.2 or later.</strong></p>
+<p>Step 2:  Unzip / extract the downloaded file to an easily accessible folder.
+For Windows we recommend <code>C:\ckb</code>
+On Mac we recommend <code>~/Documents</code></p>
+<p>Step 3: Open up Terminal (Mac) or command line (Windows).</p>
+<ul>
+<li><p>On Mac:</p>
+<ul>
+<li>Either 1) open your Applications folder, then open Utilities and double-click on Terminal, or 2) press <code>Command - Spacebar</code> or <code>Control -Spacebar</code> to launch Spotlight and type &quot;Terminal,&quot; then double-click the search result and the following steps are performed on Terminal.</li>
+</ul></li>
+<li><p>On Windows:</p>
+<ul>
+<li>Please note: if you are familiar with command line operation on Windows, you can skip this step and open the <code>cmd</code> or <code>Power Shell</code> terminal instead.</li>
+<li>Download Git for windows from <a href="https://git-scm.com/downloads">Git-Downloads</a>, double-click to install it and open Git Bash in start menu. The following steps will be performed in Git Bash.</li>
+</ul></li>
+</ul>
+<p>Step 4：Copy and paste the commands below into the Terminal (Mac) / Command Line (Windows):</p>
+<ul>
+<li><p>Please note: the directory and folder name on your computer must match the commands below, if not, please modify the command script correspondingly.</p></li>
+<li><p>Mac</p></li>
+</ul>
+<pre><code class="hljs"><span class="hljs-keyword">cd</span> <span class="hljs-string">/Users/</span><span class="hljs-params">(NAME)</span><span class="hljs-string">/Documents/ckb_v0.25.2_x86_64-apple-darwin</span>
+<span class="hljs-string">./ckb</span> <span class="hljs-params">--version</span>
+<span class="hljs-string">./ckb-cli</span> <span class="hljs-params">--version</span>
+</code></pre>
+<ul>
+<li>Windows</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-keyword">cd</span> C:<span class="hljs-string">/ckb_v0.25.2_x86_64-pc-windows-msvc</span> 
+ckb <span class="hljs-params">--version</span> 
+ckb-cli <span class="hljs-params">--version</span>
 </code></pre>
 <p><details>
 <summary>(click here to view response)</summary></p>
-<pre><code class="hljs css language-bash">$ ckb init -C ckb-testnet --chain testnet --force --ba-arg 0x7e6bccda0abe748eb5dc74be0e797662ae938036 &amp;&amp; \
-<span class="hljs-built_in">cd</span> ckb-testnet
-Initialized CKB directory <span class="hljs-keyword">in</span> /Users/username/code/ckb-testnet
+<pre><code class="hljs css language-bash">$ ./ckb --version
+$ ./ckb-cli --version
+
+ckb 0.25.2 (dda4ed9 2019-11-17)
+ckb-cli 0.25.2 (6ca7bbb 2019-11-17)
+</code></pre>
+<p></details></p>
+<p>Step 5: To run the CKB node, copy and paste the commands below into the Terminal (Mac) / Command Line (Windows):</p>
+<ul>
+<li>Initialize the node (run only once)</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-string">./ckb</span> init <span class="hljs-params">--chain</span> mainnet
+</code></pre>
+<p><details>
+<summary>(click here to view response)</summary></p>
+<pre><code class="hljs css language-bash">$ ./ckb init --chain mainnet
+
+WARN: mining feature is disabled because of lacking the block assembler config options
+Initialized CKB directory <span class="hljs-keyword">in</span> /`PATH`/ckb_v0.25.2_x86_64-apple-darwin
 create ckb.toml
 create ckb-miner.toml
 </code></pre>
 <p></details></p>
-<p>Then you can find a <code>ckb.toml</code> file in the generated <code>ckb-testnet</code> folder, which contains the configurations of your CKB node, as well as your miner wallet, which you can find at the bottom of the file.</p>
-<p><details>
-<summary>(click here to view an example of miner wallet configuration)</summary></p>
-<pre><code class="hljs css language-toml"><span class="hljs-section">[block_assembler]</span>
-<span class="hljs-attr">code_hash</span> = <span class="hljs-string">"0x1892ea40d82b53c678ff88312450bbb17e164d7a3e0a90941aa58839f56f8df2"</span>
-<span class="hljs-attr">args</span> = [<span class="hljs-string">"0x7e6bccda0abe748eb5dc74be0e797662ae938036"</span>]
-<span class="hljs-attr">hash_type</span> = <span class="hljs-string">"type"</span>
-</code></pre>
-<p></details></p>
-<h2><a class="anchor" aria-hidden="true" id="start-a-node"></a><a href="#start-a-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a Node</h2>
-<p>Now you can start the CKB client to run a node. Navigate the command line to <code>ckb-testnet</code> folder and run this command:</p>
-<pre><code class="hljs css language-bash">ckb run
-</code></pre>
+<ul>
+<li>Start the node.</li>
+</ul>
+<pre><code class="hljs">./ckb <span class="hljs-keyword">run</span><span class="bash">
+</span></code></pre>
 <p><details>
 <summary>(click here to view response)</summary></p>
-<pre><code class="hljs css language-bash">$ ckb run
-2019-05-18 08:06:37.246 +08:00 main INFO sentry  **Notice**: The ckb process will send stack trace to sentry on Rust panics. This is enabled by default before mainnet, <span class="hljs-built_in">which</span> can be opted out by setting the option `dsn` to empty <span class="hljs-keyword">in</span> the config file. The DSN is now https://48c6a88d92e246478e2d53b5917a887c@sentry.io/1422795
-2019-05-18 08:06:37.257 +08:00 main INFO ckb_db::rocksdb  Initialize a new database
-2019-05-18 08:06:37.385 +08:00 main INFO main  chain genesis <span class="hljs-built_in">hash</span>: 0xaad9b82caa07f5989dfb8caa44927f0bab515a96ccaaceba82c7bea609fec205
-2019-05-18 08:06:37.385 +08:00 main INFO network  Generate random key
-2019-05-18 08:06:37.386 +08:00 main INFO network  write random secret key to <span class="hljs-string">"/Users/username/code/ckb-testnet/data/network/secret_key"</span>
-2019-05-18 08:06:37.391 +08:00 main INFO network  No peer <span class="hljs-keyword">in</span> peer store, start seeding...
-2019-05-18 08:06:37.392 +08:00 main INFO network  Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmSbvRYNUujyEBEpRipdREfS8cqLxCSndDAWRDAE1Hms2H
-2019-05-18 08:06:37.394 +08:00 tokio-runtime-worker-0 INFO network  p2p service event: ListenStarted { address: <span class="hljs-string">"/ip4/0.0.0.0/tcp/8115"</span> }
-2019-05-18 08:06:37.441 +08:00 tokio-runtime-worker-6 INFO network  SessionId(1) open, registry /ip4/47.111.169.36/tcp/8111/p2p/QmNQ4jky6uVqLDrPU7snqxARuNGWNLgSrTnssbRuy3ij2W success
+<pre><code class="hljs css language-bash">$ ./ckb run
+
+**2019-11-28 14:22:25.464 +08:00** **main** INFO sentry sentry is disabled
+**2019-11-28 14:22:25.565 +08:00** **main** INFO main Miner is disabled, edit ckb.toml to <span class="hljs-built_in">enable</span> it
+**2019-11-28 14:22:25.635 +08:00** **main** INFO ckb-chain Start: loading live cells ...
+**2019-11-28 14:22:25.636 +08:00** **main** INFO ckb-chain Done: total 2 transactions.
+**2019-11-28 14:22:25.654 +08:00** **main** INFO main chain genesis <span class="hljs-built_in">hash</span>: 0x92b197aa1fba0f63633922c61c92375c9c074a93e85963554f5499fe1450d0e5
+**2019-11-28 14:22:25.670 +08:00** **main** INFO ckb-network Listen on address: /ip4/0.0.0.0/tcp/8115/p2p/QmbjjSgGQpvn3Fo28kvVWy9yZfgvtk9cNwRHEv646xxWYB
+**2019-11-28 14:22:25.674 +08:00** **NetworkRuntime-0** INFO ckb-network p2p service event: ListenStarted { address: <span class="hljs-string">"/ip4/0.0.0.0/tcp/8115"</span> }
+**2019-11-28 14:22:25.845 +08:00** **NetworkRuntime-3** INFO ckb-sync SyncProtocol.connected peer=SessionId(1)
+**2019-11-28 14:22:25.846 +08:00** **NetworkRuntime-6** INFO ckb-relay RelayProtocol(1).connected peer=SessionId(1)
+**2019-11-28 14:22:26.063 +08:00** **NetworkRuntime-4** INFO ckb-sync Ignoring getheaders from peer=SessionId(1) because node is <span class="hljs-keyword">in</span> initial block download
+**2019-11-28 14:22:26.197 +08:00** **ChainService** INFO ckb-chain block: 1, <span class="hljs-built_in">hash</span>: 0x2567f226c73b04a6cb3ef04b3bb10ab99f37850794cd9569be7de00bac4db875, epoch: 0(1/1743), total_diff: 0x3b1bb3d4c1376a, txs: 1
 </code></pre>
 <p></details></p>
-<p>Congratulations! You just started a CKB node!</p>
-<p>If you find any error messages, don't worry, check out the <a href="../references/troubleshooting">trouble shooting document</a>.</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 10/23/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/wallet"><span class="arrow-prev">← </span><span>Create a Wallet</span></a><a class="docs-next button" href="/getting-started/mine"><span>Mine Some CK Bytes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configurations">Configurations</a></li><li><a href="#start-a-node">Start a Node</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/4/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/getting-started/introduction"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/getting-started/transfer-ckbytes"><span>Transfer CKBytes from Neuron Wallet to the third party</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
