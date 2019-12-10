@@ -38,7 +38,7 @@ create ckb-miner.toml
 
 **Step 3: Customizing the development chain.**
 
-* Change the epoch length by `genesis_epoch_length` in `specs/dev.toml`, unit of measurement is **block**.
+* Change the epoch length by `genesis_epoch_length` in `specs/dev.toml`, unit of measurement is **block**.It is useful when you need to debug NervosDAO related functions.
 
 ```
 [params]
@@ -48,7 +48,7 @@ max_block_cycles = 10_000_000_000
 cellbase_maturity = 0
 primary_epoch_reward_halving_interval = 8760
 epoch_duration_target = 14400
-**genesis_epoch_length = 1000**
+genesis_epoch_length = 1000
 ```
 * Change the mining idle interval by `value` in `ckb-miner.toml`, unit of measurement is **ms**.
 
@@ -56,7 +56,7 @@ epoch_duration_target = 14400
 [[miner.workers]]
 worker_type = "Dummy"
 delay_type = "Constant"
-**value = 5000**
+value = 5000
 ```
 **Step 4: Configure `block-assembler` in `ckb.toml`for mining.**
 * use `ckb-cli` to generate `lock_arg`. `lock_arg` is needed for configuring the mining feature so please backup it.
@@ -78,7 +78,7 @@ lock_hash: ~
 </details>
 
 * open ckb.toml and configure [block_assembler] part. 
-    *  lock_arg need to attach 0x to the prefix, then fill in  args
+    * `lock_arg` need to attach 0x to the prefix, then fill in `args`
     * fill in message with 0x
 
 <details>
