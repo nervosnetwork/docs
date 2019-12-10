@@ -2,39 +2,18 @@
 id: introduction
 title: Introduction
 ---
+Following mainnet launch, many people want to use the Nervos CKB Mainnet. In this section, you will learn about how to run a CKB node and use the Nervos CKB Mainnet. This includes:
 
-In this section, you will learn about how to use Nervos CKB in practice. This includes [running a CKB node](run-node) and [mining](mine) CK Bytes.
-<!-- Todo: change the version here -->
+1. How to run a CKB Mainnet node
+2. How to look up transaction info on CKB-Explorer
+3. How to transfer CKBytes from the Neuron Wallet to other wallets and exchanges
+4. How to deposit CKBytes into the Nervos DAO
+5. How to withdraw CKBytes from the Nervos DAO
 
-Please note that this document is compatible with the `ckb 0.23.0 (rylai-v11 52aa02ff 2019-10-19)`. More information about CKB versions can be found in [the CKB repo on GitHub](https://github.com/nervosnetwork/ckb).
+**#‘s 3, 4, and 5** will be completed through the Neuron Wallet. **#‘s 3, 4, and 5** will also generate transaction info after completing the operations and with **# 2** is required, looking up the transaction info on CKB-Explorer.
 
-## System Requirements
-Any modern computer should be able to run CKB node and mining programs.
+If you run into issues when following this guide, please join the [official Nervos Telegram](https://t.me/NervosNetwork) channel for support.
 
-Recommended Operating System:  
-* Ubuntu 18.04 LTS x86-64
-* macOS
+To help you better understand Nervos CKB, we recommend you read CKB Design Philosophy and CKB Key Innovations to pick up some background knowledge. 
 
-Experimentally Supported System：  
-* Windows x86-64
- 
-Theoratically Sypported System:
-* Ubuntu 16.04 LTS x86-64
-* Arch Linux x86-64
-* Centos 7 x86-64
-* Debian x86-64, Stretch or later
-
-
-You can also [use docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md) if your operating system is not properly supported by CKB for now.
-
-## Testnet
-
-
-Before you start to have some fun with the testnet, here are something you should notice:
-* The CKB testnet is only for development and test use.
-* The tokens on this testnet has nearly no values, so please be aware of scams.
-* **The testnet will be reset and updated every two weeks**, so any tokens or states you have on the testnet will be cleared upon the testnet reset.
-
-## Prerequisites
-As most of the guidances in this document are based on command line interface, you might need to know [how to use the command line tool](https://www.google.com/search?q=learn+command+line) on your computer.
-
+**IMPORTANT: The Nervos Team will NEVER ask for your private key, keystore file, mnemonic seed phase or wallet password. You should NEVER share this information with anyone, doing so may result in loss of all your tokens.**
