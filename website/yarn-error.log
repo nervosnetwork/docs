@@ -1,0 +1,47 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/zengbing/.rvm/gems/ruby-2.5.3/bin:/Users/zengbing/.rvm/gems/ruby-2.5.3@global/bin:/Users/zengbing/.rvm/rubies/ruby-2.5.3/bin:/usr/local/opt/ruby/bin:/Users/zengbing/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/zengbing/.rvm/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/docusaurus: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:10080
+      at ClientRequest.onError (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:151950:17)
+      at Object.onceWrapper (events.js:291:20)
+      at ClientRequest.emit (events.js:203:13)
+      at Socket.socketErrorListener (_http_client.js:402:9)
+      at Socket.emit (events.js:203:13)
+      at emitErrorNT (internal/streams/destroy.js:91:8)
+      at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+      at processTicksAndRejections (internal/process/task_queues.js:77:11)
+
+npm manifest: 
+  {
+    "scripts": {
+      "examples": "docusaurus-examples",
+      "start": "docusaurus-start",
+      "build": "docusaurus-build",
+      "publish-gh-pages": "docusaurus-publish",
+      "write-translations": "docusaurus-write-translations",
+      "version": "docusaurus-version",
+      "rename-version": "docusaurus-rename-version"
+    },
+    "devDependencies": {
+      "docusaurus": "^1.9.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

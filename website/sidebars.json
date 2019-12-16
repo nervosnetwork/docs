@@ -12,6 +12,8 @@
         ],
         "Tooling": [
             "tooling/introduction",
+            "tooling/neuron",
+            "tooling/ckb-explorer",
             "tooling/community"
         ],
         "Getting Started": [

@@ -18,7 +18,9 @@ At this time, Nervos CKB tooling includes (will be not limited to) the following
 **Neuron Wallet**  [Github](https://github.com/nervosnetwork/neuron) | [Download](https://github.com/nervosnetwork/neuron/releases)
 * Neuron Wallet is an official Nervos CKB wallet. It holds users’ keys, can create 
 and broadcast transactions to the peer to peer network, and also provides the ability to easily **Deposit and Withdraw into the Nervos DAO**.
- Neuron Wallet is a cross platform desktop app for Windows, macOS and Linux, you can [download here](https://github.com/nervosnetwork/neuron/releases) and install it.
+* With the v0.26.0 release of Neuron Wallet, a CKB node is now included in the wallet and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run.
+
+* Neuron Wallet is a cross platform desktop app for Windows, macOS and Linux, you can [download here](https://github.com/nervosnetwork/neuron/releases) and install it.
 
 **CKB-Explorer**  [Github](https://github.com/nervosnetwork/ckb-explorer) | [Link](https://explorer.nervos.org/)
 * CKB-Explorer allows you to explore the data of the Nervos CKB Mainnet for transactions, addresses, tokens, blocks, hashrate, **Nervos DAO info** and all other activities taking place on Nervos CKB. Please note that **CKB-Explorer is not a wallet service provider. We do not store your private keys and we have no control over the transactions that take place over the CKB Network.**

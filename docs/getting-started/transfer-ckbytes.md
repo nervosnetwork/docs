@@ -17,6 +17,6 @@ Step 2：Create a new Wallet and wait for the synchronization to end.
 
 Step 3：Transfer CKBytes from Neuron Wallet to the third party.
 
-* Under the `Send` tab, fill in the address details in the `Send to` field. Click the `Max` to add multi-transactions. Turn on the `Advanced fee settings` and fill in the `Transaction fee` — click the `Send` button to complete your transfer.
+* Under the `Send` tab, fill in the address details in the `Send to` field. Click  `+` to add multi-transactions. Turn on the `Advanced fee settings` and fill in the `Transaction fee` — click the `Send` button to complete your transfer.
 
 <img src="../assets/getting-started/transfer.png" width = "600"/>
