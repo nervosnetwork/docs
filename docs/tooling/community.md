@@ -12,5 +12,7 @@ As we know, sustainable development needs community development! We welcome deve
     * A standalone debugger enabling off-chain contract development
 * ckb-graphql-server [Github](https://github.com/xxuejie/ckb-graphql-server)
     * [GraphQL](https://graphql.org/) server for CKB. For maximum performance, this server reads directly from the CKB data directory.
+* Animagus [Github](https://github.com/xxuejie/animagus)
+    * Animagus is a data processor for Nervos CKB. With a unified set of operations.
 * ckb-sdk-go [Github](https://github.com/ququzone/ckb-sdk-go)
     * ckb-sdk-go is an SDK implemented in Golang.

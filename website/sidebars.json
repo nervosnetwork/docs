@@ -16,7 +16,8 @@
             "tooling/ckb-explorer",
             "tooling/ckb-sdk-js",
             "tooling/ckb-sdk-ruby",
-            "tooling/community"
+            "tooling/community",
+            "tooling/useful-materials"
         ],
         "Getting Started": [
             "getting-started/introduction",
