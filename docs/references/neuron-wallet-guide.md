@@ -3,7 +3,7 @@ id: neuron-wallet-guide
 title: Neuron Wallet Guide
 ---
 
-Following mainnet launch, if you hold a keystore file or a seed phrase generated from the Neuron Key Manager, you can use the Neuron wallet to receive your tokens or create a new wallet to store your tokens and deposit in the Nervos DAO. In order to use the Neuron wallet, a **local CKB node** is required to sync with the Nervos CKB blockchain.
+Following mainnet launch, if you hold a keystore file or a seed phrase generated from the Neuron Key Manager, you can use the Neuron wallet to receive your tokens or create a new wallet to store your tokens and deposit in the Nervos DAO. With the v0.26.0 release of Neuron Wallet, a CKB node is now included in the wallet and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run.
 
 Please follow these instructions which are explained in detail below：
 
