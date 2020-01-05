@@ -52,7 +52,3 @@ Mining pools supporting CKB mining:
   - [Viabtc](http://www.viabtc.com)
 
   - Zhizhu Pool
-
-  - 
-
-  - 
