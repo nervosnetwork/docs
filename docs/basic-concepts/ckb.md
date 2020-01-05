@@ -1,4 +1,7 @@
-# CKB 
+---
+id: ckb
+title: CKB Introduction
+---
 
 ## Introduction
 
