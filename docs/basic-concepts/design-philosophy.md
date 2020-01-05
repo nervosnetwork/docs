@@ -1,6 +1,6 @@
 ---
 id: design-philosophy
-title: Design Philosophy of Nervos CKB
+title: Design Philosophy
 ---
 
 This article contains links to articles and videos to provide background information to provide context for the design decisions of Nervos CKB. These resources will provide the necessary knowledge to understand these decisions.
