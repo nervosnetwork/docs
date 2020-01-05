@@ -1,3 +1,8 @@
+---
+id: economics-of-ckb
+title: Economics of Nervos CKB
+---
+
 # Economics of Nervos CKB
 
 ## Introduction
