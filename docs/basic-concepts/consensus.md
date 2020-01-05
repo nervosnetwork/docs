@@ -1,4 +1,7 @@
-# CKB Consensus
+---
+id: consensus
+title: Consensus
+---
 
 
 ## Introduction
