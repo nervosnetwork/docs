@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>basic-concepts/consensus · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# CKB Consensus"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="basic-concepts/consensus · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="# CKB Consensus"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-139882771-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.svg" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://explorer.nervos.org" target="_blank">Explorer</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/basic-concepts/consensus.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">basic-concepts/consensus</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="ckb-consensus"></a><a href="#ckb-consensus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CKB Consensus</h1>
+<h2><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
+<p>The CKB consensus protocol is a variant of Nakamoto Consensus, which raises its performance limit and selfish mining resistance while maintaining all of its merits. By eliminating the bottleneck in Nakamoto Consensus (NC) block propagation latency, the CKB consensus protocol supports very short block intervals without making any security sacrifices.</p>
+<h2><a class="anchor" aria-hidden="true" id="background"></a><a href="#background" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background</h2>
+<p>Though new BFT protocol families have been proposed following NC, comparatively they often demand significant communication overhead to certify certain nodes have witnessed a block.</p>
+<p>Bitcoin's Nakamoto Consensus (NC) is well-received due to its simplicity and low communication overhead. It does however, suffer from two kinds of drawbacks:
+1) Its transaction processing throughput is limited to roughly 10 transactions per second
+2) It is vulnerable to a selfish mining attack, in which attackers can gain greater block rewards by deviating from the protocol's prescribed behavior</p>
+<p>Two parameters collectively cap system throughput in Bitcoin:
+1) the maximum block size;
+2) the expected block interval</p>
+<p>Bitcoin enforces an upper bound on block size of roughly 4MB and targets a 10-minute block interval, translating to roughly 10 transactions per second (TPS).</p>
+<p><strong>Increasing throughput</strong>
+When increasing throughput, increasing the block size leads to longer block propagation latency and reducing the block interval leads to more frequent block generation events. Both of these approaches raise the fraction of blocks that are generated during the time competing blocks are being propagated, thus raising the fraction of competing blocks.</p>
+<p>Because only one block will contribute to transaction confirmation in Nakamoto Consensus, nodes waste bandwidth propagating other <strong>orphaned blocks</strong>, and the system's effective throughput is limited.</p>
+<p><strong>Security implications</strong></p>
+<p>In this system, an increase in orphan rate degrades system security, as the system's total hash power is divided among multiple very short forks. Difficulty is adjusted according to the amount of hash power directed at the canonical chain. As orphan rate rises attackers are provided the opportunity to produce an alternate chain by matching only the work that has gone into the canonical chain.</p>
+<p>Selfish miners with sufficient hash power can deliberately orphan other miners blocks and over time collect block rewards in excess of their share of total system hash power.</p>
+<p>Researchers observe that the unfair profit opportunity presented by selfish mining is rooted in the difficulty adjustment mechanism of Nakamoto Consensus <a href="https://arxiv.org/abs/1805.08281">(link)</a>, which neglects orphaned blocks when estimating the network's computing power.</p>
+<h2><a class="anchor" aria-hidden="true" id="from-nakamoto-to-nervos"></a><a href="#from-nakamoto-to-nervos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>From Nakamoto to Nervos</h2>
+<p>The Nervos CKB consensus protocol makes three changes to Nakamoto Consensus:</p>
+<ol>
+<li><p>The CKB consensus protocol eliminates the bottleneck in block propagation resulting from the transference of newly broadcast, or <strong>fresh transactions</strong>, which have not finished propagating to the network when they are embedded in the latest block.</p>
+<p>This is done through a decoupling of transaction confirmation into two separate steps: <strong>propose</strong> and <strong>commit</strong>. A transaction is proposed via inclusion of its truncated hash in the <strong>proposal zone</strong> of a confirmed block or one of its <a href="https://www.investopedia.com/terms/u/uncle-block-cryptocurrency.asp">uncles</a>.</p>
+<p>The proposal zone is only used to facilitate transaction synchronization, newly proposed transactions do not affect block validity or block propagation. A node can start transferring a block to its neighbors before receiving these transactions. A proposed transaction could be previously proposed, in conflict with other transactions, or even malformed, without affecting block validity.</p>
+<p>The transaction is then committed if it appears in a confirmed block's <strong>commitment zone</strong> in a window between <strong>2 to 10</strong> blocks after its proposal. This two-step confirmation rule eliminates the bottleneck in propagating transactions, as a block's committed transactions will have already been received and verified by all nodes when they are proposed.</p></li>
+</ol>
+<ol start="2">
+<li><p>The CKB consensus protocol prescribes that blocks refer to all orphaned blocks as uncles. This information allows for estimation of current block propagation latency and dynamic adjustment of the expected block interval, increasing throughput when the latency of network allows.</p>
+<p>The difficulty adjustment targets a fixed orphan rate, to utilize the shortened latency without compromising security. The protocol hard-codes the interval's upper and lower bounds to defend against DoS attacks and avoid overloading the nodes. All epochs have the same expected length, and in each epoch the block reward is adjusted proportionally to the expected block interval of the epoch, so that the expected time-averaged reward is constant, independent of the block interval.</p></li>
+</ol>
+<ol start="3">
+<li>The CKB consensus protocol eliminates the opportunity presented by selfish mining. Selfish mining is not profitable regardless of how the attacker divides its mining power among honest mining, selfish mining or idling equipment, and regardless of the number of epochs the attack encompasses. The detailed proof will be released in 2020.</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="block-structure"></a><a href="#block-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Block Structure</h2>
+<p>A block includes the following fields:</p>
+<table>
+<thead>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Header</td><td style="text-align:left">block metadata</td></tr>
+<tr><td style="text-align:left">Commitment zone</td><td style="text-align:left">transactions committed in this block</td></tr>
+<tr><td style="text-align:left">Proposal zone</td><td style="text-align:left">truncated hashes of transactions proposed in this block</td></tr>
+<tr><td style="text-align:left">Uncle headers</td><td style="text-align:left">headers of uncle blocks</td></tr>
+<tr><td style="text-align:left">Uncles’ proposal zones</td><td style="text-align:left">truncated hashes of transactions proposed in the uncles</td></tr>
+</tbody>
+</table>
+<p><strong>Block structure rules:</strong></p>
+<ol>
+<li><p>Similar to NC, in the CKB consensus protocol a compact block replaces a block’s commitment zone with the transactions’ <code>shortid</code>s, a salt and a list of prefilled transactions. All other fields remain unchanged in <a href="https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki">the compact block</a>.</p></li>
+<li><p>The total size of the first four fields should be no larger than the hard-coded <strong>block size limit</strong>. The main purpose of implementing a block size limit is to avoid overloading public nodes' bandwidth.</p></li>
+<li><p>The uncle blocks’ proposal zones do not count in the limit as they are usually already synchronized when the block is mined.</p>
+<p><em>The number of truncated transaction hashes in a proposal zone also has a hard-coded upper bound.</em></p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="block-propagation"></a><a href="#block-propagation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Block Propagation</h2>
+<p>Nodes should broadcast all blocks with valid proofs-of-work, including orphans, as they may be referred to in the main chain as uncles. Valid proofs-of-work cannot be utilized to pollute the network, as constructing them is time-consuming.</p>
+<p>The protocol’s block propagation protocol removes the extra round trip of fresh transactions in most circumstances. When the round trip is inevitable, the protocol ensures that it only lasts for one hop in the propagation. This is achieved by the following three rules.</p>
+<p><strong>Block Propagation rules:</strong></p>
+<ol>
+<li>If some committed transactions are previously unknown to the sending node, they will be embedded in the prefilled transaction list and sent along with the compact block. This modification removes the extra round trip if the sender and the receiver share the same list of proposed, but-not-broadcast transactions.</li>
+<li>If certain committed transactions are still missing, the receiver queries the sender with a short timeout. Failing to send these transactions in time leads to the receiver disconnecting and blacklisting the sender. Blocks with incomplete commitment zones will not be propagated further.</li>
+<li>As long as the commitment zone is complete and valid, a node can start forwarding the compact block before receiving all newly-proposed transactions. A node requests the newly-proposed transactions from the upstream peer and sends compact blocks to other peers simultaneously. This modification does not downgrade the security as transactions in the proposal zone do not affect the block’s validity.</li>
+</ol>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/17/2019</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#introduction">Introduction</a></li><li><a href="#background">Background</a></li><li><a href="#from-nakamoto-to-nervos">From Nakamoto to Nervos</a></li><li><a href="#block-structure">Block Structure</a></li><li><a href="#block-propagation">Block Propagation</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'ef49666369943baa0a93aedc37511318',
+                indexName: 'nervos-ckb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
