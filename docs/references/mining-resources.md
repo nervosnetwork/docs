@@ -1,3 +1,8 @@
+---
+id: mining-resources
+title: Mining Resources
+---
+
 How to mine CKB https://docs.nervos.org/getting-started/mine
 
 
