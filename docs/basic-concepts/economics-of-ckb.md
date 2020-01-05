@@ -3,8 +3,6 @@ id: economics-of-ckb
 title: Economics of Nervos CKB
 ---
 
-# Economics of Nervos CKB
-
 ## Introduction
 
 Public permissionless blockchains are open and distributed systems with diverse groups of participants. A well-designed crypto-economic model provides incentives that align participants' economic self-interest, leading to emergent behaviors that contribute to the blockchain network's success.
