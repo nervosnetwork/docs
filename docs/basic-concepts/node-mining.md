@@ -21,7 +21,4 @@ In CKB, miners compete with each other to add blocks to the blockchain through P
 
 The miners who find a suitable hash will have the right to extend the blockchain by broadcasting their new blocks. Other nodes will receive newly mined blocks and verify them. Then miners will begin mining a new block on top of one of the new blocks they received.
 
-> The hash function for mining CKB mainnet is Eaglesong, you can learn more about it in
->
-> [RFC 0010 - Eaglesong]: https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0010-eaglesong/0010-eaglesong.md
->
+> The hash function for mining CKB mainnet is Eaglesong, you can learn more about it in [RFC 0010 - Eaglesong]: https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0010-eaglesong/0010-eaglesong.md
