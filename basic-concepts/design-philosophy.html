@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>basic-concepts/design-philosophy · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Design Philosophy of Nervos CKB"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="basic-concepts/design-philosophy · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="# Design Philosophy of Nervos CKB"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-139882771-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.svg" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://explorer.nervos.org" target="_blank">Explorer</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/basic-concepts/design-philosophy.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">basic-concepts/design-philosophy</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="design-philosophy-of-nervos-ckb"></a><a href="#design-philosophy-of-nervos-ckb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Design Philosophy of Nervos CKB</h1>
+<p>This article contains links to articles and videos to provide background information to provide context for the design decisions of Nervos CKB. These resources will provide the necessary knowledge to understand these decisions.</p>
+<h2><a class="anchor" aria-hidden="true" id="proof-of-work-vs-proof-of-stake-cryptoeconomics"></a><a href="#proof-of-work-vs-proof-of-stake-cryptoeconomics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proof of Work vs. Proof of Stake Cryptoeconomics</h2>
+<p><a href="https://www.youtube.com/watch?v=EWfGzeF3Xmw">Proof of Work Explained</a></p>
+<p><a href="https://medium.com/@hydrominer/proof-of-work-vs-proof-of-stake-7b3afe24f0cc">Proof of Work vs. Proof of Stake (Explanations of each &amp; Advantages of PoW)</a></p>
+<p><a href="https://edge.app/blog/proof-of-work-vs-proof-of-stake/">Proof of Work vs. Proof of Stake (Advantages/Criticisms of each)</a></p>
+<p><em>Nervos CKB chooses proof of work consensus</em></p>
+<h2><a class="anchor" aria-hidden="true" id="on-chain-vs-off-chain-scaling"></a><a href="#on-chain-vs-off-chain-scaling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>On-chain vs. Off-chain Scaling</h2>
+<p><a href="https://bdtechtalks.com/2019/09/16/blockchain-scaling-on-chain-vs-off-chain/">Blockchain scaling: on-chain vs off-chain</a></p>
+<p><a href="https://bitcoin.stackexchange.com/questions/63375/what-is-the-difference-between-on-chain-scaling-and-off-chain-scaling">What is the difference between on-chain scaling and off-chain scaling?</a></p>
+<p><a href="https://www.youtube.com/watch?v=aEpLdKbPTV4">On-chain vs Off-chain Processing and Storage</a></p>
+<p><em>Nervos CKB chooses off-chain scaling</em></p>
+<h2><a class="anchor" aria-hidden="true" id="layer-2-constructions"></a><a href="#layer-2-constructions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Layer 2 Constructions</h2>
+<p><a href="https://www.youtube.com/watch?v=rrr_zPmEiME">Bitcoin's Lightning Network (Payment channels)</a></p>
+<p><a href="https://www.youtube.com/watch?v=l6h50Omq_hs">Sidechains &amp; Plasma</a></p>
+<p><a href="https://www.youtube.com/watch?v=tADoptxNuzQ">State Channels</a></p>
+<p><a href="https://www.youtube.com/watch?v=QyM9qdFKsEA">ZK Rollup</a></p>
+<p><a href="https://medium.com/matter-labs/optimistic-vs-zk-rollup-deep-dive-ea141e71e075">Optimistic Rollup and ZK Rollup</a></p>
+<p><em>Nervos CKB is built to provide maximum flexibility for Layer 2 constructions</em></p>
+<h2><a class="anchor" aria-hidden="true" id="risc-v--webassembly-vms"></a><a href="#risc-v--webassembly-vms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RISC-V &amp; WebAssembly (VMs)</h2>
+<p><a href="https://codasip.com/2016/09/22/what-is-risc-vwhy-do-we-care-and-why-you-should-too/">What is RISC-V?</a></p>
+<p><a href="https://www.youtube.com/watch?v=QHjmykiyT5Q">Blockchain VMs and RISC-V</a></p>
+<p><a href="https://www.reddit.com/r/RISCV/comments/a9kxm5/is_wasm_a_better_choice_than_riscv/">Is WASM a better choice than RISC-V?</a></p>
+<p><a href="https://medium.com/@m.quinn/ckb-vm-lite-paper-6b01082d9123">CKB VM Lite Paper (VM design rationale)</a></p>
+<p><em>Nervos CKB chooses RISC-V as the instruction set of the CKB VM</em></p>
+<h2><a class="anchor" aria-hidden="true" id="utxo-model-vs-account-model"></a><a href="#utxo-model-vs-account-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UTXO model vs Account model</h2>
+<p><a href="https://komodoplatform.com/whats-utxo/">UTXO model Explained (Bitcoin)</a></p>
+<p><a href="https://thecoinoffering.com/learn/ethereum-transactions/">Account model explained (Ethereum)</a></p>
+<p><a href="https://hackernoon.com/utxo-and-account-model-comparison-v-2-cdf9669c6c0d">UTXO and Account model comparison</a></p>
+<p><a href="https://medium.com/@sunflora98/utxo-vs-account-balance-model-5e6470f4e0cf">UTXO and Account model pros/cons</a></p>
+<p><em>Nervos CKB generalizes the UTXO model, creating the <a href="https://www.youtube.com/watch?v=EBoTUw4MI0k">cell model</a>, which enables turing-complete scripting</em></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/23/2019</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#proof-of-work-vs-proof-of-stake-cryptoeconomics">Proof of Work vs. Proof of Stake Cryptoeconomics</a></li><li><a href="#on-chain-vs-off-chain-scaling">On-chain vs. Off-chain Scaling</a></li><li><a href="#layer-2-constructions">Layer 2 Constructions</a></li><li><a href="#risc-v--webassembly-vms">RISC-V &amp; WebAssembly (VMs)</a></li><li><a href="#utxo-model-vs-account-model">UTXO model vs Account model</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'ef49666369943baa0a93aedc37511318',
+                indexName: 'nervos-ckb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
