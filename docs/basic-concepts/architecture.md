@@ -3,7 +3,7 @@ id: architecture
 title: CKB Architecture
 ---
 
-![data-structure](assets/ckb-structure.png) //update
+![data-structure](assets/ckb-structure.png)
 
 
 
@@ -46,7 +46,7 @@ A transaction contains three parts: a group of input cells (`inputs`),  a group 
 
 ### Transaction Verification
 
-> [Here is an RFC](https://github.com/nervosnetwork/rfcs/pull/80) that lists all the transaction verification rules defined by CKB protocol. //check link
+> [Here is an RFC](https://github.com/nervosnetwork/rfcs/pull/80) that lists all the transaction verification rules defined by CKB protocol.
 
 After a CKB node receives a transaction, it will first verify that the transaction conforms to CKB protocol rules, examples of protocol rules: 
 
