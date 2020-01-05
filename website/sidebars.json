@@ -6,8 +6,10 @@
         ],
         "Basic Concepts": [
             "basic-concepts/introduction",
+            "basic-concepts/design-philosophy",
             "basic-concepts/architecture",
             "basic-concepts/state-tokens",
+            "basic-concepts/economics-of-ckb",
             "basic-concepts/node-mining"
         ],
         "Tooling": [
