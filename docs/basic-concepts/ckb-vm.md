@@ -1,4 +1,7 @@
-# CKB-VM 
+---
+id: ckb-vm
+title: CKB-VM
+---
 
 ## Introduction
 
