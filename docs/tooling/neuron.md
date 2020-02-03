@@ -19,7 +19,7 @@ In this section we will give an overall introduction to Neuron Wallet. Tutorials
 
 Please [download](https://github.com/nervosnetwork/neuron/releases) and install the latest Neuron Wallet version, click `Create a New Wallet`, and you will then see the main interface. There are seven tabs: **Overview, Send, Receive, History, Nervos DAO, Addresses and Settings**.
 
-<img src="../assets/neuron-wallet/whole.png" width = "600"/>
+<img src="../assets/neuron-wallet/overview.png" width = "600"/>
 
 ### Overview
 
