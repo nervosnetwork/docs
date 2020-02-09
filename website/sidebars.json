@@ -16,6 +16,11 @@
             "basic-concepts/economics-of-ckb",
             "basic-concepts/node-mining"
         ],
+        "Technical Concepts": [
+            "technical-concepts/script-dependencies",
+            "technical-concepts/transaction-validation-lifecycle",
+            "technical-concepts/ckb-vm-verification-rules"
+            ],
         "Tooling": [
             "tooling/introduction",
             "tooling/neuron",
@@ -40,7 +45,8 @@
             "dev-guide/ckb-cli",
             "dev-guide/ckb-sdk",
             "dev-guide/faucet",
-            "dev-guide/api"
+            "dev-guide/api",
+            "dev-guide/debugging-ckb-script"
         ],
         
         "References": [
