@@ -1,5 +1,7 @@
-# CKB VM Verification Rules
-
+---
+id: ckb-vm-verification-rules
+title: CKB VM Verification Rules
+---
 When writing a program, it is important to determine the operating environment and runtime behavior, so that the execution structure of the program is in line with the program’s intended behavior. For example: the impact of GIL (Global Interpreter Lock) in Python, the expected execution time of hardware instructions and pipeline planning, etc.
 
 We all know that CKB VM is a virtual environment based on the RISC-V instruction set. In addition to this, developers should also know the context of the VM during CKB verification, including some syscalls provided, etc. This article will provide more information about the operation of CKB VM.
