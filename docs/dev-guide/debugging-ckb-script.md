@@ -1,5 +1,7 @@
-# Debugging CKB script
-
+---
+id: debugging-ckb-script
+title: Debugging CKB script
+---
 CKB VM simulates the RISC-V instruction set, which is very different from other VMs that hard-code functionality through opcodes. Given the generalized nature of CKB VM, various languages and toolchains can be supported- every language and toolchain will be a bit different and implementers should provide appropriate documentation and support for the community.
 
 This document introduces several tips about debugging CKB scripts.
