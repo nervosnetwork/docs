@@ -1,5 +1,7 @@
-# Transaction Validation Lifecycle
-
+---
+id: transaction-validation-lifecycle
+title: Transaction Validation Lifecycle
+---
 Transactions are at the heart of the CKB’s operation. When you interact with the CKB, you are submitting state transitions through transactions. This document will explain the lifecycle of CKB transaction validation.
 
 ![Image](../docs/docs/assets/transaction-validation-lifecyle/未命名文件%20(1).jpg "Transaction Validation")
