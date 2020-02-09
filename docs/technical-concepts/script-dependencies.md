@@ -1,4 +1,7 @@
-# Script dependencies
+---
+id: script-dependencies
+title: Script dependencies
+---
 
 ## Deploy a VM and run code on the VM
 
