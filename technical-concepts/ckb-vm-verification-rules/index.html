@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>technical-concepts/ckb-vm-verification-rules · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# CKB VM Verification Rules"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="technical-concepts/ckb-vm-verification-rules · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="# CKB VM Verification Rules"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-139882771-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.svg" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://explorer.nervos.org" target="_blank">Explorer</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/technical-concepts/ckb-vm-verification-rules.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">technical-concepts/ckb-vm-verification-rules</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="ckb-vm-verification-rules"></a><a href="#ckb-vm-verification-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CKB VM Verification Rules</h1>
+<p>When writing a program, it is important to determine the operating environment and runtime behavior, so that the execution structure of the program is in line with the program’s intended behavior. For example: the impact of GIL (Global Interpreter Lock) in Python, the expected execution time of hardware instructions and pipeline planning, etc.</p>
+<p>We all know that CKB VM is a virtual environment based on the RISC-V instruction set. In addition to this, developers should also know the context of the VM during CKB verification, including some syscalls provided, etc. This article will provide more information about the operation of CKB VM.</p>
+<h2><a class="anchor" aria-hidden="true" id="environment"></a><a href="#environment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment</h2>
+<p>In CKB, each transaction is executed separately, that is, each transaction runs in its own separate VM environment. Though parallel verification of multiple transactions is performed (by the host), there is no multi-threaded execution environment inside of the VM.</p>
+<h3><a class="anchor" aria-hidden="true" id="execution-unit"></a><a href="#execution-unit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execution unit</h3>
+<p>When each individual transaction is verified, the scripts will first be separated into groups and then executed sequentially in units of script groups. Each group is created by grouping together transactions that have the same script hash.</p>
+<p><em>Note that the lock scripts of transaction outputs are not executed during transaction verification.</em></p>
+<p>No matter which script group is being executed, the entirety of transaction data can be accessed by scripts included in that transaction during execution.</p>
+<p>An advantage of this design is the group records the index of the cell(s) which belong to the current group. This is equivalent to separating the transaction data, verifying referenced lock or type scripts that are used multiple times, but only requiring execution once to complete verification across multiple cells. This reduces verification resource consumption and provides a public environment for the data set of the transaction.</p>
+<p>This is described here:</p>
+<pre><code class="hljs">`class ScriptGroup:
+    def __init__(self, script):
+        self.script = script
+        self.input_indices = []
+        self.output_indices = []
+
+def split_group(tx):
+     lock_group<span class="hljs-variable">s:</span> Dict[Hash, ScriptGroup] = dict()
+     type_group<span class="hljs-variable">s:</span> Dict[Hash, ScriptGroup] = dict()
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">index</span>, <span class="hljs-built_in">input</span> in enumerate(tx.inputs):
+        <span class="hljs-keyword">if</span> lock_groups.<span class="hljs-built_in">get</span>(hash(<span class="hljs-built_in">input</span>.lock)):
+            lock_groups.<span class="hljs-built_in">get</span>(hash(<span class="hljs-built_in">input</span>.lock)).input_indices.<span class="hljs-keyword">append</span>(<span class="hljs-built_in">index</span>)
+        <span class="hljs-keyword">else</span>:
+            script_group = ScriptGroup(<span class="hljs-built_in">input</span>.lock)
+            script_group.input_indices.<span class="hljs-keyword">append</span>(<span class="hljs-built_in">index</span>)
+            lock_groups[hash(<span class="hljs-built_in">input</span>.lock)] = script_group
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>:
+            <span class="hljs-keyword">if</span> type_groups.<span class="hljs-built_in">get</span>(hash(<span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>)):
+                type_groups.<span class="hljs-built_in">get</span>(hash(<span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>)).input_indices.<span class="hljs-keyword">append</span>(<span class="hljs-built_in">index</span>)
+            <span class="hljs-keyword">else</span>:
+                script_group = ScriptGroup(<span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>)
+                script_group.input_indices.<span class="hljs-keyword">append</span>(<span class="hljs-built_in">index</span>)
+                type_groups[hash(<span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>)] = script_group
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">index</span>, output in enumerate(tx.outputs):
+        <span class="hljs-keyword">if</span> output.<span class="hljs-built_in">type</span>:
+            <span class="hljs-keyword">if</span> type_groups.<span class="hljs-built_in">get</span>(hash(<span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>)):
+                type_groups.<span class="hljs-built_in">get</span>(hash(<span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>)).output_indices.<span class="hljs-keyword">append</span>(<span class="hljs-built_in">index</span>)
+            <span class="hljs-keyword">else</span>:
+                script_group = ScriptGroup(<span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>)
+                script_group.output_indices.<span class="hljs-keyword">append</span>(<span class="hljs-built_in">index</span>)
+                type_groups[hash(<span class="hljs-built_in">input</span>.<span class="hljs-built_in">type</span>)] = script_group
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">list</span>(lock_groups.<span class="hljs-built_in">values</span>()) + <span class="hljs-keyword">list</span>(type_groups.<span class="hljs-built_in">values</span>())
+
+def run():
+    <span class="hljs-keyword">for</span> group in split_group(tx):
+        <span class="hljs-keyword">if</span> vm_run(group) != <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> error()
+`
+</code></pre>
+<p>When each script group is executed, the execution cost of the scripts is recorded and the sum of all resource consumption is compared with the <code>max_block_cycles</code> allowed upper limit.</p>
+<p>Suppose there is a transaction as follows:</p>
+<pre><code class="hljs">`<span class="hljs-type">Transaction</span> {
+    input: [cell_1 {lock: <span class="hljs-type">A</span>, <span class="hljs-keyword">type</span>: <span class="hljs-type">B</span>}, cell _2 {lock: <span class="hljs-type">A</span>, type: <span class="hljs-type">B</span>}, cell_3 {lock: <span class="hljs-type">C</span>, type: <span class="hljs-type">None</span>}]
+    output: [cell_4 {lock: <span class="hljs-type">D</span>, <span class="hljs-keyword">type</span>: <span class="hljs-type">B</span>}, cell_5 {lock: <span class="hljs-type">C</span>, type: <span class="hljs-type">B</span>}, cell_6 {lock: <span class="hljs-type">G</span>, type: <span class="hljs-type">None</span>}, cell_7(lock: <span class="hljs-type">A</span>, type: <span class="hljs-type">F</span>)]
+}`
+</code></pre>
+<p>it will be grouped as such:</p>
+<pre><code class="hljs">`[
+    group(<span class="hljs-name">A</span>, input:[<span class="hljs-name">0</span>, <span class="hljs-number">1</span>], output:[]), 
+    group(<span class="hljs-name">C</span>, input:[<span class="hljs-name">2</span>], output:[]), 
+    group(<span class="hljs-name">B</span>, input:[<span class="hljs-name">0</span>, <span class="hljs-number">1</span>], output:[<span class="hljs-name">0</span>, <span class="hljs-number">1</span>]),
+    group(<span class="hljs-name">F</span>, input:[], output:[<span class="hljs-name">3</span>])
+]`
+</code></pre>
+<p>The syscall of the VM can load these corresponding cells through <code>group(input/output index)</code> to complete one-time verification.</p>
+<p>CKB will execute all script groups, which are then verified based on return value. This follows the convention of process exit status in Unix-like systems: a return value of zero is a verification pass, while other return values are verification exceptions.</p>
+<p>Note that when the script is executed, the script itself does not know if it is a type or lock script. The script will need to figure this out itself, by checking args or witness data.</p>
+<h3><a class="anchor" aria-hidden="true" id="special-rules"></a><a href="#special-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Special rules</h3>
+<p>Most of the contracts are verified as above, except for one type of contract, which is the TypeId contract. This contract employs special rules, written directly in the script code, and does not start the VM. For more information, see the code <a href="https://github.com/nervosnetwork/ckb/blob/44b0d3595c31a29aef81e74360ba8613cd0dd27f/script/src/type_id.rs">here</a>and a tutorial about creation of TypeId contracts <a href="https://xuejie.space/2020_02_03_introduction_to_ckb_script_programming_type_id/">here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="syscall-links"></a><a href="#syscall-links" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syscall Links</h3>
+<p><a href="https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0009-vm-syscalls/0009-vm-syscalls.md">Sycall RFC</a>
+<a href="https://github.com/nervosnetwork/ckb-system-scripts/blob/865f4d7697cc979d62111e49f2fb12a3607a4eb9/c/ckb_syscalls.h">Syscall system script (C code)</a></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/9/2020</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#environment">Environment</a><ul class="toc-headings"><li><a href="#execution-unit">Execution unit</a></li><li><a href="#special-rules">Special rules</a></li><li><a href="#syscall-links">Syscall Links</a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'ef49666369943baa0a93aedc37511318',
+                indexName: 'nervos-ckb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
