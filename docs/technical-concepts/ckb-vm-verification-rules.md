@@ -18,7 +18,7 @@ When each individual transaction is verified, the scripts will first be separate
 
 No matter which script group is being executed, the entirety of transaction data can be accessed by scripts included in that transaction during execution. 
 
-An advantage of this design is the group records the index of the cell(s) which belong to the current group. This is equivalent to separating the transaction data, verifying referenced lock or type scripts that are used multiple times, but only requiring execution once to complete verification across multiple cells. This reduces verification resource consumption and provides a public environment for the data set of the transaction.
+An advantage of this design is the group records the index of the cell(s) which belong to the current group. This is equivalent to combining multiple verifications that may exist into one verification. This reduces verification resource consumption and provides a public environment for the data set of the transaction. But this requires the developer to be aware when writing the script that it needs to consider the case of validating multiple cells.
 
 This is described here:
 
@@ -98,4 +98,5 @@ Most of the contracts are verified as above, except for one type of contract, wh
 ### Syscall Links
 
 [Sycall RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0009-vm-syscalls/0009-vm-syscalls.md)
+
 [Syscall system script (C code)](https://github.com/nervosnetwork/ckb-system-scripts/blob/865f4d7697cc979d62111e49f2fb12a3607a4eb9/c/ckb_syscalls.h)
