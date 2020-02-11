@@ -5,13 +5,13 @@ title: Script dependencies
 
 ## Deploy a VM and run code on the VM
 
-Since we are working with a virtualized mini computer in CKB VM, there’s nothing stopping us from embedding another VM as a CKB script that runs on CKB VM and in this article we will explore this VM on top of VM path. 
+Since we are working with a virtualized mini computer in CKB VM, there’s nothing stopping us from embedding another VM as a CKB script that runs on CKB VM. In this article we will explore this VM on top of VM path. 
 
-Through this method, we can have JavaScript on CKB via duktape, Ruby on CKB via mruby, we can even have Bitcoin Script or EVM on chain if we just compile those VMs and store them as scripts on CKB. This compatibility ensures CKB VM can both help to preserve legacy code and build a diversified ecosystem. 
+Through this method, we can have JavaScript on CKB via duktape, Ruby on CKB via mruby, we can even have Bitcoin Script or EVM on chain by just compiling those VMs and storing them as scripts on CKB. This compatibility ensures CKB VM can both help to preserve legacy code and build a diversified ecosystem. 
 
-All languages should are treated equal on CKB, giving freedom to blockchain contract developers to build on top of CKB however they feel is best.
+All languages are treated equal on CKB, giving freedom to blockchain contract developers to build on top of CKB however they feel is best.
 
-To use duktape on CKB, first you need to compile duktape itself into a RISC-V executable binary:
+To use duktape on CKB, first you need to compile the duktape VM itself into a RISC-V executable binary:
 
 ```
 $ git clone https://github.com/xxuejie/ckb-duktape
@@ -53,7 +53,7 @@ Notice that with a different argument, you can create a different duktape powere
 pry(main)> duktape_hello_type_script = CKB::Types::Script.new(code_hash: duktape_data_hash, args: CKB::Utils.bin_to_hex("var a = 1;\nvar b = a + 2;"))
 ```
 
-This echoes the differences mentioned above on script code vs script: here duktape serves as script code providing a JavaScript engine, while a different script leveraging duktape script code serves a different function on chain.
+This demonstrates the differences mentioned above on script code vs script: here duktape serves as script code providing a JavaScript engine, while a different script leveraging the duktape script code serves a different function on chain.
 
 Now we can create a cell with the duktape type script attached:
 
