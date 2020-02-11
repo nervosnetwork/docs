@@ -2,13 +2,13 @@
 id: ckb-vm-verification-rules
 title: CKB VM Verification Rules
 ---
-When writing a program, it is important to determine the operating environment and runtime behavior, so that the execution structure of the program is in line with the program’s intended behavior. For example: the impact of GIL (Global Interpreter Lock) in Python, the expected execution time of hardware instructions and pipeline planning, etc.
+When writing a program, determining its operating environment and runtime behavior is important. The program's execution structure should take this information into account so that the actual behavior of the program always matches what is intended. Examples of these kind of considerations include: the impact of GIL (Global Interpreter Lock) in Python, the expected execution time of hardware instructions and pipeline planning, etc.
 
-We all know that CKB VM is a virtual environment based on the RISC-V instruction set. In addition to this, developers should also know the context of the VM during CKB verification, including some syscalls provided, etc. This article will provide more information about the operation of CKB VM.
+We all know that CKB VM is a virtual environment based on the RISC-V instruction set. In addition to this, developers should also know the context of the VM during CKB verification, including some syscalls that are provided, etc. This article will provide more information about the operation of CKB VM.
 
 ## Environment
 
-In CKB, each transaction is executed separately, that is, each transaction runs in its own separate VM environment. Though parallel verification of multiple transactions is performed (by the host), there is no multi-threaded execution environment inside of the VM.
+In CKB, each transaction is executed separately, that is, each transaction runs in its own separate VM environment. Though parallel verification of multiple transactions is performed (by the host), there is no multi-threaded execution environment inside of CKB VM.
 
 ### Execution unit
 
@@ -18,7 +18,7 @@ When each individual transaction is verified, the scripts will first be separate
 
 No matter which script group is being executed, the entirety of transaction data can be accessed by scripts included in that transaction during execution. 
 
-An advantage of this design is the group records the index of the cell(s) which belong to the current group. This is equivalent to combining multiple verifications that may exist into one verification. This reduces verification resource consumption and provides a public environment for the data set of the transaction. But this requires the developer to be aware when writing the script that it needs to consider the case of validating multiple cells.
+An advantage of this design is the group records the index of the cell(s) which belong to the current group. This is equivalent to combining multiple verifications into a single verification, reducing verification resource consumption and providing a public environment for the data set of the transaction. This does however require a developer to consider validation of multiple cells when writing the script.
 
 This is described here:
 
@@ -63,7 +63,7 @@ def run():
 `
 ```
 
-When each script group is executed, the execution cost of the scripts is recorded and the sum of all resource consumption is compared with the `max_block_cycles` allowed upper limit.
+When each script group is executed, the execution cost of the scripts is recorded and the sum of all cycles consumed is compared with the `max_block_cycles` allowed upper limit.
 
 Suppose there is a transaction as follows:
 
@@ -93,7 +93,7 @@ Note that when the script is executed, the script itself does not know if it is 
 
 ### Special rules
 
-Most of the contracts are verified as above, except for one type of contract, which is the TypeId contract. This contract employs special rules, written directly in the script code, and does not start the VM. For more information, see the code [here](https://github.com/nervosnetwork/ckb/blob/44b0d3595c31a29aef81e74360ba8613cd0dd27f/script/src/type_id.rs)and a tutorial about creation of TypeId contracts [here](https://xuejie.space/2020_02_03_introduction_to_ckb_script_programming_type_id/).
+Most of the contracts are verified as above, except for one type of contract, the 'type ID' contract. This contract employs special rules, written directly in the script code and does not start the VM. For more information, see the code [here](https://github.com/nervosnetwork/ckb/blob/44b0d3595c31a29aef81e74360ba8613cd0dd27f/script/src/type_id.rs) and a tutorial about creation of 'type ID' contracts [here](https://xuejie.space/2020_02_03_introduction_to_ckb_script_programming_type_id/).
 
 ### Syscall Links
 
