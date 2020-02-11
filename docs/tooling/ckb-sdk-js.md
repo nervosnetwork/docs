@@ -41,9 +41,15 @@ $ yarn add @nervosnetwork/ckb-sdk-core
 
 * Instantiate it with a node object
 
-* const CKB = require('@nervosnetwork/ckb-sdk-core').defaultconst 
-    nodeUrl = 'http://localhost:8114'
-    const ckb = new CKB(nodeUrl)
+* For now, the node object only contains one field named `url`, the URI of the blockchain node your are going to communicate with.
+
+```js
+const CKB = require('@nervosnetwork/ckb-sdk-core').default
+
+const nodeUrl = 'http://localhost:8114'
+
+const ckb = new CKB(nodeUrl)
+```
 
 After that you can use the `ckb` object to generate addresses, send requests, etc.
 
