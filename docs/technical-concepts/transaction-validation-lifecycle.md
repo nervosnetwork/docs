@@ -4,7 +4,7 @@ title: Transaction Validation Lifecycle
 ---
 Transactions are at the heart of the CKB’s operation. When you interact with the CKB, you are submitting state transitions through transactions. This document will explain the lifecycle of CKB transaction validation.
 
-![Image](../docs/docs/assets/transaction-validation-lifecyle/未命名文件%20(1).jpg "Transaction Validation")
+![](https://github.com/nervosnetwork/docs/raw/master/docs/assets/transaction-validation-lifecycle/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%20(1).jpg "transaction validation")
 
 ## RPC
 
@@ -82,7 +82,7 @@ If verification fails, the transaction is not broadcasted any further. The trans
 
 ## Tx-pool (mempool)
 
-![Image](../docs/docs/assets/transaction-validation-lifecyle/未命名文件%20(1).jpg "Transaction Propagation")
+![tx-pool](https://github.com/nervosnetwork/docs/raw/master/docs/assets/transaction-validation-lifecycle/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%20(2).jpg)
 
 CKB uses a two-step process for transaction confirmation. Transactions will be divided into different status (pending and proposed) in the tx-pool. The status of transactions will change as a block is added to the chain. When the latest block changes, all transactions in the tx-pool will be re-scanned to ensure they are still valid.
 
