@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Transaction Validation Lifecycle · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Transactions are at the heart of the CKB’s operation. When you interact with the CKB, you are submitting state transitions through transactions. This document will explain the lifecycle of CKB transaction validation."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Transaction Validation Lifecycle · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="Transactions are at the heart of the CKB’s operation. When you interact with the CKB, you are submitting state transitions through transactions. This document will explain the lifecycle of CKB transaction validation."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Transaction Validation Lifecycle · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Transactions are at the heart of the CKB’s operation. When you interact with Nervos CKB, you are submitting state transitions through transactions. This document will explain the lifecycle of CKB transaction validation."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Transaction Validation Lifecycle · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="Transactions are at the heart of the CKB’s operation. When you interact with Nervos CKB, you are submitting state transitions through transactions. This document will explain the lifecycle of CKB transaction validation."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -65,10 +65,10 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/technical-concepts/transaction-validation-lifecycle.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Transaction Validation Lifecycle</h1></header><article><div><span><p>Transactions are at the heart of the CKB’s operation. When you interact with the CKB, you are submitting state transitions through transactions. This document will explain the lifecycle of CKB transaction validation.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/technical-concepts/transaction-validation-lifecycle.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Transaction Validation Lifecycle</h1></header><article><div><span><p>Transactions are at the heart of the CKB’s operation. When you interact with Nervos CKB, you are submitting state transitions through transactions. This document will explain the lifecycle of CKB transaction validation.</p>
 <p><img src="https://github.com/nervosnetwork/docs/raw/master/docs/assets/transaction-validation-lifecycle/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%20(1).jpg" alt="" title="transaction validation"></p>
 <h2><a class="anchor" aria-hidden="true" id="rpc"></a><a href="#rpc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RPC</h2>
-<p>First, a sender constructs a transaction, then submits it through RPC. The transaction will be validated by the <code>outputs_validator</code>  (introduced in v0.27.0) it has been submitted to.</p>
+<p>First, a sender constructs a transaction, then submits it through RPC. The transaction will be validated by the <code>outputs_validator</code>  of the node(introduced in v0.27.0) it has been submitted to.</p>
 <p>The default validation logic involves checking various things:</p>
 <pre><code class="hljs">transaction.outputs.all{ |output|
     let<span class="hljs-built_in"> script </span>= output.script
@@ -83,7 +83,7 @@ transaction.outputs.all{ |output|
 </code></pre>
 <p>This validation is intended to prevent improperly formed transactions, such as mentioned in <em><a href="https://github.com/nervosnetwork/ckb/wiki/Common-Gotchas#nervos-dao">https://github.com/nervosnetwork/ckb/wiki/Common-Gotchas#nervos-dao</a></em></p>
 <p>Although the node can be* *configured to <code>passthrough</code> to skip this validation.</p>
-<p>Once the transaction has been submitted to your local node, the node also outputs the transaction id, which can then be used to track transaction status.</p>
+<p>Once the transaction has been initially submitted to a node, the node will output the transaction id, which can then be used to track the transaction status.</p>
 <h2><a class="anchor" aria-hidden="true" id="verification"></a><a href="#verification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verification</h2>
 <p>Before a transaction is broadcasted and enters the mempool, the transaction will be verified and executed locally.</p>
 <h3><a class="anchor" aria-hidden="true" id="step-1--resolve"></a><a href="#step-1--resolve" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>STEP 1 — Resolve</h3>
@@ -93,23 +93,21 @@ transaction.outputs.all{ |output|
     index:          Uint32,
 }
 </code></pre>
-<p>We gather the referenced data through the pointer prior to transaction execution, this process is called “resolve transaction”. We will also need to check that all inputs of this transaction are valid (no* *duplicate or double spends).</p>
+<p>The referenced data is gathered through the pointer(s) prior to transaction execution, this process is called “resolve transaction”. We will also need to check that all inputs of this transaction are valid (no duplicate or double spends).</p>
 <h3><a class="anchor" aria-hidden="true" id="step-2--verification"></a><a href="#step-2--verification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>STEP 2 — Verification</h3>
 <p>Verification involves checking a number of things:</p>
 <ol>
 <li>version (currently must be 0)</li>
 <li>serialized_size is less than limit
-<ol>
-<li>pub fn serialized_size(&amp;self) -&gt; usize {
-// the offset in TransactionVec header is u32
-self.as_slice().len() + molecule::NUMBER_SIZE
-// molecule::NUMBER_SIZE = <code>size_of::&lt;u32&gt;() 4</code>
-}</li>
-</ol></li>
+<pre><code class="hljs"><span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">serialized_size</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">usize</span> {
+        <span class="hljs-comment">// the offset in TransactionVec header is u32</span>
+        <span class="hljs-keyword">self</span>.as_slice().len() + molecule::NUMBER_SIZE
+        <span class="hljs-comment">// molecule::NUMBER_SIZE = `size_of::&lt;u32&gt;() 4`</span>
+    }
+</code></pre></li>
 <li>inputs are not empty
-<ol>
-<li>inputs().is_empty() || outputs().is_empty()</li>
-</ol></li>
+<pre><code class="hljs"><span class="hljs-function"><span class="hljs-title">inputs</span><span class="hljs-params">()</span>.<span class="hljs-title">is_empty</span><span class="hljs-params">()</span> || <span class="hljs-title">outputs</span><span class="hljs-params">()</span>.<span class="hljs-title">is_empty</span><span class="hljs-params">()</span>
+</span></code></pre></li>
 <li>inputs are mature
 <ol>
 <li>For each input and dep, if the referenced output transaction is a cellbase, it must have at least 4 epoch confirmations</li>
@@ -124,21 +122,21 @@ self.as_slice().len() + molecule::NUMBER_SIZE
 </ol></li>
 <li>outputs_data_verifier
 <ol>
-<li>number of ‘output data' fields must equal number of outputs</li>
+<li>number of <code>output data</code> fields must equal number of outputs</li>
 </ol></li>
 <li>since
 <ol>
-<li>‘since’ value must follow the rules described in <a href="https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0017-tx-valid-since/0017-tx-valid-since.md">https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0017-tx-valid-since/0017-tx-valid-since.md</a></li>
+<li><code>since</code> value must follow the rules described in <a href="https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0017-tx-valid-since/0017-tx-valid-since.md">https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0017-tx-valid-since/0017-tx-valid-since.md</a></li>
 </ol></li>
 </ol>
 <p>CKB VM will then execute the transaction script and output the number of cycles consumed.</p>
 <h2><a class="anchor" aria-hidden="true" id="broadcast-to-the-network"></a><a href="#broadcast-to-the-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Broadcast to the network</h2>
-<p>If the verification is successful, the current node broadcasts the transaction (with cycles value) to all of its peer nodes (nodes it is connected to).</p>
-<p>If verification fails, the transaction is not broadcasted any further. The transaction flows through various “full nodes”, which repeat the verification process described in the previous step, and check that the cycles value matches the actual cycles consumed when they verified the transaction.</p>
+<p>If the verification is successful, the current node broadcasts the transaction (with cycles value) to all of its connected peer nodes.</p>
+<p>If verification fails, the transaction is not broadcasted any further. The transaction flows through various full nodes, which repeat the verification process described in the previous step and check that the cycles value they have received matches the actual cycles consumed when they verified the transaction.</p>
 <h2><a class="anchor" aria-hidden="true" id="tx-pool-mempool"></a><a href="#tx-pool-mempool" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tx-pool (mempool)</h2>
 <p><img src="https://github.com/nervosnetwork/docs/raw/master/docs/assets/transaction-validation-lifecycle/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%20(2).jpg" alt="tx-pool"></p>
-<p>CKB uses a two-step process for transaction confirmation. Transactions will be divided into different status (pending and proposed) in the tx-pool. The status of transactions will change as a block is added to the chain. When the latest block changes, all transactions in the tx-pool will be re-scanned to ensure they are still valid.</p>
-<p><code>BlockAssembler</code> will fetch proposals and transactions from the pending pool and proposed pool for block template.</p>
+<p>CKB uses a two-step process for transaction confirmation. Transactions will be divided into different status (pending and proposed) in the tx-pool. The status of transactions will change as a block is added to the chain.</p>
+<p>When the latest block changes, all transactions in the tx-pool will be re-scanned to ensure they are still valid. <code>BlockAssembler</code> will fetch proposals and transactions from the pending pool and proposed pool for block template.</p>
 <p>More information about this two-step transaction confirmation process can be found here:
 <a href="https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0020-ckb-consensus-protocol/0020-ckb-consensus-protocol.md#two-step-transaction-confirmation">https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0020-ckb-consensus-protocol/0020-ckb-consensus-protocol.md#two-step-transaction-confirmation</a></p>
 </span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/11/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/technical-concepts/script-dependencies"><span class="arrow-prev">← </span><span>Script dependencies</span></a><a class="docs-next button" href="/technical-concepts/ckb-vm-verification-rules"><span>CKB VM Verification Rules</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#rpc">RPC</a></li><li><a href="#verification">Verification</a><ul class="toc-headings"><li><a href="#step-1--resolve">STEP 1 — Resolve</a></li><li><a href="#step-2--verification">STEP 2 — Verification</a></li></ul></li><li><a href="#broadcast-to-the-network">Broadcast to the network</a></li><li><a href="#tx-pool-mempool">Tx-pool (mempool)</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
