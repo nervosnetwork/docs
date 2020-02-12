@@ -9,7 +9,7 @@ This document introduces several tips about debugging CKB scripts.
 
 ## Error codes
 
-The CKB node only reports an exit code on transaction verification failure; the most straightforward way to distinguish errors is to use a different exit code (between -127 and 127) to represent errors.
+The CKB node only reports an exit code on transaction verification failure; the most straightforward way to distinguish errors is to use a different exit code (between -128 and 127) to represent errors.
 
 For example, see the default lock script error codes: [secp256k1 error codes](https://github.com/nervosnetwork/ckb-system-scripts/wiki/Error-codes)
 
