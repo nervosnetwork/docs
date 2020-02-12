@@ -4,7 +4,7 @@ title: Debugging CKB script
 ---
 CKB VM simulates the RISC-V instruction set, which is very different from other VMs that hard-code functionality through opcodes. Given the generalized nature of CKB VM, various languages and toolchains can be supported- every language and toolchain will be a bit different and implementers should provide appropriate documentation and support for the community.
 
-This document introduces several tips about debugging CKB scripts.
+This document introduces several tips for debugging CKB scripts.
 
 
 ## Error codes
@@ -13,7 +13,7 @@ The CKB node only reports an exit code on transaction verification failure; the 
 
 For example, see the default lock script error codes: [secp256k1 error codes](https://github.com/nervosnetwork/ckb-system-scripts/wiki/Error-codes)
 
-> A common mistake is mixing up lock script errors and type script errors. A simple debugging method is to remove the type script, then run again; if the error still exists, you can be sure the error is being caused by the lock script; otherwise, it is caused by the type script.
+> A common mistake is mixing up lock script errors and type script errors. A simple debugging method is to remove the type script, then execute the transaction again; if the error still exists, you can be sure the error is being caused by the lock script; otherwise, it is caused by the type script.
 
 
 ## Debug syscall
@@ -25,7 +25,7 @@ By default, the CKB node does not output the debug syscall message, however `ckb
 `[``logger``]`
 `filter = info,ckb-script=debug`
 
-You can also choose to run the script under a debugging environment like [ckb-cli](https://github.com/nervosnetwork/ckb-cli), [VM debugger](https://github.com/xxuejie/ckb-standalone-debugger), or [ckb-contract-tool](https://github.com/jjyr/ckb-contract-tool).
+You can also choose to run the script under a debugging environment like [ckb-cli](https://github.com/nervosnetwork/ckb-cli), [VM debugger](https://github.com/xxuejie/ckb-standalone-debugger) or [ckb-contract-tool](https://github.com/jjyr/ckb-contract-tool).
 
 > For language / toolchain implementers, it is recommended that you integrate [debug syscall](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0009-vm-syscalls/0009-vm-syscalls.md#debug) to print the error backtrace if your language supports it. For example: if you are using Rust with [ckb-contract-std](https://github.com/jjyr/ckb-contract-std), you can see the panic location where the program crashed.
 
@@ -84,7 +84,7 @@ cargo build --release
 
 ### 2. Start standalone debugger
 
-[ckb-standalone-debugger](https://github.com/xxuejie/ckb-standalone-debugger) supports a ckb-cli generated template. To debug a script, we indicate the script group type with `-g <script type>` . This indicates the script group we want to debug with the referenced `-h <script hash>`.
+[ckb-standalone-debugger](https://github.com/xxuejie/ckb-standalone-debugger) supports a ckb-cli generated template. To debug a script, we indicate the script group type with `-g <script type>`. This indicates the script group we want to debug with the referenced `-h <script hash>`.
 
 
 ```
@@ -107,21 +107,8 @@ target remote <ip>:2000
 To learn more, you can view this tutorial: [introduction to CKB script programming](https://xuejie.space/2019_07_05_introduction_to_ckb_script_programming_validation_model/).
 
 
-## Report bugs
+## Reporting bugs
 
-When you find security-related bugs in script, please don't post them on public issues. Instead, try to contact maintainers privately, they can be found on the [CKB dev telegram](https://t.me/nervos_ckb_dev). Responsible disclosure could help maintainers, as well as prevent users from losing funds.
+When you find security-related bugs in script, please don't post them on public issues. Instead, try to contact maintainers privately, they can be found on the [CKB dev telegram](https://t.me/nervos_ckb_dev). Responsible disclosure could help maintainers as well as prevent users from losing funds.
 
-When you find security-related bugs in CKB official scripts or CKB VM, join the [bug bounty program](https://bounty.nervos.org/) to be rewarded for your valuable contribution!
-
-
-
-
-
-
-
-
-
-
-
-
-
+When you find security-related bugs in CKB official scripts or CKB VM, join the [Nervos bug bounty program](https://bounty.nervos.org/) to be rewarded for your valuable contribution!
