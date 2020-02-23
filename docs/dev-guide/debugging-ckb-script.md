@@ -22,8 +22,10 @@ When we want to output additional information from the script; the [debug syscal
 
 By default, the CKB node does not output the debug syscall message, however `ckb.toml` can be configured to enable it.
 
-`[``logger``]`
-`filter = info,ckb-script=debug`
+```
+[logger]
+filter = info,ckb-script=debug
+```
 
 You can also choose to run the script under a debugging environment like [ckb-cli](https://github.com/nervosnetwork/ckb-cli), [VM debugger](https://github.com/xxuejie/ckb-standalone-debugger) or [ckb-contract-tool](https://github.com/jjyr/ckb-contract-tool).
 
