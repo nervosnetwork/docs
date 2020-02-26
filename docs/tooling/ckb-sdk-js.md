@@ -31,7 +31,7 @@ Before you start using this SDK, you'll first need to install [yarn](https://yar
 
 ## Installation
 
-If  you want to use  `@nervosnetwork/ckb-sdk-core`, you need to import it in your project and instantiate it with a node object. For now, the node object only contains one field named `url`, the URI of the blockchain node your are going to communicate with.
+If  you want to use  `@nervosnetwork/ckb-sdk-core`, you need to import it in your project and instantiate it with a node object. For now, the node object only contains one field named `url`, the URI of the blockchain node you are going to communicate with.
 
 * Import in the project
 
@@ -41,7 +41,7 @@ $ yarn add @nervosnetwork/ckb-sdk-core
 
 * Instantiate it with a node object
 
-* For now, the node object only contains one field named `url`, the URI of the blockchain node your are going to communicate with.
+* For now, the node object only contains one field named `url`, the URI of the blockchain node you are going to communicate with.
 
 ```js
 const CKB = require('@nervosnetwork/ckb-sdk-core').default
