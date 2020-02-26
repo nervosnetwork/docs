@@ -84,7 +84,7 @@
 <h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
 <p>Before you start using this SDK, you'll first need to install <a href="https://yarnpkg.com/en/">yarn</a> on your system. There are a growing number of different ways to install Yarn. Please refer to <a href="https://yarnpkg.com/lang/en/docs/install/#mac-stable">installation</a> documentation.</p>
 <h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
-<p>If  you want to use  <code>@nervosnetwork/ckb-sdk-core</code>, you need to import it in your project and instantiate it with a node object. For now, the node object only contains one field named <code>url</code>, the URI of the blockchain node your are going to communicate with.</p>
+<p>If  you want to use  <code>@nervosnetwork/ckb-sdk-core</code>, you need to import it in your project and instantiate it with a node object. For now, the node object only contains one field named <code>url</code>, the URI of the blockchain node you are going to communicate with.</p>
 <ul>
 <li>Import in the project</li>
 </ul>
@@ -92,10 +92,14 @@
 </code></pre>
 <ul>
 <li><p>Instantiate it with a node object</p></li>
-<li><p>const CKB = require('@nervosnetwork/ckb-sdk-core').defaultconst
-nodeUrl = '<a href="http://localhost:8114">http://localhost:8114</a>'
-const ckb = new CKB(nodeUrl)</p></li>
+<li><p>For now, the node object only contains one field named <code>url</code>, the URI of the blockchain node you are going to communicate with.</p></li>
 </ul>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> CKB = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@nervosnetwork/ckb-sdk-core'</span>).default
+
+<span class="hljs-keyword">const</span> nodeUrl = <span class="hljs-string">'http://localhost:8114'</span>
+
+<span class="hljs-keyword">const</span> ckb = <span class="hljs-keyword">new</span> CKB(nodeUrl)
+</code></pre>
 <p>After that you can use the <code>ckb</code> object to generate addresses, send requests, etc.</p>
 <h2><a class="anchor" aria-hidden="true" id="development-key-points"></a><a href="#development-key-points" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Development key points</h2>
 <h3><a class="anchor" aria-hidden="true" id="code-examples"></a><a href="#code-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code Examples</h3>
@@ -116,7 +120,7 @@ ckb.rpc.setNode({ httpAgent })
 <span class="hljs-keyword">const</span> httpsAgent = <span class="hljs-keyword">new</span> https.Agent({ <span class="hljs-attr">keepAlive</span>: <span class="hljs-literal">true</span> })
 ckb.rpc.setNode({ httpsAgent })
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/17/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/tooling/ckb-explorer"><span class="arrow-prev">← </span><span>CKB-Explorer</span></a><a class="docs-next button" href="/tooling/ckb-sdk-ruby"><span>ckb-sdk-ruby</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#installation">Installation</a></li><li><a href="#development-key-points">Development key points</a><ul class="toc-headings"><li><a href="#code-examples">Code Examples</a></li><li><a href="#persistent-connection">Persistent Connection</a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/26/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/tooling/ckb-explorer"><span class="arrow-prev">← </span><span>CKB-Explorer</span></a><a class="docs-next button" href="/tooling/ckb-sdk-ruby"><span>ckb-sdk-ruby</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#installation">Installation</a></li><li><a href="#development-key-points">Development key points</a><ul class="toc-headings"><li><a href="#code-examples">Code Examples</a></li><li><a href="#persistent-connection">Persistent Connection</a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
