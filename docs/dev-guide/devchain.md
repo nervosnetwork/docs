@@ -23,7 +23,7 @@ ckb-cli 0.25.2 (6ca7bbb 2019-11-17)
 **Step 2: Initialization the development chain**
 
 ```
-ckb init —chain dev
+ckb init --chain dev
 ```
 <details>
 <summary>(click here to view response)</summary>
