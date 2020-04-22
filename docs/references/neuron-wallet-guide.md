@@ -5,9 +5,9 @@ title: Neuron Wallet Guide
 
 Following mainnet launch, if you hold a keystore file or a seed phrase generated from the Neuron Key Manager, you can use the Neuron wallet to receive your tokens or create a new wallet to store your tokens and deposit in the Nervos DAO. 
 
-With the v0.26.0 release of Neuron Wallet, a CKB node is now included in the wallet and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run.
+Now Neuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run.
 
-You can also run a CKB node yourself and launch Neuron wallet, then Neuron will NOT start the bundled node, but connects to your node instead.
+You can also run a CKB node yourself and launch Neuron wallet, then Neuron will NOT start the bundled node, but connects to your node instead.[run a CKB mainnet node](/getting-started/run-node)
 
 Please follow these instructions which are explained in detail below：
 
@@ -34,8 +34,6 @@ Download the latest release version of the Neuron Wallet from the [Neuron Wallet
 You can cross-check the Block Number with CKB-Explorer's Latest Block to make sure the synchronization to end.
 
 <img src="../assets/neuron-wallet-guide/synchronization.png" width = "600"/>
-
-<img src="../assets/neuron-wallet-guide/synchronization2.png" width = "600"/>
 
 ## 3. Create a new wallet or import your keystore file or seed phrase to the Neuron Wallet
 
@@ -111,9 +109,15 @@ You should have the third party wallet/exchange destination address. **Please ma
 
 1. Quit and restart app several times.
 
-2. If step1 can't resolve, please run a CKB mainnet node and make sure the version is v0.31.0 or later instead of running the Neuron bundled node. 
+Note: Neuron requires [VC++ redistributable](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) on Windows to work properly. 
 
-Note: Neuron requires [VC++ redistributable](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) on Windows to work properly. Please try to install it to solve this problem.
+2. If step1 can't resolve, please [run a CKB mainnet node](/getting-started/run-node) and make sure the version is v0.31.0 or later instead of running the Neuron bundled node. 
+
+3. if it still doesn't work out, please join the [Support](https://discord.gg/n6tx7uC) channel, export debug information and send it.
+
+<img src="../assets/neuron-wallet-guide/export.png" width = "600"/>
+
+
 
 ## Important
 
