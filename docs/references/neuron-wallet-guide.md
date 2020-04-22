@@ -7,7 +7,7 @@ Following mainnet launch, if you hold a keystore file or a seed phrase generated
 
 Now Neuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run.
 
-You can also run a CKB node yourself and launch Neuron wallet, then Neuron will NOT start the bundled node, but connects to your node instead.[run a CKB mainnet node](/getting-started/run-node)
+You can also run a CKB node yourself and launch Neuron wallet, then Neuron will NOT start the bundled node, but connects to your node instead. [run a CKB mainnet node](/getting-started/run-node)
 
 Please follow these instructions which are explained in detail below：
 
@@ -109,7 +109,7 @@ You should have the third party wallet/exchange destination address. **Please ma
 
 1. Quit and restart app several times.
 
-Note: Neuron requires [VC++ redistributable](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) on Windows to work properly. 
+Note: The Neuron bundled CKB node requires [VC++ redistributable](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) on Windows to work properly. 
 
 2. If step1 can't resolve, please [run a CKB mainnet node](/getting-started/run-node) and make sure the version is v0.31.0 or later instead of running the Neuron bundled node. 
 
