@@ -33,7 +33,7 @@ build/duktape*
 Here we use the ruby SDK to interact with CKB, please refer to the official [README](https://github.com/nervosnetwork/ckb-sdk-ruby/blob/develop/README.md) for how to set it up. Then deploy the duktape script code in a CKB cell:
 
 ```
-pry(main)> data = File.read("../ckb-duktape/build/duktape")
+pry(main)> duktape_data = File.read("../ckb-duktape/build/duktape")
 pry(main)> duktape_data.bytesize
 => 269064
 pry(main)> duktape_tx_hash = wallet.send_capacity(wallet.address, CKB::Utils.byte_to_shannon(280000), CKB::Utils.bin_to_hex(duktape_data))
