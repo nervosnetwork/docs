@@ -48,8 +48,8 @@
             "dev-guide/api",
             "dev-guide/debugging-ckb-script"
         ],
-        
         "References": [
+            "references/glossary",
             "references/troubleshooting",
             "references/mining-resources",
             "references/nervos-design",
