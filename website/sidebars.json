@@ -32,11 +32,7 @@
         ],
         "Getting Started": [
             "getting-started/introduction",
-            "getting-started/run-node",
-            "getting-started/transfer-ckbytes",
-            "getting-started/lookup-transaction", 
-            "getting-started/deposit-nervosdao",
-            "getting-started/withdraw-nervosdao"
+            "getting-started/run-node"
         ],
         "Development Guide": [
             "dev-guide/introduction",
@@ -53,7 +49,6 @@
             "references/troubleshooting",
             "references/mining-resources",
             "references/nervos-design",
-            "references/neuron-key-manager",
             "references/neuron-wallet-guide",
             "references/neuron-faq"
         ]
