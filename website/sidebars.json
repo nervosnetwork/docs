@@ -32,11 +32,7 @@
         ],
         "Getting Started": [
             "getting-started/introduction",
-            "getting-started/run-node",
-            "getting-started/transfer-ckbytes",
-            "getting-started/lookup-transaction", 
-            "getting-started/deposit-nervosdao",
-            "getting-started/withdraw-nervosdao"
+            "getting-started/run-node"
         ],
         "Development Guide": [
             "dev-guide/introduction",
