@@ -21,7 +21,7 @@ Please [download](https://github.com/nervosnetwork/neuron/releases) and install 
 
 ### Overview
 
-`Overview`  displays the 「Wallet name」「Balance」「Recent Activities」「Block Number」
+`Overview`  displays the 「Wallet name」、「Balance」、「Recent Activities」、「Block Number」
 
 You can cross-check the `Tip Block` in `Block Number` with `Latest Block`  in [CKB-Explorer](https://explorer.nervos.org/) to make sure the node is synced.
 
