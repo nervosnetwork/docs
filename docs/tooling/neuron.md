@@ -29,7 +29,7 @@ You can cross-check the `Tip Block` in `Block Number` with `Latest Block`  in [C
 
 ### Send
 
-You can create transactions and transfer CKByte tokens. Please make sure the node is synced before sending transactions. 
+You can create transactions and transfer CKB. Please make sure the node is synced before sending transactions. 
 
 <img src="../assets/neuron-wallet/send.png" width = "600"/>
 
