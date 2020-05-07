@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Economics · Nervos CKB</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## The Economics of the CKByte"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Economics · Nervos CKB"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nervos.org/"/><meta property="og:description" content="## The Economics of the CKByte"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139882771-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-139882771-1');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nervos-logo.svg" alt="Nervos CKB"/><h2 class="headerTitleWithLogo">Nervos CKB</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://explorer.nervos.org" target="_blank">Explorer</a></li><li class=""><a href="https://github.com/nervosnetwork" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Key Concepts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/introduction/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/introduction/nervos-intro">What is Nervos?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Key Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/key-concepts/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/key-concepts/nervos-blockchain">Nervos Blockchain</a></li><li class="navListItem"><a class="navItem" href="/key-concepts/cell-model">Cell Model</a></li><li class="navListItem"><a class="navItem" href="/key-concepts/consensus">Consensus</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/key-concepts/economics">Economics</a></li><li class="navListItem"><a class="navItem" href="/key-concepts/ckb-vm">CKB-VM</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Technical Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/technical-concepts/architecture">CKB Architecture</a></li><li class="navListItem"><a class="navItem" href="/technical-concepts/design-philosophy">Design Philosophy</a></li><li class="navListItem"><a class="navItem" href="/technical-concepts/state-tokens">State and Tokens</a></li><li class="navListItem"><a class="navItem" href="/technical-concepts/script-dependencies">Script dependencies</a></li><li class="navListItem"><a class="navItem" href="/technical-concepts/transaction-validation-lifecycle">Transaction Validation Lifecycle</a></li><li class="navListItem"><a class="navItem" href="/technical-concepts/ckb-vm-verification-rules">CKB VM Verification Rules</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tooling<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/tooling/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/tooling/neuron">Neuron Wallet</a></li><li class="navListItem"><a class="navItem" href="/tooling/ckb-explorer">CKB-Explorer</a></li><li class="navListItem"><a class="navItem" href="/tooling/ckb-sdk-js">ckb-sdk-js</a></li><li class="navListItem"><a class="navItem" href="/tooling/ckb-sdk-ruby">ckb-sdk-ruby</a></li><li class="navListItem"><a class="navItem" href="/tooling/community">Community Contribution</a></li><li class="navListItem"><a class="navItem" href="/tooling/useful-materials">Useful Materials</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/getting-started/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/getting-started/run-node">Run a CKB Mainnet Node</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/dev-guide/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/testnet">Testnet Aggron</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/devchain">Dev Chain</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/ckb-cli">ckb-cli</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/ckb-sdk">ckb-sdk</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/faucet">Testnet Faucet</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/api">CKB JSON-RPC Protocols</a></li><li class="navListItem"><a class="navItem" href="/dev-guide/debugging-ckb-script">Debugging CKB script</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/references/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/references/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/references/mining-resources">Mining Resources</a></li><li class="navListItem"><a class="navItem" href="/references/nervos-design">Nervos System Design</a></li><li class="navListItem"><a class="navItem" href="/references/neuron-wallet-guide">Neuron Wallet Guide</a></li><li class="navListItem"><a class="navItem" href="/references/neuron-faq">Neuron FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nervosnetwork/docs/edit/master/docs/key-concepts/economics.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Economics</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="the-economics-of-the-ckbyte"></a><a href="#the-economics-of-the-ckbyte" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Economics of the CKByte</h2>
+<p>The CKByte is the native token of Nervos, and it is used to pay for the three types of fees that exist: Cycles (computation), Transaction Fees (security), and State Rent (storage).</p>
+<ul>
+<li>Cycles are fees paid to miners based on the amount of computer resources that are used to verify a transaction. These are measured by CKB-VM during the execution of any smart contracts in a transaction.</li>
+<li>Transaction Fees are paid to miners for providing the computing power that provides security to the network.</li>
+<li>State Rent is paid to miners for providing storage space to persist the data in a transaction.</li>
+</ul>
+<p>Cycles and Transaction Fees are paid one time to process and insert the transaction into the blockchain. State Rent is paid continuously to persist the data until it is removed.</p>
+<p>Owning one CKByte entitles the holder to one byte of data storage on Nervos. When a new Cell is created, the user must own an amount of CKBytes equal to the space the Cell will occupy. These CKBytes will remain locked the entire time the Cell exists. When the Cell is consumed, the lock is released, and the CKBytes can be used again. State Rent is automatically paid while the CKBytes are locked.</p>
+<p>All assets on Nervos require data storage, which means they are subject to State Rent. This creates direct value alignment because CKBytes are required to maintain an asset on Nervos. More about Value Alignment and State Rent are covered in the following sections.</p>
+<h2><a class="anchor" aria-hidden="true" id="value-alignment"></a><a href="#value-alignment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Value Alignment</h2>
+<p>As the value on a platform grows, it is important that the security of the platform also grows. If it does not, you can end up in a scenario where there is too little security for the value being stored. It would be like adding more and more gold into a bank vault, but never adding any additional guards. This makes it a potential target for attack.</p>
+<p>When miners are paid for their contributions, they are paid using the native token, the CKByte. As the value of the CKByte increases, so do the rewards for protecting the network. This ensures that a scenario is not created where the value of the CKBytes being stored on the network is very high, but the reward for securing the network is too low.</p>
+<p>However, a problem can develop on multi-asset platforms if the total value of the assets gain value but the native token providing security does not. This is known as the “heavy asset problem”, and it is common among multi-asset platforms.</p>
+<p>The heavy asset problem exists when there isn’t a strong enough value correlation between the assets and the native token used to secure the underlying platform. Usage of CKBytes for the payment of Cycle and Transaction fees creates some demand similar to Bitcoin and Ethereum. However, history has demonstrated that this model does not rectify the problem.</p>
+<p>Nervos addresses this by aligning the CKByte with data storage and mandating State Rent. This creates long-term demand directly, because assets require data storage. Every asset requires CKBytes and is subject to State Rent for the entire duration of its existence.</p>
+<h2><a class="anchor" aria-hidden="true" id="state-rent"></a><a href="#state-rent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>State Rent</h2>
+<p>Miners are responsible for ensuring that the data on the network is valid and preserved. The Cycle and Transaction fees are paid to ensure proper validation, but once the fee is paid there is no continued incentive for a miner to ensure the data is preserved. State Rent addresses this by continuously providing fees to miners for their participation in preserving the data on the network.</p>
+<p>When a user puts data on Nervos they must pay a small amount of State Rent for the space their data occupies. Paying an upfront recurring fee presents a user experience problem since this requires continuous time and attention. Nervos solves this by using targeted inflation on users who are occupying space on Nervos.</p>
+<p>When data is stored on Nervos, an amount of CKBytes is required to be locked. The locked CKBytes are ineligible for interest payments. Even though the number of CKBytes does not change while locked, the value is slowly decreasing because of inflation that only affects users who are storing data on Nervos. This small decrease in value is how State Rent is paid.</p>
+<p>The inflation that pays the State Rent is created through a process called Secondary Issuance. Users who are not occupying space on Nervos have the option of gaining interest from Secondary Issuance by locking their CKBytes in the Nervos DAO. We will cover more on these topics in the following sections.</p>
+<h2><a class="anchor" aria-hidden="true" id="base-issuance"></a><a href="#base-issuance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Base Issuance</h2>
+<p>During the initial launch of the network the value of the CKByte will be low, which means the security on the network is low. In order to make Nervos a safe and attractive place to store assets, the security must be temporarily subsidized through a process known as Base Issuance.</p>
+<p>Base Issuance is very similar to the mining process found in Bitcoin. Miners are paid a fixed amount of CKBytes for providing the computer resources to process transactions and secure the network. Over time the assets stored on the network will gain value, and fewer subsidies are necessary.</p>
+<p>Base Issuance is paid for through using a fixed inflationary schedule. Approximately every four years the subsidy amount is halved until eventually stopping when the cap of 33.6 billion CKBytes have been issued. This provides a monetary policy that is transparent and predictable.</p>
+<h2><a class="anchor" aria-hidden="true" id="secondary-issuance"></a><a href="#secondary-issuance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Secondary Issuance</h2>
+<p>After the Base Issuance has ended, some have theorized that the incentive to miners will not provide enough security if it is only paid with fees from Cycles and Transactions. At the same time, miners require long term incentives that are directly aligned to ensure the data in Nervos is persisted. Both of these concerns are addressed through a process called Secondary Issuance.</p>
+<p>Secondary Issuance follows a fixed inflation schedule of 1.344 billion CKBytes per year. This amount does not change. Unlike Base Issuance, Secondary Issuance does not affect everyone on the network. It is a small and targeted inflation from users that occupy space on Nervos or hold their CKBytes outside of the Nervos DAO.</p>
+<p>The CKBytes from Secondary Issuance are distributed to:</p>
+<ul>
+<li>Miners maintaining the network (State Rent).</li>
+<li>Users of the Nervos DAO.</li>
+<li>The Nervos Treasury for continued development.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="nervos-dao"></a><a href="#nervos-dao" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nervos DAO</h2>
+<p>Holders of CKBytes have the option of locking them in the Nervos DAO to gain interest in a process similar to staking on other platforms. When this is done, the holder will accrue CKByte interest at a rate directly proportional to that of Secondary Issuance. This offsets the long-term inflationary effects of Secondary Issuance exactly, resulting in no loss of value over time.</p>
+<p>Users who are occupying space on Nervos have their CKBytes locked, which are then ineligible to be placed in the Nervos DAO. Once the Cells occupying space are consumed, the CKBytes are released, and can then be placed in the Nervos DAO. This provides an incentive to remove unnecessary data from Nervos, therefore keeping the blockchain more manageable in the long term.</p>
+<h2><a class="anchor" aria-hidden="true" id="further-reading"></a><a href="#further-reading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Further Reading</h2>
+<ul>
+<li>For more information on the economics of Nervos, please see the <a href="https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md">Crypto-Economics RFC</a>.</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/7/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/key-concepts/consensus"><span class="arrow-prev">← </span><span>Consensus</span></a><a class="docs-next button" href="/key-concepts/ckb-vm"><span>CKB-VM</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#the-economics-of-the-ckbyte">The Economics of the CKByte</a></li><li><a href="#value-alignment">Value Alignment</a></li><li><a href="#state-rent">State Rent</a></li><li><a href="#base-issuance">Base Issuance</a></li><li><a href="#secondary-issuance">Secondary Issuance</a></li><li><a href="#nervos-dao">Nervos DAO</a></li><li><a href="#further-reading">Further Reading</a></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'ef49666369943baa0a93aedc37511318',
+                indexName: 'nervos-ckb',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
