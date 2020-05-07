@@ -4,19 +4,18 @@
             "introduction/welcome",
             "introduction/nervos-intro"
         ],
-        "Basic Concepts": [
-            "basic-concepts/introduction",
-            "basic-concepts/design-philosophy",
-            "basic-concepts/architecture",
-            "basic-concepts/ckb",
-            "basic-concepts/state-tokens",
-            "basic-concepts/cell-model",
-            "basic-concepts/ckb-vm",
-            "basic-concepts/consensus",
-            "basic-concepts/economics-of-ckb",
-            "basic-concepts/node-mining"
+        "Key Concepts": [
+            "key-concepts/introduction",
+            "key-concepts/nervos-blockchain",
+            "key-concepts/cell-model",
+            "key-concepts/consensus",
+            "key-concepts/economics",
+            "key-concepts/ckb-vm"
         ],
         "Technical Concepts": [
+            "technical-concepts/architecture",
+            "technical-concepts/design-philosophy",
+            "technical-concepts/state-tokens",
             "technical-concepts/script-dependencies",
             "technical-concepts/transaction-validation-lifecycle",
             "technical-concepts/ckb-vm-verification-rules"
