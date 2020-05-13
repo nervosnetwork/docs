@@ -1,6 +1,6 @@
 ---
-id: glossary
-title: Glossary
+id: glossary-technical
+title: Technical Glossary
 ---
 
 <!--
@@ -11,16 +11,16 @@ Notes:
 - Links should be alphabetized with local links appearing above external links.
 -->
 
-## Active cell
+## Active Cell
 A Cell in the current state of CKB. Active cells can be used as inputs to transactions.
 
 #### Synonyms
 - [Live Cell](#live-cell)
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Input](#input)
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -52,7 +52,7 @@ Args is short for arguments, and is data provided to a Lock Script or Type Scrip
 Arguments are stored as part of the Cell when it is created.
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Lock Script](#lock-script)
 - [Type Script](#type-script)
 
@@ -77,80 +77,13 @@ A general-purpose cryptographic hashing algorithm that can create a succinct dat
 
 ---
 
-## Block
-A record in the blockchain that contains and confirms transactions.
-
-#### See Also
-- [Confirmation](#confirmation)
-- [Transaction](#transaction)
-
----
-
-## Confirmation
-A process where a transaction has been accepted and verified by the network and included in a block.
-
-#### See Also
-- [Block](#block)
-- [Transaction](#transaction)
-
----
-
-## First-Class Assets
-A unique property of CKB wherein ownership of a Cell, and the data contained within, is not assigned by the issuer, developer, or smart contract. The user owns the cell and is responsible for costs associated with state rent.
-
-#### See Also
-- [Cell](#cell)
-- [Cell Model](#cell-model)
-- [First-Class Asset on the Nervos Network Blog](https://medium.com/nervosnetwork/first-class-asset-ff4feaf370c4)
-- [State Rent](#state-rent)
-
----
-
-## Capacity
-The maximum amount of space (in bytes) that a Cell can occupy on the CKB blockchain.
-
-#### Synonyms
-- [CKByte](#ckbyte)
-
-#### See Also
-- [CKB](#ckb)
-- [Common Knowledge Base](#common-knowledge-base)
-- [Common Knowledge Byte](#common-knowledge-byte)
-
----
-
-## Cell
-A simple structure used hold a piece of state or data on the Nervos CKB.
-
-A Cell is similar in concept to a Bitcoin UTXO.
-
-#### See Also
-- [Dead Cell](#dead-cell)
-- [Live Cell](#live-cell)
-- [Nervos CKB](#nervos-ckb)
-- [UTXO on Bitcoin.org](https://bitcoin.org/en/glossary/unspent-transaction-output)
-
----
-
-## Cell Model
-A representation of how state is managed on Nervos CKB.
-
-#### See Also
-- [Lock Script](#lock-script)
-- [Nervos CKB](#nervos-ckb)
-- [Type Script](#type-script)
-- [Cell Model on the Nervos Blog](https://medium.com/nervosnetwork/https-medium-com-nervosnetwork-cell-model-7323fca57571)
-- [UTXO on Bitcoin.org](https://bitcoin.org/en/glossary/unspent-transaction-output)
-
----
-
 ## Cell Collection
 The process of gathering cells that meet certain criteria.
 
 For example: To find the balance of a particular account, all active cells for the address would need to be collected.
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 
 ---
 
@@ -160,48 +93,8 @@ The transaction in each block that is responsible for the minting of new CKBytes
 This is the equivalent of a coinbase transaction in Bitcoin.
 
 #### See Also
-- [CKBytes](#ckbytes)
-- [Minting](#minting)
+- [CKByte](/glossary/glossary-general#ckbyte)
 - [Coinbase on Bitcoin.org](https://bitcoin.org/en/glossary/coinbase)
-
----
-
-## CKB
-An abbreviation which can have different meanings depending on the context:
-
-- Common Knowledge Base - The layer 1 blockchain of the Nervos Network.
-- Common Knowledge Byte - The native token of the Nervos Common Knowledge Base.
-
-#### Synonyms
-- [Common Knowledge Base](#common-knowledge-base)
-- [Common Knowledge Byte](#common-knowledge-byte)
-
----
-
-## CKByte
-A shorthand name for Common Knowledge Byte.
-
-CKByte is also sometimes shortened to CKB. Exchanges often use CKB as the ticker symbol.
-
-#### Synonyms
-- [CKB](#ckb)
-- [Common Knowledge Byte](#common-knowledge-byte)
-
-#### Not To Be Confused With
-- [Common Knowledge Base](#common-knowledge-base)
-
----
-
-## CKB-VM
-The virtual machine used to execute Scripts on Nervos CKB.
-
-The instruction set of CKB-VM is RISC-V.
-
-#### See Also
-- [Nervos CKB](#nervos-ckb)
-- [RISC-V](#risc-v)
-- [Script](#script)
-- [Virtual Machine on Wikipedia](https://en.wikipedia.org/wiki/Virtual_machine)
 
 ---
 
@@ -209,44 +102,8 @@ The instruction set of CKB-VM is RISC-V.
 Section of the block that contains transaction commitments. The commitment zone can only contain valid transactions which have appeared in the proposal zone of one of the previous 2 to 10 blocks.
 
 #### See Also
-- [Block](#block)
-- [Transaction](#transaction)
-
----
-
-## Common Knowledge Base
-A layer 1 proof of work blockchain that provides a foundation of decentralized trust for the Nervos Network.
-
-#### Synonyms
-- [CKB](#ckb)
-- [Nervos CKB](#nervos-ckb)
-
-#### Not To Be Confused With
-- [Common Knowledge Byte](#common-knowledge-byte)
-
-#### See Also
-- [Nervos CKB on Nervos.org](https://www.nervos.org/ckb/)
-
----
-
-## Common Knowledge Byte
-The native token of the Nervos layer 1 blockchain, the Common Knowledge Base.
-
-Common Knowledge Byte is often abbreviated as CKByte or CKB.
-
-Owning a CKByte entitles the holder to store one byte of data on the Nervos CKB.
-
-#### Synonyms
-- [CKB](#ckb)
-- [CKByte](#ckbyte)
-
-#### Not To Be Confused With
-- [Common Knowledge Base](#common-knowledge-base)
-
-#### See Also
-- [Capacity](#capacity)
-- [Nervos CKB](#nervos-ckb)
-- [Shannon](#shannon)
+- [Block](/glossary/glossary-general#block)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -256,8 +113,8 @@ The process of using a Live Cell as an input to a transaction.
 The process of consumption marks the Live Cell as a Dead Cell. This is the equivalent of marking a UTXO as spent in Bitcoin.
 
 #### See Also
-- [Cell](#cell)
-- [Cell Model](#cell-model)
+- [Cell](/glossary/glossary-general#cell)
+- [Cell Model](/glossary/glossary-general#cell-model)
 - [Dead Cell](#dead-cell)
 - [Live Cell](#live-cell)
 - [UTXO on Bitcoin.org](https://bitcoin.org/en/glossary/unspent-transaction-output)
@@ -272,36 +129,16 @@ Well-established, low-level cryptographic algorithm commonly used to build out a
 
 ---
 
-## Cycles
-The number of RISC-V computational cycles required by a script to execute.
-
-This is a similar concept to Ethereum's Gas.
-
-#### See Also
-- [Script](#script)
-- [RISC-V](#risc-v)
-- [Gas on the Ethereum Wiki](https://github.com/ethereum/wiki/wiki/Glossary)
-
----
-
-## DAO
-Short for Decentralized Autonomous Organization. A DAO is an organization run by the rules of a computer program. A DAO is controlled by stakeholders, and may not have a physical location, therefore reducing the influence of governments.
-
-#### See Also
-- [DAO on Wikipedia](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization)
-
----
-
 ## Dead Cell
 A cell that has been used as an input to a previous transaction. It cannot be used as an input to a new transaction, nor can it be used as a dependency.
 
 This is the equivalent of a "spent UTXO" in Bitcoin.
 
 #### See Also
-- [Cell](#cell)
-- [Cell Model](#cell-model)
+- [Cell](/glossary/glossary-general#cell)
+- [Cell Model](/glossary/glossary-general#cell-model)
 - [Consume](#consume)
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 - [UTXO on Bitcoin.org](https://bitcoin.org/en/glossary/unspent-transaction-output)
 
 ---
@@ -321,10 +158,10 @@ Cells that are referenced in a transaction. Cells that are referenced as depende
 - [Deps](#deps)
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Consume](#consume)
 - [Script](#script)
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -341,7 +178,7 @@ A program that is used to create transactions that can be broadcast to the Nervo
 
 #### See Also
 - [Nervos CKB](#nervos-ckb)
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -374,11 +211,11 @@ A Blake2b hash of a Type Script which is used as an identifier for the Script wh
 A Live Cell that is used in a transaction. If the transaction is accepted by the network, the Live Cell will be consumed, and marked as a Dead Cell.
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Consume](#consume)
 - [Dead Cell](#dead-cell)
 - [Live Cell](#live-cell)
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -386,8 +223,8 @@ A Live Cell that is used in a transaction. If the transaction is accepted by the
 A proof of work blockchain known as the Common Knowledge Base (CKB) that serves as the base layer for the Nervos Network.
 
 #### Synonyms
-- [CKB](#ckb)
-- [Common Knowledge Base](#common-knowledge-base)
+- [CKB](/glossary/glossary-general#ckb)
+- [Common Knowledge Base](/glossary/glossary-general#common-knowledge-base)
 
 #### See Also
 - [Layer 2](#layer-2)
@@ -428,8 +265,8 @@ This is similar to an unspent transaction output (UTXO) in Bitcoin.
 - [Active Cell](#active-cell)
 
 #### See Also
-- [Cell](#cell)
-- [Cell Model](#cell-model)
+- [Cell](/glossary/glossary-general#cell)
+- [Cell Model](/glossary/glossary-general#cell-model)
 - [UTXO on Bitcoin.org](https://bitcoin.org/en/glossary/unspent-transaction-output)
 
 ---
@@ -438,7 +275,7 @@ This is similar to an unspent transaction output (UTXO) in Bitcoin.
 A Script that enforces access and ownership of a Cell. This Script controls who has permission to use the Cell as an input. 
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Type Script](#type-script)
 - [Script](#script)
 
@@ -448,7 +285,7 @@ A Script that enforces access and ownership of a Cell. This Script controls who 
 A Blake2b hash of a Lock Script which is used as an identifier for the Script when referenced by a Cell.
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Lock Script](#lock-script)
 
 ---
@@ -459,8 +296,8 @@ The Nervos CKB public blockchain.
 The name of the Nervos CKB Mainnet is Lina.
 
 #### Synonyms
-- [CKB](#ckb)
-- [Common Knowledge Base](#common-knowledge-base)
+- [CKB](/glossary/glossary-general#ckb)
+- [Common Knowledge Base](/glossary/glossary-general#common-knowledge-base)
 - [Lina](#lina)
 - [Nervos CKB](#nervos-ckb)
 
@@ -474,20 +311,11 @@ The name of the Nervos CKB Mainnet is Lina.
 The layer 1 blockchain of the Nervos Network, the Common Knowledge Base.
 
 #### Synonyms
-- [CKB](#ckb)
-- [Common Knowledge Base](#common-knowledge-base)
+- [CKB](/glossary/glossary-general#ckb)
+- [Common Knowledge Base](/glossary/glossary-general#common-knowledge-base)
 
 #### See Also
 - [Layer 1](#layer-1)
-
----
-
-## Nervos DAO
-A system that allows users to lock CKBytes for a period of time to earn rewards from Secondary Issuance. This process is similar to staking on other platforms.
-
-#### See Also
-- [DAO](#dao)
-- [Nervos DAO Explained on the Nervos Blog](https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c)
 
 ---
 
@@ -495,9 +323,9 @@ A system that allows users to lock CKBytes for a period of time to earn rewards 
 A particular output Cell in a transaction.
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Output](#output)
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -505,9 +333,9 @@ A particular output Cell in a transaction.
 A Live Cell that is created in a transaction.
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Live Cell](#live-cell)
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -517,7 +345,7 @@ An open standard instruction set architecture (ISA) for general computing.
 RISC-V is the instruction set used by the CKB-VM.
 
 #### See Also
-- [CKB-VM](#ckb-vm)
+- [CKB-VM](/glossary/glossary-general#risc-v)
 - [RISC-V on Wikipedia](https://en.wikipedia.org/wiki/RISC-V)
 
 ---
@@ -531,7 +359,7 @@ A program that executes on the CKB-VM. A Script can be one of two types:
 A Script is a binary executable in the ELF format for the RISC-V architecture.
 
 #### See Also
-- [CKB-VM](#ckb-vm)
+- [CKB-VM](/glossary/glossary-general#risc-v)
 - [Lock Script](#lock-script)
 - [RISC-V](#risc-v)
 - [Type Script](#type-script)
@@ -545,8 +373,8 @@ A fractional denomination of CKBytes. One CKByte is equal to 100,000,000 Shannon
 A Shannon is the equivalent of a Bitcoin Satoshi.
 
 #### See Also
-- [CKByte](#ckbyte)
-- [Common Knowledge Byte](#common-knowledge-byte)
+- [CKByte](/glossary/glossary-general#ckbyte)
+- [Common Knowledge Byte](/glossary/glossary-general#common-knowledge-byte)
 - [Satoshi (denomination) on Bitcoin.org](https://bitcoin.org/en/glossary/denominations)
 
 ---
@@ -565,19 +393,11 @@ The name of the Nervos CKB Testnet is Aggron.
 
 ---
 
-## Transaction
-An entry in the blockchain that describes any change in state. 
-
-#### See Also
-- [Nervos CKB](#nervos-ckb)
-
----
-
 ## Type Script
 A Script that enforces the rules that must be followed in a transaction for a Cell to be consumed as an input or for a Cell to be created as an output.
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Lock Script](#lock-script)
 - [Script](#script)
 - [Type Script Hash](#type-script-hash)
@@ -588,7 +408,7 @@ A Script that enforces the rules that must be followed in a transaction for a Ce
 A Blake2b hash of a Type Script which is used as an identifier for the Script when referenced by a Cell.
 
 #### See Also
-- [Cell](#cell)
+- [Cell](/glossary/glossary-general#cell)
 - [Script](#script)
 - [Type Script](#type-script)
 
@@ -620,10 +440,10 @@ A Script that is used to ensure that a transaction created by a Generator is val
 Validators are Scripts that run within the CKB-VM, and are either Lock Scripts or Type Scripts.
 
 #### See Also
-- [CKB-VM](#ckb-vm)
+- [CKB-VM](/glossary/glossary-general#risc-v)
 - [Lock Script](#lock-script)
 - [Type Script](#type-script)
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -631,6 +451,6 @@ Validators are Scripts that run within the CKB-VM, and are either Lock Scripts o
 A set of cryptographic signatures that contains the data required to prove authorization to the resources used in a transaction.
 
 #### See Also
-- [Transaction](#transaction)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---

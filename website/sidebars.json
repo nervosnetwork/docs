@@ -43,8 +43,12 @@
             "dev-guide/api",
             "dev-guide/debugging-ckb-script"
         ],
+        "Glossary": [
+            "glossary/glossary-general",
+            "glossary/glossary-economic",
+            "glossary/glossary-technical"
+        ],
         "References": [
-            "references/glossary",
             "references/troubleshooting",
             "references/mining-resources",
             "references/nervos-design",
