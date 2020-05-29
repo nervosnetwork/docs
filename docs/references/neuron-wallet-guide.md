@@ -29,7 +29,7 @@ Download the latest release version of the Neuron Wallet from the [Neuron Wallet
 ## 2. Wait for the synchronization to end
 You can cross-check the `Block Number` with CKB-Explorer's `Latest Block` to make sure the synchronization to end.
 
-<img src="../assets/neuron-wallet-guide/synchronization.png" width = "600"/>
+<img src="../assets/neuron-wallet-guide/synchronize.png" width = "600"/>
 
 ## 3. Create a new wallet or import existing keystore file or seed phrase to the Neuron Wallet
 
@@ -39,23 +39,17 @@ If you have already backup the wallet and have the keystore file (use the `Backu
 
 * Backup Current Wallet: 
 
-<img src="../assets/neuron-wallet-guide/backup.png" width = "600"/>
+<img src="../assets/neuron-wallet-guide/backupwallet.png" width = "600"/>
 
 - To import the mnemonic seed phrase, choose “Import Wallet Seed”, fill in your password and wait for synchronization to end. **The password does not need to match the original password from the Neuron Wallet.**
 
-<img src="../assets/neuron-wallet-guide/importseed.png" width = "600"/>
-
-<img src="../assets/neuron-wallet-guide/importseed2.png" width = "600"/>
-
-<img src="../assets/neuron-wallet-guide/synchronization.png" width = "600"/>
+<img src="../assets/neuron-wallet-guide/importseed1.png" width = "600"/>
 
   - To import the keystore file, choose “Import from Keystore” and input your password - Wait for synchronization to end. **The password must match the original password from the Neuron Wallet.**
 
-<img src="../assets/neuron-wallet-guide/keystore.png" width = "600"/>
+<img src="../assets/neuron-wallet-guide/importkeystore.png" width = "600"/>
 
 <img src="../assets/neuron-wallet-guide/keystorefile.png" width = "600"/>
-
-<img src="../assets/neuron-wallet-guide/synchronization.png" width = "600"/>
 
 
 Congratulations, once the Neuron wallet is synced, you will have full access to your tokens! You can send  and receive CKBytes and deposit into the Nervos DAO.
@@ -116,7 +110,7 @@ You should have the third party wallet/exchange destination address. **Please ma
 
 Note: The Neuron bundled CKB node requires [VC++ redistributable](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) on Windows to work properly. 
 
-2. If step1 can't resolve, please [run a CKB mainnet node](/getting-started/run-node) and make sure the version is v0.31.0 or later instead of running the Neuron bundled node. 
+2. If step1 can't resolve, please [run a CKB mainnet node](/getting-started/run-node) and make sure the version is v0.32.0 or later instead of running the Neuron bundled node. 
 
 3. if it still doesn't work out, please join the [Support](https://discord.gg/n6tx7uC) channel, export debug information and send it.
 

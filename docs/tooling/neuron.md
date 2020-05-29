@@ -17,15 +17,15 @@ In this section we will give an overall introduction to Neuron Wallet. Tutorials
 
 Please [download](https://github.com/nervosnetwork/neuron/releases) and install the latest Neuron Wallet version, click `Create a New Wallet`, and you will then see the main interface. There are seven tabs: **Overview, Send, Receive, History, Nervos DAO, Addresses and Customized Assets(experimental)**.
 
-<img src="../assets/neuron-wallet/overview1.png" width = "600"/>
+<img src="../assets/neuron-wallet/overview.png" width = "600"/>
 
 ### Overview
 
-`Overview`  displays the 「Wallet name」「Balance」「Recent Activities」「Block Number」
+`Overview`  displays the「Balance」「Recent Activities」「Block Number」
 
 You can cross-check the `Tip Block` in `Block Number` with `Latest Block`  in [CKB-Explorer](https://explorer.nervos.org/) to make sure the node is synced.
 
-<img src="../assets/neuron-wallet/overview1.png" width = "600"/>
+<img src="../assets/neuron-wallet/overview.png" width = "600"/>
 
 ### Send
 
