@@ -23,7 +23,7 @@ An advantage of this design is the group records the index of the cell(s) which 
 This is described here:
 
 ```
-`class ScriptGroup:
+class ScriptGroup:
     def __init__(self, script):
         self.script = script
         self.input_indices = []
@@ -60,7 +60,7 @@ def run():
     for group in split_group(tx):
         if vm_run(group) != 0:
             return error()
-`
+
 ```
 
 When each script group is executed, the execution cost of the scripts is recorded and the sum of all cycles consumed is compared with the `max_block_cycles` allowed upper limit.
@@ -68,21 +68,21 @@ When each script group is executed, the execution cost of the scripts is recorde
 Suppose there is a transaction as follows:
 
 ```
-`Transaction {
+Transaction {
     input: [cell_1 {lock: A, type: B}, cell _2 {lock: A, type: B}, cell_3 {lock: C, type: None}]
     output: [cell_4 {lock: D, type: B}, cell_5 {lock: C, type: B}, cell_6 {lock: G, type: None}, cell_7(lock: A, type: F)]
-}`
+}
 ```
 
 it will be grouped as such:
 
 ```
-`[
+[
     group(A, input:[0, 1], output:[]), 
     group(C, input:[2], output:[]), 
     group(B, input:[0, 1], output:[0, 1]),
     group(F, input:[], output:[3])
-]`
+]
 ```
 
 The syscall of the VM can load these corresponding cells through `group(input/output index)` to complete one-time verification.
