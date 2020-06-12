@@ -75,7 +75,7 @@
 <p>No matter which script group is being executed, the entirety of transaction data can be accessed by scripts included in that transaction during execution.</p>
 <p>An advantage of this design is the group records the index of the cell(s) which belong to the current group. This is equivalent to combining multiple verifications into a single verification, reducing verification resource consumption and providing a public environment for the data set of the transaction. This does however require a developer to consider validation of multiple cells when writing the script.</p>
 <p>This is described here:</p>
-<pre><code class="hljs">`class ScriptGroup:
+<pre><code class="hljs">class ScriptGroup:
     def __init__(self, script):
         self.script = script
         self.input_indices = []
@@ -112,22 +112,22 @@ def run():
     <span class="hljs-keyword">for</span> group in split_group(tx):
         <span class="hljs-keyword">if</span> vm_run(group) != <span class="hljs-number">0</span>:
             <span class="hljs-keyword">return</span> error()
-`
+
 </code></pre>
 <p>When each script group is executed, the execution cost of the scripts is recorded and the sum of all cycles consumed is compared with the <code>max_block_cycles</code> allowed upper limit.</p>
 <p>Suppose there is a transaction as follows:</p>
-<pre><code class="hljs">`<span class="hljs-type">Transaction</span> {
+<pre><code class="hljs"><span class="hljs-type">Transaction</span> {
     input: [cell_1 {lock: <span class="hljs-type">A</span>, <span class="hljs-keyword">type</span>: <span class="hljs-type">B</span>}, cell _2 {lock: <span class="hljs-type">A</span>, type: <span class="hljs-type">B</span>}, cell_3 {lock: <span class="hljs-type">C</span>, type: <span class="hljs-type">None</span>}]
     output: [cell_4 {lock: <span class="hljs-type">D</span>, <span class="hljs-keyword">type</span>: <span class="hljs-type">B</span>}, cell_5 {lock: <span class="hljs-type">C</span>, type: <span class="hljs-type">B</span>}, cell_6 {lock: <span class="hljs-type">G</span>, type: <span class="hljs-type">None</span>}, cell_7(lock: <span class="hljs-type">A</span>, type: <span class="hljs-type">F</span>)]
-}`
+}
 </code></pre>
 <p>it will be grouped as such:</p>
-<pre><code class="hljs">`[
-    group(<span class="hljs-name">A</span>, input:[<span class="hljs-name">0</span>, <span class="hljs-number">1</span>], output:[]), 
-    group(<span class="hljs-name">C</span>, input:[<span class="hljs-name">2</span>], output:[]), 
-    group(<span class="hljs-name">B</span>, input:[<span class="hljs-name">0</span>, <span class="hljs-number">1</span>], output:[<span class="hljs-name">0</span>, <span class="hljs-number">1</span>]),
-    group(<span class="hljs-name">F</span>, input:[], output:[<span class="hljs-name">3</span>])
-]`
+<pre><code class="hljs">[
+    group(A, input:[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], output:[]), 
+    group(C, input:[<span class="hljs-number">2</span>], output:[]), 
+    group(B, input:[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], output:[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>]),
+    group(F, input:[], output:[<span class="hljs-number">3</span>])
+]
 </code></pre>
 <p>The syscall of the VM can load these corresponding cells through <code>group(input/output index)</code> to complete one-time verification.</p>
 <p>CKB will execute all script groups, which are then verified based on return value. This follows the convention of process exit status in Unix-like systems: a return value of zero is a verification pass, while other return values are verification exceptions.</p>
@@ -137,7 +137,7 @@ def run():
 <h3><a class="anchor" aria-hidden="true" id="syscall-links"></a><a href="#syscall-links" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syscall Links</h3>
 <p><a href="https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0009-vm-syscalls/0009-vm-syscalls.md">Sycall RFC</a></p>
 <p><a href="https://github.com/nervosnetwork/ckb-system-scripts/blob/865f4d7697cc979d62111e49f2fb12a3607a4eb9/c/ckb_syscalls.h">Syscall system script (C code)</a></p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/11/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/technical-concepts/transaction-validation-lifecycle"><span class="arrow-prev">← </span><span>Transaction Validation Lifecycle</span></a><a class="docs-next button" href="/tooling/introduction"><span>Introduction</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#environment">Environment</a><ul class="toc-headings"><li><a href="#execution-unit">Execution unit</a></li><li><a href="#special-rules">Special rules</a></li><li><a href="#syscall-links">Syscall Links</a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/12/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/technical-concepts/transaction-validation-lifecycle"><span class="arrow-prev">← </span><span>Transaction Validation Lifecycle</span></a><a class="docs-next button" href="/tooling/introduction"><span>Introduction</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#environment">Environment</a><ul class="toc-headings"><li><a href="#execution-unit">Execution unit</a></li><li><a href="#special-rules">Special rules</a></li><li><a href="#syscall-links">Syscall Links</a></li></ul></li></ul></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
