@@ -277,6 +277,10 @@ Consensus is a state of agreement between the participants (nodes) of a decentra
 ## Cryptocurrency
 Digital currency that relies on mathematics and cryptography to secure funds and facilitate transfers from one party to another.
 
+#### See Also
+- [Digital Currency](#digital-currency)
+- [Fiat Currency](/glossary/glossary-economic#fiat-currency)
+
 ---
 
 ## Cryptographic Signature
