@@ -219,6 +219,14 @@ A Live Cell that is used in a transaction. If the transaction is accepted by the
 
 ---
 
+## Keyper
+A specification of how to manage wallet Lock Scripts which apply to a specific user.
+
+#### See Also
+- [Lock Script](#lock-script)
+
+---
+
 ## Layer 1
 A proof of work blockchain known as the Common Knowledge Base (CKB) that serves as the base layer for the Nervos Network.
 

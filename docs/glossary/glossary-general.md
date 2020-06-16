@@ -20,7 +20,7 @@ A shorthand name for Payment Address.
 ---
 
 ## Asset
-A shorthand name for digital asset, which is used in the contexts of blockchain or cryptocurrency.
+A shorthand name for digital asset.
 
 #### Synonyms
 - [Digital Asset](#digital-asset)
@@ -38,11 +38,76 @@ A record in the blockchain that contains and confirms transactions.
 
 ---
 
+## Block Height
+The block height is the total number of blocks that have been confirmed on the blockchain.
+
+This term can also used to refer to identify a single unique block when specifying a specific block height since there is always exactly one block at any block height.
+
+#### Synonyms
+- [Height](#height)
+
+#### See Also
+- [Block](#block)
+- [Blockchain](#blockchain)
+- [Confirmation](#confirmation)
+
+---
+
+## Block Interval
+The approximate amount of time between between the creation of two blocks in a blockchain.
+
+On Bitcoin blockchain the block interval is approximately every 10 minutes. On the Nervos blockchain the block interval is variable, but normally under 10 seconds.
+
+#### Synonyms
+- [Block Time](#block-time)
+
+#### See Also
+- [Block](#block)
+- [Blockchain](#blockchain)
+
+---
+
+## Block Propagation
+The process of synchronizing a new block to the majority of full nodes in the network.
+
+#### See Also
+- [Block](#block)
+- [Broadcast](#broadcast)
+- [Full Node](#full-node)
+
+---
+
+## Block Reward
+A payment that is made in the native currency of the blockchain that is paid to to miners for providing the computational resources create a block and secure the blockchain.
+
+#### See Also
+- [Block](#block)
+- [Block Subsidy](/glossary/glossary-technical#block-subsidy)
+
+---
+
+## Block Time
+A alternate name for Block Interval.
+
+#### Synonyms
+- [Block Interval](#block-interval)
+
+---
+
 ## Blockchain
 An immutable data structure that where each subsequent block of data is cryptographically linked to the previous blocks. This creates a chain like structure where none of the historical data can be altered without causing a validation error.
 
 #### See Also
 - [Block](#block)
+
+---
+
+## Broadcast
+A message that is sent to all nodes in a blockchain network.
+
+#### See Also
+- [Blockchain](#blockchain)
+- [Node](#node)
 
 ---
 
@@ -65,10 +130,14 @@ A simple structure used hold a piece of state or data on the Nervos CKB.
 
 A Cell is similar in concept to a Bitcoin UTXO.
 
+#### Synonyms
+- [Micro-State](#micro-state)
+
 #### See Also
 - [Dead Cell](/glossary/glossary-technical#dead-cell)
 - [Live Cell](/glossary/glossary-technical#live-cell)
 - [Nervos CKB](/glossary/glossary-technical#nervos-ckb)
+- [Cell Model in Key Concepts](/key-concepts/cell-model)
 - [UTXO on Bitcoin.org](https://bitcoin.org/en/glossary/unspent-transaction-output)
 
 ---
@@ -80,6 +149,7 @@ A representation of how state is managed on Nervos CKB.
 - [Lock Script](/glossary/glossary-technical#lock-script)
 - [Nervos CKB](/glossary/glossary-technical#nervos-ckb)
 - [Type Script](/glossary/glossary-technical#type-script)
+- [Cell Model in Key Concepts](/key-concepts/cell-model)
 - [Cell Model on the Nervos Blog](https://medium.com/nervosnetwork/https-medium-com-nervosnetwork-cell-model-7323fca57571)
 - [UTXO on Bitcoin.org](https://bitcoin.org/en/glossary/unspent-transaction-output)
 
@@ -132,6 +202,25 @@ The instruction set of CKB-VM is RISC-V.
 
 ---
 
+## Cold Storage
+A method of securing funds by placing them in a cold wallet; a type of wallet that is never connected to the internet.
+
+#### See Also
+- [Cold Wallet](#cold-wallet)
+- [Hardware Wallet](#hardware-wallet)
+- [Wallet](#wallet)
+
+---
+
+## Cold Wallet
+A wallet that is used to secure assets offline. This wallet is permanently disconnected from the internet, and not vulnerable to attacks which rely on an active internet connection.
+
+#### See Also
+- [Cold Storage](#cold-storage)
+- [Wallet](#wallet)
+
+---
+
 ## Common Knowledge Base
 A layer 1 proof of work blockchain that provides a foundation of decentralized trust for the Nervos Network.
 
@@ -177,7 +266,37 @@ A process where a transaction has been accepted and verified by the network and 
 ---
 
 ## Consensus
-Consensus is a state of agreement between the participants of a decentralized network.
+Consensus is a state of agreement between the participants (nodes) of a decentralized network.
+
+#### See Also
+- [Full Node](#full-node)
+- [Node](#node)
+
+---
+
+## Cryptocurrency
+Digital currency that relies on mathematics and cryptography to secure funds and facilitate transfers from one party to another.
+
+#### See Also
+- [Digital Currency](#digital-currency)
+- [Fiat Currency](/glossary/glossary-economic#fiat-currency)
+
+---
+
+## Cryptographic Signature
+A concise piece of proof data which is used to prove that the creator of the signature has ownership of a specific private key by "signing" a unique piece of data. This signing process proves ownership of the private keys without revealing the private keys.
+
+#### Synonyms
+- [Private Key](#private-key)
+- [Signature](#signature)
+
+---
+
+## Cryptography
+The study and practice of using mathematics to secure communications and information.
+
+#### See Also
+- [Cryptography at Wikipedia](https://en.wikipedia.org/wiki/Cryptography)
 
 ---
 
@@ -201,6 +320,15 @@ Short for Decentralized Autonomous Organization. A DAO is an organization run by
 
 ---
 
+## Decentralization
+The process of spreading the responsibility and ownership between multiple parties in order to mitigate the risks associated with a single party being in control.
+
+#### See Also
+- [Distributed](#distributed)
+- [Decentralization on Wikipedia](https://en.wikipedia.org/wiki/Decentralization)
+
+---
+
 ## Digital Asset
 A digital asset is an individual piece of data that has value, or represents another entity that has value.
 
@@ -212,6 +340,45 @@ Digital assets are most commonly represented as tokens, which may be used as dig
 
 ---
 
+## Digital Currency
+A type of currency that primarily exists digitally over the internet. Physical representations of the currency, in the form of cards, bills, or coins, may exist, but are secondary mediums.
+
+#### See Also
+- [Cryptocurrency](#cryptocurrency)
+
+---
+
+## Distributed
+A system where components are spread across multiple nodes to parallelize workloads, add redundancy, or eliminate single points of failure.
+
+#### See Also
+- [Decentralization](#decentralization)
+
+---
+
+## Double Spend
+A double spend is a fraudlent action where a cryptocurrency token is spent in two places at once, effectively allowing the attacker to spend more tokens than they actually own.
+
+The potential for a double spend is based on network synchronization delays. These problems are automatically resolved over time, which is why most blockchains set guidelines on the minimum number of confirmations that should be accumulated before considering a transaction final.
+
+#### See Also
+- [Confirmation](#confirmation)
+- [Cryptocurrency](#cryptocurrency)
+- [Token](#token)
+- [Transaction](#transaction)
+
+---
+
+## Epoch
+An epoch is a period of time for a set of blocks.
+
+In Nervos an epoch is approximately four hours.
+
+#### See Also
+- [Block](#block)
+
+---
+
 ## First-Class Assets
 A unique property of CKB wherein ownership of a Cell, and the data contained within, is not assigned by the issuer, developer, or smart contract. The user owns the cell and is responsible for costs associated with state rent.
 
@@ -220,6 +387,68 @@ A unique property of CKB wherein ownership of a Cell, and the data contained wit
 - [Cell Model](#cell-model)
 - [State Rent](/glossary/glossary-economic#state-rent)
 - [First-Class Asset on the Nervos Network Blog](https://medium.com/nervosnetwork/first-class-asset-ff4feaf370c4)
+
+---
+
+## Fungible Token
+Any token where every unit has identical characteristics and is interchangeable with other tokens of the same type.
+
+Fungible tokens represent the vast majority of cryptocurrencies.
+
+#### See Also
+- [Non-Fungible Token](#non-fungible-token)
+- [Token](#token)
+- [User-Defined Token](#user-defined-token)
+
+---
+
+## Full Node
+A node that contains a complete copy of the entire blockchain history.
+
+#### Synonyms
+- [Node](#node)
+
+---
+
+## Hardware Wallet
+A cryptocurrency wallet that uses a physical hardware component to store private keys. These devices are permanently disconnected from the internet and typically interface with computers only for specific activities such as sending funds.
+
+A hardware wallet is a form of cold wallet.
+
+#### See Also
+- [Cold Storage](#cold-storage)
+- [Cold Wallet](#cold-wallet)
+- [Private Key](#private-key)
+- [Wallet](#wallet)
+
+---
+
+## Hash Rate
+A measure of the speed at which a computer is able to complete cryptographic operations. These operations are known as "hashing", and are often measured in hashes per second.
+
+#### See Also
+- [Miner](#miner)
+- [Network Hash Rate](#network-hash-rate)
+
+---
+
+## Height
+A shorthand name for block height.
+
+## Synonyms
+- [Block Height](#block-height)
+
+---
+
+## Light Client
+A type of node software with much lower resource requirements than a full node. A light client allows for the most common basic functions, but does not have advanced functionality.
+
+Light clients do not contain a copy of the full blockchain or full state. They typically rely on full nodes in the network in order to operate.
+
+#### See Also
+- [Blockchain](#blockchain)
+- [Full Node](#full-node)
+- [Node](#node)
 
 ---
 
@@ -240,6 +469,28 @@ The name of the Nervos CKB Mainnet is Lina.
 
 ---
 
+## Mempool
+A shorthand name for memory pool. A "waiting area" on full nodes for transactions that have been broadcasted to the network but have not yet been confirmed on the blockchain.
+
+#### See Also
+- [Confirmation](#confirmation)
+- [Transaction](#transaction)
+
+---
+
+## Micro-State
+A small piece of state that is isolated and often able to be acted upon independently without knowing the total state of the network.
+
+On Nervos, micro-state is represented by a Cell.
+
+#### Synonyms
+- [Cell](#cell)
+
+#### See Also
+- [State](#state)
+
+---
+
 ## Miner
 A miner is a computer that provides computing power to validate transactions and create the blocks in the blockchain.
 
@@ -249,12 +500,61 @@ A miner is a computer that provides computing power to validate transactions and
 
 ---
 
+## Miner Fee
+Another term for transaction fee.
+
+#### Synonyms
+- [Transaction Fee](#transaction-fee)
+
+---
+
+## Mining
+The practice of providing computational power to validate transactions and create blocks in the blockchain in exchange for a mining reward.
+
+#### See Also
+- [Block](#block)
+- [Blockchain](#blockchain)
+- [Mining Reward](#mining-reward)
+- [Transaction](#transaction)
+
+---
+
+## Mining Reward
+Native tokens that are paid to a miner in exchange for providing the computational resources required for mining.
+
+#### See Also
+- [Miner](#miner)
+- [Mining](#mining)
+- [Native Token](#native-token)
+
+---
+
+## Native Token
+A token type which is used for paying fees and rewards on a public blockchain. This token is often unique as it is the only token that must exist on the blockchain in order to operate.
+
+On Nervos the native token is the CKByte.
+
+#### See Also
+- [CKByte](#ckbyte)
+- [Token](#token)
+
+---
+
 ## NC-MAX
 The consensus algorithm used on the Nervos blockchain.
 
 #### See Also
 - [Consensus](#consensus)
 - [Nervos Blockchain](#nervos-blockchain)
+
+---
+
+## Neighbor
+A node that is directly connected to another node in the blockchain peer to peer network.
+
+#### See Also
+- [Node](#node)
+- [Peer to Peer](#peer-to-peer)
 
 ---
 
@@ -279,6 +579,63 @@ A system that allows users to lock CKBytes for a period of time to earn rewards 
 
 ---
 
+## Network Hash Rate
+A measurement of the total computational processing power which is dedicated to providing security to the network.
+
+#### See Also
+- [Hash Rate](#hash-rate)
+- [Miner]
+
+---
+
+## Node
+A computer that is running the blockchain node software, which allows them to participate in the blockchain's peer to peer network.
+
+#### Synonyms
+- [Full Node](#full-node)
+
+#### See Also
+- [Pruned Node](#pruned-node)
+
+---
+
+## Non-Fungible Token
+Any token where every unit within the same type can have different characteristics, making each token unique.
+
+Non-fungible tokens are often used for digital representation of unique real-world items, such as real-estate.
+
+#### See Also
+- [Fungible Token](#fungible-token)
+- [Token](#token)
+- [User-Defined Token](#user-defined-token)
+
+---
+
+## Open Source
+A piece of software where source code is freely available for examination or alteration by any third-party.
+
+#### See Also
+- [What is Open Source at OpenSource.com](https://opensource.com/resources/what-open-source)
+
+---
+
+## P2P
+A shortname name for peer to peer.
+
+#### Synonyms
+- [Peer to Peer](#peer-to-peer)
+
+---
+
+## Paper Wallet
+A form of storing a recovery phrase or private keys offline by printing them on a piece of paper. This document would then be stored by traditional means in a secured location of the user's choosing, such as a safe.
+
+#### See Also
+- [Private Key](#private-key)
+- [Wallet](#wallet)
+
+---
+
 ## Payment Address
 A string of letters and numbers that cryptocurrency and assets can be sent to and from.
 
@@ -291,14 +648,60 @@ A payment address is designed to be shared with others, similar to an email addr
 
 ---
 
+## Peer to Peer
+A type of network where the nodes communicate directly with each other instead of going through an intermediary centralized server.
+
+#### Synonyms
+- [P2P](#p2p)
+
+#### See Also
+- [Node](#node)
+
+---
+
+## Proof of Work
+A type of consensus algorithm that requires high computational resources in order to produce answers to cryptographic puzzles in return for a mining reward paid in native tokens.
+
+These answers used to produce blocks and process transactions in a public blockchain. The computational difficulty itself is the basis for security in the public blockchain because it is extremely costly to replicate.
+
+#### See Also
+- [Block](#block)
+- [Consensus](#consensus)
+- [Mining Reward](#mining-reward)
+- [Proof of Stake](#proof-of-stake)
+- [Transaction](#transaction)
+
+---
+
+## Proof of Stake
+A type of consensus algorithm where the participants of the network cast votes to reach agreement on the creation of blocks and processing of transactions. The strength of each vote is weighted by the amount of native token owned by the voter.
+
+#### See Also
+- [Consensus](#consensus)
+- [Mining Reward](#mining-reward)
+- [Proof of Work](#proof-of-work)
+- [Transaction](#transaction)
+
+---
+
 ## Private Key
-A string of letters and numbers that is used to prove ownership of cryptocurrency or digital assets, allowing them to be sent to other payment addresses.
+A string of letters and numbers that is used to prove ownership of cryptocurrency or digital assets, allowing them to be sent to other payment addresses. A private key is normally stored in a wallet.
 
 A private key must be kept secret at all times. A private key works similarly to a key to a safe containing your cryptocurrency. Anyone with the key has the ability to open the safe and take the contents.
 
 #### See Also
 - [Digital Asset](#digital-asset)
+- [Paper Wallet](#paper-wallet)
 - [Payment Address](#payment-address)
+- [Wallet](#wallet)
+
+---
+
+## Pruned Node
+A node which contains only part of the blockchain history.
+
+#### See Also
+- [Node](#node)
 
 ---
 
@@ -311,6 +714,14 @@ A Shannon is the equivalent of a Bitcoin Satoshi.
 - [CKByte](#ckbyte)
 - [Common Knowledge Byte](#common-knowledge-byte)
 - [Satoshi (denomination) on Bitcoin.org](https://bitcoin.org/en/glossary/denominations)
+
+---
+
+## Signature
+A shorthand name for cryptographic signature.
+
+#### Synonyms
+- [Cryptographic Signature](#cryptographic-signature)
 
 ---
 
@@ -336,12 +747,46 @@ The name of the Nervos Testnet is Aggron.
 
 ---
 
+## Tip
+A shorthand name for tip block.
+
+#### Synonyms
+- [Tip Block](#tip-block)
+
+---
+
+## Tip Block
+The most recent block to be confirmed in a blockchain. The tip block has the highest block height in the blockchain.
+
+#### Synonyms
+- [Tip](#tip)
+
+#### See Also
+- [Block](#block)
+- [Block Height](#block-height)
+- [Blockchain](#blockchain)
+
+---
+
 ## Transaction
 An entry in the blockchain that describes any change in state. 
 
 #### See Also
 - [Blockchain](/glossary/glossary-general#blockchain)
 - [Nervos Blockchain](/glossary/glossary-general#nervos-blockchain)
+
+---
+
+## Transaction Fee
+A fee which is paid in the native token to miners in exchange for processing a transaction.
+
+#### Synonyms
+- [Miner Fee](#miner-fee)
+
+#### See Also
+- [Miner](#miner)
+- [Native Token](#native-token)
+- [Transaction](#transaction)
 
 ---
 
@@ -379,6 +824,7 @@ A UDT is equivalent of an Ethereum ERC20 token or ER777 token.
 A piece of software used to manage a user's private keys and payment addresses. A wallet allows a user to send and receive cryptocurrency payments. Some wallets also incorporate functionality to manage digital assets.
 
 #### See Also
+- [Paper Wallet](#paper-wallet)
 - [Private Key](#private-key)
 - [Payment Address](#payment-address)
 - [Digital Asset](#digital-asset)
