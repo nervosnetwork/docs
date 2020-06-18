@@ -187,8 +187,8 @@ A Type Script which defines the monetary policy of a User Defined Token (UDT).
 
 #### See Also
 - [Governance Script Hash](#governance-script-hash)
-- [UDT](#udt)
-- [User Defined Token](#user-defined-token)
+- [UDT](/glossary/glossary-general#udt)
+- [User Defined Token](/glossary/glossary-general#user-defined-token)
 - [Type Script](#type-script)
 
 ---
@@ -201,8 +201,8 @@ A Blake2b hash of a Type Script which is used as an identifier for the Script wh
 
 #### See Also
 - [Governance Script](#governance-script)
-- [UDT](#udt)
-- [User Defined Token](#user-defined-token)
+- [UDT](/glossary/glossary-general#udt)
+- [User Defined Token](/glossary/glossary-general#user-defined-token)
 - [Type Script](#type-script)
 
 ---
@@ -387,6 +387,32 @@ A Shannon is the equivalent of a Bitcoin Satoshi.
 
 ---
 
+## Simple UDT
+A standard that defines a the most basic implementation of a UDT fungible token on Nervos.
+
+A Simple UDT is often referred to by its abbreviation, SUDT.
+
+An SUDT on Nervos is the equivalent of Ethereum tokens standards ERC20 and ERC777.
+
+#### Synonyms
+- [SUDT](#sudt)
+
+#### See Also
+- [UDT](/glossary/glossary-general#udt)
+- [User-Defined Token](/glossary/glossary-general#user-defined-token)
+- [ERC20 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-20)
+- [Simple UDT RFC Draft Spec on Nervos Talk](https://talk.nervos.org/t/rfc-simple-udt-draft-spec/4333/1)
+
+---
+
+## SUDT
+An abbreviation for Simple UDT.
+
+#### Synonyms
+- [Simple UDT](#simple-udt)
+
+---
+
 ## Testnet
 An alternate public blockchain used for testing purposes that is running the same or similar software as the Mainnet. All tokens and data on testnets have no value.
 
@@ -419,26 +445,6 @@ A Blake2b hash of a Type Script which is used as an identifier for the Script wh
 - [Cell](/glossary/glossary-general#cell)
 - [Script](#script)
 - [Type Script](#type-script)
-
----
-
-## UDT
-An abbreviation for User-Defined Token.
-
-#### Synonyms
-- [User-Defined Token](#user-defined-token)
-
----
-
-## User-Defined Token
-A unique non-fungible token with properties defined by the user.
-
-A UDT is equivalent of an Ethereum ERC20 token or ER777 token.
-
-#### See Also
-- [ERC20 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-20)
-- [ERC777 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-777)
-- [UDT Draft Spec on Nervos Talk](https://talk.nervos.org/t/rfc-simple-udt-draft-spec/4333)
 
 ---
 
