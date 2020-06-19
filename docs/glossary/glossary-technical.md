@@ -77,6 +77,36 @@ A general-purpose cryptographic hashing algorithm that can create a succinct dat
 
 ---
 
+## Block Subsidy
+A payment that is made in the native currency of the blockchain that is paid to to miners for providing the computational resources create a block and secure the blockchain.
+
+The subsidy consists is the portion of the total block reward that is issued out of inflation for creating the block, but does not include any additional transaction fees that may be paid on top.
+
+#### Synonyms
+- [Block Reward](/glossary/glossary-general#block-reward)
+- [Transaction Fee](/glossary/glossary-general#transaction-fee)
+
+---
+
+## BLS
+A cryptographic signature scheme for signing and verification.
+
+BLS is short for Boneh–Lynn–Shacham.
+
+#### See Also
+- [Boneh–Lynn–Shacham on Wikipedia](https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham)
+
+---
+
+## Boxer
+A lightweight Rust library for verifying the Nervos layer 1 blockchain, the Common Knowledge Base.
+
+#### See Also
+- [Common Knowledge Base](/glossary/glossary-general#common-knowledge-base)
+- [Boxer on GitHub](https://github.com/xxuejie/ckb-boxer)
+
+---
+
 ## Cell Collection
 The process of gathering cells that meet certain criteria.
 
@@ -95,6 +125,19 @@ This is the equivalent of a coinbase transaction in Bitcoin.
 #### See Also
 - [CKByte](/glossary/glossary-general#ckbyte)
 - [Coinbase on Bitcoin.org](https://bitcoin.org/en/glossary/coinbase)
+
+---
+
+## Commit
+The process of taking a proposed transaction and adding it to the blockchain. After the transaction has been committed it is confirmed.
+
+Miners are incentivized to commit transactions by being paid a commit reward.
+
+#### See Also
+- [Commit Reward](/glossary/glossary-economic#commit-reward)
+- [Confirmation](/glossary/glossary-general#confirmation)
+- [Propose](#propose)
+- [Transaction](/glossary/glossary-general#transaction)
 
 ---
 
@@ -129,6 +172,17 @@ Well-established, low-level cryptographic algorithm commonly used to build out a
 
 ---
 
+## Data
+In Nervos specific contexts, data may refer to the data structure within a Cell. This structure is used to hold any form of information that needs to be stored on the Nervos blockchain.
+
+In more general contexts, data may refer to any form of information.
+
+#### See Also
+- [Cell](/glossary/glossary-general#cell)
+- [Cell Model](/glossary/glossary-general#cell-model)
+
+---
+
 ## Dead Cell
 A cell that has been used as an input to a previous transaction. It cannot be used as an input to a new transaction, nor can it be used as a dependency.
 
@@ -143,6 +197,26 @@ This is the equivalent of a "spent UTXO" in Bitcoin.
 
 ---
 
+## Dep Group
+A method for referencing multiple dependencies which are commonly used together using a single dependency field.
+
+#### See Also
+- [Dep Type](#dep-type)
+- [Dependencies](#dependencies)
+- [CKB Transaction Structure on GitHub](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0022-transaction-structure/0022-transaction-structure.md)
+
+---
+
+## Dep Type
+A field that specifies the type of the dependency.
+
+#### See Also
+- [Dep Group](#dep-group)
+- [Dependencies](#dependencies)
+- [CKB Transaction Structure on GitHub](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0022-transaction-structure/0022-transaction-structure.md)
+
+---
+
 ## Deps
 A shorthand name for dependencies.
 
@@ -153,6 +227,8 @@ A shorthand name for dependencies.
 
 ## Dependencies
 Cells that are referenced in a transaction. Cells that are referenced as dependencies are read-only and made available to any Scripts executing within the transaction. Dependencies are not consumed.
+
+Dependencies are commonly referred to as deps.
 
 #### Synonyms
 - [Deps](#deps)
@@ -165,11 +241,52 @@ Cells that are referenced in a transaction. Cells that are referenced as depende
 
 ---
 
+## Difficulty
+A measurement of how difficult it is to solve the Proof of Work cryptographic puzzle required to create a block.
+
+Networks automatically adjust the difficulty to control the speed at which blocks are generated as mining participants enter and exit the network.
+
+#### See Also
+- [Proof of Work](/glossary/glossary-general#proof-of-work)
+
+---
+
+## Diviner
+A deterministic testing framework for Rust.
+
+#### See Also
+- [Diviner on GitHub](https://github.com/xxuejie/diviner)
+
+---
+
 ## Eaglesong
 The proof of work function used for mining on Nervos CKB.
 
 #### See Also
 - [Eaglesong RFC on the Nervos Github](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0010-eaglesong/0010-eaglesong.md)
+
+---
+
+## ERC20
+An Ethereum token standard for basic fungible tokens.
+
+An SUDT on Nervos is the equivalent of Ethereum tokens standards ERC20 and ERC777.
+
+#### See Also
+- [Fungible Token](/glossary/glossary-general#fungible-token)
+- [Token](/glossary/glossary-general#token)
+- [User-Defined Token](/glossary/glossary-general#user-defined-token)
+- [ERC20 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-20)
+
+---
+
+## ERC721
+An Ethereum token standard for non-fungible tokens.
+
+#### See Also
+- [Non-Fungible Token](/glossary/glossary-general#non-fungible-token)
+- [Token](/glossary/glossary-general#token)
+- [ERC721 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-721)
 
 ---
 
@@ -347,6 +464,20 @@ A Live Cell that is created in a transaction.
 
 ---
 
+## Propose
+The process of taking an unconfirmed transaction out of the mempool and proposing it for commitment. A transaction is not confirmed until after it has been committed.
+
+Miners are incentivized to propose transactions by being paid a proposal reward.
+
+#### See Also
+- [Commit](#commit)
+- [Confirmation](/glossary/glossary-general#confirmation)
+- [Mempool](/glossary/glossary-general#mempool)
+- [Proposal Reward](/glossary/glossary-economic#proposal-reward)
+- [Transaction](/glossary/glossary-general#transaction)
+
+---
+
 ## RISC-V
 An open standard instruction set architecture (ISA) for general computing.
 
@@ -355,6 +486,14 @@ RISC-V is the instruction set used by the CKB-VM.
 #### See Also
 - [CKB-VM](/glossary/glossary-general#risc-v)
 - [RISC-V on Wikipedia](https://en.wikipedia.org/wiki/RISC-V)
+
+---
+
+## Schnorr Signature
+A cryptographic signature scheme for signing and verification.
+
+#### See Also
+- [Schnorr Signature on Wikipedia](https://en.wikipedia.org/wiki/Schnorr_signature)
 
 ---
 
@@ -398,6 +537,7 @@ An SUDT on Nervos is the equivalent of Ethereum tokens standards ERC20 and ERC77
 - [SUDT](#sudt)
 
 #### See Also
+- [Token](/glossary/glossary-general#token)
 - [UDT](/glossary/glossary-general#udt)
 - [User-Defined Token](/glossary/glossary-general#user-defined-token)
 - [ERC20 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-20)
