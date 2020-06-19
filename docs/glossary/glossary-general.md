@@ -809,14 +809,18 @@ An abbreviation for User-Defined Token.
 ---
 
 ## User-Defined Token
-A unique non-fungible token with properties defined by the user.
+A custom token created with properties defined by the user. In normal usage, this most commonly refers to fungible tokens.
 
-A UDT is equivalent of an Ethereum ERC20 token or ER777 token.
+A User-Defined Token is usually referred to by its abbreviation, UDT.
+
+#### Synonyms
+- [Fungible Token](#fungible-token)
+- [UDT](#udt)
 
 #### See Also
 - [ERC20 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-20)
 - [ERC777 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-777)
-- [UDT Draft Spec on Nervos Talk](https://talk.nervos.org/t/rfc-simple-udt-draft-spec/4333)
+- [Simple UDT Draft Spec on Nervos Talk](https://talk.nervos.org/t/rfc-simple-udt-draft-spec/4333)
 
 ---
 
