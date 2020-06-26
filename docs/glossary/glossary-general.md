@@ -70,6 +70,9 @@ On Bitcoin blockchain the block interval is approximately every 10 minutes. On t
 ## Block Propagation
 The process of synchronizing a new block to the majority of full nodes in the network.
 
+#### Synonyms
+- [Propagation](#propagation)
+
 #### See Also
 - [Block](#block)
 - [Broadcast](#broadcast)
@@ -262,6 +265,7 @@ A process where a transaction has been accepted and verified by the network and 
 #### See Also
 - [Block](#block)
 - [Transaction](#transaction)
+- [Unconfirmed](#unconfirmed)
 
 ---
 
@@ -684,6 +688,14 @@ A type of consensus algorithm where the participants of the network cast votes t
 
 ---
 
+## Propagation
+A shorthand name for Block Propagation.
+
+#### Synonyms
+- [Block Propagation](#block-propagation)
+
+---
+
 ## Private Key
 A string of letters and numbers that is used to prove ownership of cryptocurrency or digital assets, allowing them to be sent to other payment addresses. A private key is normally stored in a wallet.
 
@@ -805,6 +817,30 @@ An abbreviation for User-Defined Token.
 
 #### Synonyms
 - [User-Defined Token](#user-defined-token)
+
+---
+
+## Unconfirmed
+The state of a transaction that has not yet been confirmed. An unconfirmed transaction is not finalized and cannot be guaranteed.
+
+#### Synonyms
+- [Unconfirmed Transaction](#unconfirmed-transaction)
+
+#### See Also
+- [Confirmation](#confirmation)
+- [Transaction](#transaction)
+
+---
+
+## Unconfirmed Transaction
+A transaction that has not yet been confirmed. An unconfirmed transaction is not finalized and cannot be guaranteed.
+
+#### Synonyms
+- [Unconfirmed](#unconfirmed)
+
+#### See Also
+- [Confirmation](#confirmation)
+- [Transaction](#transaction)
 
 ---
 

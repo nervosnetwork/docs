@@ -64,6 +64,7 @@ A common problem found in multi-asset blockchain platforms where the value of th
 #### See Also
 - [Asset](/glossary/glossary-general#asset)
 - [Starving Layer 1 Problem](#starving-layer-1-problem)
+- [Tragedy of the Security Commons](#tragedy-of-the-security-commons)
 
 ---
 
@@ -189,9 +190,10 @@ A situation in a system where the participants act in accordance with their own 
 ---
 
 ## Tragedy of the Security Commons
-
+A situation that can emerge on multi-asset blockchain platforms where asset tokens rely on the storage and security of the blockchain platform, but do not contribute back to the platform. As the number of assets that "ride for free" increases, so does the burden placed on the underlying blockchain platform. If the assets do not contribute to the underlying platform, the available security may not properly support the network.
 
 #### See Also
+- [Heavy Asset Problem](#heavy-asset-problem)
 - [Tragedy of the Commons](#tragedy-of-the-commons)
 - [Tragedy of the Storage Commons](#tragedy-of-the-storage-commons)
 
