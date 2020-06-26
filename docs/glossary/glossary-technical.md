@@ -128,6 +128,16 @@ This is the equivalent of a coinbase transaction in Bitcoin.
 
 ---
 
+## Code Hash
+A field in a Cell that contains a hash value which could refer to a specific piece of data, or a specific cell referenced by Type ID.
+
+#### See Also
+- [Cell](/glossary/glossary-general#cell)
+- [Data](#data)
+- [Type ID](#type-id)
+
+---
+
 ## Commit
 The process of taking a proposed transaction and adding it to the blockchain. After the transaction has been committed it is confirmed.
 
@@ -146,6 +156,7 @@ Section of the block that contains transaction commitments. The commitment zone 
 
 #### See Also
 - [Block](/glossary/glossary-general#block)
+- [Proposal Zone](#proposal-zone)
 - [Transaction](/glossary/glossary-general#transaction)
 
 ---
@@ -184,9 +195,14 @@ In more general contexts, data may refer to any form of information.
 ---
 
 ## Dead Cell
-A cell that has been used as an input to a previous transaction. It cannot be used as an input to a new transaction, nor can it be used as a dependency.
+A cell that has been used as an input to a previous transaction and is consumed.
 
-This is the equivalent of a "spent UTXO" in Bitcoin.
+A dead cell cannot be used as an input to a new transaction, nor can it be used as a dependency. It is effectively destroyed and removed from the active state of the network.
+
+A dead cell is the equivalent of a "spent UTXO" in Bitcoin.
+
+#### Synonyms
+- [Historical Cell](#historical-cell)
 
 #### See Also
 - [Cell](/glossary/glossary-general#cell)
@@ -241,6 +257,16 @@ Dependencies are commonly referred to as deps.
 
 ---
 
+## Duktape
+Duktape is an embeddable Javascript engine, with a focus on portability and compact footprint.
+
+Duktape is used to run Javascript based smart contracts on Nervos.
+
+#### See Also
+- [Duktape Official Website](https://duktape.org/)
+
+---
+
 ## Difficulty
 A measurement of how difficult it is to solve the Proof of Work cryptographic puzzle required to create a block.
 
@@ -270,9 +296,10 @@ The proof of work function used for mining on Nervos CKB.
 ## ERC20
 An Ethereum token standard for basic fungible tokens.
 
-An SUDT on Nervos is the equivalent of Ethereum tokens standards ERC20 and ERC777.
+An SUDT on Nervos is the equivalent of Ethereum tokens standards ERC20 or ERC777.
 
 #### See Also
+- [ERC777](#erc777)
 - [Fungible Token](/glossary/glossary-general#fungible-token)
 - [Token](/glossary/glossary-general#token)
 - [User-Defined Token](/glossary/glossary-general#user-defined-token)
@@ -290,12 +317,55 @@ An Ethereum token standard for non-fungible tokens.
 
 ---
 
+## ERC777
+An updated Ethereum token standard for basic fungible tokens that is backwards compatible with ERC20.
+
+An SUDT on Nervos is the equivalent of Ethereum tokens standards ERC20 or ERC777.
+
+#### See Also
+- [ERC20](#erc20)
+- [Fungible Token](/glossary/glossary-general#fungible-token)
+- [Token](/glossary/glossary-general#token)
+- [User-Defined Token](/glossary/glossary-general#user-defined-token)
+- [ERC777 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-777)
+
+---
+
+## ERC1155
+An Ethereum token standard that supports the creation any number of fungible or non-fungible tokens on a single contract.
+
+#### See Also
+- [Fungible Token](/glossary/glossary-general#fungible-token)
+- [Non-Fungible Token](/glossary/glossary-general#non-fungible-token)
+- [Token](/glossary/glossary-general#token)
+- [User-Defined Token](/glossary/glossary-general#user-defined-token)
+- [ERC1155 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-1155)
+
+---
+
 ## Generator
 A program that is used to create transactions that can be broadcast to the Nervos CKB network.
 
 #### See Also
 - [Nervos CKB](#nervos-ckb)
 - [Transaction](/glossary/glossary-general#transaction)
+
+---
+
+## Genesis Block
+The first block on a blockchain. The genesis block is unique because it does not contain a reference to the previous block because it is the first.
+
+#### See Also
+- [Block](/glossary/glossary-general#block)
+- [Blockchain](/glossary/glossary-general#blockchain)
+
+---
+
+## Godwoken
+A tool that provides a programmable layer on Nervos CKB that emulates the account model used by other cryptocurrencies like Ethereum.
+
+#### See Also
+- [Godwoken on GitHub](https://github.com/jjyr/godwoken)
 
 ---
 
@@ -324,6 +394,27 @@ A Blake2b hash of a Type Script which is used as an identifier for the Script wh
 
 ---
 
+## Historical Cell
+An alternative term for Dead Cell.
+
+#### Synonyms
+- [Dead Cell](#dead-cell)
+
+#### See Also
+- [Cell](/glossary/glossary-general#cell)
+- [Cell Model](/glossary/glossary-general#cell-model)
+
+---
+
+## Indexer
+An application or library that keeps track of live Cells that match criteria specified by the developer or user.
+
+#### See Also
+- [Cells](/glossary/glossary-general#cells)
+- [Live Cell](#live-cell)
+
+---
+
 ## Input
 A Live Cell that is used in a transaction. If the transaction is accepted by the network, the Live Cell will be consumed, and marked as a Dead Cell.
 
@@ -341,6 +432,17 @@ A specification of how to manage wallet Lock Scripts which apply to a specific u
 
 #### See Also
 - [Lock Script](#lock-script)
+- [Keyper on GitHub](https://github.com/ququzone/keyper)
+
+---
+
+## Late Spawning
+When a node joins a blockchain network for the first time after the network has already been in operation for a period of time.
+
+A network is said to support late spawning if that participant can download and verify the entire blockchain without having to trust any of the participants in the network to feed them unaltered data.
+
+#### See Also
+- [Genesis Block](#genesis-block)
 
 ---
 
@@ -415,6 +517,17 @@ A Blake2b hash of a Lock Script which is used as an identifier for the Script wh
 
 ---
 
+## Long Address
+An address format used on Nervos that includes the full code hash of the lock script which is associated with it.
+
+#### See Also
+- [Address](/glossary/glossary-general#address)
+- [Code Hash](#code-hash)
+- [Lock Script](#lock-script)
+- [Short Address](#short-address)
+
+---
+
 ## Mainnet
 The Nervos CKB public blockchain.
 
@@ -432,15 +545,136 @@ The name of the Nervos CKB Mainnet is Lina.
 
 ---
 
+## Minting
+The process of creating of new tokens.
+
+#### See Also
+- [Token](/glossary/glossary-general#token)
+
+---
+
+## Molecule
+A serialization library for encoding data which is used extensively on the Nervos blockchain.
+
+#### See Also
+- [Molecule on GitHub](https://github.com/nervosnetwork/molecule)
+
+---
+
+## Muta
+A framework used to create highly customizable layer 2 blockchain implementations on Nervos.
+
+#### See Also
+- [Muta on GitHub](https://github.com/nervosnetwork/muta)
+
+---
+
 ## Nervos CKB
 The layer 1 blockchain of the Nervos Network, the Common Knowledge Base.
+
+Nervos CKB is often referred to as the Nervos Blockchain.
 
 #### Synonyms
 - [CKB](/glossary/glossary-general#ckb)
 - [Common Knowledge Base](/glossary/glossary-general#common-knowledge-base)
+- [Nervos Blockchain](/glossary/glossary-general#nervos-blockchain)
 
 #### See Also
 - [Layer 1](#layer-1)
+
+---
+
+## Off-Chain Computation
+A programming model where all computation is done off-chain to reduce the burden on the nodes in the network and provide higher levels of scalability.
+
+Nervos uses off-chain computation and on-chain verification.
+
+#### See Also
+- [On-Chain Computation](#on-chain-computation)
+- [On-Chain Verification](#on-chain-verification)
+
+---
+
+## Off-Chain State
+A programming model where the data that represents the state of an application is not stored on the blockchain, or is not accessible by on-chain smart contracts.
+
+#### See Also
+- [On-Chain State](#on-chain-state)
+
+---
+
+## On-Chain Computation
+A programming model where all computation by smart contracts is done on-chain every node on the network simultaneously.
+
+Ethereum uses on-chain computation.
+
+#### See Also
+- [Off-Chain Computation](#off-chain-computation)
+
+---
+
+## On-Chain State
+A programming model where the data that represents the state of an application is stored on the blockchain and is accessible by on-chain smart contracts.
+
+Nervos provides on-chain state for all smart contracts.
+
+#### See Also
+- [Off-Chain State](#off-chain-state)
+
+---
+
+## On-Chain Verification
+A programming model where all computation is done off-chain to reduce the burden on the nodes in the network, but verification of the resulting data is done on-chain to enforce the smart contract rules created by the developer.
+
+Nervos uses off-chain computation and on-chain verification.
+
+#### See Also
+- [On-Chain Computation](#on-chain-computation)
+
+---
+
+## Open Transaction
+A signed piece of a transaction that is incomplete and invalid on its own. When combined with other signed transaction pieces can form a complete transaction which can be processed.
+
+One use of open transactions is to create the functionality required for a trustless decentalized exchange.
+
+#### See Also
+- [Cryptographic Signature](/glossary/glossary-general#cryptographic-signature)
+- [Transaction](/glossary/glossary-general#transaction)
+
+---
+
+## Orphan
+A shorthand name for Orphan Block.
+
+#### Synonyms
+- [Orphan Block](#orphan-block)
+- [Uncle](#uncle)
+
+---
+
+## Orphan Block
+A valid block that was found simultaneously with another valid block by another miner, but was not selected by network because it arrived after the other block.
+
+Orphan blocks are expected to occur under normal operation and do not become a problem unless they occur too frequently.
+
+On Nervos, orphan blocks are better described as Uncles.
+
+#### Synonyms
+- [Orphan](#orphan)
+- [Uncle](#uncle)
+
+#### See Also
+- [Block](/glossary/glossary-general#block)
+- [Orphan Rate](#orphan-rate)
+
+---
+
+## Orphan Rate
+A measure of the speed at which Orphan blocks occur within the blockchain network.
+
+#### See Also
+- [Orphan Block](#orphan-block)
 
 ---
 
@@ -464,6 +698,32 @@ A Live Cell that is created in a transaction.
 
 ---
 
+## Overlord
+A byzantine fault tollerant consensus algorithm designed by Nervos for Huobi which can support thousands of transactions per second.
+
+#### See Also
+- [Overlord on Medium](https://medium.com/nervosnetwork/overlord-a-new-consensus-algorithm-3cc51690d269)
+
+---
+
+## Polyjuice
+An Ethereum compatible layer that provides account model functionality on top of Nervos' Cell Model.
+
+#### See Also
+- [Cell Model](/glossary/glossary-general#cell-model)
+- [Polyjuice on GitHub](https://github.com/nervosnetwork/polyjuice)
+
+---
+
+## Proposal Zone
+Section of the block that contains transaction proposals.
+
+#### See Also
+- [Commitment Zone](#commitment-zone)
+- [Propose](#propose)
+
+---
+
 ## Propose
 The process of taking an unconfirmed transaction out of the mempool and proposing it for commitment. A transaction is not confirmed until after it has been committed.
 
@@ -474,6 +734,7 @@ Miners are incentivized to propose transactions by being paid a proposal reward.
 - [Confirmation](/glossary/glossary-general#confirmation)
 - [Mempool](/glossary/glossary-general#mempool)
 - [Proposal Reward](/glossary/glossary-economic#proposal-reward)
+- [Proposal Zone](#proposal-zone)
 - [Transaction](/glossary/glossary-general#transaction)
 
 ---
@@ -514,6 +775,14 @@ A Script is a binary executable in the ELF format for the RISC-V architecture.
 
 ---
 
+## Seed Cell
+A design pattern on Nervos from creating unique identifiers used to create unforgeable assets.
+
+#### See Also
+- [Cell](/glossary/glossary-general#cell)
+
+---
+
 ## Shannon
 A fractional denomination of CKBytes. One CKByte is equal to 100,000,000 Shannons.
 
@@ -523,6 +792,21 @@ A Shannon is the equivalent of a Bitcoin Satoshi.
 - [CKByte](/glossary/glossary-general#ckbyte)
 - [Common Knowledge Byte](/glossary/glossary-general#common-knowledge-byte)
 - [Satoshi (denomination) on Bitcoin.org](https://bitcoin.org/en/glossary/denominations)
+
+---
+
+## Short Address
+An address format on Nervos that does not include the code hash of the associated lock script, and instead uses one of many commonly used lock scripts.
+
+The short address format is the most common address format used, and is often referred to as simply "address".
+
+#### Synonyms
+- [Address](/glossary/glossary-general#address)
+
+#### See Also
+- [Code Hash](#code-hash)
+- [Lock Script](#lock-script)
+- [Long Address](#long-address)
 
 ---
 
@@ -542,6 +826,33 @@ An SUDT on Nervos is the equivalent of Ethereum tokens standards ERC20 and ERC77
 - [User-Defined Token](/glossary/glossary-general#user-defined-token)
 - [ERC20 on Ethereum.org](https://eips.ethereum.org/EIPS/eip-20)
 - [Simple UDT RFC Draft Spec on Nervos Talk](https://talk.nervos.org/t/rfc-simple-udt-draft-spec/4333/1)
+
+---
+
+## Since
+A field on a Cell which can contain an optional value that prevents consumption before a certain block timestamp or a block number.
+
+#### See Also
+- [Cell](/glossary/glossary-general#cell)
+
+---
+
+## SPV
+An abbreviation for Simplified Payment Verification. A protocol for using a blockchain cryptocurrency without having to operate a full node.
+
+SPV clients require far less data to be stored, but also must requires the trust of the network clients it is connected to directly.
+
+#### See Also
+- [SPV Wallet](#spv-wallet)
+- [Simplified Payment Verification on BitcoinWiki](https://en.bitcoinwiki.org/wiki/Simplified_Payment_Verification)
+
+---
+
+## SPV Wallet
+A light-weight cryptocurrency wallet that uses the SPV protocol.
+
+#### See Also
+- [SPV](#spv)
 
 ---
 
@@ -588,6 +899,41 @@ A Blake2b hash of a Type Script which is used as an identifier for the Script wh
 
 ---
 
+## Type ID
+A unique identifier for asset types on Nervos. This idenfier is based on the Type Script and Arguments of a Cell.
+
+#### See Also
+- [Args](#args)
+- [Cell](/glossary/glossary-general#cell)
+- [Type Script](#type-script)
+
+---
+
+## Uncle
+A valid block that was found simultaneously with another valid block by another miner, but was not selected by network because it arrived after the other block.
+
+Uncles are paid a reduced block reward when they are found and reported.
+
+On Nervos, Uncles are tracked by consensus to adjust the block interval of the network.
+
+#### Synonyms
+- [Orphan Block](#orphan-block)
+
+#### See Also
+- [Block Interval](/glossary/glossary-general#block-interval)
+- [Orphan Rate](#orphan-rate)
+- [Uncle](#uncle)
+
+---
+
+## Uncle Rate
+
+#### See Also
+- [Orphan Rate](#orphan-rate)
+- [Uncle](#uncle)
+
+---
+
 ## Validator
 A Script that is used to ensure that a transaction created by a Generator is valid.
 
@@ -606,5 +952,29 @@ A set of cryptographic signatures that contains the data required to prove autho
 
 #### See Also
 - [Transaction](/glossary/glossary-general#transaction)
+
+---
+
+## Zk-SNARK
+A form of cryptographic proof, that when used in cryptocurrencies, allows for privacy features which do not reveal the amounts or participants in transactions.
+
+Zk-SNARKs require a trusted setup, but are otherwise trustless.
+
+#### See Also
+- [Transaction](/glossary/glossary-general#transaction)
+- [Zk-STARK](#zk-stark)
+- [Non-interactive zero-knowledge proofs on Wikipedia](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof)
+
+---
+
+## Zk-STARK
+A form of cryptographic proof, that when used in cryptocurrencies, allows for privacy features which do not reveal the amounts or participants in transactions.
+
+Unlike Zk-SNARKs, Zk-STARKs do not require a trusted setup.
+
+#### See Also
+- [Transaction](/glossary/glossary-general#transaction)
+- [Zk-SNARK](#zk-snark)
+- [Non-interactive zero-knowledge proofs on Wikipedia](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof)
 
 ---
