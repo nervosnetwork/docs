@@ -7,7 +7,7 @@ title: Run a CKB Mainnet Node
 
 Running a node requires using the command line. If you have never used a command line before, you may refer to [how to use the command line tool](https://www.google.com/search?q=learn+command+line) on your computer. Although it may seem complicated at first, it is quite simple and you should be able to easily run a CKB node following the specific instructions below.
 
-Step 1: Download the latest release CKB binary file from [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases)  Please make sure the version you download is **v0.25.2 or later.**
+Step 1: Download the latest release CKB binary file from [CKB releases page on GitHub](https://github.com/nervosnetwork/ckb/releases) 
 
 Step 2:  Unzip / extract the downloaded file to an easily accessible folder. 
 For Windows we recommend `C:\ckb` 
