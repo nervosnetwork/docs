@@ -11,13 +11,13 @@
 const siteConfig = {
     title: 'Nervos CKB', // Title for your website.
     tagline: 'Nervos CKB Documentations',
-    url: 'https://docs.nervos.org', // Your website URL
+    url: 'https://docs-old.nervos.org', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
     //   baseUrl: '/test-site/',
 
-    cname: 'docs.nervos.org',
+    cname: 'docs-old.nervos.org',
 
     // Used for publishing and more
     projectName: 'docs',
