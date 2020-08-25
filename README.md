@@ -1,6 +1,8 @@
 
 # Nervos CKB Documentation Website
 
+> This is the old and deprecated Nervos CKB Documentation, see https://github.com/nervosnetwork/docs-new for the new one, kept here only for reference reasons.
+
 [![CircleCI](https://circleci.com/gh/nervosnetwork/docs.svg?style=svg)](https://circleci.com/gh/nervosnetwork/docs)
 
 This is the Nervos CKB documentation website. 
